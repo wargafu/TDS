@@ -30,7 +30,7 @@ jobs:
           node-version: '20'
 
       - name: Install devDependencies (TypeScript)
-        run: npm install
+        run: npm install --ignore-scripts
         working-directory: packages/core
 
       # ── Type safety ────────────────────────────────────────────
@@ -94,7 +94,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install devDependencies (TypeScript)
-        run: npm install
+        run: npm install --ignore-scripts
 
       - name: Build
         run: node scripts/build.mjs

@@ -15,7 +15,6 @@ import {
   mkdirSync,
   readdirSync,
   rmSync,
-  statSync,
 } from 'fs';
 import { dirname, join, relative } from 'path';
 import { fileURLToPath } from 'url';
@@ -24,6 +23,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const SRC = join(ROOT, 'src');
 const DIST = join(ROOT, 'dist');
+
+// Chemin vers le tsc local — fonctionne même si tsc n'est pas dans PATH global
+const TSC = join(ROOT, 'node_modules', '.bin', 'tsc');
 
 const ASSET_EXTENSIONS = new Set(['.css', '.json']);
 
@@ -69,8 +71,12 @@ if (existsSync(DIST)) {
 // ─── step 2: typescript ──────────────────────────────────────────────────────
 
 log('Step 2/3 — Compiling TypeScript...');
+if (!existsSync(TSC)) {
+  err(`tsc not found at ${TSC} — run npm install first`);
+  process.exit(1);
+}
 try {
-  execSync('tsc --build tsconfig.json', {
+  execSync(`"${TSC}" --build tsconfig.json`, {
     stdio: 'inherit',
     cwd: ROOT,
   });
