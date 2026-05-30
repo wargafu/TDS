@@ -92,5 +92,6 @@ export default defineConfig({
       ],
     }),
   ],
-  site: 'https://design.tchad.gov.td',
+  site: 'https://notoor.github.io/TDGS',
+  base: '/TDGS',
 });
