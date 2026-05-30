@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "jsx": "preserve",
 
     // Strict core
@@ -18,12 +18,11 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
 
-    // Monorepo paths
-    "baseUrl": ".",
+    // Monorepo paths (IDE support — pas utilisés à la compilation des packages)
     "paths": {
-      "@tdgs/*": ["packages/*/src"],
-      "@tdgs/core": ["packages/core/src"],
-      "@tdgs/tokens": ["packages/tokens/src"]
+      "@tdgs/*": ["./packages/*/src"],
+      "@tdgs/core": ["./packages/core/src"],
+      "@tdgs/tokens": ["./packages/tokens/src"]
     }
   },
   "include": ["packages", "apps", "templates"]

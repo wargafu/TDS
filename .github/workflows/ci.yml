@@ -29,16 +29,13 @@ jobs:
         with:
           node-version: '20'
 
-      # @tdgs/core n'a aucune dépendance runtime — pas de npm install nécessaire
-      # TypeScript est installé globalement pour les checks
-
-      - name: Install TypeScript
-        run: npm install -g typescript
-        working-directory: .
+      - name: Install devDependencies (TypeScript)
+        run: npm install
+        working-directory: packages/core
 
       # ── Type safety ────────────────────────────────────────────
       - name: Typecheck
-        run: tsc -p tsconfig.typecheck.json
+        run: ./node_modules/.bin/tsc -p tsconfig.typecheck.json
 
       # ── Token validation (sans build) ──────────────────────────
       - name: Validate tokens
@@ -96,9 +93,8 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install TypeScript
-        run: npm install -g typescript
-        working-directory: .
+      - name: Install devDependencies (TypeScript)
+        run: npm install
 
       - name: Build
         run: node scripts/build.mjs

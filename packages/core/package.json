@@ -6,7 +6,10 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "sideEffects": ["**/*.css", "dist/**/*.css"],
+  "sideEffects": [
+    "**/*.css",
+    "dist/**/*.css"
+  ],
   "files": [
     "dist",
     "!dist/**/*.tsbuildinfo"
@@ -77,5 +80,8 @@
     "./tokens/shadow.css": "./dist/tokens/shadow.css",
     "./tokens/motion.css": "./dist/tokens/motion.css",
     "./tokens/z-index.css": "./dist/tokens/z-index.css"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
   }
 }
