@@ -1,6 +1,6 @@
 ---
 title: Anti-patterns
-description: Erreurs fréquentes à éviter dans les interfaces TDGS — design, code et accessibilité.
+description: Erreurs fréquentes à éviter dans les interfaces DSTD — design, code et accessibilité.
 sidebar:
   order: 2
 ---
@@ -27,7 +27,7 @@ qui ne correspond pas à la gravité des actes administratifs.
   animation: gradientShift 3s ease infinite;
 }
 
-/* ✅ TDGS — sobre et institutionnel */
+/* ✅ DSTD — sobre et institutionnel */
 .hero {
   background: var(--tdgs-color-neutral-100);
   border-bottom: 3px solid var(--tdgs-color-blue-500);
@@ -36,7 +36,7 @@ qui ne correspond pas à la gravité des actes administratifs.
 
 ### Couleurs inventées hors palette
 
-Utiliser des couleurs hors de la palette TDGS casse la cohérence visuelle
+Utiliser des couleurs hors de la palette DSTD casse la cohérence visuelle
 et crée des problèmes de contraste non vérifiés.
 
 ```css
@@ -46,7 +46,7 @@ et crée des problèmes de contraste non vérifiés.
   color: #FFF;          /* Contraste non vérifié */
 }
 
-/* ✅ Palette TDGS vérifiée */
+/* ✅ Palette DSTD vérifiée */
 .mon-composant {
   background: var(--tdgs-color-blue-500);
   color: white;  /* Contraste 8.59:1 ✅ */
@@ -61,7 +61,7 @@ et crée des problèmes de contraste non vérifiés.
 .mon-tooltip { z-index: 99999; }
 .ma-nav      { z-index: 1000; }
 
-/* ✅ Échelle TDGS verrouillée */
+/* ✅ Échelle DSTD verrouillée */
 .ma-modal    { z-index: var(--tdgs-z-modal);    /* 400 */ }
 .mon-tooltip { z-index: var(--tdgs-z-tooltip);  /* 600 */ }
 .ma-nav      { z-index: var(--tdgs-z-sticky);   /* 200 */ }
@@ -122,7 +122,7 @@ Le bouton Reset détruit le travail de l'utilisateur d'un clic accidentel.
 ### Suppression du focus
 
 ```css
-/* ❌ Suppression globale du focus — interdit en TDGS */
+/* ❌ Suppression globale du focus — interdit en DSTD */
 * { outline: none; }
 *:focus { outline: none; }
 button:focus { outline: 0; }

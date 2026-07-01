@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   TDGS Documentation — Charte officielle
+   DSTD Documentation — Charte officielle
    Basé sur l'inspection du vrai système de variables Starlight 0.32
    ═══════════════════════════════════════════════════════════════ */
 
@@ -13,7 +13,7 @@
   --sl-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* ─── 3. Header bleu TDGS — GLOBAL (dark + light) ───────────── */
+/* ─── 3. Header bleu DSTD — GLOBAL (dark + light) ───────────── */
 :root {
   --sl-color-bg-nav: #0033a0;
 }
@@ -46,7 +46,7 @@
 :root[data-theme='light'],
 [data-theme='light'] ::backdrop {
   --sl-color-accent-low:  #d9e3ff;   /* blue.100 — fond accentué subtil */
-  --sl-color-accent:      #0033a0;   /* blue.500 — primaire TDGS */
+  --sl-color-accent:      #0033a0;   /* blue.500 — primaire DSTD */
   --sl-color-accent-high: #002063;   /* blue.700 — texte accentué fort */
 
   /* IMPORTANT : en mode clair Starlight, "white" = couleur de TEXTE (sombre),
@@ -199,7 +199,7 @@ body::before {
   padding: 0.1em 0.4em;
 }
 
-/* ─── 12. Composants doc TDGS ────────────────────────────────── */
+/* ─── 12. Composants doc DSTD ────────────────────────────────── */
 
 /* Grille de swatches couleurs */
 .tdgs-color-grid {
@@ -332,7 +332,7 @@ body::before {
   border-top: 1px solid var(--sl-color-gray-5);
 }
 
-/* ─── 13. Preview boutons TDGS ───────────────────────────────── */
+/* ─── 13. Preview boutons DSTD ───────────────────────────────── */
 .tdgs-button {
   display: inline-flex;
   align-items: center;
@@ -378,7 +378,7 @@ body::before {
 :root .tdgs-button--tertiary { color:#e5e7eb; }
 :root .tdgs-button--tertiary:hover { background:#1f2937; }
 
-/* ─── 14. Preview champs de formulaire TDGS ──────────────────── */
+/* ─── 14. Preview champs de formulaire DSTD ──────────────────── */
 .tdgs-field__label {
   display: block;
   font-size: 0.875rem;

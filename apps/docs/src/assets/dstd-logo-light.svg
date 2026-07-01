@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 32" fill="none" role="img" aria-labelledby="title">
+  <title id="title">DSTD</title>
+  <rect x="0" y="5" width="8" height="22" rx="2" fill="#002664"/>
+  <rect x="8" y="5" width="8" height="22" fill="#FECB00"/>
+  <rect x="16" y="5" width="8" height="22" rx="2" fill="#C60C30"/>
+  <text x="32" y="24" font-family="system-ui, sans-serif" font-size="22" font-weight="750" letter-spacing=".5" fill="#002664">DSTD</text>
+</svg>

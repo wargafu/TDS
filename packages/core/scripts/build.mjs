@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * TDGS Core — Build pipeline
+ * DSTD Core — Build pipeline
  *
  * Steps:
  *   1. Clean dist/
@@ -76,7 +76,9 @@ if (!existsSync(TSC)) {
   process.exit(1);
 }
 try {
-  execSync(`"${TSC}" --build tsconfig.json`, {
+  // dist/ vient d'être supprimé : --force évite que le cache composite
+  // considère malgré tout la compilation comme à jour.
+  execSync(`"${TSC}" --build tsconfig.json --force`, {
     stdio: 'inherit',
     cwd: ROOT,
   });

@@ -1,24 +1,33 @@
-# TDGS — Tchad Design System
+# DSTD — Système de Design de l’État
 
-> Le système de design officiel pour les services numériques de l'État du Tchad.
+> Le système de design open source destiné aux services numériques publics du Tchad.
 
-[![CI](https://github.com/Notoor/TDGS/actions/workflows/ci.yml/badge.svg)](https://github.com/Notoor/TDGS/actions/workflows/ci.yml)
+[![CI](https://github.com/wargafu/DSTD/actions/workflows/ci.yml/badge.svg)](https://github.com/wargafu/DSTD/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/@tdgs/core.svg)](https://www.npmjs.com/package/@tdgs/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## Pourquoi TDGS ?
+<p align="center">
+  <img src="./apps/docs/public/brand/dstd-mark.png" width="280" alt="Symbole du DSTD aux couleurs du Tchad">
+</p>
+
+> [!IMPORTANT]
+> DSTD est actuellement une initiative indépendante et communautaire. Le projet vise une
+> adoption par les institutions publiques tchadiennes, mais ne se présente pas encore comme
+> une norme officiellement homologuée par l'État.
+
+## Pourquoi DSTD ?
 
 Les services numériques gouvernementaux du Tchad manquent d'une identité visuelle cohérente. Chaque ministère, chaque plateforme citoyenne développe ses interfaces de manière indépendante — résultat : incohérence, inaccessibilité et perte de confiance des citoyens.
 
-**TDGS** est la réponse systémique : une bibliothèque de tokens et de composants partagés, accessibles par défaut, conformes WCAG 2.1 AA, et prêts pour le français comme pour l'arabe.
+**DSTD** propose une réponse systémique : une bibliothèque de tokens et de composants partagés, accessibles par défaut, conformes WCAG 2.1 AA, et prêts pour le français comme pour l'arabe.
 
 Inspiré de [GOV.UK Design System](https://design-system.service.gov.uk/), [DSFR](https://www.systeme-de-design.gouv.fr/) et [USWDS](https://designsystem.digital.gov/).
 
 ---
 
-## Ce que TDGS fournit
+## Ce que DSTD fournit
 
 ### 🎨 Design Tokens
 | Système | Variables CSS | TypeScript | JSON |
@@ -42,6 +51,9 @@ Inspiré de [GOV.UK Design System](https://design-system.service.gov.uk/), [DSFR
 ---
 
 ## Installation
+
+Le namespace npm `@tdgs` et les classes CSS `tdgs-*` sont conservés pendant la
+transition de marque afin d’éviter une rupture d’API.
 
 ```bash
 # pnpm (recommandé)
@@ -122,7 +134,7 @@ const body = typography.sizes.md;     // '1rem'
 ## Structure du monorepo
 
 ```
-TDGS/
+DSTD/
 ├── packages/
 │   └── core/                  ← Package npm principal @tdgs/core
 │       ├── src/
@@ -152,8 +164,8 @@ TDGS/
 ### Installation
 
 ```bash
-git clone https://github.com/Notoor/TDGS.git
-cd TDGS
+git clone https://github.com/wargafu/DSTD.git
+cd DSTD
 pnpm install
 ```
 
@@ -205,7 +217,7 @@ git push origin feat/nom-du-composant
 
 ## Contribuer
 
-**Toute contribution est bienvenue.** TDGS est un bien public numérique pour le Tchad.
+**Toute contribution est bienvenue.** DSTD est un bien numérique commun pour le Tchad.
 
 ### Avant d'ouvrir une PR
 
@@ -233,7 +245,7 @@ git push origin feat/nom-du-composant
 - Supprimer un export public
 - Renommer une classe CSS existante
 
-> TDGS suit le versionnement sémantique strict. Les tokens publiés sont **immuables**.
+> DSTD suit le versionnement sémantique strict. Les tokens publiés sont **immuables**.
 
 ### Guide de contribution complet
 
@@ -304,8 +316,8 @@ git push origin feat/nom-du-composant
 
 ## Contact
 
-- **Issues** : [github.com/Notoor/TDGS/issues](https://github.com/Notoor/TDGS/issues)
-- **Discussions** : [github.com/Notoor/TDGS/discussions](https://github.com/Notoor/TDGS/discussions)
+- **Issues** : [github.com/wargafu/DSTD/issues](https://github.com/wargafu/DSTD/issues)
+- **Discussions** : [github.com/wargafu/DSTD/discussions](https://github.com/wargafu/DSTD/discussions)
 - **Email** : design-system@gouv.td *(à configurer)*
 
 ---

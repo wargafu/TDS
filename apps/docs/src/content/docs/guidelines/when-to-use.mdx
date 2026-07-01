@@ -1,5 +1,5 @@
 ---
-title: Quand utiliser TDGS
+title: Quand utiliser DSTD
 description: Directives d'adoption du Tchad Design System — contextes recommandés et limites.
 sidebar:
   order: 1
@@ -7,14 +7,14 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-# Quand utiliser TDGS
+# Quand utiliser DSTD
 
-TDGS est conçu pour des contextes spécifiques. Cette page aide les équipes à décider
-si TDGS est le bon choix pour leur projet.
+DSTD est conçu pour des contextes spécifiques. Cette page aide les équipes à décider
+si DSTD est le bon choix pour leur projet.
 
 ---
 
-## TDGS est fait pour
+## DSTD est fait pour
 
 ### Services numériques gouvernementaux
 Portails citoyens, applications de démarches administratives, formulaires de demande de documents,
@@ -37,10 +37,10 @@ doivent reconnaître immédiatement qu'ils interagissent avec un service officie
 
 ---
 
-## TDGS n'est pas fait pour
+## DSTD n'est pas fait pour
 
 ### Applications commerciales privées
-TDGS n'est pas un framework CSS généraliste. Son esthétique institutionnelle
+DSTD n'est pas un framework CSS généraliste. Son esthétique institutionnelle
 ne convient pas aux applications commerciales, fintech, e-commerce, etc.
 
 ### Startups et produits marketing-first
@@ -49,10 +49,10 @@ nécessitent des librairies plus flexibles (Tailwind + Headless UI, shadcn/ui, e
 
 ### Applications très spécialisées
 Outils de data visualisation avancés, éditeurs de contenu complexes, applications temps-réel
-nécessitent des composants qui dépassent le périmètre actuel de TDGS.
+nécessitent des composants qui dépassent le périmètre actuel de DSTD.
 
-<Aside type="note" title="TDGS comme couche de base">
-  Même dans des projets commerciaux, les tokens TDGS (couleurs, espacement)
+<Aside type="note" title="DSTD comme couche de base">
+  Même dans des projets commerciaux, les tokens DSTD (couleurs, espacement)
   peuvent servir de point de départ pour maintenir la cohérence visuelle
   avec les services gouvernementaux partenaires.
 </Aside>
@@ -61,24 +61,24 @@ nécessitent des composants qui dépassent le périmètre actuel de TDGS.
 
 ## Critères d'évaluation
 
-Avant d'adopter TDGS, répondez à ces questions :
+Avant d'adopter DSTD, répondez à ces questions :
 
 | Question | Si oui | Si non |
 |---|---|---|
-| Mon service est-il destiné aux citoyens ou agents de l'État ? | ✅ TDGS recommandé | Évaluer selon le contexte |
-| L'identité visuelle de l'État est-elle requise ? | ✅ TDGS recommandé | Autre framework possible |
-| L'accessibilité WCAG AA est-elle un prérequis ? | ✅ TDGS conforme | Tout framework accessible |
-| Le projet supporte-t-il HTML-first / no-JS ? | ✅ TDGS compatible | Évaluer les dépendances |
-| Mon interface a-t-elle besoin d'animations avancées ? | ⚠️ Hors périmètre TDGS | — |
+| Mon service est-il destiné aux citoyens ou agents de l'État ? | ✅ DSTD recommandé | Évaluer selon le contexte |
+| L'identité visuelle de l'État est-elle requise ? | ✅ DSTD recommandé | Autre framework possible |
+| L'accessibilité WCAG AA est-elle un prérequis ? | ✅ DSTD conforme | Tout framework accessible |
+| Le projet supporte-t-il HTML-first / no-JS ? | ✅ DSTD compatible | Évaluer les dépendances |
+| Mon interface a-t-elle besoin d'animations avancées ? | ⚠️ Hors périmètre DSTD | — |
 
 ---
 
 ## Processus d'adoption recommandé
 
-1. **Évaluation** — Identifier les interfaces concernées par TDGS
+1. **Évaluation** — Identifier les interfaces concernées par DSTD
 2. **Audit existant** — Inventorier les composants et styles actuels
-3. **Migration des tokens** — Remplacer les couleurs/spaces custom par les tokens TDGS
-4. **Migration composants** — Adopter les classes CSS TDGS progressivement
+3. **Migration des tokens** — Remplacer les couleurs/spaces custom par les tokens DSTD
+4. **Migration composants** — Adopter les classes CSS DSTD progressivement
 5. **Validation accessibilité** — Tester avec axe-core et navigation clavier
 6. **Formation équipe** — Partager ce guide de documentation avec les développeurs
 

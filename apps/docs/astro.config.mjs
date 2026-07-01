@@ -4,22 +4,22 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'TDGS',
-      description: 'Tchad Design System — Documentation officielle',
+      title: 'DSTD',
+      description: 'Système de Design de l’État — République du Tchad',
       defaultLocale: 'root',
       locales: {
         root: { label: 'Français', lang: 'fr' },
       },
       logo: {
-        light: './src/assets/tdgs-logo-light.svg',
-        dark: './src/assets/tdgs-logo-dark.svg',
+        light: './src/assets/dstd-logo-light.svg',
+        dark: './src/assets/dstd-logo-dark.svg',
         replacesTitle: false,
       },
       social: {
-        github: 'https://github.com/Notoor/TDGS',
+        github: 'https://github.com/wargafu/DSTD',
       },
       editLink: {
-        baseUrl: 'https://github.com/Notoor/TDGS/edit/main/apps/docs/',
+        baseUrl: 'https://github.com/wargafu/DSTD/edit/main/apps/docs/',
       },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
@@ -77,7 +77,7 @@ export default defineConfig({
         {
           label: 'Directives',
           items: [
-            { label: 'Quand utiliser TDGS', slug: 'guidelines/when-to-use' },
+            { label: 'Quand utiliser DSTD', slug: 'guidelines/when-to-use' },
             { label: 'Anti-patterns', slug: 'guidelines/anti-patterns' },
             { label: 'Contribution', slug: 'guidelines/contributing' },
           ],
@@ -92,6 +92,6 @@ export default defineConfig({
       ],
     }),
   ],
-  site: 'https://notoor.github.io/TDGS',
-  base: '/TDGS',
+  site: 'https://wargafu.github.io/DSTD',
+  base: '/DSTD',
 });

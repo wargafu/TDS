@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TDGS — Documentation typographique</title>
+  <title>DSTD — Documentation typographique</title>
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <main>
     <header>
-      <p>TDGS — Tchad Design System</p>
+      <p>DSTD — Tchad Design System</p>
       <h1>Système typographique officiel</h1>
-      <p>Documentation minimale et exemples visuels pour le système typographique TDGS. Ce guide couvre l’architecture des polices, l’échelle de taille, les styles textuels, le multilingue et les règles d’accessibilité.</p>
+      <p>Documentation minimale et exemples visuels pour le système typographique DSTD. Ce guide couvre l’architecture des polices, l’échelle de taille, les styles textuels, le multilingue et les règles d’accessibilité.</p>
     </header>
 
     <section>
       <h2>1. Architecture des polices</h2>
-      <p>TDGS utilise une architecture typographique claire et performante : Source Sans 3 pour le Latin, Noto Naskh Arabic pour l’Arabe, Public Sans comme secours institutionnel et JetBrains Mono pour les usages monospace.</p>
+      <p>DSTD utilise une architecture typographique claire et performante : Source Sans 3 pour le Latin, Noto Naskh Arabic pour l’Arabe, Public Sans comme secours institutionnel et JetBrains Mono pour les usages monospace.</p>
       <div class="code-block">
         <pre><code>html {
   font-family: "Source Sans 3", "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -37,7 +37,7 @@ code, kbd, pre {
 
     <section>
       <h2>2. Échelle typographique</h2>
-      <p>L’échelle TDGS est mobile-first et basée sur une racine de 16px. Elle évite les tailles marketing et reste stable pour les interfaces gouvernementales.</p>
+      <p>L’échelle DSTD est mobile-first et basée sur une racine de 16px. Elle évite les tailles marketing et reste stable pour les interfaces gouvernementales.</p>
       <table class="token-table">
         <thead>
           <tr>
@@ -63,7 +63,7 @@ code, kbd, pre {
 
     <section>
       <h2>2.1. Système d’espacement</h2>
-      <p>TDGS applique une grille modulaire de 4px rendue en rem pour un écosystème stable et accessible. Chaque token représente un multiple de 4px : par exemple <code>spacing-4</code> = 16px / 1rem et <code>spacing-16</code> = 64px / 4rem. Cette échelle simple est pensée pour les portails citoyens, les tableaux de bord administratifs, les formulaires complexes et les pages multi-modules.</p>
+      <p>DSTD applique une grille modulaire de 4px rendue en rem pour un écosystème stable et accessible. Chaque token représente un multiple de 4px : par exemple <code>spacing-4</code> = 16px / 1rem et <code>spacing-16</code> = 64px / 4rem. Cette échelle simple est pensée pour les portails citoyens, les tableaux de bord administratifs, les formulaires complexes et les pages multi-modules.</p>
       <table class="token-table">
         <thead>
           <tr>
@@ -131,7 +131,7 @@ code, kbd, pre {
 
     <section>
       <h2>2.2. Rayons et ombres</h2>
-      <p>Le système TDGS des arrondis reste sobre et institutionnel. Les rayons servent à hiérarchiser les surfaces sans verser dans un style trop « startup ».</p>
+      <p>Le système DSTD des arrondis reste sobre et institutionnel. Les rayons servent à hiérarchiser les surfaces sans verser dans un style trop « startup ».</p>
       <table class="token-table">
         <thead>
           <tr><th>Token</th><th>Valeur</th><th>Usage recommandé</th></tr>
@@ -147,7 +147,7 @@ code, kbd, pre {
         </tbody>
       </table>
       <div class="note-box">
-        <h3>Règles TDGS pour les arrondis</h3>
+        <h3>Règles DSTD pour les arrondis</h3>
         <ul>
           <li><strong>Faible</strong> : `none`, `xs` et `sm` pour les interfaces formelles et les données.</li>
           <li><strong>Moyen</strong> : `md` pour les cartes, panels et modales afin de conserver une densité lisible.</li>
@@ -179,7 +179,7 @@ code, kbd, pre {
       </div>
       <table class="token-table">
         <thead>
-          <tr><th>Token</th><th>Valeur</th><th>Usage TDGS</th></tr>
+          <tr><th>Token</th><th>Valeur</th><th>Usage DSTD</th></tr>
         </thead>
         <tbody>
           <tr><td>shadow-none</td><td>none</td><td>Surfaces plates, tables, sections formelles</td></tr>
@@ -206,7 +206,7 @@ code, kbd, pre {
 
     <section>
       <h2>2.3. Motion et z-index</h2>
-      <p>Le système de motion TDGS est conçu pour être sobre, fonctionnel et accessible. Les animations doivent améliorer la compréhension de l’interface sans devenir décoratives.</p>
+      <p>Le système de motion DSTD est conçu pour être sobre, fonctionnel et accessible. Les animations doivent améliorer la compréhension de l’interface sans devenir décoratives.</p>
       <table class="token-table">
         <thead>
           <tr><th>Token</th><th>Variable CSS</th><th>Valeur</th><th>Usage</th></tr>
@@ -231,7 +231,7 @@ code, kbd, pre {
         </tbody>
       </table>
       <div class="note-box">
-        <h3>Philosophie motion TDGS</h3>
+        <h3>Philosophie motion DSTD</h3>
         <ul>
           <li>Motion discrète, au service de la hiérarchie et de la compréhension.</li>
           <li>Animations uniquement pour indiquer un changement d’état ou une relation spatiale.</li>
@@ -259,8 +259,8 @@ code, kbd, pre {
           <li>Navigation : transitions de page ou panneaux avec <code>normal</code> + <code>standard</code>.</li>
         </ul>
       </div>
-      <h3>Z-index TDGS</h3>
-      <p>La hiérarchie z-index TDGS est verrouillée et minimale. Les valeurs sont espacées de 100 pour conserver une marge de manœuvre, tout en restant explicites et sans ambiguïté.</p>
+      <h3>Z-index DSTD</h3>
+      <p>La hiérarchie z-index DSTD est verrouillée et minimale. Les valeurs sont espacées de 100 pour conserver une marge de manœuvre, tout en restant explicites et sans ambiguïté.</p>
       <table class="token-table">
         <thead>
           <tr><th>Token</th><th>Variable CSS</th><th>Valeur</th><th>Usage</th></tr>
@@ -278,7 +278,7 @@ code, kbd, pre {
       <div class="note-box">
         <h3>Règles strictes</h3>
         <ul>
-          <li>Interdiction des z-index arbitraires hors de l’échelle TDGS.</li>
+          <li>Interdiction des z-index arbitraires hors de l’échelle DSTD.</li>
           <li>Modal > dropdown toujours.</li>
           <li>Tooltip > modal uniquement lorsque le tooltip est lié à une interaction modale et est absolument positionné dans le même stacking context.</li>
           <li>Sticky ne doit jamais recouvrir une modal ou un overlay.</li>
@@ -290,7 +290,7 @@ code, kbd, pre {
         <h3>Gestion des stacking contexts</h3>
         <ul>
           <li>Éviter de créer des stacking contexts inutiles avec <code>transform</code>, <code>opacity</code>, <code>filter</code>, <code>will-change</code> sur des éléments empilés.</li>
-          <li>Si un composant doit créer un stacking context, vérifier que sa valeur z-index utilise bien le token TDGS correspondant.</li>
+          <li>Si un composant doit créer un stacking context, vérifier que sa valeur z-index utilise bien le token DSTD correspondant.</li>
           <li>Les règles d’empilement s’appliquent dans le même context ; ne pas compter sur des valeurs z-index locales pour traverser plusieurs contexts.</li>
         </ul>
       </div>
@@ -308,8 +308,8 @@ code, kbd, pre {
     </section>
 
     <section>
-      <h2>3. Boutons TDGS</h2>
-      <p>Le système de boutons TDGS est conçu pour être direct, lisible et fiable dans les parcours administratifs. Les variantes sont limitées, hiérarchisées et compatibles HTML-first, sans dépendre de JavaScript.</p>
+      <h2>3. Boutons DSTD</h2>
+      <p>Le système de boutons DSTD est conçu pour être direct, lisible et fiable dans les parcours administratifs. Les variantes sont limitées, hiérarchisées et compatibles HTML-first, sans dépendre de JavaScript.</p>
       <div class="note-box">
         <h3>Philosophie des boutons</h3>
         <ul>
@@ -384,8 +384,8 @@ code, kbd, pre {
     </section>
 
     <section>
-      <h2>4. Inputs TDGS</h2>
-      <p>Le système de champs TDGS s’appuie sur la même sobriété que les boutons : structure claire, états visibles et variantes limitées pour éviter les erreurs dans les formulaires publics.</p>
+      <h2>4. Inputs DSTD</h2>
+      <p>Le système de champs DSTD s’appuie sur la même sobriété que les boutons : structure claire, états visibles et variantes limitées pour éviter les erreurs dans les formulaires publics.</p>
       <div class="note-box">
         <h3>Structure standard</h3>
         <ul>
@@ -488,7 +488,7 @@ code, kbd, pre {
       <div class="text-samples">
         <div class="sample-card">
           <span class="sample-label">Display</span>
-          <p style="font-size: var(--tdgs-font-size-5xl); line-height: var(--tdgs-line-height-5xl); font-weight: var(--tdgs-font-weight-semibold); letter-spacing: -0.02em;">TDGS Display — Usage héroïque</p>
+          <p style="font-size: var(--tdgs-font-size-5xl); line-height: var(--tdgs-line-height-5xl); font-weight: var(--tdgs-font-weight-semibold); letter-spacing: -0.02em;">DSTD Display — Usage héroïque</p>
         </div>
         <div class="sample-card">
           <span class="sample-label">Page Title</span>
@@ -504,7 +504,7 @@ code, kbd, pre {
         </div>
         <div class="sample-card">
           <span class="sample-label">Body</span>
-          <p style="font-size: var(--tdgs-font-size-md); line-height: var(--tdgs-line-height-md); font-weight: var(--tdgs-font-weight-regular);">Le texte de corps standard TDGS est conçu pour une lecture confortable. Il respecte la taille minimale de 16px et une hauteur de ligne généreuse pour l’accessibilité.</p>
+          <p style="font-size: var(--tdgs-font-size-md); line-height: var(--tdgs-line-height-md); font-weight: var(--tdgs-font-weight-regular);">Le texte de corps standard DSTD est conçu pour une lecture confortable. Il respecte la taille minimale de 16px et une hauteur de ligne généreuse pour l’accessibilité.</p>
         </div>
         <div class="sample-card">
           <span class="sample-label">Button</span>
@@ -547,13 +547,13 @@ html[lang="ar"], :lang(ar) {
       </div>
       <div class="sample-card rtl-sample">
         <span class="sample-label">Exemple arabe</span>
-        <p>نظام TDGS هو معيار حكومي للخدمات الرقمية، مصمم للوضوح والاعتمادية والتوافق مع الأطر العالمية.</p>
+        <p>نظام DSTD هو معيار حكومي للخدمات الرقمية، مصمم للوضوح والاعتمادية والتوافق مع الأطر العالمية.</p>
       </div>
     </section>
 
     <section>
       <h2>6. Accessibilité</h2>
-      <p>TDGS applique les bonnes pratiques WCAG 2.1 AA :</p>
+      <p>DSTD applique les bonnes pratiques WCAG 2.1 AA :</p>
       <ul>
         <li>Texte de base à 16px minimum.</li>
         <li>Line-height généreuses (1.4–1.5 pour le corps).</li>
@@ -573,7 +573,7 @@ html[lang="ar"], :lang(ar) {
       </div>
       <div class="example-card">
         <span class="sample-label">Typographie responsive</span>
-        <p>TDGS recommande d’adapter les titres et les échelles de texte entre mobile, tablette et desktop sans casser la hiérarchie.</p>
+        <p>DSTD recommande d’adapter les titres et les échelles de texte entre mobile, tablette et desktop sans casser la hiérarchie.</p>
         <div class="code-block">
           <pre><code>h1 {
   font-size: clamp(2rem, 5vw, 3rem);

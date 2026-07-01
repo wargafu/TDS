@@ -1,4 +1,4 @@
-# Templates TDGS
+# Templates DSTD
 
 Ce dossier contient des modèles institutionnels de référence.
 

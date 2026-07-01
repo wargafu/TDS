@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "ckm:design-system": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/design-system/SKILL.md",
+      "computedHash": "0206bc1d866ba6a93c6683d28b801314979fd164939d53830a7592ce0fb7a8a2"
+    }
+  }
+}

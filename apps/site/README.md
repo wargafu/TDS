@@ -1,6 +1,6 @@
-# TDGS Documentation Site
+# DSTD Documentation Site
 
-Cette application statique présente la documentation typographique TDGS.
+Cette application statique présente la documentation typographique DSTD.
 
 ## Voir la page
 

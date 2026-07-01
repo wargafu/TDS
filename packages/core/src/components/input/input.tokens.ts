@@ -31,8 +31,8 @@ export const input = {
       icon: 'var(--tdgs-input-icon-error)'
     },
     success: {
-      border: 'var(--tdgs-input-border-success)',
       background: 'var(--tdgs-input-bg)',
+      border: 'var(--tdgs-input-border-success)',
       text: 'var(--tdgs-input-text)',
       placeholder: 'var(--tdgs-input-placeholder)',
       focusBorder: 'var(--tdgs-input-border-success)',
