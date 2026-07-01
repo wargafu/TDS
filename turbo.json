@@ -19,7 +19,19 @@
     "lint": {
       "outputs": []
     },
+    "lint:css": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
     "format": {
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test:a11y": {
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "validate": {

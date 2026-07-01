@@ -10,8 +10,11 @@
     "clean": "turbo clean",
     "typecheck": "turbo typecheck",
     "lint": "turbo lint",
+    "lint:css": "turbo lint:css",
     "format": "prettier --write \"**/*.{ts,json,css,md}\" --ignore-path .prettierignore",
     "format:check": "prettier --check \"**/*.{ts,json,css,md}\" --ignore-path .prettierignore",
+    "test": "turbo test",
+    "test:a11y": "turbo test:a11y",
     "validate": "turbo validate"
   },
   "devDependencies": {
