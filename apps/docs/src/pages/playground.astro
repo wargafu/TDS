@@ -41,6 +41,7 @@ const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalo
   </style>
 </head>
 <body>
+<main>
   <h1>TDS — Terrain de jeu des composants</h1>
   <p>Rend chaque variante × taille × état à partir du CSS réellement buildé (<code>packages/core/dist</code>). Page de QA visuelle, non indexée, non liée depuis la navigation Starlight.</p>
 
@@ -82,8 +83,14 @@ const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalo
     ))}
     <div class="row">
       <span class="row-label">disabled</span>
-      <input type="text" class="tds-input tds-input--md tds-input--disabled" value="Champ désactivé" disabled />
-      <input type="text" class="tds-input tds-input--md tds-input--readonly" value="Lecture seule" readonly />
+      <div class="tds-field">
+        <label class="tds-field__label" for="input-disabled">Champ désactivé</label>
+        <input id="input-disabled" type="text" class="tds-input tds-input--md tds-input--disabled" value="Champ désactivé" disabled />
+      </div>
+      <div class="tds-field">
+        <label class="tds-field__label" for="input-readonly">Lecture seule</label>
+        <input id="input-readonly" type="text" class="tds-input tds-input--md tds-input--readonly" value="Lecture seule" readonly />
+      </div>
     </div>
   </section>
 
@@ -150,5 +157,6 @@ const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalo
       </table>
     </div>
   </section>
+</main>
 </body>
 </html>
