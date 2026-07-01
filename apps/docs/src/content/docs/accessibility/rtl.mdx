@@ -46,7 +46,7 @@ via la déclaration `lang="ar"`.
 html[lang="ar"],
 :lang(ar) {
   direction: rtl;
-  font-family: var(--tdgs-font-family-arabic);
+  font-family: var(--dstd-font-family-arabic);
   /* "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif */
   line-height: 1.6; /* Ligne plus haute pour l'arabe */
 }
@@ -64,15 +64,15 @@ Privilégiez-les aux propriétés physiques pour les interfaces bilingues.
 ```css
 /* ✅ Propriétés logiques — s'adaptent à RTL automatiquement */
 .mon-composant {
-  margin-inline-start: var(--tdgs-spacing-4);   /* = margin-left en LTR, margin-right en RTL */
-  margin-inline-end: var(--tdgs-spacing-4);     /* = margin-right en LTR, margin-left en RTL */
-  padding-block-start: var(--tdgs-spacing-3);   /* = padding-top */
+  margin-inline-start: var(--dstd-spacing-4);   /* = margin-left en LTR, margin-right en RTL */
+  margin-inline-end: var(--dstd-spacing-4);     /* = margin-right en LTR, margin-left en RTL */
+  padding-block-start: var(--dstd-spacing-3);   /* = padding-top */
   border-inline-start: 4px solid currentColor; /* = border-left en LTR */
 }
 
 /* ❌ Propriétés physiques — à éviter pour les éléments directionnels */
 .mon-composant {
-  margin-left: var(--tdgs-spacing-4);  /* Reste à gauche même en RTL */
+  margin-left: var(--dstd-spacing-4);  /* Reste à gauche même en RTL */
 }
 ```
 
@@ -107,21 +107,21 @@ Certaines icônes ont un sens et doivent être retournées en RTL.
   <main>
     <h1>Demande de document</h1>
     <form>
-      <div class="tdgs-field">
-        <label class="tdgs-field__label" for="nom-fr">Nom complet</label>
-        <input id="nom-fr" type="text" class="tdgs-input tdgs-input--md" lang="fr">
+      <div class="dstd-field">
+        <label class="dstd-field__label" for="nom-fr">Nom complet</label>
+        <input id="nom-fr" type="text" class="dstd-input dstd-input--md" lang="fr">
       </div>
 
       <!-- Champ en arabe (RTL) -->
-      <div class="tdgs-field" dir="rtl" lang="ar">
-        <label class="tdgs-field__label" for="nom-ar">الاسم الكامل</label>
+      <div class="dstd-field" dir="rtl" lang="ar">
+        <label class="dstd-field__label" for="nom-ar">الاسم الكامل</label>
         <input
           id="nom-ar"
           type="text"
-          class="tdgs-input tdgs-input--md"
+          class="dstd-input dstd-input--md"
           lang="ar"
           dir="rtl"
-          style="font-family: var(--tdgs-font-family-arabic);"
+          style="font-family: var(--dstd-font-family-arabic);"
         >
       </div>
     </form>

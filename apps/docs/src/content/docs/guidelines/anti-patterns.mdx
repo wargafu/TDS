@@ -29,8 +29,8 @@ qui ne correspond pas à la gravité des actes administratifs.
 
 /* ✅ DSTD — sobre et institutionnel */
 .hero {
-  background: var(--tdgs-color-neutral-100);
-  border-bottom: 3px solid var(--tdgs-color-blue-500);
+  background: var(--dstd-color-neutral-100);
+  border-bottom: 3px solid var(--dstd-color-blue-500);
 }
 ```
 
@@ -48,7 +48,7 @@ et crée des problèmes de contraste non vérifiés.
 
 /* ✅ Palette DSTD vérifiée */
 .mon-composant {
-  background: var(--tdgs-color-blue-500);
+  background: var(--dstd-color-blue-500);
   color: white;  /* Contraste 8.59:1 ✅ */
 }
 ```
@@ -62,9 +62,9 @@ et crée des problèmes de contraste non vérifiés.
 .ma-nav      { z-index: 1000; }
 
 /* ✅ Échelle DSTD verrouillée */
-.ma-modal    { z-index: var(--tdgs-z-modal);    /* 400 */ }
-.mon-tooltip { z-index: var(--tdgs-z-tooltip);  /* 600 */ }
-.ma-nav      { z-index: var(--tdgs-z-sticky);   /* 200 */ }
+.ma-modal    { z-index: var(--dstd-z-modal);    /* 400 */ }
+.mon-tooltip { z-index: var(--dstd-z-tooltip);  /* 600 */ }
+.ma-nav      { z-index: var(--dstd-z-sticky);   /* 200 */ }
 ```
 
 ---
@@ -78,12 +78,12 @@ et ne peut plus le voir une fois le champ rempli.
 
 ```html
 <!-- ❌ Label absent — le placeholder remplace le label -->
-<input type="text" placeholder="Nom complet" class="tdgs-input">
+<input type="text" placeholder="Nom complet" class="dstd-input">
 
 <!-- ✅ Label visible toujours -->
-<div class="tdgs-field">
-  <label class="tdgs-field__label" for="nom">Nom complet</label>
-  <input id="nom" type="text" class="tdgs-input tdgs-input--md" placeholder="Ex : Moussa Ibrahim">
+<div class="dstd-field">
+  <label class="dstd-field__label" for="nom">Nom complet</label>
+  <input id="nom" type="text" class="dstd-input dstd-input--md" placeholder="Ex : Moussa Ibrahim">
 </div>
 ```
 
@@ -110,7 +110,7 @@ Le bouton Reset détruit le travail de l'utilisateur d'un clic accidentel.
 <button type="reset">Effacer tout</button>
 
 <!-- ✅ Préférer un lien "Annuler" qui renvoie à l'étape précédente -->
-<a href="/etape-precedente" class="tdgs-button tdgs-button--secondary tdgs-button--md">
+<a href="/etape-precedente" class="dstd-button dstd-button--secondary dstd-button--md">
   Annuler
 </a>
 ```
@@ -129,7 +129,7 @@ button:focus { outline: 0; }
 
 /* ✅ Focus personnalisé mais visible */
 :focus-visible {
-  outline: 2px solid var(--tdgs-color-blue-500);
+  outline: 2px solid var(--dstd-color-blue-500);
   outline-offset: 3px;
 }
 ```
@@ -141,7 +141,7 @@ button:focus { outline: 0; }
 <div class="btn" onclick="doAction()">Valider</div>
 
 <!-- ✅ Bouton natif — accessible, focus, clavier, AT -->
-<button type="button" class="tdgs-button tdgs-button--primary tdgs-button--md" onclick="doAction()">
+<button type="button" class="dstd-button dstd-button--primary dstd-button--md" onclick="doAction()">
   Valider
 </button>
 ```
@@ -158,7 +158,7 @@ button:focus { outline: 0; }
   aria-invalid="true"
   aria-describedby="nom-error"
 >
-<p id="nom-error" class="tdgs-error-text" role="alert">
+<p id="nom-error" class="dstd-error-text" role="alert">
   Ce champ est requis.
 </p>
 ```
@@ -192,19 +192,19 @@ button:focus { outline: 0; }
 
 /* ✅ Tokens — maintenable, cohérent, themeable */
 .mon-composant {
-  color: var(--tdgs-color-blue-500);
-  padding: var(--tdgs-spacing-4);
-  border-radius: var(--tdgs-radius-sm);
+  color: var(--dstd-color-blue-500);
+  padding: var(--dstd-spacing-4);
+  border-radius: var(--dstd-radius-sm);
 }
 ```
 
-### Importer `@tdgs/core` en entier dans chaque composant
+### Importer `@dstd/core` en entier dans chaque composant
 
 ```typescript
 // ❌ Import massif dans chaque fichier
-import * as tdgs from '@tdgs/core';
+import * as dstd from '@dstd/core';
 
 // ✅ Import ciblé — tree-shakeable
-import { color, spacing } from '@tdgs/core/tokens';
-import type { ButtonVariant } from '@tdgs/core/components/button';
+import { color, spacing } from '@dstd/core/tokens';
+import type { ButtonVariant } from '@dstd/core/components/button';
 ```

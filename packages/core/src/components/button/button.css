@@ -1,193 +1,193 @@
-/* TDGS button tokens */
+/* DSTD button tokens */
 :root {
   /* Variants */
-  --tdgs-button-primary-bg: var(--tdgs-color-blue-500);
-  --tdgs-button-primary-text: var(--tdgs-neutral-0);
-  --tdgs-button-primary-border: transparent;
-  --tdgs-button-primary-hover-bg: var(--tdgs-color-blue-600);
-  --tdgs-button-primary-hover-border: transparent;
-  --tdgs-button-primary-active-bg: var(--tdgs-color-blue-700);
-  --tdgs-button-primary-active-border: transparent;
+  --dstd-button-primary-bg: var(--dstd-color-blue-500);
+  --dstd-button-primary-text: var(--dstd-neutral-0);
+  --dstd-button-primary-border: transparent;
+  --dstd-button-primary-hover-bg: var(--dstd-color-blue-600);
+  --dstd-button-primary-hover-border: transparent;
+  --dstd-button-primary-active-bg: var(--dstd-color-blue-700);
+  --dstd-button-primary-active-border: transparent;
 
-  --tdgs-button-secondary-bg: var(--tdgs-neutral-100);
-  --tdgs-button-secondary-text: var(--tdgs-neutral-900);
-  --tdgs-button-secondary-border: var(--tdgs-neutral-300);
-  --tdgs-button-secondary-hover-bg: var(--tdgs-neutral-200);
-  --tdgs-button-secondary-hover-border: var(--tdgs-neutral-400);
-  --tdgs-button-secondary-active-bg: var(--tdgs-neutral-300);
-  --tdgs-button-secondary-active-border: var(--tdgs-neutral-400);
+  --dstd-button-secondary-bg: var(--dstd-neutral-100);
+  --dstd-button-secondary-text: var(--dstd-neutral-900);
+  --dstd-button-secondary-border: var(--dstd-neutral-300);
+  --dstd-button-secondary-hover-bg: var(--dstd-neutral-200);
+  --dstd-button-secondary-hover-border: var(--dstd-neutral-400);
+  --dstd-button-secondary-active-bg: var(--dstd-neutral-300);
+  --dstd-button-secondary-active-border: var(--dstd-neutral-400);
 
-  --tdgs-button-tertiary-bg: transparent;
-  --tdgs-button-tertiary-text: var(--tdgs-neutral-900);
-  --tdgs-button-tertiary-border: transparent;
-  --tdgs-button-tertiary-hover-bg: var(--tdgs-neutral-100);
-  --tdgs-button-tertiary-hover-border: var(--tdgs-neutral-300);
-  --tdgs-button-tertiary-active-bg: var(--tdgs-neutral-200);
-  --tdgs-button-tertiary-active-border: var(--tdgs-neutral-300);
+  --dstd-button-tertiary-bg: transparent;
+  --dstd-button-tertiary-text: var(--dstd-neutral-900);
+  --dstd-button-tertiary-border: transparent;
+  --dstd-button-tertiary-hover-bg: var(--dstd-neutral-100);
+  --dstd-button-tertiary-hover-border: var(--dstd-neutral-300);
+  --dstd-button-tertiary-active-bg: var(--dstd-neutral-200);
+  --dstd-button-tertiary-active-border: var(--dstd-neutral-300);
 
-  --tdgs-button-danger-bg: var(--tdgs-color-red-500);
-  --tdgs-button-danger-text: var(--tdgs-neutral-0);
-  --tdgs-button-danger-border: transparent;
-  --tdgs-button-danger-hover-bg: var(--tdgs-color-red-600);
-  --tdgs-button-danger-hover-border: transparent;
-  --tdgs-button-danger-active-bg: var(--tdgs-color-red-700);
-  --tdgs-button-danger-active-border: transparent;
+  --dstd-button-danger-bg: var(--dstd-color-red-500);
+  --dstd-button-danger-text: var(--dstd-neutral-0);
+  --dstd-button-danger-border: transparent;
+  --dstd-button-danger-hover-bg: var(--dstd-color-red-600);
+  --dstd-button-danger-hover-border: transparent;
+  --dstd-button-danger-active-bg: var(--dstd-color-red-700);
+  --dstd-button-danger-active-border: transparent;
 
-  --tdgs-button-success-bg: var(--tdgs-color-green-500);
-  --tdgs-button-success-text: var(--tdgs-neutral-0);
-  --tdgs-button-success-border: transparent;
-  --tdgs-button-success-hover-bg: var(--tdgs-color-green-600);
-  --tdgs-button-success-hover-border: transparent;
-  --tdgs-button-success-active-bg: var(--tdgs-color-green-700);
-  --tdgs-button-success-active-border: transparent;
+  --dstd-button-success-bg: var(--dstd-color-green-500);
+  --dstd-button-success-text: var(--dstd-neutral-0);
+  --dstd-button-success-border: transparent;
+  --dstd-button-success-hover-bg: var(--dstd-color-green-600);
+  --dstd-button-success-hover-border: transparent;
+  --dstd-button-success-active-bg: var(--dstd-color-green-700);
+  --dstd-button-success-active-border: transparent;
 
-  --tdgs-button-disabled-bg: var(--tdgs-neutral-200);
-  --tdgs-button-disabled-text: var(--tdgs-neutral-500);
-  --tdgs-button-disabled-border: var(--tdgs-neutral-200);
+  --dstd-button-disabled-bg: var(--dstd-neutral-200);
+  --dstd-button-disabled-text: var(--dstd-neutral-500);
+  --dstd-button-disabled-border: var(--dstd-neutral-200);
 
   /* Sizes */
-  --tdgs-button-radius-sm: var(--tdgs-radius-sm);
-  --tdgs-button-radius-md: var(--tdgs-radius-md);
-  --tdgs-button-min-height: 2.75rem;
-  --tdgs-button-padding-sm: 0.375rem 0.75rem;
-  --tdgs-button-padding-md: 0.75rem 1rem;
-  --tdgs-button-padding-lg: 0.875rem 1.25rem;
-  --tdgs-button-font-size-sm: var(--tdgs-font-size-sm);
-  --tdgs-button-font-size-md: var(--tdgs-font-size-md);
-  --tdgs-button-font-size-lg: var(--tdgs-font-size-lg);
-  --tdgs-button-line-height-sm: var(--tdgs-line-height-sm);
-  --tdgs-button-line-height-md: var(--tdgs-line-height-md);
-  --tdgs-button-line-height-lg: var(--tdgs-line-height-md);
+  --dstd-button-radius-sm: var(--dstd-radius-sm);
+  --dstd-button-radius-md: var(--dstd-radius-md);
+  --dstd-button-min-height: 2.75rem;
+  --dstd-button-padding-sm: 0.375rem 0.75rem;
+  --dstd-button-padding-md: 0.75rem 1rem;
+  --dstd-button-padding-lg: 0.875rem 1.25rem;
+  --dstd-button-font-size-sm: var(--dstd-font-size-sm);
+  --dstd-button-font-size-md: var(--dstd-font-size-md);
+  --dstd-button-font-size-lg: var(--dstd-font-size-lg);
+  --dstd-button-line-height-sm: var(--dstd-line-height-sm);
+  --dstd-button-line-height-md: var(--dstd-line-height-md);
+  --dstd-button-line-height-lg: var(--dstd-line-height-md);
 
   /* Behavior */
-  --tdgs-button-transition: background-color var(--tdgs-motion-fast) var(--tdgs-easing-standard), color var(--tdgs-motion-fast) var(--tdgs-easing-standard), border-color var(--tdgs-motion-fast) var(--tdgs-easing-standard), box-shadow var(--tdgs-motion-fast) var(--tdgs-easing-standard);
-  --tdgs-button-focus-outline: 2px solid var(--tdgs-color-blue-500);
-  --tdgs-button-focus-outline-offset: 3px;
+  --dstd-button-transition: background-color var(--dstd-motion-fast) var(--dstd-easing-standard), color var(--dstd-motion-fast) var(--dstd-easing-standard), border-color var(--dstd-motion-fast) var(--dstd-easing-standard), box-shadow var(--dstd-motion-fast) var(--dstd-easing-standard);
+  --dstd-button-focus-outline: 2px solid var(--dstd-color-blue-500);
+  --dstd-button-focus-outline-offset: 3px;
 }
 
-.tdgs-button {
+.dstd-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--tdgs-button-min-height);
-  padding: var(--tdgs-button-padding-md);
-  font-family: var(--tdgs-font-family-primary);
-  font-size: var(--tdgs-button-font-size-md);
-  line-height: var(--tdgs-button-line-height-md);
-  font-weight: var(--tdgs-text-button-weight);
+  min-height: var(--dstd-button-min-height);
+  padding: var(--dstd-button-padding-md);
+  font-family: var(--dstd-font-family-primary);
+  font-size: var(--dstd-button-font-size-md);
+  line-height: var(--dstd-button-line-height-md);
+  font-weight: var(--dstd-text-button-weight);
   letter-spacing: 0.01em;
   border-width: 1px;
   border-style: solid;
-  border-radius: var(--tdgs-radius-sm); /* fallback si aucun modificateur de taille */
-  transition: var(--tdgs-button-transition);
+  border-radius: var(--dstd-radius-sm); /* fallback si aucun modificateur de taille */
+  transition: var(--dstd-button-transition);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
 }
 
-.tdgs-button:focus-visible {
-  outline: var(--tdgs-button-focus-outline);
-  outline-offset: var(--tdgs-button-focus-outline-offset);
+.dstd-button:focus-visible {
+  outline: var(--dstd-button-focus-outline);
+  outline-offset: var(--dstd-button-focus-outline-offset);
 }
 
-.tdgs-button:disabled,
-.tdgs-button[aria-disabled="true"] {
-  background: var(--tdgs-button-disabled-bg);
-  color: var(--tdgs-button-disabled-text);
-  border-color: var(--tdgs-button-disabled-border);
+.dstd-button:disabled,
+.dstd-button[aria-disabled="true"] {
+  background: var(--dstd-button-disabled-bg);
+  color: var(--dstd-button-disabled-text);
+  border-color: var(--dstd-button-disabled-border);
   cursor: not-allowed;
   opacity: 0.75;
 }
 
-.tdgs-button[data-loading="true"] {
+.dstd-button[data-loading="true"] {
   pointer-events: none;
   cursor: progress;
 }
 
-.tdgs-button--primary {
-  background: var(--tdgs-button-primary-bg);
-  color: var(--tdgs-button-primary-text);
-  border-color: var(--tdgs-button-primary-border);
+.dstd-button--primary {
+  background: var(--dstd-button-primary-bg);
+  color: var(--dstd-button-primary-text);
+  border-color: var(--dstd-button-primary-border);
 }
-.tdgs-button--primary:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-primary-hover-bg);
-  border-color: var(--tdgs-button-primary-hover-border);
+.dstd-button--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-primary-hover-bg);
+  border-color: var(--dstd-button-primary-hover-border);
 }
-.tdgs-button--primary:active:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-primary-active-bg);
-  border-color: var(--tdgs-button-primary-active-border);
-}
-
-.tdgs-button--secondary {
-  background: var(--tdgs-button-secondary-bg);
-  color: var(--tdgs-button-secondary-text);
-  border-color: var(--tdgs-button-secondary-border);
-}
-.tdgs-button--secondary:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-secondary-hover-bg);
-  border-color: var(--tdgs-button-secondary-hover-border);
-}
-.tdgs-button--secondary:active:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-secondary-active-bg);
-  border-color: var(--tdgs-button-secondary-active-border);
+.dstd-button--primary:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-primary-active-bg);
+  border-color: var(--dstd-button-primary-active-border);
 }
 
-.tdgs-button--tertiary {
-  background: var(--tdgs-button-tertiary-bg);
-  color: var(--tdgs-button-tertiary-text);
-  border-color: var(--tdgs-button-tertiary-border);
+.dstd-button--secondary {
+  background: var(--dstd-button-secondary-bg);
+  color: var(--dstd-button-secondary-text);
+  border-color: var(--dstd-button-secondary-border);
 }
-.tdgs-button--tertiary:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-tertiary-hover-bg);
-  border-color: var(--tdgs-button-tertiary-hover-border);
+.dstd-button--secondary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-secondary-hover-bg);
+  border-color: var(--dstd-button-secondary-hover-border);
 }
-.tdgs-button--tertiary:active:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-tertiary-active-bg);
-  border-color: var(--tdgs-button-tertiary-active-border);
-}
-
-.tdgs-button--danger {
-  background: var(--tdgs-button-danger-bg);
-  color: var(--tdgs-button-danger-text);
-  border-color: var(--tdgs-button-danger-border);
-}
-.tdgs-button--danger:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-danger-hover-bg);
-}
-.tdgs-button--danger:active:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-danger-active-bg);
+.dstd-button--secondary:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-secondary-active-bg);
+  border-color: var(--dstd-button-secondary-active-border);
 }
 
-.tdgs-button--success {
-  background: var(--tdgs-button-success-bg);
-  color: var(--tdgs-button-success-text);
-  border-color: var(--tdgs-button-success-border);
+.dstd-button--tertiary {
+  background: var(--dstd-button-tertiary-bg);
+  color: var(--dstd-button-tertiary-text);
+  border-color: var(--dstd-button-tertiary-border);
 }
-.tdgs-button--success:hover:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-success-hover-bg);
+.dstd-button--tertiary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-tertiary-hover-bg);
+  border-color: var(--dstd-button-tertiary-hover-border);
 }
-.tdgs-button--success:active:not(:disabled):not([aria-disabled="true"]) {
-  background: var(--tdgs-button-success-active-bg);
-}
-
-.tdgs-button--sm {
-  padding: var(--tdgs-button-padding-sm);
-  font-size: var(--tdgs-button-font-size-sm);
-  line-height: var(--tdgs-button-line-height-sm);
-  border-radius: var(--tdgs-button-radius-sm);
+.dstd-button--tertiary:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-tertiary-active-bg);
+  border-color: var(--dstd-button-tertiary-active-border);
 }
 
-.tdgs-button--md {
-  padding: var(--tdgs-button-padding-md);
-  font-size: var(--tdgs-button-font-size-md);
-  line-height: var(--tdgs-button-line-height-md);
-  border-radius: var(--tdgs-button-radius-md);
+.dstd-button--danger {
+  background: var(--dstd-button-danger-bg);
+  color: var(--dstd-button-danger-text);
+  border-color: var(--dstd-button-danger-border);
+}
+.dstd-button--danger:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-danger-hover-bg);
+}
+.dstd-button--danger:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-danger-active-bg);
 }
 
-.tdgs-button--lg {
-  padding: var(--tdgs-button-padding-lg);
-  font-size: var(--tdgs-button-font-size-lg);
-  line-height: var(--tdgs-button-line-height-lg);
-  border-radius: var(--tdgs-button-radius-md);
+.dstd-button--success {
+  background: var(--dstd-button-success-bg);
+  color: var(--dstd-button-success-text);
+  border-color: var(--dstd-button-success-border);
+}
+.dstd-button--success:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-success-hover-bg);
+}
+.dstd-button--success:active:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--dstd-button-success-active-bg);
+}
+
+.dstd-button--sm {
+  padding: var(--dstd-button-padding-sm);
+  font-size: var(--dstd-button-font-size-sm);
+  line-height: var(--dstd-button-line-height-sm);
+  border-radius: var(--dstd-button-radius-sm);
+}
+
+.dstd-button--md {
+  padding: var(--dstd-button-padding-md);
+  font-size: var(--dstd-button-font-size-md);
+  line-height: var(--dstd-button-line-height-md);
+  border-radius: var(--dstd-button-radius-md);
+}
+
+.dstd-button--lg {
+  padding: var(--dstd-button-padding-lg);
+  font-size: var(--dstd-button-font-size-lg);
+  line-height: var(--dstd-button-line-height-lg);
+  border-radius: var(--dstd-button-radius-md);
 }

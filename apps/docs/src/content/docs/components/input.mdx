@@ -17,11 +17,11 @@ checkbox, radio, switch et file upload. La structure standard est toujours `labe
 ## Importation
 
 ```css
-@import "@tdgs/core/components/input/input.css";
+@import "@dstd/core/components/input/input.css";
 ```
 
 ```typescript
-import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/input';
+import type { InputVariant, InputSize, InputState } from '@dstd/core/components/input';
 ```
 
 ---
@@ -29,15 +29,15 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 ## Structure de champ standard
 
 ```html
-<div class="tdgs-field">
-  <label class="tdgs-field__label" for="CHAMP_ID">
+<div class="dstd-field">
+  <label class="dstd-field__label" for="CHAMP_ID">
     Libellé du champ
     <!-- Marqueur requis si nécessaire -->
     <span aria-hidden="true"> *</span>
   </label>
 
   <!-- Aide contextuelle optionnelle -->
-  <p id="CHAMP_ID-hint" class="tdgs-helper-text">
+  <p id="CHAMP_ID-hint" class="dstd-helper-text">
     Texte d'aide pour préciser la saisie attendue.
   </p>
 
@@ -46,13 +46,13 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
     id="CHAMP_ID"
     name="nom_champ"
     type="text"
-    class="tdgs-input tdgs-input--md"
+    class="dstd-input dstd-input--md"
     aria-describedby="CHAMP_ID-hint"
     required
   >
 
   <!-- Message d'erreur (affiché en cas d'erreur) -->
-  <p id="CHAMP_ID-error" class="tdgs-error-text" role="alert" hidden>
+  <p id="CHAMP_ID-error" class="dstd-error-text" role="alert" hidden>
     Message d'erreur explicite.
   </p>
 </div>
@@ -66,13 +66,70 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 ---
 
+## Groupe de champs avec fieldset
+
+Pour plusieurs champs liés, utilisez un `<fieldset>` nommé. Chaque contrôle est placé dans
+un élément distinct et le groupe de messages est relié avec `aria-describedby`.
+
+```html
+<fieldset
+  class="dstd-fieldset"
+  aria-label="Demande de nom et prénom"
+  aria-describedby="name-1-fieldset-messages"
+>
+  <div class="dstd-fieldset__element">
+    <div class="dstd-input-group">
+      <label class="dstd-label" for="input-family-name-1">
+        Nom
+      </label>
+      <input
+        class="dstd-input"
+        spellcheck="false"
+        autocomplete="family-name"
+        name="family-name"
+        id="input-family-name-1"
+        type="text"
+      >
+    </div>
+  </div>
+
+  <div class="dstd-fieldset__element">
+    <div class="dstd-input-group">
+      <label class="dstd-label" for="input-firstname-1">
+        Prénom
+      </label>
+      <input
+        class="dstd-input"
+        spellcheck="false"
+        autocomplete="given-name"
+        name="given-name"
+        id="input-firstname-1"
+        type="text"
+      >
+    </div>
+  </div>
+
+  <div
+    class="dstd-messages-group"
+    aria-live="assertive"
+    id="name-1-fieldset-messages"
+  ></div>
+</fieldset>
+```
+
+Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldset__legend">`
+à `aria-label`. Le groupe de messages peut recevoir des éléments
+`dstd-helper-text`, `dstd-error-text` ou `dstd-success-text`.
+
+---
+
 ## Variantes
 
 | Variante | Classe | Usage |
 |---|---|---|
-| `default` | `tdgs-input--default` (ou aucune) | Saisie normale |
-| `error` | `tdgs-input--error` | Validation échouée, champ requis vide |
-| `success` | `tdgs-input--success` | Champ validé avec succès |
+| `default` | `dstd-input--default` (ou aucune) | Saisie normale |
+| `error` | `dstd-input--error` | Validation échouée, champ requis vide |
+| `success` | `dstd-input--success` | Champ validé avec succès |
 | `disabled` | attribut `disabled` | Champ inactif, non modifiable |
 
 ---
@@ -81,9 +138,9 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 | Taille | Classe | Police | Padding | Min-height |
 |---|---|---|---|---|
-| `sm` | `tdgs-input--sm` | 14px | `0.5rem 0.75rem` | 44px |
-| **`md`** | **`tdgs-input--md`** | **16px** | **`0.75rem 1rem`** | **44px** |
-| `lg` | `tdgs-input--lg` | 18px | `0.875rem 1.25rem` | 52px |
+| `sm` | `dstd-input--sm` | 14px | `0.5rem 0.75rem` | 44px |
+| **`md`** | **`dstd-input--md`** | **16px** | **`0.75rem 1rem`** | **44px** |
+| `lg` | `dstd-input--lg` | 18px | `0.875rem 1.25rem` | 52px |
 
 ---
 
@@ -95,13 +152,13 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
   <TabItem label="HTML">
     ```html
     <!-- Champ texte standard -->
-    <div class="tdgs-field">
-      <label class="tdgs-field__label" for="nom">Nom complet</label>
+    <div class="dstd-field">
+      <label class="dstd-field__label" for="nom">Nom complet</label>
       <input
         id="nom"
         name="nom"
         type="text"
-        class="tdgs-input tdgs-input--md"
+        class="dstd-input dstd-input--md"
         autocomplete="name"
         required
         placeholder="Ex : Moussa Ibrahim"
@@ -109,44 +166,44 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
     </div>
 
     <!-- Champ en erreur -->
-    <div class="tdgs-field">
-      <label class="tdgs-field__label" for="email">Adresse e-mail</label>
+    <div class="dstd-field">
+      <label class="dstd-field__label" for="email">Adresse e-mail</label>
       <input
         id="email"
         name="email"
         type="email"
-        class="tdgs-input tdgs-input--md tdgs-input--error"
+        class="dstd-input dstd-input--md dstd-input--error"
         autocomplete="email"
         aria-invalid="true"
         aria-describedby="email-error"
         value="invalide@"
       >
-      <p id="email-error" class="tdgs-error-text" role="alert">
+      <p id="email-error" class="dstd-error-text" role="alert">
         L'adresse e-mail saisie n'est pas valide.
       </p>
     </div>
 
     <!-- Champ désactivé -->
-    <div class="tdgs-field">
-      <label class="tdgs-field__label" for="ref">Numéro de référence</label>
+    <div class="dstd-field">
+      <label class="dstd-field__label" for="ref">Numéro de référence</label>
       <input
         id="ref"
         name="ref"
         type="text"
-        class="tdgs-input tdgs-input--md"
+        class="dstd-input dstd-input--md"
         disabled
         aria-disabled="true"
         value="REF-2024-001234"
         readonly
       >
-      <p class="tdgs-helper-text">Ce champ est généré automatiquement.</p>
+      <p class="dstd-helper-text">Ce champ est généré automatiquement.</p>
     </div>
     ```
   </TabItem>
   <TabItem label="React">
     ```tsx
-    import '@tdgs/core/components/input/input.css';
-    import type { InputVariant, InputSize } from '@tdgs/core/components/input';
+    import '@dstd/core/components/input/input.css';
+    import type { InputVariant, InputSize } from '@dstd/core/components/input';
 
     interface TextFieldProps {
       id: string;
@@ -183,21 +240,21 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
       const effectiveVariant = error ? 'error' : variant;
 
       return (
-        <div className="tdgs-field">
-          <label className="tdgs-field__label" htmlFor={id}>
+        <div className="dstd-field">
+          <label className="dstd-field__label" htmlFor={id}>
             {label}
             {required && <span aria-hidden="true"> *</span>}
           </label>
 
           {hint && (
-            <p id={hintId} className="tdgs-helper-text">{hint}</p>
+            <p id={hintId} className="dstd-helper-text">{hint}</p>
           )}
 
           <input
             id={id}
             name={name}
             type={type}
-            className={`tdgs-input tdgs-input--${size} tdgs-input--${effectiveVariant}`}
+            className={`dstd-input dstd-input--${size} dstd-input--${effectiveVariant}`}
             disabled={disabled}
             required={required}
             aria-invalid={error ? 'true' : undefined}
@@ -208,7 +265,7 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
           />
 
           {error && (
-            <p id={errorId} className="tdgs-error-text" role="alert">{error}</p>
+            <p id={errorId} className="dstd-error-text" role="alert">{error}</p>
           )}
         </div>
       );
@@ -218,9 +275,9 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
   <TabItem label="Vue 3">
     ```vue
     <script setup lang="ts">
-    import '@tdgs/core/components/input/input.css';
+    import '@dstd/core/components/input/input.css';
     import { computed } from 'vue';
-    import type { InputVariant, InputSize } from '@tdgs/core/components/input';
+    import type { InputVariant, InputSize } from '@dstd/core/components/input';
 
     const props = withDefaults(defineProps<{
       id: string;
@@ -253,19 +310,19 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
     </script>
 
     <template>
-      <div class="tdgs-field">
-        <label class="tdgs-field__label" :for="id">
+      <div class="dstd-field">
+        <label class="dstd-field__label" :for="id">
           {{ label }}
           <span v-if="required" aria-hidden="true"> *</span>
         </label>
 
-        <p v-if="hint" :id="hintId" class="tdgs-helper-text">{{ hint }}</p>
+        <p v-if="hint" :id="hintId" class="dstd-helper-text">{{ hint }}</p>
 
         <input
           :id="id"
           :name="name"
           :type="type"
-          :class="`tdgs-input tdgs-input--${size} tdgs-input--${effectiveVariant}`"
+          :class="`dstd-input dstd-input--${size} dstd-input--${effectiveVariant}`"
           :disabled="disabled"
           :required="required"
           :aria-invalid="error ? 'true' : undefined"
@@ -274,7 +331,7 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
           @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         />
 
-        <p v-if="error" :id="errorId" class="tdgs-error-text" role="alert">
+        <p v-if="error" :id="errorId" class="dstd-error-text" role="alert">
           {{ error }}
         </p>
       </div>
@@ -288,17 +345,17 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 ### Textarea
 
 ```html
-<div class="tdgs-field">
-  <label class="tdgs-field__label" for="description">
+<div class="dstd-field">
+  <label class="dstd-field__label" for="description">
     Description de la demande
   </label>
-  <p id="description-hint" class="tdgs-helper-text">
+  <p id="description-hint" class="dstd-helper-text">
     Maximum 500 caractères. Soyez précis pour accélérer le traitement.
   </p>
   <textarea
     id="description"
     name="description"
-    class="tdgs-textarea tdgs-textarea--md"
+    class="dstd-textarea dstd-textarea--md"
     rows="5"
     maxlength="500"
     aria-describedby="description-hint"
@@ -312,14 +369,14 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 ### Select
 
 ```html
-<div class="tdgs-field">
-  <label class="tdgs-field__label" for="type-document">
+<div class="dstd-field">
+  <label class="dstd-field__label" for="type-document">
     Type de document demandé
   </label>
   <select
     id="type-document"
     name="type_document"
-    class="tdgs-select tdgs-select--md"
+    class="dstd-select dstd-select--md"
     required
     aria-required="true"
   >
@@ -339,7 +396,7 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 ```html
 <!-- Checkbox unique — consentement -->
-<label class="tdgs-checkbox">
+<label class="dstd-checkbox">
   <input
     type="checkbox"
     name="consentement"
@@ -352,14 +409,14 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 <!-- Groupe de checkboxes -->
 <fieldset>
-  <legend class="tdgs-field__label">Documents à fournir</legend>
-  <label class="tdgs-checkbox">
+  <legend class="dstd-field__label">Documents à fournir</legend>
+  <label class="dstd-checkbox">
     <input type="checkbox" name="docs[]" value="cni"> Carte d'identité
   </label>
-  <label class="tdgs-checkbox">
+  <label class="dstd-checkbox">
     <input type="checkbox" name="docs[]" value="justificatif"> Justificatif de domicile
   </label>
-  <label class="tdgs-checkbox">
+  <label class="dstd-checkbox">
     <input type="checkbox" name="docs[]" value="photo"> Photo d'identité
   </label>
 </fieldset>
@@ -371,14 +428,14 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 ```html
 <fieldset>
-  <legend class="tdgs-field__label">Vous êtes</legend>
-  <label class="tdgs-radio">
+  <legend class="dstd-field__label">Vous êtes</legend>
+  <label class="dstd-radio">
     <input type="radio" name="statut" value="citoyen" required> Citoyen tchadien
   </label>
-  <label class="tdgs-radio">
+  <label class="dstd-radio">
     <input type="radio" name="statut" value="resident"> Résident étranger
   </label>
-  <label class="tdgs-radio">
+  <label class="dstd-radio">
     <input type="radio" name="statut" value="diaspora"> Ressortissant en diaspora
   </label>
 </fieldset>
@@ -395,7 +452,7 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 ```html
 <!-- Switch simple -->
-<label class="tdgs-switch">
+<label class="dstd-switch">
   <input
     type="checkbox"
     name="notifications"
@@ -430,9 +487,9 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
 
 ## Do / Don't
 
-<div class="tdgs-do-dont">
-  <div class="tdgs-do-dont__card tdgs-do-dont__card--do">
-    <div class="tdgs-do-dont__heading">✓ Faire</div>
+<div class="dstd-do-dont">
+  <div class="dstd-do-dont__card dstd-do-dont__card--do">
+    <div class="dstd-do-dont__heading">✓ Faire</div>
     <ul>
       <li>Label court et explicite au-dessus du champ</li>
       <li>Message d'erreur en dessous du champ, jamais dans le placeholder</li>
@@ -440,8 +497,8 @@ import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/
       <li>Utiliser <code>autocomplete</code> pour faciliter la saisie</li>
     </ul>
   </div>
-  <div class="tdgs-do-dont__card tdgs-do-dont__card--dont">
-    <div class="tdgs-do-dont__heading">✗ Éviter</div>
+  <div class="dstd-do-dont__card dstd-do-dont__card--dont">
+    <div class="dstd-do-dont__heading">✗ Éviter</div>
     <ul>
       <li>Supprimer le label et le remplacer par un placeholder</li>
       <li>Valider le champ uniquement à la soumission (préférer <code>onBlur</code>)</li>

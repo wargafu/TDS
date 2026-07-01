@@ -18,13 +18,13 @@ et utilisable sans JavaScript.
 
 ```css
 /* CSS — requis pour les styles */
-@import "@tdgs/core/components/button/button.css";
+@import "@dstd/core/components/button/button.css";
 ```
 
 ```typescript
 /* TypeScript — tokens et types */
-import { button } from '@tdgs/core/components/button';
-import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
+import { button } from '@dstd/core/components/button';
+import type { ButtonVariant, ButtonSize } from '@dstd/core/components/button';
 ```
 
 ---
@@ -41,15 +41,15 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 | `danger` | Action destructive | Supprimer, révoquer, action irréversible |
 | `success` | Confirmation positive | Approuver, accepter, finaliser |
 
-<div class="tdgs-preview">
-  <div class="tdgs-preview__stage">
-    <button class="tdgs-button tdgs-button--primary tdgs-button--md" type="button">Valider</button>
-    <button class="tdgs-button tdgs-button--secondary tdgs-button--md" type="button">Retour</button>
-    <button class="tdgs-button tdgs-button--tertiary tdgs-button--md" type="button">Voir plus</button>
-    <button class="tdgs-button tdgs-button--danger tdgs-button--md" type="button">Supprimer</button>
-    <button class="tdgs-button tdgs-button--success tdgs-button--md" type="button">Approuver</button>
+<div class="dstd-preview">
+  <div class="dstd-preview__stage">
+    <button class="dstd-button dstd-button--primary dstd-button--md" type="button">Valider</button>
+    <button class="dstd-button dstd-button--secondary dstd-button--md" type="button">Retour</button>
+    <button class="dstd-button dstd-button--tertiary dstd-button--md" type="button">Voir plus</button>
+    <button class="dstd-button dstd-button--danger dstd-button--md" type="button">Supprimer</button>
+    <button class="dstd-button dstd-button--success dstd-button--md" type="button">Approuver</button>
   </div>
-  <div class="tdgs-preview__label">Aperçu des variantes (taille md)</div>
+  <div class="dstd-preview__label">Aperçu des variantes (taille md)</div>
 </div>
 
 ---
@@ -58,9 +58,9 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 
 | Taille | Classe | Police | Padding | Min-height |
 |---|---|---|---|---|
-| `sm` | `tdgs-button--sm` | 14px | `0.375rem 0.75rem` | 44px |
-| **`md`** | **`tdgs-button--md`** | **16px** | **`0.75rem 1rem`** | **44px** |
-| `lg` | `tdgs-button--lg` | 18px | `0.875rem 1.25rem` | 44px |
+| `sm` | `dstd-button--sm` | 14px | `0.375rem 0.75rem` | 44px |
+| **`md`** | **`dstd-button--md`** | **16px** | **`0.75rem 1rem`** | **44px** |
+| `lg` | `dstd-button--lg` | 18px | `0.875rem 1.25rem` | 44px |
 
 ---
 
@@ -84,14 +84,14 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 
     ### Bouton primary standard
     ```html
-    <button type="submit" class="tdgs-button tdgs-button--primary tdgs-button--md">
+    <button type="submit" class="dstd-button dstd-button--primary dstd-button--md">
       Soumettre la demande
     </button>
     ```
 
     ### Bouton avec icône
     ```html
-    <button type="button" class="tdgs-button tdgs-button--primary tdgs-button--md">
+    <button type="button" class="dstd-button dstd-button--primary dstd-button--md">
       <svg aria-hidden="true" focusable="false" width="16" height="16">
         <use href="/icons/sprite.svg#icon-check" />
       </svg>
@@ -103,7 +103,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
     ```html
     <button
       type="button"
-      class="tdgs-button tdgs-button--danger tdgs-button--md"
+      class="dstd-button dstd-button--danger dstd-button--md"
       aria-describedby="delete-warning"
     >
       Supprimer le dossier
@@ -117,7 +117,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
     ```html
     <button
       type="submit"
-      class="tdgs-button tdgs-button--primary tdgs-button--md"
+      class="dstd-button dstd-button--primary dstd-button--md"
       disabled
       aria-disabled="true"
     >
@@ -129,7 +129,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
     ```html
     <button
       type="submit"
-      class="tdgs-button tdgs-button--primary tdgs-button--md"
+      class="dstd-button dstd-button--primary dstd-button--md"
       aria-busy="true"
       disabled
     >
@@ -143,7 +143,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
     <!-- Préférer <button> ; utiliser <a> uniquement pour la navigation -->
     <a
       href="/dossiers"
-      class="tdgs-button tdgs-button--secondary tdgs-button--md"
+      class="dstd-button dstd-button--secondary dstd-button--md"
       role="button"
     >
       Voir mes dossiers
@@ -155,8 +155,8 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 
     ### Composant Button minimal
     ```tsx
-    import '@tdgs/core/components/button/button.css';
-    import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
+    import '@dstd/core/components/button/button.css';
+    import type { ButtonVariant, ButtonSize } from '@dstd/core/components/button';
 
     interface ButtonProps {
       variant?: ButtonVariant;
@@ -182,7 +182,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
       return (
         <button
           type={type}
-          className={`tdgs-button tdgs-button--${variant} tdgs-button--${size}`}
+          className={`dstd-button dstd-button--${variant} dstd-button--${size}`}
           disabled={isDisabled}
           aria-disabled={isDisabled || undefined}
           aria-busy={loading || undefined}
@@ -224,8 +224,8 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
     ```vue
     <!-- components/TdgsButton.vue -->
     <script setup lang="ts">
-    import '@tdgs/core/components/button/button.css';
-    import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
+    import '@dstd/core/components/button/button.css';
+    import type { ButtonVariant, ButtonSize } from '@dstd/core/components/button';
 
     const props = withDefaults(
       defineProps<{
@@ -254,7 +254,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
     <template>
       <button
         :type="type"
-        :class="`tdgs-button tdgs-button--${variant} tdgs-button--${size}`"
+        :class="`dstd-button dstd-button--${variant} dstd-button--${size}`"
         :disabled="isDisabled"
         :aria-disabled="isDisabled || undefined"
         :aria-busy="loading || undefined"
@@ -309,9 +309,9 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 
 ## Do / Don't
 
-<div class="tdgs-do-dont">
-  <div class="tdgs-do-dont__card tdgs-do-dont__card--do">
-    <div class="tdgs-do-dont__heading">✓ Faire</div>
+<div class="dstd-do-dont">
+  <div class="dstd-do-dont__card dstd-do-dont__card--do">
+    <div class="dstd-do-dont__heading">✓ Faire</div>
     <ul>
       <li>Un seul bouton primary par section d'action</li>
       <li>Label verbe-actif : "Valider", "Envoyer", "Confirmer"</li>
@@ -319,8 +319,8 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
       <li>Respecter la hiérarchie : primary → secondary → tertiary</li>
     </ul>
   </div>
-  <div class="tdgs-do-dont__card tdgs-do-dont__card--dont">
-    <div class="tdgs-do-dont__heading">✗ Éviter</div>
+  <div class="dstd-do-dont__card dstd-do-dont__card--dont">
+    <div class="dstd-do-dont__heading">✗ Éviter</div>
     <ul>
       <li>Deux boutons primary côte à côte</li>
       <li>Labels ambigus : "OK", "Cliquer ici", "Continuer"</li>

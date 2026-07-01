@@ -1,5 +1,5 @@
 /**
- * TDGS z-index scale.
+ * DSTD z-index scale.
  *
  * Valeurs verrouillées pour garantir une hiérarchie stable et éviter les z-index arbitraires.
  * Utiliser uniquement ces tokens dans le design system.

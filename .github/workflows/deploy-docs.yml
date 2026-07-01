@@ -40,6 +40,9 @@ jobs:
       - name: Build docs
         run: npm run build
         working-directory: apps/docs
+        env:
+          SITE_URL: https://wargafu.github.io/DSTD
+          BASE_PATH: /DSTD
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

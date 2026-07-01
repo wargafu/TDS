@@ -1,10 +1,10 @@
-/* TDGS radius tokens */
+/* DSTD radius tokens */
 :root{
-  --tdgs-radius-none: 0;
-  --tdgs-radius-xs: 0.125rem; /* 2px */
-  --tdgs-radius-sm: 0.25rem;  /* 4px */
-  --tdgs-radius-md: 0.5rem;   /* 8px */
-  --tdgs-radius-lg: 0.75rem;  /* 12px */
-  --tdgs-radius-xl: 1rem;     /* 16px */
-  --tdgs-radius-full: 9999px; /* pill */
+  --dstd-radius-none: 0;
+  --dstd-radius-xs: 0.125rem; /* 2px */
+  --dstd-radius-sm: 0.25rem;  /* 4px */
+  --dstd-radius-md: 0.5rem;   /* 8px */
+  --dstd-radius-lg: 0.75rem;  /* 12px */
+  --dstd-radius-xl: 1rem;     /* 16px */
+  --dstd-radius-full: 9999px; /* pill */
 }

@@ -15,7 +15,7 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
 
 ## Prérequis
 
-- `@tdgs/core` installé ([voir Installation](../getting-started/installation))
+- `@dstd/core` installé ([voir Installation](../getting-started/installation))
 - Un projet web (HTML, React, Vue ou autre)
 
 ---
@@ -28,23 +28,23 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
 
    ```css
    /* styles/global.css */
-   @import "@tdgs/core/tokens/color.css";
-   @import "@tdgs/core/tokens/typography.css";
-   @import "@tdgs/core/tokens/spacing.css";
-   @import "@tdgs/core/tokens/radius.css";
-   @import "@tdgs/core/tokens/shadow.css";
-   @import "@tdgs/core/tokens/motion.css";
+   @import "@dstd/core/tokens/color.css";
+   @import "@dstd/core/tokens/typography.css";
+   @import "@dstd/core/tokens/spacing.css";
+   @import "@dstd/core/tokens/radius.css";
+   @import "@dstd/core/tokens/shadow.css";
+   @import "@dstd/core/tokens/motion.css";
 
-   @import "@tdgs/core/components/button/button.css";
-   @import "@tdgs/core/components/input/input.css";
+   @import "@dstd/core/components/button/button.css";
+   @import "@dstd/core/components/input/input.css";
 
    /* Polices institutionnelles */
    body {
      font-family: "Source Sans 3", system-ui, sans-serif;
-     font-size: var(--tdgs-font-size-md);
-     line-height: var(--tdgs-line-height-md);
-     color: var(--tdgs-color-neutral-900);
-     background-color: var(--tdgs-color-neutral-0);
+     font-size: var(--dstd-font-size-md);
+     line-height: var(--dstd-line-height-md);
+     color: var(--dstd-color-neutral-900);
+     background-color: var(--dstd-color-neutral-0);
    }
    ```
 
@@ -64,54 +64,54 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
        <body>
          <main style="
            max-width: 480px;
-           margin: var(--tdgs-spacing-16) auto;
-           padding: 0 var(--tdgs-spacing-4);
+           margin: var(--dstd-spacing-16) auto;
+           padding: 0 var(--dstd-spacing-4);
          ">
            <h1 style="
-             font-size: var(--tdgs-font-size-4xl);
-             font-weight: var(--tdgs-font-weight-semibold);
-             margin-bottom: var(--tdgs-spacing-8);
+             font-size: var(--dstd-font-size-4xl);
+             font-weight: var(--dstd-font-weight-semibold);
+             margin-bottom: var(--dstd-spacing-8);
            ">Connexion</h1>
 
            <form method="post" action="/login" novalidate>
 
              <!-- Champ email -->
-             <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-5);">
-               <label class="tdgs-field__label" for="email">
+             <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-5);">
+               <label class="dstd-field__label" for="email">
                  Adresse e-mail
                </label>
                <input
                  id="email"
                  name="email"
                  type="email"
-                 class="tdgs-input tdgs-input--md"
+                 class="dstd-input dstd-input--md"
                  autocomplete="email"
                  required
                  placeholder="votre@email.td"
                  aria-describedby="email-hint"
                >
-               <p id="email-hint" class="tdgs-helper-text">
+               <p id="email-hint" class="dstd-helper-text">
                  Utilisez l'adresse e-mail liée à votre compte.
                </p>
              </div>
 
              <!-- Champ mot de passe -->
-             <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-6);">
-               <label class="tdgs-field__label" for="password">
+             <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-6);">
+               <label class="dstd-field__label" for="password">
                  Mot de passe
                </label>
                <input
                  id="password"
                  name="password"
                  type="password"
-                 class="tdgs-input tdgs-input--md"
+                 class="dstd-input dstd-input--md"
                  autocomplete="current-password"
                  required
                >
              </div>
 
              <!-- Bouton de soumission -->
-             <button type="submit" class="tdgs-button tdgs-button--primary tdgs-button--md">
+             <button type="submit" class="dstd-button dstd-button--primary dstd-button--md">
                Se connecter
              </button>
 
@@ -123,57 +123,57 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
      </TabItem>
      <TabItem label="React">
        ```tsx
-       import '@tdgs/core/tokens/color.css';
-       import '@tdgs/core/tokens/typography.css';
-       import '@tdgs/core/tokens/spacing.css';
-       import '@tdgs/core/tokens/radius.css';
-       import '@tdgs/core/components/button/button.css';
-       import '@tdgs/core/components/input/input.css';
+       import '@dstd/core/tokens/color.css';
+       import '@dstd/core/tokens/typography.css';
+       import '@dstd/core/tokens/spacing.css';
+       import '@dstd/core/tokens/radius.css';
+       import '@dstd/core/components/button/button.css';
+       import '@dstd/core/components/input/input.css';
 
        export default function LoginPage() {
          return (
            <main style={{
              maxWidth: '480px',
-             margin: 'var(--tdgs-spacing-16) auto',
-             padding: '0 var(--tdgs-spacing-4)',
+             margin: 'var(--dstd-spacing-16) auto',
+             padding: '0 var(--dstd-spacing-4)',
            }}>
              <h1 style={{
-               fontSize: 'var(--tdgs-font-size-4xl)',
-               fontWeight: 'var(--tdgs-font-weight-semibold)',
-               marginBottom: 'var(--tdgs-spacing-8)',
+               fontSize: 'var(--dstd-font-size-4xl)',
+               fontWeight: 'var(--dstd-font-weight-semibold)',
+               marginBottom: 'var(--dstd-spacing-8)',
              }}>
                Connexion
              </h1>
 
              <form method="post" action="/login" noValidate>
-               <div className="tdgs-field" style={{ marginBottom: 'var(--tdgs-spacing-5)' }}>
-                 <label className="tdgs-field__label" htmlFor="email">
+               <div className="dstd-field" style={{ marginBottom: 'var(--dstd-spacing-5)' }}>
+                 <label className="dstd-field__label" htmlFor="email">
                    Adresse e-mail
                  </label>
                  <input
                    id="email"
                    name="email"
                    type="email"
-                   className="tdgs-input tdgs-input--md"
+                   className="dstd-input dstd-input--md"
                    autoComplete="email"
                    required
                    placeholder="votre@email.td"
                    aria-describedby="email-hint"
                  />
-                 <p id="email-hint" className="tdgs-helper-text">
+                 <p id="email-hint" className="dstd-helper-text">
                    Utilisez l'adresse e-mail liée à votre compte.
                  </p>
                </div>
 
-               <div className="tdgs-field" style={{ marginBottom: 'var(--tdgs-spacing-6)' }}>
-                 <label className="tdgs-field__label" htmlFor="password">
+               <div className="dstd-field" style={{ marginBottom: 'var(--dstd-spacing-6)' }}>
+                 <label className="dstd-field__label" htmlFor="password">
                    Mot de passe
                  </label>
                  <input
                    id="password"
                    name="password"
                    type="password"
-                   className="tdgs-input tdgs-input--md"
+                   className="dstd-input dstd-input--md"
                    autoComplete="current-password"
                    required
                  />
@@ -181,7 +181,7 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
 
                <button
                  type="submit"
-                 className="tdgs-button tdgs-button--primary tdgs-button--md"
+                 className="dstd-button dstd-button--primary dstd-button--md"
                >
                  Se connecter
                </button>
@@ -194,57 +194,57 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
      <TabItem label="Vue 3">
        ```vue
        <script setup lang="ts">
-       import '@tdgs/core/tokens/color.css';
-       import '@tdgs/core/tokens/typography.css';
-       import '@tdgs/core/tokens/spacing.css';
-       import '@tdgs/core/tokens/radius.css';
-       import '@tdgs/core/components/button/button.css';
-       import '@tdgs/core/components/input/input.css';
+       import '@dstd/core/tokens/color.css';
+       import '@dstd/core/tokens/typography.css';
+       import '@dstd/core/tokens/spacing.css';
+       import '@dstd/core/tokens/radius.css';
+       import '@dstd/core/components/button/button.css';
+       import '@dstd/core/components/input/input.css';
        </script>
 
        <template>
          <main :style="{
            maxWidth: '480px',
-           margin: 'var(--tdgs-spacing-16) auto',
-           padding: '0 var(--tdgs-spacing-4)',
+           margin: 'var(--dstd-spacing-16) auto',
+           padding: '0 var(--dstd-spacing-4)',
          }">
            <h1 :style="{
-             fontSize: 'var(--tdgs-font-size-4xl)',
-             fontWeight: 'var(--tdgs-font-weight-semibold)',
-             marginBottom: 'var(--tdgs-spacing-8)',
+             fontSize: 'var(--dstd-font-size-4xl)',
+             fontWeight: 'var(--dstd-font-weight-semibold)',
+             marginBottom: 'var(--dstd-spacing-8)',
            }">
              Connexion
            </h1>
 
            <form method="post" action="/login" novalidate>
-             <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-5);">
-               <label class="tdgs-field__label" for="email">
+             <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-5);">
+               <label class="dstd-field__label" for="email">
                  Adresse e-mail
                </label>
                <input
                  id="email"
                  name="email"
                  type="email"
-                 class="tdgs-input tdgs-input--md"
+                 class="dstd-input dstd-input--md"
                  autocomplete="email"
                  required
                  placeholder="votre@email.td"
                  aria-describedby="email-hint"
                />
-               <p id="email-hint" class="tdgs-helper-text">
+               <p id="email-hint" class="dstd-helper-text">
                  Utilisez l'adresse e-mail liée à votre compte.
                </p>
              </div>
 
-             <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-6);">
-               <label class="tdgs-field__label" for="password">
+             <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-6);">
+               <label class="dstd-field__label" for="password">
                  Mot de passe
                </label>
                <input
                  id="password"
                  name="password"
                  type="password"
-                 class="tdgs-input tdgs-input--md"
+                 class="dstd-input dstd-input--md"
                  autocomplete="current-password"
                  required
                />
@@ -252,7 +252,7 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
 
              <button
                type="submit"
-               class="tdgs-button tdgs-button--primary tdgs-button--md"
+               class="dstd-button dstd-button--primary dstd-button--md"
              >
                Se connecter
              </button>
@@ -269,17 +269,17 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
 
    ```html
    <!-- Champ en erreur -->
-   <div class="tdgs-field">
-     <label class="tdgs-field__label" for="email">Adresse e-mail</label>
+   <div class="dstd-field">
+     <label class="dstd-field__label" for="email">Adresse e-mail</label>
      <input
        id="email"
        type="email"
-       class="tdgs-input tdgs-input--md tdgs-input--error"
+       class="dstd-input dstd-input--md dstd-input--error"
        aria-invalid="true"
        aria-describedby="email-error"
        value="adresse-invalide"
      >
-     <p id="email-error" class="tdgs-error-text" role="alert">
+     <p id="email-error" class="dstd-error-text" role="alert">
        Veuillez saisir une adresse e-mail valide.
      </p>
    </div>
@@ -290,7 +290,7 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec D
    Accédez aux valeurs de tokens dans votre logique applicative.
 
    ```typescript
-   import { color, spacing, typography } from '@tdgs/core';
+   import { color, spacing, typography } from '@dstd/core';
 
    // Dans un système de thème, une génération CSS dynamique
    // ou des tests de valeurs

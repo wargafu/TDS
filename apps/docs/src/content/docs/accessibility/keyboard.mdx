@@ -41,9 +41,9 @@ DSTD applique ce style de focus sur tous les éléments interactifs :
 
 ```css
 :focus-visible {
-  outline: 2px solid var(--tdgs-color-blue-500);  /* #0033A0 */
+  outline: 2px solid var(--dstd-color-blue-500);  /* #0033A0 */
   outline-offset: 3px;
-  border-radius: var(--tdgs-radius-xs);
+  border-radius: var(--dstd-radius-xs);
 }
 ```
 
@@ -140,27 +140,27 @@ Les skip links permettent aux utilisateurs clavier de sauter la navigation rép�
 
 ```html
 <!-- Premier élément du <body> -->
-<a href="#main-content" class="tdgs-skip-link">
+<a href="#main-content" class="dstd-skip-link">
   Aller au contenu principal
 </a>
 
 <!-- Dans les styles -->
 <style>
-.tdgs-skip-link {
+.dstd-skip-link {
   position: absolute;
   top: -100%;
-  left: var(--tdgs-spacing-4);
-  background: var(--tdgs-color-blue-500);
+  left: var(--dstd-spacing-4);
+  background: var(--dstd-color-blue-500);
   color: white;
-  padding: var(--tdgs-spacing-2) var(--tdgs-spacing-4);
-  border-radius: var(--tdgs-radius-sm);
+  padding: var(--dstd-spacing-2) var(--dstd-spacing-4);
+  border-radius: var(--dstd-radius-sm);
   text-decoration: none;
-  font-weight: var(--tdgs-font-weight-semibold);
-  z-index: var(--tdgs-z-tooltip);
+  font-weight: var(--dstd-font-weight-semibold);
+  z-index: var(--dstd-z-tooltip);
 }
 
-.tdgs-skip-link:focus {
-  top: var(--tdgs-spacing-4);
+.dstd-skip-link:focus {
+  top: var(--dstd-spacing-4);
 }
 </style>
 

@@ -18,11 +18,11 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `instant` | `--tdgs-motion-instant` | `0ms` | Reset instantané, suppression d'animation |
-| **`fast`** | **`--tdgs-motion-fast`** | **`120ms`** | **Hover/focus, micro-interactions** |
-| `normal` | `--tdgs-motion-normal` | `200ms` | Dropdowns, modales, transitions d'état |
-| `slow` | `--tdgs-motion-slow` | `320ms` | Panels, toasts, ouvertures |
-| `verySlow` | `--tdgs-motion-very-slow` | `500ms` | Changements documentaires, page overlays |
+| `instant` | `--dstd-motion-instant` | `0ms` | Reset instantané, suppression d'animation |
+| **`fast`** | **`--dstd-motion-fast`** | **`120ms`** | **Hover/focus, micro-interactions** |
+| `normal` | `--dstd-motion-normal` | `200ms` | Dropdowns, modales, transitions d'état |
+| `slow` | `--dstd-motion-slow` | `320ms` | Panels, toasts, ouvertures |
+| `verySlow` | `--dstd-motion-very-slow` | `500ms` | Changements documentaires, page overlays |
 
 ---
 
@@ -30,10 +30,10 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `standard` | `--tdgs-easing-standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Transitions générales |
-| `enter` | `--tdgs-easing-enter` | `cubic-bezier(0.3, 0, 0.15, 1)` | Entrées d'éléments |
-| `exit` | `--tdgs-easing-exit` | `cubic-bezier(0.4, 0, 1, 1)` | Sorties d'éléments |
-| `linear` | `--tdgs-easing-linear` | `linear` | Loaders, barres de progression |
+| `standard` | `--dstd-easing-standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Transitions générales |
+| `enter` | `--dstd-easing-enter` | `cubic-bezier(0.3, 0, 0.15, 1)` | Entrées d'éléments |
+| `exit` | `--dstd-easing-exit` | `cubic-bezier(0.4, 0, 1, 1)` | Sorties d'éléments |
+| `linear` | `--dstd-easing-linear` | `linear` | Loaders, barres de progression |
 
 ---
 
@@ -63,8 +63,8 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 /* Pattern obligatoire pour toute transition DSTD */
 .mon-composant {
   transition:
-    background-color var(--tdgs-motion-fast) var(--tdgs-easing-standard),
-    border-color var(--tdgs-motion-fast) var(--tdgs-easing-standard);
+    background-color var(--dstd-motion-fast) var(--dstd-easing-standard),
+    border-color var(--dstd-motion-fast) var(--dstd-easing-standard);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -93,14 +93,14 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 ## Variables CSS
 
 ```css
---tdgs-motion-instant:   0ms;
---tdgs-motion-fast:      120ms;
---tdgs-motion-normal:    200ms;
---tdgs-motion-slow:      320ms;
---tdgs-motion-very-slow: 500ms;
+--dstd-motion-instant:   0ms;
+--dstd-motion-fast:      120ms;
+--dstd-motion-normal:    200ms;
+--dstd-motion-slow:      320ms;
+--dstd-motion-very-slow: 500ms;
 
---tdgs-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
---tdgs-easing-enter:    cubic-bezier(0.3, 0, 0.15, 1);
---tdgs-easing-exit:     cubic-bezier(0.4, 0, 1, 1);
---tdgs-easing-linear:   linear;
+--dstd-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+--dstd-easing-enter:    cubic-bezier(0.3, 0, 0.15, 1);
+--dstd-easing-exit:     cubic-bezier(0.4, 0, 1, 1);
+--dstd-easing-linear:   linear;
 ```

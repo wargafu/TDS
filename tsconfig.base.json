@@ -20,9 +20,9 @@
 
     // Monorepo paths (IDE support — pas utilisés à la compilation des packages)
     "paths": {
-      "@tdgs/*": ["./packages/*/src"],
-      "@tdgs/core": ["./packages/core/src"],
-      "@tdgs/tokens": ["./packages/tokens/src"]
+      "@dstd/*": ["./packages/*/src"],
+      "@dstd/core": ["./packages/core/src"],
+      "@dstd/tokens": ["./packages/tokens/src"]
     }
   },
   "include": ["packages", "apps", "templates"]

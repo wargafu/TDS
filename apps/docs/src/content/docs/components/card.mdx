@@ -13,7 +13,7 @@ Elles structurent les portails citoyens, tableaux de bord et listes de services.
 ## Importation
 
 ```css
-@import "@tdgs/core/components/card/card.css";
+@import "@dstd/core/components/card/card.css";
 ```
 
 ---
@@ -21,19 +21,19 @@ Elles structurent les portails citoyens, tableaux de bord et listes de services.
 ## Structure de base
 
 ```html
-<div class="tdgs-card">
-  <div class="tdgs-card__header">
-    <h3 class="tdgs-card__title">Demande de carte d'identité</h3>
+<div class="dstd-card">
+  <div class="dstd-card__header">
+    <h3 class="dstd-card__title">Demande de carte d'identité</h3>
   </div>
-  <div class="tdgs-card__body">
-    <p class="tdgs-card__subtitle">Déposée le 15 janvier 2024</p>
-    <p class="tdgs-card__description">
+  <div class="dstd-card__body">
+    <p class="dstd-card__subtitle">Déposée le 15 janvier 2024</p>
+    <p class="dstd-card__description">
       Votre demande est en cours de traitement par la préfecture de N'Djamena.
     </p>
   </div>
-  <div class="tdgs-card__footer">
-    <span class="tdgs-badge tdgs-badge--warning">En cours</span>
-    <a href="/dossier/001234" class="tdgs-link tdgs-link--standalone">Voir le dossier</a>
+  <div class="dstd-card__footer">
+    <span class="dstd-badge dstd-badge--warning">En cours</span>
+    <a href="/dossier/001234" class="dstd-link dstd-link--standalone">Voir le dossier</a>
   </div>
 </div>
 ```
@@ -44,13 +44,13 @@ Elles structurent les portails citoyens, tableaux de bord et listes de services.
 
 ```html
 <!-- Plate (défaut) -->
-<div class="tdgs-card tdgs-card--flat">...</div>
+<div class="dstd-card dstd-card--flat">...</div>
 
 <!-- Avec ombre -->
-<div class="tdgs-card tdgs-card--elevated">...</div>
+<div class="dstd-card dstd-card--elevated">...</div>
 
 <!-- Avec bordure renforcée -->
-<div class="tdgs-card tdgs-card--outlined">...</div>
+<div class="dstd-card dstd-card--outlined">...</div>
 ```
 
 ---
@@ -58,15 +58,15 @@ Elles structurent les portails citoyens, tableaux de bord et listes de services.
 ## Card interactive (lien)
 
 ```html
-<a href="/service/cni" class="tdgs-card tdgs-card--elevated">
-  <div class="tdgs-card__body">
-    <h3 class="tdgs-card__title">Carte nationale d'identité</h3>
-    <p class="tdgs-card__description">
+<a href="/service/cni" class="dstd-card dstd-card--elevated">
+  <div class="dstd-card__body">
+    <h3 class="dstd-card__title">Carte nationale d'identité</h3>
+    <p class="dstd-card__description">
       Demandez ou renouvelez votre carte d'identité en ligne.
     </p>
   </div>
-  <div class="tdgs-card__footer">
-    <span class="tdgs-link tdgs-link--standalone">Faire une demande</span>
+  <div class="dstd-card__footer">
+    <span class="dstd-link dstd-link--standalone">Faire une demande</span>
   </div>
 </a>
 ```
@@ -76,23 +76,23 @@ Elles structurent les portails citoyens, tableaux de bord et listes de services.
 ## Grille de cards
 
 ```html
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--tdgs-spacing-5);">
-  <div class="tdgs-card tdgs-card--elevated">
-    <div class="tdgs-card__body">
-      <h3 class="tdgs-card__title">État civil</h3>
-      <p class="tdgs-card__description">Actes de naissance, mariage, décès.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--dstd-spacing-5);">
+  <div class="dstd-card dstd-card--elevated">
+    <div class="dstd-card__body">
+      <h3 class="dstd-card__title">État civil</h3>
+      <p class="dstd-card__description">Actes de naissance, mariage, décès.</p>
     </div>
   </div>
-  <div class="tdgs-card tdgs-card--elevated">
-    <div class="tdgs-card__body">
-      <h3 class="tdgs-card__title">Documents d'identité</h3>
-      <p class="tdgs-card__description">CNI, passeport, permis de séjour.</p>
+  <div class="dstd-card dstd-card--elevated">
+    <div class="dstd-card__body">
+      <h3 class="dstd-card__title">Documents d'identité</h3>
+      <p class="dstd-card__description">CNI, passeport, permis de séjour.</p>
     </div>
   </div>
-  <div class="tdgs-card tdgs-card--elevated">
-    <div class="tdgs-card__body">
-      <h3 class="tdgs-card__title">Fiscalité</h3>
-      <p class="tdgs-card__description">Déclaration de revenus, taxes locales.</p>
+  <div class="dstd-card dstd-card--elevated">
+    <div class="dstd-card__body">
+      <h3 class="dstd-card__title">Fiscalité</h3>
+      <p class="dstd-card__description">Déclaration de revenus, taxes locales.</p>
     </div>
   </div>
 </div>

@@ -69,8 +69,8 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
 
    ```bash
    # Fork le dépôt sur GitHub
-   git clone https://github.com/VOTRE_USERNAME/tdgs.git
-   cd tdgs
+   git clone https://github.com/VOTRE_USERNAME/dstd.git
+   cd dstd
 
    # Installer les dépendances
    pnpm install
@@ -91,13 +91,13 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
    pnpm typecheck
 
    # Valider les tokens
-   pnpm --filter @tdgs/core validate:tokens
+   pnpm --filter @dstd/core validate:tokens
 
    # Builder
    pnpm build
 
    # Valider les exports
-   pnpm --filter @tdgs/core validate:exports
+   pnpm --filter @dstd/core validate:exports
    ```
 
 4. **Lint et format**
@@ -141,7 +141,7 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
 
 ### Tokens
 - Chaque nouveau token doit exister en `.ts`, `.json` ET `.css`
-- Les noms de tokens suivent la convention : `--tdgs-[catégorie]-[propriété]-[variante]`
+- Les noms de tokens suivent la convention : `--dstd-[catégorie]-[propriété]-[variante]`
 - Les valeurs de tokens doivent être stables — pas de valeurs calculées complexes
 
 ### CSS
@@ -164,6 +164,6 @@ DSTD suit la sémantique de versionnement stricte :
 <Aside type="danger" title="Tokens immuables">
   Les valeurs de tokens une fois publiées dans une version ne peuvent jamais changer
   sans version majeure. Une institution peut avoir des milliers d'interfaces
-  qui dépendent de `--tdgs-color-blue-500: #0033A0`.
+  qui dépendent de `--dstd-color-blue-500: #0033A0`.
   Modifier cette valeur sans incrément majeur est une rupture de contrat.
 </Aside>

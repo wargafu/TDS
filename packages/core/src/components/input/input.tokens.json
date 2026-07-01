@@ -2,75 +2,80 @@
   "defaults": {
     "variant": "default",
     "size": "md",
-    "radius": "var(--tdgs-input-radius)",
-    "transition": "border-color var(--tdgs-motion-fast) var(--tdgs-easing-standard), background-color var(--tdgs-motion-fast) var(--tdgs-easing-standard), color var(--tdgs-motion-fast) var(--tdgs-easing-standard)",
-    "focusOutline": "var(--tdgs-input-focus-outline)",
+    "radius": "var(--dstd-input-radius)",
+    "transition": "border-color var(--dstd-motion-fast) var(--dstd-easing-standard), background-color var(--dstd-motion-fast) var(--dstd-easing-standard), color var(--dstd-motion-fast) var(--dstd-easing-standard)",
+    "focusOutline": "var(--dstd-input-focus-outline)",
     "focusOutlineOffset": "2px"
   },
   "variants": {
     "default": {
-      "border": "var(--tdgs-input-border)",
-      "background": "var(--tdgs-input-bg)",
-      "text": "var(--tdgs-input-text)",
-      "placeholder": "var(--tdgs-input-placeholder)",
-      "focusBorder": "var(--tdgs-input-border-focus)",
-      "icon": "var(--tdgs-input-icon-color)"
+      "border": "var(--dstd-input-border)",
+      "background": "var(--dstd-input-bg)",
+      "text": "var(--dstd-input-text)",
+      "placeholder": "var(--dstd-input-placeholder)",
+      "focusBorder": "var(--dstd-input-border-focus)",
+      "icon": "var(--dstd-input-icon-color)"
     },
     "error": {
-      "border": "var(--tdgs-input-border-error)",
-      "background": "var(--tdgs-input-bg)",
-      "text": "var(--tdgs-input-text)",
-      "placeholder": "var(--tdgs-input-placeholder)",
-      "focusBorder": "var(--tdgs-input-border-error)",
-      "icon": "var(--tdgs-input-icon-error)"
+      "border": "var(--dstd-input-border-error)",
+      "background": "var(--dstd-input-bg)",
+      "text": "var(--dstd-input-text)",
+      "placeholder": "var(--dstd-input-placeholder)",
+      "focusBorder": "var(--dstd-input-border-error)",
+      "icon": "var(--dstd-input-icon-error)"
     },
     "success": {
-      "border": "var(--tdgs-input-border-success)",
-      "background": "var(--tdgs-input-bg)",
-      "text": "var(--tdgs-input-text)",
-      "placeholder": "var(--tdgs-input-placeholder)",
-      "focusBorder": "var(--tdgs-input-border-success)",
-      "icon": "var(--tdgs-input-icon-success)"
+      "border": "var(--dstd-input-border-success)",
+      "background": "var(--dstd-input-bg)",
+      "text": "var(--dstd-input-text)",
+      "placeholder": "var(--dstd-input-placeholder)",
+      "focusBorder": "var(--dstd-input-border-success)",
+      "icon": "var(--dstd-input-icon-success)"
     },
     "disabled": {
-      "border": "var(--tdgs-input-border-disabled)",
-      "background": "var(--tdgs-input-bg-disabled)",
-      "text": "var(--tdgs-input-text-disabled)",
-      "placeholder": "var(--tdgs-input-placeholder-disabled)",
-      "icon": "var(--tdgs-input-icon-disabled)"
+      "border": "var(--dstd-input-border-disabled)",
+      "background": "var(--dstd-input-bg-disabled)",
+      "text": "var(--dstd-input-text-disabled)",
+      "placeholder": "var(--dstd-input-placeholder-disabled)",
+      "icon": "var(--dstd-input-icon-disabled)"
     }
   },
   "sizes": {
     "sm": {
-      "fontSize": "var(--tdgs-input-font-size-sm)",
-      "lineHeight": "var(--tdgs-input-line-height-sm)",
-      "padding": "var(--tdgs-input-padding-sm)",
-      "minHeight": "var(--tdgs-input-min-height)"
+      "fontSize": "var(--dstd-input-font-size-sm)",
+      "lineHeight": "var(--dstd-input-line-height-sm)",
+      "padding": "var(--dstd-input-padding-sm)",
+      "minHeight": "var(--dstd-input-min-height)"
     },
     "md": {
-      "fontSize": "var(--tdgs-input-font-size-md)",
-      "lineHeight": "var(--tdgs-input-line-height-md)",
-      "padding": "var(--tdgs-input-padding-md)",
-      "minHeight": "var(--tdgs-input-min-height)"
+      "fontSize": "var(--dstd-input-font-size-md)",
+      "lineHeight": "var(--dstd-input-line-height-md)",
+      "padding": "var(--dstd-input-padding-md)",
+      "minHeight": "var(--dstd-input-min-height)"
     },
     "lg": {
-      "fontSize": "var(--tdgs-input-font-size-lg)",
-      "lineHeight": "var(--tdgs-input-line-height-lg)",
-      "padding": "var(--tdgs-input-padding-lg)",
-      "minHeight": "var(--tdgs-input-min-height-lg)"
+      "fontSize": "var(--dstd-input-font-size-lg)",
+      "lineHeight": "var(--dstd-input-line-height-lg)",
+      "padding": "var(--dstd-input-padding-lg)",
+      "minHeight": "var(--dstd-input-min-height-lg)"
     }
+  },
+  "fieldset": {
+    "gap": "var(--dstd-fieldset-gap)",
+    "elementGap": "var(--dstd-fieldset-element-gap)",
+    "messagesGap": "var(--dstd-messages-gap)"
   },
   "states": {
     "focus": {
-      "outline": "var(--tdgs-input-focus-outline)",
-      "outlineOffset": "var(--tdgs-input-focus-outline-offset)"
+      "outline": "var(--dstd-input-focus-outline)",
+      "outlineOffset": "var(--dstd-input-focus-outline-offset)"
     },
     "disabled": {
       "cursor": "not-allowed",
       "opacity": "0.75"
     },
     "readonly": {
-      "background": "var(--tdgs-input-bg-disabled)"
+      "background": "var(--dstd-input-bg-disabled)"
     },
     "loading": {
       "cursor": "progress"

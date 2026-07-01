@@ -1,6 +1,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+const site = process.env.SITE_URL ?? 'http://localhost:4321';
+const base = process.env.BASE_PATH ?? '/';
+
 export default defineConfig({
   integrations: [
     starlight({
@@ -92,6 +95,6 @@ export default defineConfig({
       ],
     }),
   ],
-  site: 'https://wargafu.github.io/DSTD',
-  base: '/DSTD',
+  site,
+  base,
 });

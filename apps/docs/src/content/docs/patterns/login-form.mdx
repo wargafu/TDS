@@ -23,15 +23,15 @@ Il doit être simple, rassurant et sans obstacles.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion — Nom du service</title>
-  <link rel="stylesheet" href="/styles/tdgs.css">
+  <link rel="stylesheet" href="/styles/dstd.css">
 </head>
 <body>
   <!-- Skip link -->
-  <a href="#main-content" class="tdgs-skip-link">Aller au contenu principal</a>
+  <a href="#main-content" class="dstd-skip-link">Aller au contenu principal</a>
 
   <!-- En-tête gouvernemental -->
-  <header class="tdgs-gov-header" role="banner">
-    <div class="tdgs-gov-header__brand">
+  <header class="dstd-gov-header" role="banner">
+    <div class="dstd-gov-header__brand">
       <img src="/images/armoiries-tchad.svg" alt="République du Tchad" height="48">
       <span>Nom du ministère ou service</span>
     </div>
@@ -41,21 +41,21 @@ Il doit être simple, rassurant et sans obstacles.
   <main id="main-content">
     <div style="
       max-width: 480px;
-      margin: var(--tdgs-spacing-16) auto;
-      padding: 0 var(--tdgs-spacing-4);
+      margin: var(--dstd-spacing-16) auto;
+      padding: 0 var(--dstd-spacing-4);
     ">
 
       <!-- Résumé d'erreurs (visible uniquement si erreurs) -->
       <div
-        class="tdgs-alert tdgs-alert--danger"
+        class="dstd-alert dstd-alert--danger"
         role="alert"
         aria-labelledby="error-summary-heading"
         hidden
       >
         <h2 id="error-summary-heading" style="
-          font-size: var(--tdgs-font-size-lg);
-          font-weight: var(--tdgs-font-weight-semibold);
-          margin-bottom: var(--tdgs-spacing-3);
+          font-size: var(--dstd-font-size-lg);
+          font-weight: var(--dstd-font-weight-semibold);
+          margin-bottom: var(--dstd-spacing-3);
         ">
           Il y a des erreurs dans votre saisie
         </h2>
@@ -65,9 +65,9 @@ Il doit être simple, rassurant et sans obstacles.
       </div>
 
       <h1 style="
-        font-size: var(--tdgs-font-size-4xl);
-        font-weight: var(--tdgs-font-weight-semibold);
-        margin-bottom: var(--tdgs-spacing-8);
+        font-size: var(--dstd-font-size-4xl);
+        font-weight: var(--dstd-font-weight-semibold);
+        margin-bottom: var(--dstd-spacing-8);
       ">
         Connexion
       </h1>
@@ -77,15 +77,15 @@ Il doit être simple, rassurant et sans obstacles.
         <input type="hidden" name="_token" value="{{csrf_token}}">
 
         <!-- Champ e-mail -->
-        <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-5);">
-          <label class="tdgs-field__label" for="email">
+        <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-5);">
+          <label class="dstd-field__label" for="email">
             Adresse e-mail
           </label>
           <input
             id="email"
             name="email"
             type="email"
-            class="tdgs-input tdgs-input--md"
+            class="dstd-input dstd-input--md"
             autocomplete="email"
             spellcheck="false"
             required
@@ -93,26 +93,26 @@ Il doit être simple, rassurant et sans obstacles.
             value="{{old_email}}"
           >
           <!-- Affiché si erreur -->
-          <p id="email-error" class="tdgs-error-text" role="alert" hidden>
+          <p id="email-error" class="dstd-error-text" role="alert" hidden>
             <!-- Message d'erreur -->
           </p>
         </div>
 
         <!-- Champ mot de passe -->
-        <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-6);">
-          <label class="tdgs-field__label" for="password">
+        <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-6);">
+          <label class="dstd-field__label" for="password">
             Mot de passe
           </label>
           <input
             id="password"
             name="password"
             type="password"
-            class="tdgs-input tdgs-input--md"
+            class="dstd-input dstd-input--md"
             autocomplete="current-password"
             required
             aria-required="true"
           >
-          <p id="password-error" class="tdgs-error-text" role="alert" hidden>
+          <p id="password-error" class="dstd-error-text" role="alert" hidden>
             <!-- Message d'erreur -->
           </p>
         </div>
@@ -121,17 +121,17 @@ Il doit être simple, rassurant et sans obstacles.
         <div style="
           display: flex;
           flex-direction: column;
-          gap: var(--tdgs-spacing-3);
+          gap: var(--dstd-spacing-3);
         ">
-          <button type="submit" class="tdgs-button tdgs-button--primary tdgs-button--md">
+          <button type="submit" class="dstd-button dstd-button--primary dstd-button--md">
             Se connecter
           </button>
 
           <a
             href="/auth/forgot-password"
             style="
-              font-size: var(--tdgs-font-size-sm);
-              color: var(--tdgs-color-blue-500);
+              font-size: var(--dstd-font-size-sm);
+              color: var(--dstd-color-blue-500);
               text-decoration: underline;
               text-align: center;
             "
@@ -160,13 +160,13 @@ Il doit être simple, rassurant et sans obstacles.
 
 ```html
 <!-- ✅ Message générique (sécurisé) -->
-<div class="tdgs-alert tdgs-alert--danger" role="alert">
+<div class="dstd-alert dstd-alert--danger" role="alert">
   <strong>Identifiants incorrects.</strong>
   Vérifiez votre adresse e-mail et votre mot de passe, puis réessayez.
 </div>
 
 <!-- ❌ Message spécifique (à éviter) -->
-<div class="tdgs-alert tdgs-alert--danger" role="alert">
+<div class="dstd-alert dstd-alert--danger" role="alert">
   Ce compte n'existe pas. <!-- Révèle l'existence du compte -->
 </div>
 ```
@@ -174,17 +174,17 @@ Il doit être simple, rassurant et sans obstacles.
 ### Erreur de validation de champ
 
 ```html
-<div class="tdgs-field">
-  <label class="tdgs-field__label" for="email">Adresse e-mail</label>
+<div class="dstd-field">
+  <label class="dstd-field__label" for="email">Adresse e-mail</label>
   <input
     id="email"
     type="email"
-    class="tdgs-input tdgs-input--md tdgs-input--error"
+    class="dstd-input dstd-input--md dstd-input--error"
     aria-invalid="true"
     aria-describedby="email-error"
     value="adresse-invalide"
   >
-  <p id="email-error" class="tdgs-error-text" role="alert">
+  <p id="email-error" class="dstd-error-text" role="alert">
     Saisissez une adresse e-mail valide. Exemple : nom@domaine.td
   </p>
 </div>

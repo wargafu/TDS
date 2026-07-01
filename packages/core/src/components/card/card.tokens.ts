@@ -1,14 +1,14 @@
 export const card = {
   defaults: {
-    background: 'var(--tdgs-neutral-0)',
-    border: 'var(--tdgs-neutral-200)',
-    radius: 'var(--tdgs-radius-md)',
-    padding: 'var(--tdgs-spacing-5)',
+    background: 'var(--dstd-neutral-0)',
+    border: 'var(--dstd-neutral-200)',
+    radius: 'var(--dstd-radius-md)',
+    padding: 'var(--dstd-spacing-5)',
   },
   variants: {
-    flat:     { shadow: 'none',                    border: 'var(--tdgs-neutral-200)' },
-    elevated: { shadow: 'var(--tdgs-shadow-sm)',   border: 'var(--tdgs-neutral-200)' },
-    outlined: { shadow: 'none',                    border: 'var(--tdgs-neutral-300)' },
+    flat:     { shadow: 'none',                    border: 'var(--dstd-neutral-200)' },
+    elevated: { shadow: 'var(--dstd-shadow-sm)',   border: 'var(--dstd-neutral-200)' },
+    outlined: { shadow: 'none',                    border: 'var(--dstd-neutral-300)' },
   },
 } as const;
 

@@ -22,13 +22,13 @@ et de lui fournir une référence pour le suivi.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demande reçue — Nom du service</title>
-  <link rel="stylesheet" href="/styles/tdgs.css">
+  <link rel="stylesheet" href="/styles/dstd.css">
   <!-- Empêcher la resoumission sur F5 -->
   <meta name="robots" content="noindex">
 </head>
 <body>
-  <header class="tdgs-gov-header" role="banner">
-    <div class="tdgs-gov-header__brand">
+  <header class="dstd-gov-header" role="banner">
+    <div class="dstd-gov-header__brand">
       <img src="/images/armoiries-tchad.svg" alt="République du Tchad" height="48">
       <span>Nom du service</span>
     </div>
@@ -37,24 +37,24 @@ et de lui fournir une référence pour le suivi.
   <main id="main-content">
     <div style="
       max-width: 640px;
-      margin: var(--tdgs-spacing-16) auto;
-      padding: 0 var(--tdgs-spacing-4);
+      margin: var(--dstd-spacing-16) auto;
+      padding: 0 var(--dstd-spacing-4);
     ">
 
       <!-- Indicateur de succès -->
       <div style="
         display: flex;
         align-items: center;
-        gap: var(--tdgs-spacing-3);
-        margin-bottom: var(--tdgs-spacing-6);
-        color: var(--tdgs-color-semantic-success-icon);
+        gap: var(--dstd-spacing-3);
+        margin-bottom: var(--dstd-spacing-6);
+        color: var(--dstd-color-semantic-success-icon);
       ">
         <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-5-5 1.41-1.41L10 13.67l7.59-7.59L19 7.5l-9 9z"/>
         </svg>
         <span style="
-          font-size: var(--tdgs-font-size-lg);
-          font-weight: var(--tdgs-font-weight-semibold);
+          font-size: var(--dstd-font-size-lg);
+          font-weight: var(--dstd-font-weight-semibold);
         ">
           Demande envoyée avec succès
         </span>
@@ -62,40 +62,40 @@ et de lui fournir une référence pour le suivi.
 
       <!-- Titre principal -->
       <h1 style="
-        font-size: var(--tdgs-font-size-4xl);
-        font-weight: var(--tdgs-font-weight-semibold);
-        margin-bottom: var(--tdgs-spacing-4);
+        font-size: var(--dstd-font-size-4xl);
+        font-weight: var(--dstd-font-weight-semibold);
+        margin-bottom: var(--dstd-spacing-4);
       ">
         Votre demande a été reçue
       </h1>
 
       <!-- Numéro de référence -->
       <div style="
-        background: var(--tdgs-color-neutral-100);
-        border: 1px solid var(--tdgs-color-neutral-200);
-        border-radius: var(--tdgs-radius-sm);
-        padding: var(--tdgs-spacing-4) var(--tdgs-spacing-5);
-        margin-bottom: var(--tdgs-spacing-6);
+        background: var(--dstd-color-neutral-100);
+        border: 1px solid var(--dstd-color-neutral-200);
+        border-radius: var(--dstd-radius-sm);
+        padding: var(--dstd-spacing-4) var(--dstd-spacing-5);
+        margin-bottom: var(--dstd-spacing-6);
       ">
         <p style="
-          font-size: var(--tdgs-font-size-sm);
-          color: var(--tdgs-color-neutral-600);
-          margin-bottom: var(--tdgs-spacing-1);
+          font-size: var(--dstd-font-size-sm);
+          color: var(--dstd-color-neutral-600);
+          margin-bottom: var(--dstd-spacing-1);
         ">
           Numéro de référence
         </p>
         <p style="
-          font-size: var(--tdgs-font-size-2xl);
-          font-weight: var(--tdgs-font-weight-bold);
-          font-family: var(--tdgs-font-family-mono);
-          color: var(--tdgs-color-neutral-900);
+          font-size: var(--dstd-font-size-2xl);
+          font-weight: var(--dstd-font-weight-bold);
+          font-family: var(--dstd-font-family-mono);
+          color: var(--dstd-color-neutral-900);
         ">
           REF-2024-{{REFERENCE_ID}}
         </p>
         <p style="
-          font-size: var(--tdgs-font-size-sm);
-          color: var(--tdgs-color-neutral-500);
-          margin-top: var(--tdgs-spacing-1);
+          font-size: var(--dstd-font-size-sm);
+          color: var(--dstd-color-neutral-500);
+          margin-top: var(--dstd-spacing-1);
         ">
           Notez ce numéro pour le suivi de votre dossier.
         </p>
@@ -103,54 +103,54 @@ et de lui fournir une référence pour le suivi.
 
       <!-- Récapitulatif -->
       <h2 style="
-        font-size: var(--tdgs-font-size-xl);
-        font-weight: var(--tdgs-font-weight-semibold);
-        margin-bottom: var(--tdgs-spacing-4);
+        font-size: var(--dstd-font-size-xl);
+        font-weight: var(--dstd-font-weight-semibold);
+        margin-bottom: var(--dstd-spacing-4);
       ">
         Récapitulatif
       </h2>
 
       <dl style="
-        border: 1px solid var(--tdgs-color-neutral-200);
-        border-radius: var(--tdgs-radius-sm);
+        border: 1px solid var(--dstd-color-neutral-200);
+        border-radius: var(--dstd-radius-sm);
         overflow: hidden;
-        margin-bottom: var(--tdgs-spacing-8);
+        margin-bottom: var(--dstd-spacing-8);
       ">
         <div style="
           display: flex;
-          gap: var(--tdgs-spacing-4);
-          padding: var(--tdgs-spacing-3) var(--tdgs-spacing-4);
-          border-bottom: 1px solid var(--tdgs-color-neutral-200);
+          gap: var(--dstd-spacing-4);
+          padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
+          border-bottom: 1px solid var(--dstd-color-neutral-200);
         ">
           <dt style="
-            font-weight: var(--tdgs-font-weight-semibold);
+            font-weight: var(--dstd-font-weight-semibold);
             min-width: 160px;
-            color: var(--tdgs-color-neutral-700);
+            color: var(--dstd-color-neutral-700);
           ">Type de demande</dt>
           <dd>{{TYPE_DEMANDE}}</dd>
         </div>
         <div style="
           display: flex;
-          gap: var(--tdgs-spacing-4);
-          padding: var(--tdgs-spacing-3) var(--tdgs-spacing-4);
-          border-bottom: 1px solid var(--tdgs-color-neutral-200);
+          gap: var(--dstd-spacing-4);
+          padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
+          border-bottom: 1px solid var(--dstd-color-neutral-200);
         ">
           <dt style="
-            font-weight: var(--tdgs-font-weight-semibold);
+            font-weight: var(--dstd-font-weight-semibold);
             min-width: 160px;
-            color: var(--tdgs-color-neutral-700);
+            color: var(--dstd-color-neutral-700);
           ">Date de soumission</dt>
           <dd>{{DATE_SOUMISSION}}</dd>
         </div>
         <div style="
           display: flex;
-          gap: var(--tdgs-spacing-4);
-          padding: var(--tdgs-spacing-3) var(--tdgs-spacing-4);
+          gap: var(--dstd-spacing-4);
+          padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
         ">
           <dt style="
-            font-weight: var(--tdgs-font-weight-semibold);
+            font-weight: var(--dstd-font-weight-semibold);
             min-width: 160px;
-            color: var(--tdgs-color-neutral-700);
+            color: var(--dstd-color-neutral-700);
           ">Délai estimé</dt>
           <dd>{{DELAI_TRAITEMENT}}</dd>
         </div>
@@ -158,22 +158,22 @@ et de lui fournir une référence pour le suivi.
 
       <!-- Prochaines étapes -->
       <h2 style="
-        font-size: var(--tdgs-font-size-xl);
-        font-weight: var(--tdgs-font-weight-semibold);
-        margin-bottom: var(--tdgs-spacing-4);
+        font-size: var(--dstd-font-size-xl);
+        font-weight: var(--dstd-font-weight-semibold);
+        margin-bottom: var(--dstd-spacing-4);
       ">
         Prochaines étapes
       </h2>
 
       <ol style="
-        padding-left: var(--tdgs-spacing-6);
-        margin-bottom: var(--tdgs-spacing-8);
-        line-height: var(--tdgs-line-height-lg);
+        padding-left: var(--dstd-spacing-6);
+        margin-bottom: var(--dstd-spacing-8);
+        line-height: var(--dstd-line-height-lg);
       ">
-        <li style="margin-bottom: var(--tdgs-spacing-3);">
+        <li style="margin-bottom: var(--dstd-spacing-3);">
           Un e-mail de confirmation a été envoyé à <strong>{{EMAIL_UTILISATEUR}}</strong>.
         </li>
-        <li style="margin-bottom: var(--tdgs-spacing-3);">
+        <li style="margin-bottom: var(--dstd-spacing-3);">
           Votre dossier sera examiné dans un délai de {{DELAI_TRAITEMENT}}.
         </li>
         <li>
@@ -182,16 +182,16 @@ et de lui fournir une référence pour le suivi.
       </ol>
 
       <!-- Actions -->
-      <div style="display: flex; gap: var(--tdgs-spacing-3); flex-wrap: wrap;">
+      <div style="display: flex; gap: var(--dstd-spacing-3); flex-wrap: wrap;">
         <a
           href="/tableau-de-bord"
-          class="tdgs-button tdgs-button--primary tdgs-button--md"
+          class="dstd-button dstd-button--primary dstd-button--md"
         >
           Accéder à mes demandes
         </a>
         <a
           href="/"
-          class="tdgs-button tdgs-button--secondary tdgs-button--md"
+          class="dstd-button dstd-button--secondary dstd-button--md"
         >
           Retour à l'accueil
         </a>

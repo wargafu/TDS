@@ -33,53 +33,53 @@ sans les submerger.
 <nav aria-label="Progression du formulaire">
   <ol style="
     display: flex;
-    gap: var(--tdgs-spacing-2);
+    gap: var(--dstd-spacing-2);
     list-style: none;
     padding: 0;
-    margin-bottom: var(--tdgs-spacing-8);
+    margin-bottom: var(--dstd-spacing-8);
   ">
-    <li aria-current="step" style="font-weight: var(--tdgs-font-weight-semibold);">
+    <li aria-current="step" style="font-weight: var(--dstd-font-weight-semibold);">
       <span style="
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 28px;
         height: 28px;
-        border-radius: var(--tdgs-radius-full);
-        background: var(--tdgs-color-blue-500);
+        border-radius: var(--dstd-radius-full);
+        background: var(--dstd-color-blue-500);
         color: white;
-        font-size: var(--tdgs-font-size-sm);
-        margin-right: var(--tdgs-spacing-2);
+        font-size: var(--dstd-font-size-sm);
+        margin-right: var(--dstd-spacing-2);
       ">1</span>
       Identité
     </li>
-    <li aria-disabled="true" style="color: var(--tdgs-color-neutral-400);">
+    <li aria-disabled="true" style="color: var(--dstd-color-neutral-400);">
       <span style="
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 28px;
         height: 28px;
-        border-radius: var(--tdgs-radius-full);
-        background: var(--tdgs-color-neutral-200);
-        color: var(--tdgs-color-neutral-500);
-        font-size: var(--tdgs-font-size-sm);
-        margin-right: var(--tdgs-spacing-2);
+        border-radius: var(--dstd-radius-full);
+        background: var(--dstd-color-neutral-200);
+        color: var(--dstd-color-neutral-500);
+        font-size: var(--dstd-font-size-sm);
+        margin-right: var(--dstd-spacing-2);
       ">2</span>
       Documents
     </li>
-    <li aria-disabled="true" style="color: var(--tdgs-color-neutral-400);">
+    <li aria-disabled="true" style="color: var(--dstd-color-neutral-400);">
       <span style="
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 28px;
         height: 28px;
-        border-radius: var(--tdgs-radius-full);
-        background: var(--tdgs-color-neutral-200);
-        color: var(--tdgs-color-neutral-500);
-        font-size: var(--tdgs-font-size-sm);
-        margin-right: var(--tdgs-spacing-2);
+        border-radius: var(--dstd-radius-full);
+        background: var(--dstd-color-neutral-200);
+        color: var(--dstd-color-neutral-500);
+        font-size: var(--dstd-font-size-sm);
+        margin-right: var(--dstd-spacing-2);
       ">3</span>
       Confirmation
     </li>
@@ -96,33 +96,33 @@ sans les submerger.
     <input type="hidden" name="etape" value="1">
 
     <h1 style="
-      font-size: var(--tdgs-font-size-3xl);
-      font-weight: var(--tdgs-font-weight-semibold);
-      margin-bottom: var(--tdgs-spacing-6);
+      font-size: var(--dstd-font-size-3xl);
+      font-weight: var(--dstd-font-weight-semibold);
+      margin-bottom: var(--dstd-spacing-6);
     ">
       Étape 1 sur 3 — Informations d'identité
     </h1>
 
     <!-- Champs de l'étape 1 -->
-    <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-5);">
-      <label class="tdgs-field__label" for="prenom">Prénom</label>
-      <input id="prenom" name="prenom" type="text" class="tdgs-input tdgs-input--md" required>
+    <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-5);">
+      <label class="dstd-field__label" for="prenom">Prénom</label>
+      <input id="prenom" name="prenom" type="text" class="dstd-input dstd-input--md" required>
     </div>
 
-    <div class="tdgs-field" style="margin-bottom: var(--tdgs-spacing-8);">
-      <label class="tdgs-field__label" for="nom">Nom de famille</label>
-      <input id="nom" name="nom" type="text" class="tdgs-input tdgs-input--md" required>
+    <div class="dstd-field" style="margin-bottom: var(--dstd-spacing-8);">
+      <label class="dstd-field__label" for="nom">Nom de famille</label>
+      <input id="nom" name="nom" type="text" class="dstd-input dstd-input--md" required>
     </div>
 
     <!-- Navigation entre étapes -->
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <a
         href="/demande"
-        class="tdgs-button tdgs-button--secondary tdgs-button--md"
+        class="dstd-button dstd-button--secondary dstd-button--md"
       >
         ← Retour
       </a>
-      <button type="submit" class="tdgs-button tdgs-button--primary tdgs-button--md">
+      <button type="submit" class="dstd-button dstd-button--primary dstd-button--md">
         Continuer →
       </button>
     </div>

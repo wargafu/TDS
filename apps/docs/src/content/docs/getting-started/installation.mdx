@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Ajouter @tdgs/core à votre projet — npm, pnpm, yarn ou CDN.
+description: Ajouter @dstd/core à votre projet — npm, pnpm, yarn ou CDN.
 sidebar:
   order: 2
 ---
@@ -9,24 +9,24 @@ import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components';
 
 # Installation
 
-`@tdgs/core` est disponible sur npm. Choisissez votre gestionnaire de paquets.
+`@dstd/core` est disponible sur npm. Choisissez votre gestionnaire de paquets.
 
 ## Gestionnaire de paquets
 
 <Tabs>
   <TabItem label="pnpm">
     ```bash
-    pnpm add @tdgs/core
+    pnpm add @dstd/core
     ```
   </TabItem>
   <TabItem label="npm">
     ```bash
-    npm install @tdgs/core
+    npm install @dstd/core
     ```
   </TabItem>
   <TabItem label="yarn">
     ```bash
-    yarn add @tdgs/core
+    yarn add @dstd/core
     ```
   </TabItem>
 </Tabs>
@@ -44,23 +44,23 @@ Elles sont disponibles pour chaque système de tokens.
 
 ```css
 /* Importer tous les tokens (recommandé pour démarrer) */
-@import "@tdgs/core/tokens/color.css";
-@import "@tdgs/core/tokens/typography.css";
-@import "@tdgs/core/tokens/spacing.css";
-@import "@tdgs/core/tokens/radius.css";
-@import "@tdgs/core/tokens/shadow.css";
-@import "@tdgs/core/tokens/motion.css";
-@import "@tdgs/core/tokens/z-index.css";
+@import "@dstd/core/tokens/color.css";
+@import "@dstd/core/tokens/typography.css";
+@import "@dstd/core/tokens/spacing.css";
+@import "@dstd/core/tokens/radius.css";
+@import "@dstd/core/tokens/shadow.css";
+@import "@dstd/core/tokens/motion.css";
+@import "@dstd/core/tokens/z-index.css";
 ```
 
-Après import, toutes les variables CSS `--tdgs-*` sont disponibles globalement.
+Après import, toutes les variables CSS `--dstd-*` sont disponibles globalement.
 
 ```css
 /* Utilisation directe */
 .mon-composant {
-  color: var(--tdgs-color-blue-500);
-  padding: var(--tdgs-spacing-4);
-  border-radius: var(--tdgs-radius-sm);
+  color: var(--dstd-color-blue-500);
+  padding: var(--dstd-spacing-4);
+  border-radius: var(--dstd-radius-sm);
 }
 ```
 
@@ -72,10 +72,10 @@ Importez les CSS des composants que vous utilisez.
 
 ```css
 /* Bouton */
-@import "@tdgs/core/components/button/button.css";
+@import "@dstd/core/components/button/button.css";
 
 /* Champs de formulaire */
-@import "@tdgs/core/components/input/input.css";
+@import "@dstd/core/components/input/input.css";
 ```
 
 ---
@@ -86,12 +86,12 @@ Pour accéder aux valeurs de tokens dans votre code TypeScript/JavaScript :
 
 ```typescript
 // Importer les tokens individuellement
-import { color } from '@tdgs/core/tokens';
-import { typography } from '@tdgs/core/tokens';
-import { spacing } from '@tdgs/core/tokens';
+import { color } from '@dstd/core/tokens';
+import { typography } from '@dstd/core/tokens';
+import { spacing } from '@dstd/core/tokens';
 
 // Ou tout importer depuis la racine
-import { color, typography, spacing, radius, shadow, motion } from '@tdgs/core';
+import { color, typography, spacing, radius, shadow, motion } from '@dstd/core';
 
 // Utiliser les tokens
 const primaryBlue = color.blue[500];    // '#0033A0'
@@ -104,9 +104,9 @@ const gap = spacing.scale[4];           // '1rem' (16px)
 ## Importer les types TypeScript
 
 ```typescript
-import type { ColorTokens } from '@tdgs/core/tokens';
-import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
-import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/input';
+import type { ColorTokens } from '@dstd/core/tokens';
+import type { ButtonVariant, ButtonSize } from '@dstd/core/components/button';
+import type { InputVariant, InputSize, InputState } from '@dstd/core/components/input';
 ```
 
 ---
@@ -117,9 +117,9 @@ Les tokens sont aussi disponibles en JSON pour l'intégration avec Style Diction
 les plugins Figma ou d'autres outils de design.
 
 ```javascript
-import colorJson from '@tdgs/core/tokens/color.json' assert { type: 'json' };
+import colorJson from '@dstd/core/tokens/color.json' assert { type: 'json' };
 // ou en CommonJS
-const colorJson = require('@tdgs/core/tokens/color.json');
+const colorJson = require('@dstd/core/tokens/color.json');
 ```
 
 ---
@@ -138,17 +138,17 @@ ou pointez vers un CDN auto-hébergé.
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tokens DSTD (depuis votre serveur) -->
-  <link rel="stylesheet" href="/assets/tdgs/tokens/color.css">
-  <link rel="stylesheet" href="/assets/tdgs/tokens/typography.css">
-  <link rel="stylesheet" href="/assets/tdgs/tokens/spacing.css">
-  <link rel="stylesheet" href="/assets/tdgs/tokens/radius.css">
-  <link rel="stylesheet" href="/assets/tdgs/tokens/shadow.css">
-  <link rel="stylesheet" href="/assets/tdgs/tokens/motion.css">
-  <link rel="stylesheet" href="/assets/tdgs/tokens/z-index.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/color.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/typography.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/spacing.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/radius.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/shadow.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/motion.css">
+  <link rel="stylesheet" href="/assets/dstd/tokens/z-index.css">
 
   <!-- Composants DSTD -->
-  <link rel="stylesheet" href="/assets/tdgs/components/button/button.css">
-  <link rel="stylesheet" href="/assets/tdgs/components/input/input.css">
+  <link rel="stylesheet" href="/assets/dstd/components/button/button.css">
+  <link rel="stylesheet" href="/assets/dstd/components/input/input.css">
 </head>
 ```
 
@@ -167,7 +167,7 @@ Après installation, vérifiez que les tokens CSS sont bien chargés dans le nav
 ```javascript
 // Dans la console du navigateur
 getComputedStyle(document.documentElement)
-  .getPropertyValue('--tdgs-color-blue-500')
+  .getPropertyValue('--dstd-color-blue-500')
 // Doit retourner : ' #0033A0'
 ```
 
@@ -176,7 +176,7 @@ getComputedStyle(document.documentElement)
 ## Arborescence du package publié
 
 ```
-@tdgs/core/
+@dstd/core/
 ├── dist/
 │   ├── index.js              — Point d'entrée principal (ESM)
 │   ├── index.d.ts            — Types TypeScript

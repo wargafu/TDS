@@ -1,14 +1,14 @@
 {
   "default": {
-    "color": "var(--tdgs-color-blue-500)",
-    "colorHover": "var(--tdgs-color-blue-700)",
-    "colorVisited": "var(--tdgs-color-blue-700)",
-    "decorationColor": "var(--tdgs-color-blue-200)",
-    "decorationColorHover": "var(--tdgs-color-blue-500)"
+    "color": "var(--dstd-color-blue-500)",
+    "colorHover": "var(--dstd-color-blue-700)",
+    "colorVisited": "var(--dstd-color-blue-700)",
+    "decorationColor": "var(--dstd-color-blue-200)",
+    "decorationColorHover": "var(--dstd-color-blue-500)"
   },
   "variants": {
-    "default": { "color": "var(--tdgs-color-blue-500)" },
-    "muted":   { "color": "var(--tdgs-neutral-600)"    },
-    "danger":  { "color": "var(--tdgs-color-red-600)"  }
+    "default": { "color": "var(--dstd-color-blue-500)" },
+    "muted":   { "color": "var(--dstd-neutral-600)"    },
+    "danger":  { "color": "var(--dstd-color-red-600)"  }
   }
 }

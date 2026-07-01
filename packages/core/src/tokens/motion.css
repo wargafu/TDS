@@ -1,13 +1,13 @@
-/* TDGS motion tokens */
+/* DSTD motion tokens */
 :root{
-  --tdgs-motion-instant: 0ms;
-  --tdgs-motion-fast: 120ms;
-  --tdgs-motion-normal: 200ms;
-  --tdgs-motion-slow: 320ms;
-  --tdgs-motion-very-slow: 500ms;
+  --dstd-motion-instant: 0ms;
+  --dstd-motion-fast: 120ms;
+  --dstd-motion-normal: 200ms;
+  --dstd-motion-slow: 320ms;
+  --dstd-motion-very-slow: 500ms;
 
-  --tdgs-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --tdgs-easing-enter: cubic-bezier(0.3, 0, 0.15, 1);
-  --tdgs-easing-exit: cubic-bezier(0.4, 0, 1, 1);
-  --tdgs-easing-linear: linear;
+  --dstd-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --dstd-easing-enter: cubic-bezier(0.3, 0, 0.15, 1);
+  --dstd-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --dstd-easing-linear: linear;
 }

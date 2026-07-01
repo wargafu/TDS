@@ -3,7 +3,7 @@
 > Le système de design open source destiné aux services numériques publics du Tchad.
 
 [![CI](https://github.com/wargafu/DSTD/actions/workflows/ci.yml/badge.svg)](https://github.com/wargafu/DSTD/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/@tdgs/core.svg)](https://www.npmjs.com/package/@tdgs/core)
+[![npm version](https://img.shields.io/npm/v/@dstd/core.svg)](https://www.npmjs.com/package/@dstd/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
@@ -40,30 +40,30 @@ Inspiré de [GOV.UK Design System](https://design-system.service.gov.uk/), [DSFR
 ### 🧩 Composants
 | Composant | Classes CSS | Types TS | Accessibilité |
 |---|---|---|---|
-| Button | `tdgs-button` | `ButtonVariant`, `ButtonSize` | WCAG AA ✅ |
-| Input / Form | `tdgs-input`, `tdgs-field` | `InputVariant`, `InputSize` | WCAG AA ✅ |
-| Alert | `tdgs-alert` | `AlertVariant` | `role=alert` ✅ |
-| Badge | `tdgs-badge` | `BadgeVariant` | WCAG AA ✅ |
-| Card | `tdgs-card` | `CardVariant` | ✅ |
-| Link | `tdgs-link` | `LinkVariant` | Focus visible ✅ |
-| Table | `tdgs-table` | — | `scope`, `caption` ✅ |
+| Button | `dstd-button` | `ButtonVariant`, `ButtonSize` | WCAG AA ✅ |
+| Input / Form | `dstd-input`, `dstd-field` | `InputVariant`, `InputSize` | WCAG AA ✅ |
+| Alert | `dstd-alert` | `AlertVariant` | `role=alert` ✅ |
+| Badge | `dstd-badge` | `BadgeVariant` | WCAG AA ✅ |
+| Card | `dstd-card` | `CardVariant` | ✅ |
+| Link | `dstd-link` | `LinkVariant` | Focus visible ✅ |
+| Table | `dstd-table` | — | `scope`, `caption` ✅ |
 
 ---
 
 ## Installation
 
-Le namespace npm `@tdgs` et les classes CSS `tdgs-*` sont conservés pendant la
+Le namespace npm `@dstd` et les classes CSS `dstd-*` sont conservés pendant la
 transition de marque afin d’éviter une rupture d’API.
 
 ```bash
 # pnpm (recommandé)
-pnpm add @tdgs/core
+pnpm add @dstd/core
 
 # npm
-npm install @tdgs/core
+npm install @dstd/core
 
 # yarn
-yarn add @tdgs/core
+yarn add @dstd/core
 ```
 
 **Node.js 18+ requis.** Le package est distribué en ESM (`"type": "module"`).
@@ -76,44 +76,44 @@ yarn add @tdgs/core
 
 ```css
 /* Dans votre feuille de style principale */
-@import "@tdgs/core/base.css";             /* Reset + styles HTML */
-@import "@tdgs/core/tokens/color.css";
-@import "@tdgs/core/tokens/typography.css";
-@import "@tdgs/core/tokens/spacing.css";
-@import "@tdgs/core/tokens/radius.css";
-@import "@tdgs/core/tokens/shadow.css";
-@import "@tdgs/core/tokens/motion.css";
-@import "@tdgs/core/tokens/z-index.css";
+@import "@dstd/core/base.css";             /* Reset + styles HTML */
+@import "@dstd/core/tokens/color.css";
+@import "@dstd/core/tokens/typography.css";
+@import "@dstd/core/tokens/spacing.css";
+@import "@dstd/core/tokens/radius.css";
+@import "@dstd/core/tokens/shadow.css";
+@import "@dstd/core/tokens/motion.css";
+@import "@dstd/core/tokens/z-index.css";
 
 /* Composants selon vos besoins */
-@import "@tdgs/core/components/button/button.css";
-@import "@tdgs/core/components/input/input.css";
-@import "@tdgs/core/components/alert/alert.css";
-@import "@tdgs/core/components/badge/badge.css";
-@import "@tdgs/core/components/card/card.css";
-@import "@tdgs/core/components/link/link.css";
-@import "@tdgs/core/components/table/table.css";
+@import "@dstd/core/components/button/button.css";
+@import "@dstd/core/components/input/input.css";
+@import "@dstd/core/components/alert/alert.css";
+@import "@dstd/core/components/badge/badge.css";
+@import "@dstd/core/components/card/card.css";
+@import "@dstd/core/components/link/link.css";
+@import "@dstd/core/components/table/table.css";
 ```
 
 ### 2. Utiliser les composants en HTML
 
 ```html
 <!-- Bouton primary -->
-<button type="submit" class="tdgs-button tdgs-button--primary tdgs-button--md">
+<button type="submit" class="dstd-button dstd-button--primary dstd-button--md">
   Valider la demande
 </button>
 
 <!-- Champ de formulaire -->
-<div class="tdgs-field">
-  <label class="tdgs-field__label" for="nom">Nom complet</label>
-  <input id="nom" type="text" class="tdgs-input tdgs-input--md" required>
+<div class="dstd-field">
+  <label class="dstd-field__label" for="nom">Nom complet</label>
+  <input id="nom" type="text" class="dstd-input dstd-input--md" required>
 </div>
 
 <!-- Alerte succès -->
-<div class="tdgs-alert tdgs-alert--success" role="status">
-  <div class="tdgs-alert__content">
-    <p class="tdgs-alert__title">Dossier soumis</p>
-    <div class="tdgs-alert__body">Référence : REF-2024-001234</div>
+<div class="dstd-alert dstd-alert--success" role="status">
+  <div class="dstd-alert__content">
+    <p class="dstd-alert__title">Dossier soumis</p>
+    <div class="dstd-alert__body">Référence : REF-2024-001234</div>
   </div>
 </div>
 ```
@@ -121,8 +121,8 @@ yarn add @tdgs/core
 ### 3. Utiliser les tokens TypeScript
 
 ```typescript
-import { color, spacing, typography } from '@tdgs/core/tokens';
-import type { ButtonVariant } from '@tdgs/core/components/button';
+import { color, spacing, typography } from '@dstd/core/tokens';
+import type { ButtonVariant } from '@dstd/core/components/button';
 
 const primary = color.blue[500];      // '#0033A0'
 const gap = spacing.scale[4];         // '1rem' (16px)
@@ -136,7 +136,7 @@ const body = typography.sizes.md;     // '1rem'
 ```
 DSTD/
 ├── packages/
-│   └── core/                  ← Package npm principal @tdgs/core
+│   └── core/                  ← Package npm principal @dstd/core
 │       ├── src/
 │       │   ├── base.css       ← Reset CSS + styles HTML de base
 │       │   ├── tokens/        ← Design tokens (TS + JSON + CSS)
@@ -183,10 +183,10 @@ pnpm build
 pnpm typecheck
 
 # Valider les tokens (53 checks)
-pnpm --filter @tdgs/core validate:tokens
+pnpm --filter @dstd/core validate:tokens
 
 # Valider les exports npm (après build)
-pnpm --filter @tdgs/core validate:exports
+pnpm --filter @dstd/core validate:exports
 
 # Lint
 pnpm lint
@@ -202,7 +202,7 @@ pnpm format
 git checkout -b feat/nom-du-composant
 
 # 2. Développer + valider
-pnpm --filter @tdgs/core validate:tokens
+pnpm --filter @dstd/core validate:tokens
 pnpm build
 pnpm typecheck
 
@@ -222,8 +222,8 @@ git push origin feat/nom-du-composant
 ### Avant d'ouvrir une PR
 
 - [ ] Les tokens ajoutés existent en `.ts`, `.json` ET `.css`
-- [ ] `pnpm --filter @tdgs/core validate:tokens` passe à 0 erreur
-- [ ] `pnpm build && pnpm --filter @tdgs/core validate:exports` réussit
+- [ ] `pnpm --filter @dstd/core validate:tokens` passe à 0 erreur
+- [ ] `pnpm build && pnpm --filter @dstd/core validate:exports` réussit
 - [ ] `pnpm typecheck` → zéro erreur TypeScript
 - [ ] Les composants respectent WCAG 2.1 AA (contraste, focus, ARIA)
 - [ ] La documentation est mise à jour dans `apps/docs/`
@@ -277,7 +277,7 @@ git push origin feat/nom-du-composant
 - [ ] Dark mode complet
 - [ ] Système d'icônes SVG
 - [ ] Support arabe RTL complet et testé
-- [ ] Publication npm `@tdgs/core`
+- [ ] Publication npm `@dstd/core`
 
 ---
 

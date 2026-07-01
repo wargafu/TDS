@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   quality:
-    name: Quality Checks — @tdgs/core
+    name: Quality Checks — @dstd/core
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -99,7 +99,7 @@ jobs:
       - name: Build
         run: node scripts/build.mjs
 
-      - name: Publish @tdgs/core
+      - name: Publish @dstd/core
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

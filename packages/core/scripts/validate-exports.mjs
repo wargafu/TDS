@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * TDGS Core — Export validation
+ * DSTD Core — Export validation
  *
  * Reads package.json exports and verifies every declared file exists in dist/.
  * Exits 1 if any export is broken.

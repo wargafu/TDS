@@ -15,7 +15,7 @@ données administratives. Ils sont accessibles et responsive par défaut.
 ## Importation
 
 ```css
-@import "@tdgs/core/components/table/table.css";
+@import "@dstd/core/components/table/table.css";
 ```
 
 ---
@@ -23,8 +23,8 @@ données administratives. Ils sont accessibles et responsive par défaut.
 ## Structure de base
 
 ```html
-<div class="tdgs-table-wrapper">
-  <table class="tdgs-table">
+<div class="dstd-table-wrapper">
+  <table class="dstd-table">
     <caption>Liste des demandes en cours — Préfecture de N'Djamena</caption>
     <thead>
       <tr>
@@ -32,7 +32,7 @@ données administratives. Ils sont accessibles et responsive par défaut.
         <th scope="col">Type</th>
         <th scope="col">Date</th>
         <th scope="col">Statut</th>
-        <th scope="col" class="tdgs-table__actions">Actions</th>
+        <th scope="col" class="dstd-table__actions">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -40,27 +40,27 @@ données administratives. Ils sont accessibles et responsive par défaut.
         <td><code>REF-2024-001234</code></td>
         <td>Carte nationale d'identité</td>
         <td>15 jan. 2024</td>
-        <td data-status="warning"><span class="tdgs-badge tdgs-badge--warning">En cours</span></td>
-        <td class="tdgs-table__actions">
-          <a href="/dossier/001234" class="tdgs-link">Consulter</a>
+        <td data-status="warning"><span class="dstd-badge dstd-badge--warning">En cours</span></td>
+        <td class="dstd-table__actions">
+          <a href="/dossier/001234" class="dstd-link">Consulter</a>
         </td>
       </tr>
       <tr>
         <td><code>REF-2024-001198</code></td>
         <td>Acte de naissance</td>
         <td>8 jan. 2024</td>
-        <td data-status="success"><span class="tdgs-badge tdgs-badge--success">Approuvé</span></td>
-        <td class="tdgs-table__actions">
-          <a href="/dossier/001198" class="tdgs-link">Consulter</a>
+        <td data-status="success"><span class="dstd-badge dstd-badge--success">Approuvé</span></td>
+        <td class="dstd-table__actions">
+          <a href="/dossier/001198" class="dstd-link">Consulter</a>
         </td>
       </tr>
       <tr>
         <td><code>REF-2024-001089</code></td>
         <td>Passeport</td>
         <td>3 jan. 2024</td>
-        <td data-status="danger"><span class="tdgs-badge tdgs-badge--danger">Rejeté</span></td>
-        <td class="tdgs-table__actions">
-          <a href="/dossier/001089" class="tdgs-link">Consulter</a>
+        <td data-status="danger"><span class="dstd-badge dstd-badge--danger">Rejeté</span></td>
+        <td class="dstd-table__actions">
+          <a href="/dossier/001089" class="dstd-link">Consulter</a>
         </td>
       </tr>
     </tbody>
@@ -74,13 +74,13 @@ données administratives. Ils sont accessibles et responsive par défaut.
 
 ```html
 <!-- Lignes alternées -->
-<table class="tdgs-table tdgs-table--striped">...</table>
+<table class="dstd-table dstd-table--striped">...</table>
 
 <!-- Avec bordures -->
-<table class="tdgs-table tdgs-table--bordered">...</table>
+<table class="dstd-table dstd-table--bordered">...</table>
 
 <!-- Compact (moins de padding) -->
-<table class="tdgs-table tdgs-table--compact">...</table>
+<table class="dstd-table dstd-table--compact">...</table>
 ```
 
 ---
@@ -96,7 +96,7 @@ données administratives. Ils sont accessibles et responsive par défaut.
 
 ```html
 <!-- Tableau avec en-têtes de ligne et colonne -->
-<table class="tdgs-table">
+<table class="dstd-table">
   <caption>Tarifs des services administratifs 2024</caption>
   <thead>
     <tr>

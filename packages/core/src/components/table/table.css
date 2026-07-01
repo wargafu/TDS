@@ -1,98 +1,98 @@
-/* TDGS Table component */
-.tdgs-table-wrapper {
+/* DSTD Table component */
+.dstd-table-wrapper {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--tdgs-neutral-200);
-  border-radius: var(--tdgs-radius-sm);
+  border: 1px solid var(--dstd-neutral-200);
+  border-radius: var(--dstd-radius-sm);
   -webkit-overflow-scrolling: touch;
 }
 
-.tdgs-table {
+.dstd-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--tdgs-font-size-sm);
-  line-height: var(--tdgs-line-height-md);
-  background: var(--tdgs-neutral-0);
+  font-size: var(--dstd-font-size-sm);
+  line-height: var(--dstd-line-height-md);
+  background: var(--dstd-neutral-0);
 }
 
 /* Caption */
-.tdgs-table caption {
-  font-size: var(--tdgs-font-size-sm);
-  color: var(--tdgs-neutral-600);
-  padding: var(--tdgs-spacing-2) 0;
+.dstd-table caption {
+  font-size: var(--dstd-font-size-sm);
+  color: var(--dstd-neutral-600);
+  padding: var(--dstd-spacing-2) 0;
   text-align: start;
   caption-side: bottom;
 }
 
 /* En-tête */
-.tdgs-table thead th {
-  background: var(--tdgs-neutral-100);
-  color: var(--tdgs-neutral-800);
-  font-weight: var(--tdgs-font-weight-semibold);
-  font-size: var(--tdgs-font-size-xs);
+.dstd-table thead th {
+  background: var(--dstd-neutral-100);
+  color: var(--dstd-neutral-800);
+  font-weight: var(--dstd-font-weight-semibold);
+  font-size: var(--dstd-font-size-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: var(--tdgs-spacing-3) var(--tdgs-spacing-4);
+  padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
   text-align: start;
-  border-bottom: 2px solid var(--tdgs-neutral-300);
+  border-bottom: 2px solid var(--dstd-neutral-300);
   white-space: nowrap;
 }
 
 /* Cellules */
-.tdgs-table tbody td {
-  padding: var(--tdgs-spacing-3) var(--tdgs-spacing-4);
-  border-bottom: 1px solid var(--tdgs-neutral-200);
-  color: var(--tdgs-neutral-800);
+.dstd-table tbody td {
+  padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
+  border-bottom: 1px solid var(--dstd-neutral-200);
+  color: var(--dstd-neutral-800);
   vertical-align: middle;
 }
 
-.tdgs-table tbody tr:last-child td {
+.dstd-table tbody tr:last-child td {
   border-bottom: none;
 }
 
 /* Hover ligne */
-.tdgs-table tbody tr:hover td {
-  background: var(--tdgs-color-blue-50);
+.dstd-table tbody tr:hover td {
+  background: var(--dstd-color-blue-50);
 }
 
 /* Lignes alternées */
-.tdgs-table--striped tbody tr:nth-child(even) td {
-  background: var(--tdgs-neutral-100);
+.dstd-table--striped tbody tr:nth-child(even) td {
+  background: var(--dstd-neutral-100);
 }
 
-.tdgs-table--striped tbody tr:nth-child(even):hover td {
-  background: var(--tdgs-color-blue-50);
+.dstd-table--striped tbody tr:nth-child(even):hover td {
+  background: var(--dstd-color-blue-50);
 }
 
 /* Bordures */
-.tdgs-table--bordered td,
-.tdgs-table--bordered th {
-  border: 1px solid var(--tdgs-neutral-200);
+.dstd-table--bordered td,
+.dstd-table--bordered th {
+  border: 1px solid var(--dstd-neutral-200);
 }
 
 /* Compact */
-.tdgs-table--compact td,
-.tdgs-table--compact th {
-  padding: var(--tdgs-spacing-2) var(--tdgs-spacing-3);
+.dstd-table--compact td,
+.dstd-table--compact th {
+  padding: var(--dstd-spacing-2) var(--dstd-spacing-3);
 }
 
 /* Cellules de statut */
-.tdgs-table td[data-status="success"] {
-  color: var(--tdgs-semantic-success-text);
-  font-weight: var(--tdgs-font-weight-medium);
+.dstd-table td[data-status="success"] {
+  color: var(--dstd-semantic-success-text);
+  font-weight: var(--dstd-font-weight-medium);
 }
-.tdgs-table td[data-status="danger"] {
-  color: var(--tdgs-semantic-danger-text);
-  font-weight: var(--tdgs-font-weight-medium);
+.dstd-table td[data-status="danger"] {
+  color: var(--dstd-semantic-danger-text);
+  font-weight: var(--dstd-font-weight-medium);
 }
-.tdgs-table td[data-status="warning"] {
-  color: var(--tdgs-semantic-warning-icon);
-  font-weight: var(--tdgs-font-weight-medium);
+.dstd-table td[data-status="warning"] {
+  color: var(--dstd-semantic-warning-icon);
+  font-weight: var(--dstd-font-weight-medium);
 }
 
 /* Colonne actions */
-.tdgs-table th.tdgs-table__actions,
-.tdgs-table td.tdgs-table__actions {
+.dstd-table th.dstd-table__actions,
+.dstd-table td.dstd-table__actions {
   text-align: end;
   white-space: nowrap;
   width: 1%;

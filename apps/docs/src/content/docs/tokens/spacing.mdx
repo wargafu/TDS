@@ -30,26 +30,26 @@ Les tokens utilisent des nombres entiers qui correspondent au nombre d'unités d
 
 | Token | Variable CSS | rem | px | Zone d'usage |
 |---|---|---|---|---|
-| `0` | `--tdgs-spacing-0` | `0` | 0px | Aucun espace |
-| `1` | `--tdgs-spacing-1` | `0.25rem` | 4px | Micro-spacing, séparateurs |
-| `2` | `--tdgs-spacing-2` | `0.5rem` | 8px | Icônes et labels, espaces très fins |
-| `3` | `--tdgs-spacing-3` | `0.75rem` | 12px | Padding compact, interlignes serrés |
-| **`4`** | **`--tdgs-spacing-4`** | **`1rem`** | **16px** | **Padding standard, marge de base** |
-| `5` | `--tdgs-spacing-5` | `1.25rem` | 20px | Formulaires, boutons, listes |
-| `6` | `--tdgs-spacing-6` | `1.5rem` | 24px | Groupes de composants, cards |
-| `8` | `--tdgs-spacing-8` | `2rem` | 32px | Espaces entre sections |
-| `10` | `--tdgs-spacing-10` | `2.5rem` | 40px | Layout, barres d'actions |
-| `12` | `--tdgs-spacing-12` | `3rem` | 48px | Espaces larges |
-| `14` | `--tdgs-spacing-14` | `3.5rem` | 56px | Intervalles personnalisés |
-| `16` | `--tdgs-spacing-16` | `4rem` | 64px | Marges de page, sections majeures |
-| `20` | `--tdgs-spacing-20` | `5rem` | 80px | Zones de contenu larges |
-| `24` | `--tdgs-spacing-24` | `6rem` | 96px | Layout top-level |
-| `32` | `--tdgs-spacing-32` | `8rem` | 128px | Marges horizontales/verticales |
-| `40` | `--tdgs-spacing-40` | `10rem` | 160px | Buffers de contenu |
-| `48` | `--tdgs-spacing-48` | `12rem` | 192px | Tableaux, formulaires groupés |
-| `64` | `--tdgs-spacing-64` | `16rem` | 256px | Bannière, héros |
-| `80` | `--tdgs-spacing-80` | `20rem` | 320px | Grands blocs de page |
-| `96` | `--tdgs-spacing-96` | `24rem` | 384px | Extra-large, templates |
+| `0` | `--dstd-spacing-0` | `0` | 0px | Aucun espace |
+| `1` | `--dstd-spacing-1` | `0.25rem` | 4px | Micro-spacing, séparateurs |
+| `2` | `--dstd-spacing-2` | `0.5rem` | 8px | Icônes et labels, espaces très fins |
+| `3` | `--dstd-spacing-3` | `0.75rem` | 12px | Padding compact, interlignes serrés |
+| **`4`** | **`--dstd-spacing-4`** | **`1rem`** | **16px** | **Padding standard, marge de base** |
+| `5` | `--dstd-spacing-5` | `1.25rem` | 20px | Formulaires, boutons, listes |
+| `6` | `--dstd-spacing-6` | `1.5rem` | 24px | Groupes de composants, cards |
+| `8` | `--dstd-spacing-8` | `2rem` | 32px | Espaces entre sections |
+| `10` | `--dstd-spacing-10` | `2.5rem` | 40px | Layout, barres d'actions |
+| `12` | `--dstd-spacing-12` | `3rem` | 48px | Espaces larges |
+| `14` | `--dstd-spacing-14` | `3.5rem` | 56px | Intervalles personnalisés |
+| `16` | `--dstd-spacing-16` | `4rem` | 64px | Marges de page, sections majeures |
+| `20` | `--dstd-spacing-20` | `5rem` | 80px | Zones de contenu larges |
+| `24` | `--dstd-spacing-24` | `6rem` | 96px | Layout top-level |
+| `32` | `--dstd-spacing-32` | `8rem` | 128px | Marges horizontales/verticales |
+| `40` | `--dstd-spacing-40` | `10rem` | 160px | Buffers de contenu |
+| `48` | `--dstd-spacing-48` | `12rem` | 192px | Tableaux, formulaires groupés |
+| `64` | `--dstd-spacing-64` | `16rem` | 256px | Bannière, héros |
+| `80` | `--dstd-spacing-80` | `20rem` | 320px | Grands blocs de page |
+| `96` | `--dstd-spacing-96` | `24rem` | 384px | Extra-large, templates |
 
 ---
 
@@ -59,13 +59,13 @@ Les tokens utilisent des nombres entiers qui correspondent au nombre d'unités d
 Espaces internes très petits : icônes et textes, badges, séparateurs fins, padding de tags.
 
 ```css
-.tdgs-badge {
-  padding: var(--tdgs-spacing-1) var(--tdgs-spacing-2);
+.dstd-badge {
+  padding: var(--dstd-spacing-1) var(--dstd-spacing-2);
   /* 4px vertical, 8px horizontal */
 }
 
-.tdgs-icon-label {
-  gap: var(--tdgs-spacing-2); /* 8px entre icône et texte */
+.dstd-icon-label {
+  gap: var(--dstd-spacing-2); /* 8px entre icône et texte */
 }
 ```
 
@@ -73,12 +73,12 @@ Espaces internes très petits : icônes et textes, badges, séparateurs fins, pa
 Padding de composants, marges internes, espaces entre champs de formulaire.
 
 ```css
-.tdgs-card {
-  padding: var(--tdgs-spacing-6); /* 24px */
+.dstd-card {
+  padding: var(--dstd-spacing-6); /* 24px */
 }
 
-.tdgs-field + .tdgs-field {
-  margin-top: var(--tdgs-spacing-5); /* 20px */
+.dstd-field + .dstd-field {
+  margin-top: var(--dstd-spacing-5); /* 20px */
 }
 ```
 
@@ -87,11 +87,11 @@ Espaces entre blocs fonctionnels, séparation de sections, zones d'actions.
 
 ```css
 .page-section + .page-section {
-  margin-top: var(--tdgs-spacing-8); /* 32px */
+  margin-top: var(--dstd-spacing-8); /* 32px */
 }
 
 .page-actions {
-  padding: var(--tdgs-spacing-6) var(--tdgs-spacing-10);
+  padding: var(--dstd-spacing-6) var(--dstd-spacing-10);
 }
 ```
 
@@ -100,14 +100,14 @@ Marges de page, padding de layout, zones de contenu de grande taille.
 
 ```css
 .page-container {
-  padding: 0 var(--tdgs-spacing-6);   /* mobile : 24px */
+  padding: 0 var(--dstd-spacing-6);   /* mobile : 24px */
   max-width: 1024px;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .page-container {
-    padding: 0 var(--tdgs-spacing-10); /* desktop : 40px */
+    padding: 0 var(--dstd-spacing-10); /* desktop : 40px */
   }
 }
 ```
@@ -139,26 +139,26 @@ Marges de page, padding de layout, zones de contenu de grande taille.
 ## Variables CSS — Référence
 
 ```css
---tdgs-spacing-0:  0rem;      /*   0px */
---tdgs-spacing-1:  0.25rem;   /*   4px */
---tdgs-spacing-2:  0.5rem;    /*   8px */
---tdgs-spacing-3:  0.75rem;   /*  12px */
---tdgs-spacing-4:  1rem;      /*  16px */
---tdgs-spacing-5:  1.25rem;   /*  20px */
---tdgs-spacing-6:  1.5rem;    /*  24px */
---tdgs-spacing-8:  2rem;      /*  32px */
---tdgs-spacing-10: 2.5rem;    /*  40px */
---tdgs-spacing-12: 3rem;      /*  48px */
---tdgs-spacing-14: 3.5rem;    /*  56px */
---tdgs-spacing-16: 4rem;      /*  64px */
---tdgs-spacing-20: 5rem;      /*  80px */
---tdgs-spacing-24: 6rem;      /*  96px */
---tdgs-spacing-32: 8rem;      /* 128px */
---tdgs-spacing-40: 10rem;     /* 160px */
---tdgs-spacing-48: 12rem;     /* 192px */
---tdgs-spacing-64: 16rem;     /* 256px */
---tdgs-spacing-80: 20rem;     /* 320px */
---tdgs-spacing-96: 24rem;     /* 384px */
+--dstd-spacing-0:  0rem;      /*   0px */
+--dstd-spacing-1:  0.25rem;   /*   4px */
+--dstd-spacing-2:  0.5rem;    /*   8px */
+--dstd-spacing-3:  0.75rem;   /*  12px */
+--dstd-spacing-4:  1rem;      /*  16px */
+--dstd-spacing-5:  1.25rem;   /*  20px */
+--dstd-spacing-6:  1.5rem;    /*  24px */
+--dstd-spacing-8:  2rem;      /*  32px */
+--dstd-spacing-10: 2.5rem;    /*  40px */
+--dstd-spacing-12: 3rem;      /*  48px */
+--dstd-spacing-14: 3.5rem;    /*  56px */
+--dstd-spacing-16: 4rem;      /*  64px */
+--dstd-spacing-20: 5rem;      /*  80px */
+--dstd-spacing-24: 6rem;      /*  96px */
+--dstd-spacing-32: 8rem;      /* 128px */
+--dstd-spacing-40: 10rem;     /* 160px */
+--dstd-spacing-48: 12rem;     /* 192px */
+--dstd-spacing-64: 16rem;     /* 256px */
+--dstd-spacing-80: 20rem;     /* 320px */
+--dstd-spacing-96: 24rem;     /* 384px */
 ```
 
 <Aside type="caution" title="Cibles tactiles">

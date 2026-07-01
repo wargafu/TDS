@@ -18,13 +18,13 @@ Les valeurs arbitraires hors de l'échelle sont interdites.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `base` | `--tdgs-z-base` | `0` | Contenu de base, layout normal |
-| `dropdown` | `--tdgs-z-dropdown` | `100` | Menus déroulants, popovers |
-| `sticky` | `--tdgs-z-sticky` | `200` | Navigation fixe, barres collantes |
-| `overlay` | `--tdgs-z-overlay` | `300` | Backdrops masquants |
-| `modal` | `--tdgs-z-modal` | `400` | Fenêtres modales |
-| `toast` | `--tdgs-z-toast` | `500` | Notifications, toasts |
-| `tooltip` | `--tdgs-z-tooltip` | `600` | Tooltips, info-bulles |
+| `base` | `--dstd-z-base` | `0` | Contenu de base, layout normal |
+| `dropdown` | `--dstd-z-dropdown` | `100` | Menus déroulants, popovers |
+| `sticky` | `--dstd-z-sticky` | `200` | Navigation fixe, barres collantes |
+| `overlay` | `--dstd-z-overlay` | `300` | Backdrops masquants |
+| `modal` | `--dstd-z-modal` | `400` | Fenêtres modales |
+| `toast` | `--dstd-z-toast` | `500` | Notifications, toasts |
+| `tooltip` | `--dstd-z-tooltip` | `600` | Tooltips, info-bulles |
 
 **Ordre de priorité absolue :**
 `tooltip (600)` > `toast (500)` > `modal (400)` > `overlay (300)` > `sticky (200)` > `dropdown (100)` > `base (0)`
@@ -50,24 +50,24 @@ Les valeurs arbitraires hors de l'échelle sont interdites.
 ## Variables CSS
 
 ```css
---tdgs-z-base:     0;
---tdgs-z-dropdown: 100;
---tdgs-z-sticky:   200;
---tdgs-z-overlay:  300;
---tdgs-z-modal:    400;
---tdgs-z-toast:    500;
---tdgs-z-tooltip:  600;
+--dstd-z-base:     0;
+--dstd-z-dropdown: 100;
+--dstd-z-sticky:   200;
+--dstd-z-overlay:  300;
+--dstd-z-modal:    400;
+--dstd-z-toast:    500;
+--dstd-z-tooltip:  600;
 ```
 
 ```css
 /* Exemple d'usage */
 .ma-modale {
-  z-index: var(--tdgs-z-modal);    /* 400 */
+  z-index: var(--dstd-z-modal);    /* 400 */
   position: fixed;
 }
 
 .mon-backdrop {
-  z-index: var(--tdgs-z-overlay);  /* 300 */
+  z-index: var(--dstd-z-overlay);  /* 300 */
   position: fixed;
   inset: 0;
 }
