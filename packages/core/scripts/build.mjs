@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * DSTD Core — Build pipeline
+ * TDS Core — Build pipeline
  *
  * Steps:
  *   1. Clean dist/
