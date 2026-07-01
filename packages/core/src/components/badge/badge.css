@@ -1,58 +1,58 @@
 /* DSTD Badge / Tag component */
-.dstd-badge {
+.tds-badge {
   display: inline-flex;
   align-items: center;
-  gap: var(--dstd-spacing-1);
+  gap: var(--tds-spacing-1);
   padding: 0.2rem 0.5rem;
-  border-radius: var(--dstd-radius-full);
+  border-radius: var(--tds-radius-full);
   border: 1px solid transparent;
-  font-size: var(--dstd-font-size-xs);
-  font-weight: var(--dstd-font-weight-semibold);
+  font-size: var(--tds-font-size-xs);
+  font-weight: var(--tds-font-weight-semibold);
   line-height: 1.4;
   white-space: nowrap;
   vertical-align: middle;
 }
 
 /* Tailles */
-.dstd-badge--sm { padding: 0.1rem 0.375rem; font-size: var(--dstd-font-size-xs); }
-.dstd-badge--md { padding: 0.2rem 0.5rem;   font-size: var(--dstd-font-size-xs); }
+.tds-badge--sm { padding: 0.1rem 0.375rem; font-size: var(--tds-font-size-xs); }
+.tds-badge--md { padding: 0.2rem 0.5rem;   font-size: var(--tds-font-size-xs); }
 
 /* Forme rectangulaire */
-.dstd-badge--square { border-radius: var(--dstd-radius-xs); }
+.tds-badge--square { border-radius: var(--tds-radius-xs); }
 
 /* Variantes */
-.dstd-badge--default {
-  background: var(--dstd-neutral-100);
-  color: var(--dstd-neutral-700);
-  border-color: var(--dstd-neutral-200);
+.tds-badge--default {
+  background: var(--tds-neutral-100);
+  color: var(--tds-neutral-700);
+  border-color: var(--tds-neutral-200);
 }
 
-.dstd-badge--info {
-  background: var(--dstd-semantic-info-bg);
-  color: var(--dstd-semantic-info-text);
-  border-color: var(--dstd-semantic-info-border);
+.tds-badge--info {
+  background: var(--tds-semantic-info-bg);
+  color: var(--tds-semantic-info-text);
+  border-color: var(--tds-semantic-info-border);
 }
 
-.dstd-badge--success {
-  background: var(--dstd-semantic-success-bg);
-  color: var(--dstd-semantic-success-text);
-  border-color: var(--dstd-semantic-success-border);
+.tds-badge--success {
+  background: var(--tds-semantic-success-bg);
+  color: var(--tds-semantic-success-text);
+  border-color: var(--tds-semantic-success-border);
 }
 
-.dstd-badge--warning {
-  background: var(--dstd-semantic-warning-bg);
-  color: var(--dstd-semantic-warning-text);
-  border-color: var(--dstd-semantic-warning-border);
+.tds-badge--warning {
+  background: var(--tds-semantic-warning-bg);
+  color: var(--tds-semantic-warning-text);
+  border-color: var(--tds-semantic-warning-border);
 }
 
-.dstd-badge--danger {
-  background: var(--dstd-semantic-danger-bg);
-  color: var(--dstd-semantic-danger-text);
-  border-color: var(--dstd-semantic-danger-border);
+.tds-badge--danger {
+  background: var(--tds-semantic-danger-bg);
+  color: var(--tds-semantic-danger-text);
+  border-color: var(--tds-semantic-danger-border);
 }
 
 /* Point de statut */
-.dstd-badge__dot {
+.tds-badge__dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;

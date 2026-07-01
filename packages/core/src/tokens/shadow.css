@@ -1,9 +1,9 @@
 /* DSTD shadow tokens */
 :root{
-  --dstd-shadow-none: none;
-  --dstd-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --dstd-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --dstd-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --dstd-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
-  --dstd-shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.16);
+  --tds-shadow-none: none;
+  --tds-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --tds-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --tds-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --tds-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --tds-shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.16);
 }

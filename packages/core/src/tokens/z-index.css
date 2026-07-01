@@ -1,10 +1,10 @@
 /* DSTD z-index tokens */
 :root{
-  --dstd-z-base: 0;
-  --dstd-z-dropdown: 100;
-  --dstd-z-sticky: 200;
-  --dstd-z-overlay: 300;
-  --dstd-z-modal: 400;
-  --dstd-z-toast: 500;
-  --dstd-z-tooltip: 600;
+  --tds-z-base: 0;
+  --tds-z-dropdown: 100;
+  --tds-z-sticky: 200;
+  --tds-z-overlay: 300;
+  --tds-z-modal: 400;
+  --tds-z-toast: 500;
+  --tds-z-tooltip: 600;
 }

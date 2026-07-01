@@ -1,98 +1,98 @@
 /* DSTD Table component */
-.dstd-table-wrapper {
+.tds-table-wrapper {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--dstd-neutral-200);
-  border-radius: var(--dstd-radius-sm);
+  border: 1px solid var(--tds-neutral-200);
+  border-radius: var(--tds-radius-sm);
   -webkit-overflow-scrolling: touch;
 }
 
-.dstd-table {
+.tds-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--dstd-font-size-sm);
-  line-height: var(--dstd-line-height-md);
-  background: var(--dstd-neutral-0);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-md);
+  background: var(--tds-neutral-0);
 }
 
 /* Caption */
-.dstd-table caption {
-  font-size: var(--dstd-font-size-sm);
-  color: var(--dstd-neutral-600);
-  padding: var(--dstd-spacing-2) 0;
+.tds-table caption {
+  font-size: var(--tds-font-size-sm);
+  color: var(--tds-neutral-600);
+  padding: var(--tds-spacing-2) 0;
   text-align: start;
   caption-side: bottom;
 }
 
 /* En-tête */
-.dstd-table thead th {
-  background: var(--dstd-neutral-100);
-  color: var(--dstd-neutral-800);
-  font-weight: var(--dstd-font-weight-semibold);
-  font-size: var(--dstd-font-size-xs);
+.tds-table thead th {
+  background: var(--tds-neutral-100);
+  color: var(--tds-neutral-800);
+  font-weight: var(--tds-font-weight-semibold);
+  font-size: var(--tds-font-size-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
+  padding: var(--tds-spacing-3) var(--tds-spacing-4);
   text-align: start;
-  border-bottom: 2px solid var(--dstd-neutral-300);
+  border-bottom: 2px solid var(--tds-neutral-300);
   white-space: nowrap;
 }
 
 /* Cellules */
-.dstd-table tbody td {
-  padding: var(--dstd-spacing-3) var(--dstd-spacing-4);
-  border-bottom: 1px solid var(--dstd-neutral-200);
-  color: var(--dstd-neutral-800);
+.tds-table tbody td {
+  padding: var(--tds-spacing-3) var(--tds-spacing-4);
+  border-bottom: 1px solid var(--tds-neutral-200);
+  color: var(--tds-neutral-800);
   vertical-align: middle;
 }
 
-.dstd-table tbody tr:last-child td {
+.tds-table tbody tr:last-child td {
   border-bottom: none;
 }
 
 /* Hover ligne */
-.dstd-table tbody tr:hover td {
-  background: var(--dstd-color-blue-50);
+.tds-table tbody tr:hover td {
+  background: var(--tds-color-blue-50);
 }
 
 /* Lignes alternées */
-.dstd-table--striped tbody tr:nth-child(even) td {
-  background: var(--dstd-neutral-100);
+.tds-table--striped tbody tr:nth-child(even) td {
+  background: var(--tds-neutral-100);
 }
 
-.dstd-table--striped tbody tr:nth-child(even):hover td {
-  background: var(--dstd-color-blue-50);
+.tds-table--striped tbody tr:nth-child(even):hover td {
+  background: var(--tds-color-blue-50);
 }
 
 /* Bordures */
-.dstd-table--bordered td,
-.dstd-table--bordered th {
-  border: 1px solid var(--dstd-neutral-200);
+.tds-table--bordered td,
+.tds-table--bordered th {
+  border: 1px solid var(--tds-neutral-200);
 }
 
 /* Compact */
-.dstd-table--compact td,
-.dstd-table--compact th {
-  padding: var(--dstd-spacing-2) var(--dstd-spacing-3);
+.tds-table--compact td,
+.tds-table--compact th {
+  padding: var(--tds-spacing-2) var(--tds-spacing-3);
 }
 
 /* Cellules de statut */
-.dstd-table td[data-status="success"] {
-  color: var(--dstd-semantic-success-text);
-  font-weight: var(--dstd-font-weight-medium);
+.tds-table td[data-status="success"] {
+  color: var(--tds-semantic-success-text);
+  font-weight: var(--tds-font-weight-medium);
 }
-.dstd-table td[data-status="danger"] {
-  color: var(--dstd-semantic-danger-text);
-  font-weight: var(--dstd-font-weight-medium);
+.tds-table td[data-status="danger"] {
+  color: var(--tds-semantic-danger-text);
+  font-weight: var(--tds-font-weight-medium);
 }
-.dstd-table td[data-status="warning"] {
-  color: var(--dstd-semantic-warning-icon);
-  font-weight: var(--dstd-font-weight-medium);
+.tds-table td[data-status="warning"] {
+  color: var(--tds-semantic-warning-icon);
+  font-weight: var(--tds-font-weight-medium);
 }
 
 /* Colonne actions */
-.dstd-table th.dstd-table__actions,
-.dstd-table td.dstd-table__actions {
+.tds-table th.tds-table__actions,
+.tds-table td.tds-table__actions {
   text-align: end;
   white-space: nowrap;
   width: 1%;

@@ -1,87 +1,87 @@
 /* DSTD typography tokens */
 :root{
   /* font families */
-  --dstd-font-family-primary: "Source Sans 3", "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --dstd-font-family-ar: "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif;
-  --dstd-font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  --tds-font-family-primary: "Source Sans 3", "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --tds-font-family-ar: "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif;
+  --tds-font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
 
   /* sizes (rem) */
-  --dstd-font-size-xs: 0.75rem; /*12px*/
-  --dstd-font-size-sm: 0.875rem; /*14px*/
-  --dstd-font-size-md: 1rem; /*16px*/
-  --dstd-font-size-lg: 1.125rem; /*18px*/
-  --dstd-font-size-xl: 1.25rem; /*20px*/
-  --dstd-font-size-2xl: 1.5rem; /*24px*/
-  --dstd-font-size-3xl: 1.875rem; /*30px*/
-  --dstd-font-size-4xl: 2.25rem; /*36px*/
-  --dstd-font-size-5xl: 3rem; /*48px*/
+  --tds-font-size-xs: 0.75rem; /*12px*/
+  --tds-font-size-sm: 0.875rem; /*14px*/
+  --tds-font-size-md: 1rem; /*16px*/
+  --tds-font-size-lg: 1.125rem; /*18px*/
+  --tds-font-size-xl: 1.25rem; /*20px*/
+  --tds-font-size-2xl: 1.5rem; /*24px*/
+  --tds-font-size-3xl: 1.875rem; /*30px*/
+  --tds-font-size-4xl: 2.25rem; /*36px*/
+  --tds-font-size-5xl: 3rem; /*48px*/
 
   /* line-heights */
-  --dstd-line-height-xs: 1.2;
-  --dstd-line-height-sm: 1.3;
-  --dstd-line-height-md: 1.5;
-  --dstd-line-height-lg: 1.5;
-  --dstd-line-height-xl: 1.35;
-  --dstd-line-height-2xl: 1.3;
-  --dstd-line-height-3xl: 1.2;
-  --dstd-line-height-4xl: 1.15;
-  --dstd-line-height-5xl: 1.1;
+  --tds-line-height-xs: 1.2;
+  --tds-line-height-sm: 1.3;
+  --tds-line-height-md: 1.5;
+  --tds-line-height-lg: 1.5;
+  --tds-line-height-xl: 1.35;
+  --tds-line-height-2xl: 1.3;
+  --tds-line-height-3xl: 1.2;
+  --tds-line-height-4xl: 1.15;
+  --tds-line-height-5xl: 1.1;
 
   /* weights */
-  --dstd-font-weight-light: 300;
-  --dstd-font-weight-regular: 400;
-  --dstd-font-weight-medium: 500;
-  --dstd-font-weight-semibold: 600;
-  --dstd-font-weight-bold: 700;
-  --dstd-font-weight-xbold: 800;
+  --tds-font-weight-light: 300;
+  --tds-font-weight-regular: 400;
+  --tds-font-weight-medium: 500;
+  --tds-font-weight-semibold: 600;
+  --tds-font-weight-bold: 700;
+  --tds-font-weight-xbold: 800;
 
   /* text style snippets (font-size + line-height + weight) */
-  --dstd-text-display-size: var(--dstd-font-size-5xl);
-  --dstd-text-display-line-height: var(--dstd-line-height-5xl);
-  --dstd-text-display-weight: var(--dstd-font-weight-semibold);
+  --tds-text-display-size: var(--tds-font-size-5xl);
+  --tds-text-display-line-height: var(--tds-line-height-5xl);
+  --tds-text-display-weight: var(--tds-font-weight-semibold);
 
-  --dstd-text-page-title-size: var(--dstd-font-size-4xl);
-  --dstd-text-page-title-line-height: var(--dstd-line-height-4xl);
-  --dstd-text-page-title-weight: var(--dstd-font-weight-semibold);
+  --tds-text-page-title-size: var(--tds-font-size-4xl);
+  --tds-text-page-title-line-height: var(--tds-line-height-4xl);
+  --tds-text-page-title-weight: var(--tds-font-weight-semibold);
 
-  --dstd-text-section-title-size: var(--dstd-font-size-2xl);
-  --dstd-text-section-title-line-height: var(--dstd-line-height-2xl);
-  --dstd-text-section-title-weight: var(--dstd-font-weight-semibold);
+  --tds-text-section-title-size: var(--tds-font-size-2xl);
+  --tds-text-section-title-line-height: var(--tds-line-height-2xl);
+  --tds-text-section-title-weight: var(--tds-font-weight-semibold);
 
-  --dstd-text-subsection-title-size: var(--dstd-font-size-xl);
-  --dstd-text-subsection-title-line-height: var(--dstd-line-height-xl);
-  --dstd-text-subsection-title-weight: var(--dstd-font-weight-medium);
+  --tds-text-subsection-title-size: var(--tds-font-size-xl);
+  --tds-text-subsection-title-line-height: var(--tds-line-height-xl);
+  --tds-text-subsection-title-weight: var(--tds-font-weight-medium);
 
-  --dstd-text-body-large-size: var(--dstd-font-size-lg);
-  --dstd-text-body-large-line-height: var(--dstd-line-height-lg);
-  --dstd-text-body-large-weight: var(--dstd-font-weight-regular);
+  --tds-text-body-large-size: var(--tds-font-size-lg);
+  --tds-text-body-large-line-height: var(--tds-line-height-lg);
+  --tds-text-body-large-weight: var(--tds-font-weight-regular);
 
-  --dstd-text-body-size: var(--dstd-font-size-md);
-  --dstd-text-body-line-height: var(--dstd-line-height-md);
-  --dstd-text-body-weight: var(--dstd-font-weight-regular);
+  --tds-text-body-size: var(--tds-font-size-md);
+  --tds-text-body-line-height: var(--tds-line-height-md);
+  --tds-text-body-weight: var(--tds-font-weight-regular);
 
-  --dstd-text-body-small-size: var(--dstd-font-size-sm);
-  --dstd-text-body-small-line-height: var(--dstd-line-height-sm);
-  --dstd-text-body-small-weight: var(--dstd-font-weight-regular);
+  --tds-text-body-small-size: var(--tds-font-size-sm);
+  --tds-text-body-small-line-height: var(--tds-line-height-sm);
+  --tds-text-body-small-weight: var(--tds-font-weight-regular);
 
-  --dstd-text-caption-size: var(--dstd-font-size-xs);
-  --dstd-text-caption-line-height: var(--dstd-line-height-xs);
-  --dstd-text-caption-weight: var(--dstd-font-weight-regular);
+  --tds-text-caption-size: var(--tds-font-size-xs);
+  --tds-text-caption-line-height: var(--tds-line-height-xs);
+  --tds-text-caption-weight: var(--tds-font-weight-regular);
 
-  --dstd-text-label-size: var(--dstd-font-size-sm);
-  --dstd-text-label-line-height: var(--dstd-line-height-sm);
-  --dstd-text-label-weight: var(--dstd-font-weight-semibold);
+  --tds-text-label-size: var(--tds-font-size-sm);
+  --tds-text-label-line-height: var(--tds-line-height-sm);
+  --tds-text-label-weight: var(--tds-font-weight-semibold);
 
-  --dstd-text-button-size: var(--dstd-font-size-md);
-  --dstd-text-button-line-height: var(--dstd-line-height-md);
-  --dstd-text-button-weight: var(--dstd-font-weight-semibold);
+  --tds-text-button-size: var(--tds-font-size-md);
+  --tds-text-button-line-height: var(--tds-line-height-md);
+  --tds-text-button-weight: var(--tds-font-weight-semibold);
 
-  --dstd-text-link-size: var(--dstd-font-size-md);
-  --dstd-text-link-line-height: var(--dstd-line-height-md);
-  --dstd-text-link-weight: var(--dstd-font-weight-medium);
+  --tds-text-link-size: var(--tds-font-size-md);
+  --tds-text-link-line-height: var(--tds-line-height-md);
+  --tds-text-link-weight: var(--tds-font-weight-medium);
 }
 
 /* RTL / Arabic usage helper */
 :root[lang="ar"], :root:lang(ar) {
-  --dstd-default-line-height-ar: 1.6; /* recommend slightly larger line-height for Arabic */
+  --tds-default-line-height-ar: 1.6; /* recommend slightly larger line-height for Arabic */
 }

@@ -1,25 +1,25 @@
 /* DSTD spacing tokens */
 :root{
-  --dstd-spacing-0: 0rem;
-  --dstd-spacing-1: 0.25rem;  /* 4px */
-  --dstd-spacing-2: 0.5rem;   /* 8px */
-  --dstd-spacing-3: 0.75rem;  /* 12px */
-  --dstd-spacing-4: 1rem;     /* 16px */
-  --dstd-spacing-5: 1.25rem;  /* 20px */
-  --dstd-spacing-6: 1.5rem;   /* 24px */
-  --dstd-spacing-8: 2rem;     /* 32px */
-  --dstd-spacing-10: 2.5rem;  /* 40px */
-  --dstd-spacing-12: 3rem;    /* 48px */
-  --dstd-spacing-14: 3.5rem;  /* 56px */
-  --dstd-spacing-16: 4rem;    /* 64px */
-  --dstd-spacing-20: 5rem;    /* 80px */
-  --dstd-spacing-24: 6rem;    /* 96px */
-  --dstd-spacing-28: 7rem;    /* 112px */
-  --dstd-spacing-32: 8rem;    /* 128px */
-  --dstd-spacing-40: 10rem;   /* 160px */
-  --dstd-spacing-48: 12rem;   /* 192px */
-  --dstd-spacing-56: 14rem;   /* 224px */
-  --dstd-spacing-64: 16rem;   /* 256px */
-  --dstd-spacing-80: 20rem;   /* 320px */
-  --dstd-spacing-96: 24rem;   /* 384px */
+  --tds-spacing-0: 0rem;
+  --tds-spacing-1: 0.25rem;  /* 4px */
+  --tds-spacing-2: 0.5rem;   /* 8px */
+  --tds-spacing-3: 0.75rem;  /* 12px */
+  --tds-spacing-4: 1rem;     /* 16px */
+  --tds-spacing-5: 1.25rem;  /* 20px */
+  --tds-spacing-6: 1.5rem;   /* 24px */
+  --tds-spacing-8: 2rem;     /* 32px */
+  --tds-spacing-10: 2.5rem;  /* 40px */
+  --tds-spacing-12: 3rem;    /* 48px */
+  --tds-spacing-14: 3.5rem;  /* 56px */
+  --tds-spacing-16: 4rem;    /* 64px */
+  --tds-spacing-20: 5rem;    /* 80px */
+  --tds-spacing-24: 6rem;    /* 96px */
+  --tds-spacing-28: 7rem;    /* 112px */
+  --tds-spacing-32: 8rem;    /* 128px */
+  --tds-spacing-40: 10rem;   /* 160px */
+  --tds-spacing-48: 12rem;   /* 192px */
+  --tds-spacing-56: 14rem;   /* 224px */
+  --tds-spacing-64: 16rem;   /* 256px */
+  --tds-spacing-80: 20rem;   /* 320px */
+  --tds-spacing-96: 24rem;   /* 384px */
 }

@@ -1,13 +1,13 @@
 /* DSTD motion tokens */
 :root{
-  --dstd-motion-instant: 0ms;
-  --dstd-motion-fast: 120ms;
-  --dstd-motion-normal: 200ms;
-  --dstd-motion-slow: 320ms;
-  --dstd-motion-very-slow: 500ms;
+  --tds-motion-instant: 0ms;
+  --tds-motion-fast: 120ms;
+  --tds-motion-normal: 200ms;
+  --tds-motion-slow: 320ms;
+  --tds-motion-very-slow: 500ms;
 
-  --dstd-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --dstd-easing-enter: cubic-bezier(0.3, 0, 0.15, 1);
-  --dstd-easing-exit: cubic-bezier(0.4, 0, 1, 1);
-  --dstd-easing-linear: linear;
+  --tds-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --tds-easing-enter: cubic-bezier(0.3, 0, 0.15, 1);
+  --tds-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --tds-easing-linear: linear;
 }
