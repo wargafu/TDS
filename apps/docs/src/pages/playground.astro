@@ -11,6 +11,12 @@ const badgeVariants = ['default', 'info', 'success', 'warning', 'danger'];
 const alertVariants = ['info', 'success', 'warning', 'danger'];
 const cardVariants = ['flat', 'elevated', 'outlined'];
 const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalone'];
+const breadcrumbTrail = [
+  { label: 'Accueil', href: '#' },
+  { label: 'Démarches', href: '#' },
+  { label: 'Renouvellement de carte' },
+];
+const paginationPages = [1, 2, 3, 4, 5];
 ---
 <!doctype html>
 <html lang="fr">
@@ -32,6 +38,11 @@ const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalo
   <link rel="stylesheet" href="/tds/components/card/card.css" />
   <link rel="stylesheet" href="/tds/components/link/link.css" />
   <link rel="stylesheet" href="/tds/components/table/table.css" />
+  <link rel="stylesheet" href="/tds/components/header/header.css" />
+  <link rel="stylesheet" href="/tds/components/nav/nav.css" />
+  <link rel="stylesheet" href="/tds/components/breadcrumb/breadcrumb.css" />
+  <link rel="stylesheet" href="/tds/components/pagination/pagination.css" />
+  <link rel="stylesheet" href="/tds/components/modal/modal.css" />
   <style>
     body { max-width: 72rem; margin: 0 auto; padding: var(--tds-spacing-8); font-family: var(--tds-font-family-primary); }
     section { margin-bottom: var(--tds-spacing-16); }
@@ -156,6 +167,92 @@ const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalo
         </tbody>
       </table>
     </div>
+  </section>
+
+  <section id="header" data-pagefind-ignore>
+    <h2>Header</h2>
+    <div class="tds-header" style="border: 1px solid var(--tds-neutral-200); margin-bottom: var(--tds-spacing-3);">
+      <a href="#" class="tds-header__brand">
+        <div class="tds-header__titles">
+          <span class="tds-header__title">République du Tchad</span>
+          <span class="tds-header__tagline">Ministère du Numérique</span>
+        </div>
+      </a>
+      <div class="tds-header__actions">
+        <a href="#" class="tds-link">Se connecter</a>
+      </div>
+    </div>
+    <div class="tds-header tds-header--compact" style="border: 1px solid var(--tds-neutral-200);">
+      <a href="#" class="tds-header__brand">
+        <span class="tds-header__title">Variante compacte</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="nav" data-pagefind-ignore>
+    <h2>Navigation</h2>
+    <nav class="tds-nav" aria-label="Navigation principale" style="margin-bottom: var(--tds-spacing-3);">
+      <ul class="tds-nav__list">
+        <li><a href="#" class="tds-nav__link" aria-current="page">Accueil</a></li>
+        <li><a href="#" class="tds-nav__link">Démarches</a></li>
+        <li><a href="#" class="tds-nav__link">Services</a></li>
+        <li><a href="#" class="tds-nav__link">Contact</a></li>
+      </ul>
+    </nav>
+    <nav class="tds-nav tds-nav--muted" aria-label="Navigation secondaire">
+      <ul class="tds-nav__list">
+        <li><a href="#" class="tds-nav__link">Sous-section A</a></li>
+        <li><a href="#" class="tds-nav__link" aria-current="page">Sous-section B</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="breadcrumb" data-pagefind-ignore>
+    <h2>Breadcrumb</h2>
+    <nav class="tds-breadcrumb" aria-label="Fil d'Ariane">
+      <ol class="tds-breadcrumb__list">
+        {breadcrumbTrail.map((item, i) => (
+          <li class="tds-breadcrumb__item">
+            {item.href
+              ? <a href={item.href} class="tds-breadcrumb__link">{item.label}</a>
+              : <span class="tds-breadcrumb__current" aria-current="page">{item.label}</span>}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  </section>
+
+  <section id="pagination" data-pagefind-ignore>
+    <h2>Pagination</h2>
+    <nav aria-label="Pagination">
+      <ul class="tds-pagination__list">
+        <li><a href="#" class="tds-pagination__link" aria-disabled="true" aria-label="Page précédente">‹</a></li>
+        {paginationPages.map((page) => (
+          <li><a href="#" class="tds-pagination__link" aria-current={page === 1 ? 'page' : undefined} aria-label={`Page ${page}`}>{page}</a></li>
+        ))}
+        <li><span class="tds-pagination__ellipsis">…</span></li>
+        <li><a href="#" class="tds-pagination__link" aria-label="Page 12">12</a></li>
+        <li><a href="#" class="tds-pagination__link" aria-label="Page suivante">›</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="modal" data-pagefind-ignore>
+    <h2>Modal</h2>
+    <p>Rendu statique (attribut <code>open</code>) pour la QA visuelle — l'ouverture réelle passe par <code>dialog.showModal()</code> côté consommateur.</p>
+    <dialog class="tds-modal" open style="position: static; margin: 0;">
+      <div class="tds-modal__header">
+        <h3 class="tds-modal__title">Confirmer la soumission</h3>
+        <button type="button" class="tds-modal__close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="tds-modal__body">
+        <p>Votre demande sera transmise au service concerné. Cette action est définitive.</p>
+      </div>
+      <div class="tds-modal__footer">
+        <button type="button" class="tds-button tds-button--tertiary tds-button--md">Annuler</button>
+        <button type="button" class="tds-button tds-button--primary tds-button--md">Confirmer</button>
+      </div>
+    </dialog>
   </section>
 </main>
 </body>
