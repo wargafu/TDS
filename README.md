@@ -47,6 +47,11 @@ Inspiré de [GOV.UK Design System](https://design-system.service.gov.uk/), [DSFR
 | Card | `tds-card` | `CardVariant` | ✅ |
 | Link | `tds-link` | `LinkVariant` | Focus visible ✅ |
 | Table | `tds-table` | — | `scope`, `caption` ✅ |
+| Header | `tds-header` | `HeaderVariant` | Lien d'évitement recommandé ✅ |
+| Navigation | `tds-nav` | — | `aria-current="page"` ✅ |
+| Breadcrumb | `tds-breadcrumb` | — | `aria-current="page"` ✅ |
+| Pagination | `tds-pagination` | — | `aria-label`, `aria-current` ✅ |
+| Modal | `tds-modal` | `ModalSize` | Focus trap natif (`<dialog>`) ✅ |
 
 ---
 
@@ -183,7 +188,7 @@ pnpm build
 # Vérifier les types TypeScript
 pnpm typecheck
 
-# Valider les tokens (53 checks)
+# Valider les tokens (73 checks)
 pnpm --filter @tds-tchad/core validate:tokens
 
 # Valider les exports npm (après build)
@@ -226,8 +231,9 @@ git push origin feat/nom-du-composant
 - [ ] `pnpm --filter @tds-tchad/core validate:tokens` passe à 0 erreur
 - [ ] `pnpm build && pnpm --filter @tds-tchad/core validate:exports` réussit
 - [ ] `pnpm typecheck` → zéro erreur TypeScript
-- [ ] Les composants respectent WCAG 2.1 AA (contraste, focus, ARIA)
-- [ ] La documentation est mise à jour dans `apps/docs/`
+- [ ] `pnpm --filter @tds-tchad/core test` et `lint:css` passent
+- [ ] Les composants respectent WCAG 2.1 AA (contraste, focus, ARIA) — `cd apps/docs && npm run test:a11y`
+- [ ] La documentation est mise à jour dans `apps/docs/` (page composant + terrain de jeu)
 
 ### Types de contributions acceptées
 
@@ -256,18 +262,19 @@ git push origin feat/nom-du-composant
 
 ## Feuille de route
 
-### v0.1 — Fondations ✅ (actuel)
+### v0.1 — Fondations ✅
 - [x] 7 systèmes de tokens (couleurs, typo, espacement, radius, shadow, motion, z-index)
 - [x] 7 composants (Button, Input, Alert, Badge, Card, Link, Table)
 - [x] Build system industriel + CI/CD
-- [x] Documentation Astro Starlight (30 pages)
+- [x] Documentation Astro Starlight
+- [x] Pipeline de génération de tokens à source unique, tests automatisés, stylelint, vérifications a11y (axe-core)
 
-### v0.2 — Composants navigation
-- [ ] Header gouvernemental
-- [ ] Navigation principale
-- [ ] Breadcrumb
-- [ ] Pagination
-- [ ] Modal / Dialog
+### v0.2 — Composants navigation ✅ (actuel)
+- [x] Header gouvernemental
+- [x] Navigation principale
+- [x] Breadcrumb
+- [x] Pagination
+- [x] Modal / Dialog
 
 ### v0.3 — Patterns et templates
 - [ ] Template portail citoyen

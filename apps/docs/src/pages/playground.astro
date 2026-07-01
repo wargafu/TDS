@@ -211,7 +211,7 @@ const paginationPages = [1, 2, 3, 4, 5];
     <h2>Breadcrumb</h2>
     <nav class="tds-breadcrumb" aria-label="Fil d'Ariane">
       <ol class="tds-breadcrumb__list">
-        {breadcrumbTrail.map((item, i) => (
+        {breadcrumbTrail.map((item) => (
           <li class="tds-breadcrumb__item">
             {item.href
               ? <a href={item.href} class="tds-breadcrumb__link">{item.label}</a>
