@@ -17,6 +17,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "generate:tokens": "node scripts/generate-tokens.mjs",
+    "test": "vitest run",
     "clean": "node scripts/clean.mjs",
     "dev": "tsc --build tsconfig.json --watch",
     "typecheck": "tsc -p tsconfig.typecheck.json",
@@ -83,6 +84,8 @@
     "./tokens/z-index.css": "./dist/tokens/z-index.css"
   },
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "postcss": "^8.5.16",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }
