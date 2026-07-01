@@ -1,13 +1,13 @@
 {
   "defaults": {
-    "background": "var(--dstd-neutral-0)",
-    "border": "var(--dstd-neutral-200)",
-    "radius": "var(--dstd-radius-md)",
-    "padding": "var(--dstd-spacing-5)"
+    "background": "var(--tds-neutral-0)",
+    "border": "var(--tds-neutral-200)",
+    "radius": "var(--tds-radius-md)",
+    "padding": "var(--tds-spacing-5)"
   },
   "variants": {
-    "flat":     { "shadow": "none",                  "border": "var(--dstd-neutral-200)" },
-    "elevated": { "shadow": "var(--dstd-shadow-sm)", "border": "var(--dstd-neutral-200)" },
-    "outlined": { "shadow": "none",                  "border": "var(--dstd-neutral-300)" }
+    "flat":     { "shadow": "none",                  "border": "var(--tds-neutral-200)" },
+    "elevated": { "shadow": "var(--tds-shadow-sm)", "border": "var(--tds-neutral-200)" },
+    "outlined": { "shadow": "none",                  "border": "var(--tds-neutral-300)" }
   }
 }

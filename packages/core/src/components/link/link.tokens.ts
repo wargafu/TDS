@@ -1,15 +1,15 @@
 export const link = {
   default: {
-    color: 'var(--dstd-color-blue-500)',
-    colorHover: 'var(--dstd-color-blue-700)',
-    colorVisited: 'var(--dstd-color-blue-700)',
-    decorationColor: 'var(--dstd-color-blue-200)',
-    decorationColorHover: 'var(--dstd-color-blue-500)',
+    color: 'var(--tds-color-blue-500)',
+    colorHover: 'var(--tds-color-blue-700)',
+    colorVisited: 'var(--tds-color-blue-700)',
+    decorationColor: 'var(--tds-color-blue-200)',
+    decorationColorHover: 'var(--tds-color-blue-500)',
   },
   variants: {
-    default: { color: 'var(--dstd-color-blue-500)' },
-    muted:   { color: 'var(--dstd-neutral-600)'    },
-    danger:  { color: 'var(--dstd-color-red-600)'  },
+    default: { color: 'var(--tds-color-blue-500)' },
+    muted:   { color: 'var(--tds-neutral-600)'    },
+    danger:  { color: 'var(--tds-color-red-600)'  },
   },
 } as const;
 

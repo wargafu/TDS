@@ -1,4 +1,4 @@
-/* DSTD Alert component */
+/* TDS Alert component */
 :root {
   --tds-alert-radius:       var(--tds-radius-sm);
   --tds-alert-padding:      var(--tds-spacing-4);

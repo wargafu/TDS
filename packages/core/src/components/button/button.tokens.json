@@ -2,103 +2,103 @@
   "defaults": {
     "variant": "primary",
     "size": "md",
-    "fontFamily": "var(--dstd-font-family-primary)",
-    "fontWeight": "var(--dstd-text-button-weight)",
+    "fontFamily": "var(--tds-font-family-primary)",
+    "fontWeight": "var(--tds-text-button-weight)",
     "textTransform": "none",
-    "transition": "background-color var(--dstd-motion-fast) var(--dstd-easing-standard), color var(--dstd-motion-fast) var(--dstd-easing-standard), border-color var(--dstd-motion-fast) var(--dstd-easing-standard), box-shadow var(--dstd-motion-fast) var(--dstd-easing-standard)",
-    "focusOutline": "2px solid var(--dstd-color-blue-500)",
+    "transition": "background-color var(--tds-motion-fast) var(--tds-easing-standard), color var(--tds-motion-fast) var(--tds-easing-standard), border-color var(--tds-motion-fast) var(--tds-easing-standard), box-shadow var(--tds-motion-fast) var(--tds-easing-standard)",
+    "focusOutline": "2px solid var(--tds-color-blue-500)",
     "focusOutlineOffset": "3px",
-    "minHeight": "var(--dstd-button-min-height)"
+    "minHeight": "var(--tds-button-min-height)"
   },
   "variants": {
     "primary": {
-      "background": "var(--dstd-button-primary-bg)",
-      "text": "var(--dstd-button-primary-text)",
-      "border": "var(--dstd-button-primary-border)",
-      "hoverBackground": "var(--dstd-button-primary-hover-bg)",
-      "hoverBorder": "var(--dstd-button-primary-hover-border)",
-      "activeBackground": "var(--dstd-button-primary-active-bg)",
-      "activeBorder": "var(--dstd-button-primary-active-border)",
-      "disabledBackground": "var(--dstd-button-disabled-bg)",
-      "disabledText": "var(--dstd-button-disabled-text)",
-      "disabledBorder": "var(--dstd-button-disabled-border)"
+      "background": "var(--tds-button-primary-bg)",
+      "text": "var(--tds-button-primary-text)",
+      "border": "var(--tds-button-primary-border)",
+      "hoverBackground": "var(--tds-button-primary-hover-bg)",
+      "hoverBorder": "var(--tds-button-primary-hover-border)",
+      "activeBackground": "var(--tds-button-primary-active-bg)",
+      "activeBorder": "var(--tds-button-primary-active-border)",
+      "disabledBackground": "var(--tds-button-disabled-bg)",
+      "disabledText": "var(--tds-button-disabled-text)",
+      "disabledBorder": "var(--tds-button-disabled-border)"
     },
     "secondary": {
-      "background": "var(--dstd-button-secondary-bg)",
-      "text": "var(--dstd-button-secondary-text)",
-      "border": "var(--dstd-button-secondary-border)",
-      "hoverBackground": "var(--dstd-button-secondary-hover-bg)",
-      "hoverBorder": "var(--dstd-button-secondary-hover-border)",
-      "activeBackground": "var(--dstd-button-secondary-active-bg)",
-      "activeBorder": "var(--dstd-button-secondary-active-border)",
-      "disabledBackground": "var(--dstd-button-disabled-bg)",
-      "disabledText": "var(--dstd-button-disabled-text)",
-      "disabledBorder": "var(--dstd-button-disabled-border)"
+      "background": "var(--tds-button-secondary-bg)",
+      "text": "var(--tds-button-secondary-text)",
+      "border": "var(--tds-button-secondary-border)",
+      "hoverBackground": "var(--tds-button-secondary-hover-bg)",
+      "hoverBorder": "var(--tds-button-secondary-hover-border)",
+      "activeBackground": "var(--tds-button-secondary-active-bg)",
+      "activeBorder": "var(--tds-button-secondary-active-border)",
+      "disabledBackground": "var(--tds-button-disabled-bg)",
+      "disabledText": "var(--tds-button-disabled-text)",
+      "disabledBorder": "var(--tds-button-disabled-border)"
     },
     "tertiary": {
-      "background": "var(--dstd-button-tertiary-bg)",
-      "text": "var(--dstd-button-tertiary-text)",
-      "border": "var(--dstd-button-tertiary-border)",
-      "hoverBackground": "var(--dstd-button-tertiary-hover-bg)",
-      "hoverBorder": "var(--dstd-button-tertiary-hover-border)",
-      "activeBackground": "var(--dstd-button-tertiary-active-bg)",
-      "activeBorder": "var(--dstd-button-tertiary-active-border)",
-      "disabledBackground": "var(--dstd-button-disabled-bg)",
-      "disabledText": "var(--dstd-button-disabled-text)",
-      "disabledBorder": "var(--dstd-button-disabled-border)"
+      "background": "var(--tds-button-tertiary-bg)",
+      "text": "var(--tds-button-tertiary-text)",
+      "border": "var(--tds-button-tertiary-border)",
+      "hoverBackground": "var(--tds-button-tertiary-hover-bg)",
+      "hoverBorder": "var(--tds-button-tertiary-hover-border)",
+      "activeBackground": "var(--tds-button-tertiary-active-bg)",
+      "activeBorder": "var(--tds-button-tertiary-active-border)",
+      "disabledBackground": "var(--tds-button-disabled-bg)",
+      "disabledText": "var(--tds-button-disabled-text)",
+      "disabledBorder": "var(--tds-button-disabled-border)"
     },
     "danger": {
-      "background": "var(--dstd-button-danger-bg)",
-      "text": "var(--dstd-button-danger-text)",
-      "border": "var(--dstd-button-danger-border)",
-      "hoverBackground": "var(--dstd-button-danger-hover-bg)",
-      "hoverBorder": "var(--dstd-button-danger-hover-border)",
-      "activeBackground": "var(--dstd-button-danger-active-bg)",
-      "activeBorder": "var(--dstd-button-danger-active-border)",
-      "disabledBackground": "var(--dstd-button-disabled-bg)",
-      "disabledText": "var(--dstd-button-disabled-text)",
-      "disabledBorder": "var(--dstd-button-disabled-border)"
+      "background": "var(--tds-button-danger-bg)",
+      "text": "var(--tds-button-danger-text)",
+      "border": "var(--tds-button-danger-border)",
+      "hoverBackground": "var(--tds-button-danger-hover-bg)",
+      "hoverBorder": "var(--tds-button-danger-hover-border)",
+      "activeBackground": "var(--tds-button-danger-active-bg)",
+      "activeBorder": "var(--tds-button-danger-active-border)",
+      "disabledBackground": "var(--tds-button-disabled-bg)",
+      "disabledText": "var(--tds-button-disabled-text)",
+      "disabledBorder": "var(--tds-button-disabled-border)"
     },
     "success": {
-      "background": "var(--dstd-button-success-bg)",
-      "text": "var(--dstd-button-success-text)",
-      "border": "var(--dstd-button-success-border)",
-      "hoverBackground": "var(--dstd-button-success-hover-bg)",
-      "hoverBorder": "var(--dstd-button-success-hover-border)",
-      "activeBackground": "var(--dstd-button-success-active-bg)",
-      "activeBorder": "var(--dstd-button-success-active-border)",
-      "disabledBackground": "var(--dstd-button-disabled-bg)",
-      "disabledText": "var(--dstd-button-disabled-text)",
-      "disabledBorder": "var(--dstd-button-disabled-border)"
+      "background": "var(--tds-button-success-bg)",
+      "text": "var(--tds-button-success-text)",
+      "border": "var(--tds-button-success-border)",
+      "hoverBackground": "var(--tds-button-success-hover-bg)",
+      "hoverBorder": "var(--tds-button-success-hover-border)",
+      "activeBackground": "var(--tds-button-success-active-bg)",
+      "activeBorder": "var(--tds-button-success-active-border)",
+      "disabledBackground": "var(--tds-button-disabled-bg)",
+      "disabledText": "var(--tds-button-disabled-text)",
+      "disabledBorder": "var(--tds-button-disabled-border)"
     }
   },
   "sizes": {
     "sm": {
-      "fontSize": "var(--dstd-button-font-size-sm)",
-      "lineHeight": "var(--dstd-button-line-height-sm)",
-      "padding": "var(--dstd-button-padding-sm)",
-      "minHeight": "var(--dstd-button-min-height)",
-      "radius": "var(--dstd-button-radius-sm)"
+      "fontSize": "var(--tds-button-font-size-sm)",
+      "lineHeight": "var(--tds-button-line-height-sm)",
+      "padding": "var(--tds-button-padding-sm)",
+      "minHeight": "var(--tds-button-min-height)",
+      "radius": "var(--tds-button-radius-sm)"
     },
     "md": {
-      "fontSize": "var(--dstd-button-font-size-md)",
-      "lineHeight": "var(--dstd-button-line-height-md)",
-      "padding": "var(--dstd-button-padding-md)",
-      "minHeight": "var(--dstd-button-min-height)",
-      "radius": "var(--dstd-button-radius-md)"
+      "fontSize": "var(--tds-button-font-size-md)",
+      "lineHeight": "var(--tds-button-line-height-md)",
+      "padding": "var(--tds-button-padding-md)",
+      "minHeight": "var(--tds-button-min-height)",
+      "radius": "var(--tds-button-radius-md)"
     },
     "lg": {
-      "fontSize": "var(--dstd-button-font-size-lg)",
-      "lineHeight": "var(--dstd-button-line-height-lg)",
-      "padding": "var(--dstd-button-padding-lg)",
-      "minHeight": "var(--dstd-button-min-height)",
-      "radius": "var(--dstd-button-radius-md)"
+      "fontSize": "var(--tds-button-font-size-lg)",
+      "lineHeight": "var(--tds-button-line-height-lg)",
+      "padding": "var(--tds-button-padding-lg)",
+      "minHeight": "var(--tds-button-min-height)",
+      "radius": "var(--tds-button-radius-md)"
     }
   },
   "states": {
     "focus": {
-      "outline": "var(--dstd-button-focus-outline)",
-      "outlineOffset": "var(--dstd-button-focus-outline-offset)"
+      "outline": "var(--tds-button-focus-outline)",
+      "outlineOffset": "var(--tds-button-focus-outline-offset)"
     },
     "disabled": {
       "cursor": "not-allowed",

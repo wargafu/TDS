@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
-   DSTD Base — Reset CSS + styles HTML de base
+   TDS Base — Reset CSS + styles HTML de base
    À importer après tous les fichiers de tokens, avant les composants.
-   Usage : @import "@dstd/core/base.css"
+   Usage : @import "@tds-tchad/core/base.css"
    ═══════════════════════════════════════════════════════════════ */
 
 /* ─── Reset ──────────────────────────────────────────────────── */

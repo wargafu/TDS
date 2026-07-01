@@ -1,4 +1,4 @@
-/* DSTD form input tokens */
+/* TDS form input tokens */
 :root {
   --tds-input-border: var(--tds-neutral-300);
   --tds-input-border-focus: var(--tds-color-blue-500);

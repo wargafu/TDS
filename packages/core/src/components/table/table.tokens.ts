@@ -1,10 +1,10 @@
 export const table = {
   defaults: {
-    headerBackground: 'var(--dstd-neutral-100)',
-    headerText: 'var(--dstd-neutral-800)',
-    borderColor: 'var(--dstd-neutral-200)',
-    stripedBackground: 'var(--dstd-neutral-100)',
-    cellPadding: 'var(--dstd-spacing-3) var(--dstd-spacing-4)',
+    headerBackground: 'var(--tds-neutral-100)',
+    headerText: 'var(--tds-neutral-800)',
+    borderColor: 'var(--tds-neutral-200)',
+    stripedBackground: 'var(--tds-neutral-100)',
+    cellPadding: 'var(--tds-spacing-3) var(--tds-spacing-4)',
   },
 } as const;
 

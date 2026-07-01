@@ -1,5 +1,5 @@
 /**
- * DSTD motion tokens
+ * TDS motion tokens
  *
  * Ce système de motion est sobre, fonctionnel et accessible.
  * Les durées sont verrouillées pour garantir une expérience fiable et stable.
