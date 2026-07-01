@@ -1,6 +1,6 @@
 ---
 title: Input
-description: Composants de formulaire DSTD — text input, textarea, select, checkbox, radio, switch. Avec états, accessibilité et exemples HTML/React/Vue.
+description: Composants de formulaire TDS — text input, textarea, select, checkbox, radio, switch. Avec états, accessibilité et exemples HTML/React/Vue.
 sidebar:
   order: 2
 ---
@@ -9,7 +9,7 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 # Input
 
-Le système de champs DSTD couvre tous les contrôles de formulaire : text, textarea, select,
+Le système de champs TDS couvre tous les contrôles de formulaire : text, textarea, select,
 checkbox, radio, switch et file upload. La structure standard est toujours `label + champ + (message)`.
 
 ---
@@ -17,11 +17,11 @@ checkbox, radio, switch et file upload. La structure standard est toujours `labe
 ## Importation
 
 ```css
-@import "@dstd/core/components/input/input.css";
+@import "@tds-tchad/core/components/input/input.css";
 ```
 
 ```typescript
-import type { InputVariant, InputSize, InputState } from '@dstd/core/components/input';
+import type { InputVariant, InputSize, InputState } from '@tds-tchad/core/components/input';
 ```
 
 ---
@@ -29,15 +29,15 @@ import type { InputVariant, InputSize, InputState } from '@dstd/core/components/
 ## Structure de champ standard
 
 ```html
-<div class="dstd-field">
-  <label class="dstd-field__label" for="CHAMP_ID">
+<div class="tds-field">
+  <label class="tds-field__label" for="CHAMP_ID">
     Libellé du champ
     <!-- Marqueur requis si nécessaire -->
     <span aria-hidden="true"> *</span>
   </label>
 
   <!-- Aide contextuelle optionnelle -->
-  <p id="CHAMP_ID-hint" class="dstd-helper-text">
+  <p id="CHAMP_ID-hint" class="tds-helper-text">
     Texte d'aide pour préciser la saisie attendue.
   </p>
 
@@ -46,13 +46,13 @@ import type { InputVariant, InputSize, InputState } from '@dstd/core/components/
     id="CHAMP_ID"
     name="nom_champ"
     type="text"
-    class="dstd-input dstd-input--md"
+    class="tds-input tds-input--md"
     aria-describedby="CHAMP_ID-hint"
     required
   >
 
   <!-- Message d'erreur (affiché en cas d'erreur) -->
-  <p id="CHAMP_ID-error" class="dstd-error-text" role="alert" hidden>
+  <p id="CHAMP_ID-error" class="tds-error-text" role="alert" hidden>
     Message d'erreur explicite.
   </p>
 </div>
@@ -73,17 +73,17 @@ un élément distinct et le groupe de messages est relié avec `aria-describedby
 
 ```html
 <fieldset
-  class="dstd-fieldset"
+  class="tds-fieldset"
   aria-label="Demande de nom et prénom"
   aria-describedby="name-1-fieldset-messages"
 >
-  <div class="dstd-fieldset__element">
-    <div class="dstd-input-group">
-      <label class="dstd-label" for="input-family-name-1">
+  <div class="tds-fieldset__element">
+    <div class="tds-input-group">
+      <label class="tds-label" for="input-family-name-1">
         Nom
       </label>
       <input
-        class="dstd-input"
+        class="tds-input"
         spellcheck="false"
         autocomplete="family-name"
         name="family-name"
@@ -93,13 +93,13 @@ un élément distinct et le groupe de messages est relié avec `aria-describedby
     </div>
   </div>
 
-  <div class="dstd-fieldset__element">
-    <div class="dstd-input-group">
-      <label class="dstd-label" for="input-firstname-1">
+  <div class="tds-fieldset__element">
+    <div class="tds-input-group">
+      <label class="tds-label" for="input-firstname-1">
         Prénom
       </label>
       <input
-        class="dstd-input"
+        class="tds-input"
         spellcheck="false"
         autocomplete="given-name"
         name="given-name"
@@ -110,16 +110,16 @@ un élément distinct et le groupe de messages est relié avec `aria-describedby
   </div>
 
   <div
-    class="dstd-messages-group"
+    class="tds-messages-group"
     aria-live="assertive"
     id="name-1-fieldset-messages"
   ></div>
 </fieldset>
 ```
 
-Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldset__legend">`
+Lorsqu’un titre doit être visible, préférez un `<legend class="tds-fieldset__legend">`
 à `aria-label`. Le groupe de messages peut recevoir des éléments
-`dstd-helper-text`, `dstd-error-text` ou `dstd-success-text`.
+`tds-helper-text`, `tds-error-text` ou `tds-success-text`.
 
 ---
 
@@ -127,9 +127,9 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 | Variante | Classe | Usage |
 |---|---|---|
-| `default` | `dstd-input--default` (ou aucune) | Saisie normale |
-| `error` | `dstd-input--error` | Validation échouée, champ requis vide |
-| `success` | `dstd-input--success` | Champ validé avec succès |
+| `default` | `tds-input--default` (ou aucune) | Saisie normale |
+| `error` | `tds-input--error` | Validation échouée, champ requis vide |
+| `success` | `tds-input--success` | Champ validé avec succès |
 | `disabled` | attribut `disabled` | Champ inactif, non modifiable |
 
 ---
@@ -138,9 +138,9 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 | Taille | Classe | Police | Padding | Min-height |
 |---|---|---|---|---|
-| `sm` | `dstd-input--sm` | 14px | `0.5rem 0.75rem` | 44px |
-| **`md`** | **`dstd-input--md`** | **16px** | **`0.75rem 1rem`** | **44px** |
-| `lg` | `dstd-input--lg` | 18px | `0.875rem 1.25rem` | 52px |
+| `sm` | `tds-input--sm` | 14px | `0.5rem 0.75rem` | 44px |
+| **`md`** | **`tds-input--md`** | **16px** | **`0.75rem 1rem`** | **44px** |
+| `lg` | `tds-input--lg` | 18px | `0.875rem 1.25rem` | 52px |
 
 ---
 
@@ -152,13 +152,13 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
   <TabItem label="HTML">
     ```html
     <!-- Champ texte standard -->
-    <div class="dstd-field">
-      <label class="dstd-field__label" for="nom">Nom complet</label>
+    <div class="tds-field">
+      <label class="tds-field__label" for="nom">Nom complet</label>
       <input
         id="nom"
         name="nom"
         type="text"
-        class="dstd-input dstd-input--md"
+        class="tds-input tds-input--md"
         autocomplete="name"
         required
         placeholder="Ex : Moussa Ibrahim"
@@ -166,44 +166,44 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
     </div>
 
     <!-- Champ en erreur -->
-    <div class="dstd-field">
-      <label class="dstd-field__label" for="email">Adresse e-mail</label>
+    <div class="tds-field">
+      <label class="tds-field__label" for="email">Adresse e-mail</label>
       <input
         id="email"
         name="email"
         type="email"
-        class="dstd-input dstd-input--md dstd-input--error"
+        class="tds-input tds-input--md tds-input--error"
         autocomplete="email"
         aria-invalid="true"
         aria-describedby="email-error"
         value="invalide@"
       >
-      <p id="email-error" class="dstd-error-text" role="alert">
+      <p id="email-error" class="tds-error-text" role="alert">
         L'adresse e-mail saisie n'est pas valide.
       </p>
     </div>
 
     <!-- Champ désactivé -->
-    <div class="dstd-field">
-      <label class="dstd-field__label" for="ref">Numéro de référence</label>
+    <div class="tds-field">
+      <label class="tds-field__label" for="ref">Numéro de référence</label>
       <input
         id="ref"
         name="ref"
         type="text"
-        class="dstd-input dstd-input--md"
+        class="tds-input tds-input--md"
         disabled
         aria-disabled="true"
         value="REF-2024-001234"
         readonly
       >
-      <p class="dstd-helper-text">Ce champ est généré automatiquement.</p>
+      <p class="tds-helper-text">Ce champ est généré automatiquement.</p>
     </div>
     ```
   </TabItem>
   <TabItem label="React">
     ```tsx
-    import '@dstd/core/components/input/input.css';
-    import type { InputVariant, InputSize } from '@dstd/core/components/input';
+    import '@tds-tchad/core/components/input/input.css';
+    import type { InputVariant, InputSize } from '@tds-tchad/core/components/input';
 
     interface TextFieldProps {
       id: string;
@@ -240,21 +240,21 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
       const effectiveVariant = error ? 'error' : variant;
 
       return (
-        <div className="dstd-field">
-          <label className="dstd-field__label" htmlFor={id}>
+        <div className="tds-field">
+          <label className="tds-field__label" htmlFor={id}>
             {label}
             {required && <span aria-hidden="true"> *</span>}
           </label>
 
           {hint && (
-            <p id={hintId} className="dstd-helper-text">{hint}</p>
+            <p id={hintId} className="tds-helper-text">{hint}</p>
           )}
 
           <input
             id={id}
             name={name}
             type={type}
-            className={`dstd-input dstd-input--${size} dstd-input--${effectiveVariant}`}
+            className={`tds-input tds-input--${size} tds-input--${effectiveVariant}`}
             disabled={disabled}
             required={required}
             aria-invalid={error ? 'true' : undefined}
@@ -265,7 +265,7 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
           />
 
           {error && (
-            <p id={errorId} className="dstd-error-text" role="alert">{error}</p>
+            <p id={errorId} className="tds-error-text" role="alert">{error}</p>
           )}
         </div>
       );
@@ -275,9 +275,9 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
   <TabItem label="Vue 3">
     ```vue
     <script setup lang="ts">
-    import '@dstd/core/components/input/input.css';
+    import '@tds-tchad/core/components/input/input.css';
     import { computed } from 'vue';
-    import type { InputVariant, InputSize } from '@dstd/core/components/input';
+    import type { InputVariant, InputSize } from '@tds-tchad/core/components/input';
 
     const props = withDefaults(defineProps<{
       id: string;
@@ -310,19 +310,19 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
     </script>
 
     <template>
-      <div class="dstd-field">
-        <label class="dstd-field__label" :for="id">
+      <div class="tds-field">
+        <label class="tds-field__label" :for="id">
           {{ label }}
           <span v-if="required" aria-hidden="true"> *</span>
         </label>
 
-        <p v-if="hint" :id="hintId" class="dstd-helper-text">{{ hint }}</p>
+        <p v-if="hint" :id="hintId" class="tds-helper-text">{{ hint }}</p>
 
         <input
           :id="id"
           :name="name"
           :type="type"
-          :class="`dstd-input dstd-input--${size} dstd-input--${effectiveVariant}`"
+          :class="`tds-input tds-input--${size} tds-input--${effectiveVariant}`"
           :disabled="disabled"
           :required="required"
           :aria-invalid="error ? 'true' : undefined"
@@ -331,7 +331,7 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
           @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
         />
 
-        <p v-if="error" :id="errorId" class="dstd-error-text" role="alert">
+        <p v-if="error" :id="errorId" class="tds-error-text" role="alert">
           {{ error }}
         </p>
       </div>
@@ -345,17 +345,17 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 ### Textarea
 
 ```html
-<div class="dstd-field">
-  <label class="dstd-field__label" for="description">
+<div class="tds-field">
+  <label class="tds-field__label" for="description">
     Description de la demande
   </label>
-  <p id="description-hint" class="dstd-helper-text">
+  <p id="description-hint" class="tds-helper-text">
     Maximum 500 caractères. Soyez précis pour accélérer le traitement.
   </p>
   <textarea
     id="description"
     name="description"
-    class="dstd-textarea dstd-textarea--md"
+    class="tds-textarea tds-textarea--md"
     rows="5"
     maxlength="500"
     aria-describedby="description-hint"
@@ -369,14 +369,14 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 ### Select
 
 ```html
-<div class="dstd-field">
-  <label class="dstd-field__label" for="type-document">
+<div class="tds-field">
+  <label class="tds-field__label" for="type-document">
     Type de document demandé
   </label>
   <select
     id="type-document"
     name="type_document"
-    class="dstd-select dstd-select--md"
+    class="tds-select tds-select--md"
     required
     aria-required="true"
   >
@@ -396,7 +396,7 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 ```html
 <!-- Checkbox unique — consentement -->
-<label class="dstd-checkbox">
+<label class="tds-checkbox">
   <input
     type="checkbox"
     name="consentement"
@@ -409,14 +409,14 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 <!-- Groupe de checkboxes -->
 <fieldset>
-  <legend class="dstd-field__label">Documents à fournir</legend>
-  <label class="dstd-checkbox">
+  <legend class="tds-field__label">Documents à fournir</legend>
+  <label class="tds-checkbox">
     <input type="checkbox" name="docs[]" value="cni"> Carte d'identité
   </label>
-  <label class="dstd-checkbox">
+  <label class="tds-checkbox">
     <input type="checkbox" name="docs[]" value="justificatif"> Justificatif de domicile
   </label>
-  <label class="dstd-checkbox">
+  <label class="tds-checkbox">
     <input type="checkbox" name="docs[]" value="photo"> Photo d'identité
   </label>
 </fieldset>
@@ -428,14 +428,14 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 ```html
 <fieldset>
-  <legend class="dstd-field__label">Vous êtes</legend>
-  <label class="dstd-radio">
+  <legend class="tds-field__label">Vous êtes</legend>
+  <label class="tds-radio">
     <input type="radio" name="statut" value="citoyen" required> Citoyen tchadien
   </label>
-  <label class="dstd-radio">
+  <label class="tds-radio">
     <input type="radio" name="statut" value="resident"> Résident étranger
   </label>
-  <label class="dstd-radio">
+  <label class="tds-radio">
     <input type="radio" name="statut" value="diaspora"> Ressortissant en diaspora
   </label>
 </fieldset>
@@ -452,7 +452,7 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 ```html
 <!-- Switch simple -->
-<label class="dstd-switch">
+<label class="tds-switch">
   <input
     type="checkbox"
     name="notifications"
@@ -487,9 +487,9 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
 
 ## Do / Don't
 
-<div class="dstd-do-dont">
-  <div class="dstd-do-dont__card dstd-do-dont__card--do">
-    <div class="dstd-do-dont__heading">✓ Faire</div>
+<div class="tds-do-dont">
+  <div class="tds-do-dont__card tds-do-dont__card--do">
+    <div class="tds-do-dont__heading">✓ Faire</div>
     <ul>
       <li>Label court et explicite au-dessus du champ</li>
       <li>Message d'erreur en dessous du champ, jamais dans le placeholder</li>
@@ -497,8 +497,8 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="dstd-fieldse
       <li>Utiliser <code>autocomplete</code> pour faciliter la saisie</li>
     </ul>
   </div>
-  <div class="dstd-do-dont__card dstd-do-dont__card--dont">
-    <div class="dstd-do-dont__heading">✗ Éviter</div>
+  <div class="tds-do-dont__card tds-do-dont__card--dont">
+    <div class="tds-do-dont__heading">✗ Éviter</div>
     <ul>
       <li>Supprimer le label et le remplacer par un placeholder</li>
       <li>Valider le champ uniquement à la soumission (préférer <code>onBlur</code>)</li>

@@ -7,9 +7,9 @@ sidebar:
 
 import { Aside, Steps } from '@astrojs/starlight/components';
 
-# Contribuer à DSTD
+# Contribuer à TDS
 
-DSTD est un projet open source. Les contributions sont bienvenues mais soumises
+TDS est un projet open source. Les contributions sont bienvenues mais soumises
 à un processus de validation rigoureux pour garantir la stabilité du système.
 
 ---
@@ -17,7 +17,7 @@ DSTD est un projet open source. Les contributions sont bienvenues mais soumises
 ## Principes de contribution
 
 ### Stabilité avant tout
-DSTD est utilisé par des services publics critiques. Chaque modification
+TDS est utilisé par des services publics critiques. Chaque modification
 peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles fonctionnalités.
 
 ### Rétrocompatibilité obligatoire
@@ -59,7 +59,7 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
    ```
    Titre : [Bug] Le bouton danger ne respecte pas le contraste WCAG AA en état hover
    Description :
-   - Version DSTD affectée : 0.1.0
+   - Version TDS affectée : 0.1.0
    - Comportement observé : ...
    - Comportement attendu : ...
    - Environnement : Chrome 120, Windows 11
@@ -69,8 +69,8 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
 
    ```bash
    # Fork le dépôt sur GitHub
-   git clone https://github.com/VOTRE_USERNAME/dstd.git
-   cd dstd
+   git clone https://github.com/VOTRE_USERNAME/tds.git
+   cd tds
 
    # Installer les dépendances
    pnpm install
@@ -91,13 +91,13 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
    pnpm typecheck
 
    # Valider les tokens
-   pnpm --filter @dstd/core validate:tokens
+   pnpm --filter @tds-tchad/core validate:tokens
 
    # Builder
    pnpm build
 
    # Valider les exports
-   pnpm --filter @dstd/core validate:exports
+   pnpm --filter @tds-tchad/core validate:exports
    ```
 
 4. **Lint et format**
@@ -141,7 +141,7 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
 
 ### Tokens
 - Chaque nouveau token doit exister en `.ts`, `.json` ET `.css`
-- Les noms de tokens suivent la convention : `--dstd-[catégorie]-[propriété]-[variante]`
+- Les noms de tokens suivent la convention : `--tds-[catégorie]-[propriété]-[variante]`
 - Les valeurs de tokens doivent être stables — pas de valeurs calculées complexes
 
 ### CSS
@@ -153,7 +153,7 @@ peut affecter des milliers d'interfaces. La stabilité prime sur les nouvelles f
 
 ## Versionnement (semver)
 
-DSTD suit la sémantique de versionnement stricte :
+TDS suit la sémantique de versionnement stricte :
 
 | Type de changement | Version |
 |---|---|
@@ -164,6 +164,6 @@ DSTD suit la sémantique de versionnement stricte :
 <Aside type="danger" title="Tokens immuables">
   Les valeurs de tokens une fois publiées dans une version ne peuvent jamais changer
   sans version majeure. Une institution peut avoir des milliers d'interfaces
-  qui dépendent de `--dstd-color-blue-500: #0033A0`.
+  qui dépendent de `--tds-color-blue-500: #0033A0`.
   Modifier cette valeur sans incrément majeur est une rupture de contrat.
 </Aside>

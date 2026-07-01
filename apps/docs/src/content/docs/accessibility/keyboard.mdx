@@ -1,6 +1,6 @@
 ---
 title: Clavier & Focus
-description: Navigation au clavier et gestion du focus dans les interfaces DSTD.
+description: Navigation au clavier et gestion du focus dans les interfaces TDS.
 sidebar:
   order: 2
 ---
@@ -37,13 +37,13 @@ et les utilisateurs de lecteurs d'écran.
   inutilisable pour les navigateurs clavier.
 </Aside>
 
-DSTD applique ce style de focus sur tous les éléments interactifs :
+TDS applique ce style de focus sur tous les éléments interactifs :
 
 ```css
 :focus-visible {
-  outline: 2px solid var(--dstd-color-blue-500);  /* #0033A0 */
+  outline: 2px solid var(--tds-color-blue-500);  /* #0033A0 */
   outline-offset: 3px;
-  border-radius: var(--dstd-radius-xs);
+  border-radius: var(--tds-radius-xs);
 }
 ```
 
@@ -140,27 +140,27 @@ Les skip links permettent aux utilisateurs clavier de sauter la navigation rép�
 
 ```html
 <!-- Premier élément du <body> -->
-<a href="#main-content" class="dstd-skip-link">
+<a href="#main-content" class="tds-skip-link">
   Aller au contenu principal
 </a>
 
 <!-- Dans les styles -->
 <style>
-.dstd-skip-link {
+.tds-skip-link {
   position: absolute;
   top: -100%;
-  left: var(--dstd-spacing-4);
-  background: var(--dstd-color-blue-500);
+  left: var(--tds-spacing-4);
+  background: var(--tds-color-blue-500);
   color: white;
-  padding: var(--dstd-spacing-2) var(--dstd-spacing-4);
-  border-radius: var(--dstd-radius-sm);
+  padding: var(--tds-spacing-2) var(--tds-spacing-4);
+  border-radius: var(--tds-radius-sm);
   text-decoration: none;
-  font-weight: var(--dstd-font-weight-semibold);
-  z-index: var(--dstd-z-tooltip);
+  font-weight: var(--tds-font-weight-semibold);
+  z-index: var(--tds-z-tooltip);
 }
 
-.dstd-skip-link:focus {
-  top: var(--dstd-spacing-4);
+.tds-skip-link:focus {
+  top: var(--tds-spacing-4);
 }
 </style>
 

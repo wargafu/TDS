@@ -1,6 +1,6 @@
 ---
 title: Résumé d'erreurs
-description: Pattern de résumé d'erreurs DSTD — récapitulatif d'erreurs de formulaire accessible.
+description: Pattern de résumé d'erreurs TDS — récapitulatif d'erreurs de formulaire accessible.
 sidebar:
   order: 4
 ---
@@ -26,26 +26,26 @@ Il liste toutes les erreurs avec des liens vers les champs concernés.
 ```html
 <!-- Résumé d'erreurs — affiché au sommet du formulaire en cas d'erreur -->
 <div
-  class="dstd-error-summary"
+  class="tds-error-summary"
   role="alert"
   aria-labelledby="error-summary-title"
   tabindex="-1"
   style="
-    background: var(--dstd-color-semantic-danger-background);
-    border: 2px solid var(--dstd-color-semantic-danger-border);
-    border-left: 4px solid var(--dstd-color-semantic-danger-icon);
-    border-radius: var(--dstd-radius-sm);
-    padding: var(--dstd-spacing-5);
-    margin-bottom: var(--dstd-spacing-6);
+    background: var(--tds-color-semantic-danger-background);
+    border: 2px solid var(--tds-color-semantic-danger-border);
+    border-left: 4px solid var(--tds-color-semantic-danger-icon);
+    border-radius: var(--tds-radius-sm);
+    padding: var(--tds-spacing-5);
+    margin-bottom: var(--tds-spacing-6);
   "
 >
   <h2
     id="error-summary-title"
     style="
-      font-size: var(--dstd-font-size-lg);
-      font-weight: var(--dstd-font-weight-semibold);
-      color: var(--dstd-color-semantic-danger-text);
-      margin-bottom: var(--dstd-spacing-3);
+      font-size: var(--tds-font-size-lg);
+      font-weight: var(--tds-font-weight-semibold);
+      color: var(--tds-color-semantic-danger-text);
+      margin-bottom: var(--tds-spacing-3);
     "
   >
     Votre formulaire contient 3 erreurs
@@ -56,18 +56,18 @@ Il liste toutes les erreurs avec des liens vers les champs concernés.
     padding: 0;
     margin: 0;
   ">
-    <li style="margin-bottom: var(--dstd-spacing-2);">
+    <li style="margin-bottom: var(--tds-spacing-2);">
       <a
         href="#nom"
-        style="color: var(--dstd-color-semantic-danger-text); font-weight: var(--dstd-font-weight-medium);"
+        style="color: var(--tds-color-semantic-danger-text); font-weight: var(--tds-font-weight-medium);"
       >
         Nom complet — Ce champ est requis
       </a>
     </li>
-    <li style="margin-bottom: var(--dstd-spacing-2);">
+    <li style="margin-bottom: var(--tds-spacing-2);">
       <a
         href="#email"
-        style="color: var(--dstd-color-semantic-danger-text); font-weight: var(--dstd-font-weight-medium);"
+        style="color: var(--tds-color-semantic-danger-text); font-weight: var(--tds-font-weight-medium);"
       >
         Adresse e-mail — Saisissez une adresse e-mail valide
       </a>
@@ -75,7 +75,7 @@ Il liste toutes les erreurs avec des liens vers les champs concernés.
     <li>
       <a
         href="#telephone"
-        style="color: var(--dstd-color-semantic-danger-text); font-weight: var(--dstd-font-weight-medium);"
+        style="color: var(--tds-color-semantic-danger-text); font-weight: var(--tds-font-weight-medium);"
       >
         Numéro de téléphone — Saisissez un numéro à 8 chiffres
       </a>

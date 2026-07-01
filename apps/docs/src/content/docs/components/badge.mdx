@@ -1,6 +1,6 @@
 ---
 title: Badge
-description: Composant Badge DSTD — étiquettes de statut, tags et indicateurs visuels.
+description: Composant Badge TDS — étiquettes de statut, tags et indicateurs visuels.
 sidebar:
   order: 4
 ---
@@ -13,30 +13,30 @@ d'un texte visible ou d'un `aria-label` pour l'accessibilité.
 ## Importation
 
 ```css
-@import "@dstd/core/components/badge/badge.css";
+@import "@tds-tchad/core/components/badge/badge.css";
 ```
 
 ---
 
 ## Variantes
 
-<div class="dstd-preview">
-  <div class="dstd-preview__stage" style="flex-wrap:wrap;gap:0.5rem;">
-    <span class="dstd-badge dstd-badge--default">Par défaut</span>
-    <span class="dstd-badge dstd-badge--info">Information</span>
-    <span class="dstd-badge dstd-badge--success">Approuvé</span>
-    <span class="dstd-badge dstd-badge--warning">En attente</span>
-    <span class="dstd-badge dstd-badge--danger">Rejeté</span>
+<div class="tds-preview">
+  <div class="tds-preview__stage" style="flex-wrap:wrap;gap:0.5rem;">
+    <span class="tds-badge tds-badge--default">Par défaut</span>
+    <span class="tds-badge tds-badge--info">Information</span>
+    <span class="tds-badge tds-badge--success">Approuvé</span>
+    <span class="tds-badge tds-badge--warning">En attente</span>
+    <span class="tds-badge tds-badge--danger">Rejeté</span>
   </div>
-  <div class="dstd-preview__label">5 variantes</div>
+  <div class="tds-preview__label">5 variantes</div>
 </div>
 
 ```html
-<span class="dstd-badge dstd-badge--default">Par défaut</span>
-<span class="dstd-badge dstd-badge--info">Information</span>
-<span class="dstd-badge dstd-badge--success">Approuvé</span>
-<span class="dstd-badge dstd-badge--warning">En attente</span>
-<span class="dstd-badge dstd-badge--danger">Rejeté</span>
+<span class="tds-badge tds-badge--default">Par défaut</span>
+<span class="tds-badge tds-badge--info">Information</span>
+<span class="tds-badge tds-badge--success">Approuvé</span>
+<span class="tds-badge tds-badge--warning">En attente</span>
+<span class="tds-badge tds-badge--danger">Rejeté</span>
 ```
 
 ---
@@ -44,13 +44,13 @@ d'un texte visible ou d'un `aria-label` pour l'accessibilité.
 ## Avec point de statut
 
 ```html
-<span class="dstd-badge dstd-badge--success">
-  <span class="dstd-badge__dot" aria-hidden="true"></span>
+<span class="tds-badge tds-badge--success">
+  <span class="tds-badge__dot" aria-hidden="true"></span>
   En ligne
 </span>
 
-<span class="dstd-badge dstd-badge--danger">
-  <span class="dstd-badge__dot" aria-hidden="true"></span>
+<span class="tds-badge tds-badge--danger">
+  <span class="tds-badge__dot" aria-hidden="true"></span>
   Hors ligne
 </span>
 ```
@@ -61,8 +61,8 @@ d'un texte visible ou d'un `aria-label` pour l'accessibilité.
 
 ```html
 <!-- Modificateur --square pour les catégories et tags -->
-<span class="dstd-badge dstd-badge--info dstd-badge--square">Document</span>
-<span class="dstd-badge dstd-badge--default dstd-badge--square">Formulaire</span>
+<span class="tds-badge tds-badge--info tds-badge--square">Document</span>
+<span class="tds-badge tds-badge--default tds-badge--square">Formulaire</span>
 ```
 
 ---
@@ -71,19 +71,19 @@ d'un texte visible ou d'un `aria-label` pour l'accessibilité.
 
 ```html
 <!-- Statut d'un dossier -->
-<table class="dstd-table">
+<table class="tds-table">
   <tbody>
     <tr>
       <td>Demande de CNI</td>
-      <td><span class="dstd-badge dstd-badge--warning">En cours</span></td>
+      <td><span class="tds-badge tds-badge--warning">En cours</span></td>
     </tr>
     <tr>
       <td>Certificat de résidence</td>
-      <td><span class="dstd-badge dstd-badge--success">Prêt</span></td>
+      <td><span class="tds-badge tds-badge--success">Prêt</span></td>
     </tr>
     <tr>
       <td>Passeport</td>
-      <td><span class="dstd-badge dstd-badge--danger">Rejeté</span></td>
+      <td><span class="tds-badge tds-badge--danger">Rejeté</span></td>
     </tr>
   </tbody>
 </table>

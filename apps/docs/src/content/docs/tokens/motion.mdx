@@ -1,6 +1,6 @@
 ---
 title: Motion
-description: Système de transitions DSTD — durées, easing, règles d'accessibilité prefers-reduced-motion.
+description: Système de transitions TDS — durées, easing, règles d'accessibilité prefers-reduced-motion.
 sidebar:
   order: 6
 ---
@@ -9,7 +9,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 # Motion
 
-Le système de motion DSTD est **fonctionnel, jamais décoratif**.
+Le système de motion TDS est **fonctionnel, jamais décoratif**.
 Les animations doivent guider l'utilisateur, pas le distraire.
 
 ---
@@ -18,11 +18,11 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `instant` | `--dstd-motion-instant` | `0ms` | Reset instantané, suppression d'animation |
-| **`fast`** | **`--dstd-motion-fast`** | **`120ms`** | **Hover/focus, micro-interactions** |
-| `normal` | `--dstd-motion-normal` | `200ms` | Dropdowns, modales, transitions d'état |
-| `slow` | `--dstd-motion-slow` | `320ms` | Panels, toasts, ouvertures |
-| `verySlow` | `--dstd-motion-very-slow` | `500ms` | Changements documentaires, page overlays |
+| `instant` | `--tds-motion-instant` | `0ms` | Reset instantané, suppression d'animation |
+| **`fast`** | **`--tds-motion-fast`** | **`120ms`** | **Hover/focus, micro-interactions** |
+| `normal` | `--tds-motion-normal` | `200ms` | Dropdowns, modales, transitions d'état |
+| `slow` | `--tds-motion-slow` | `320ms` | Panels, toasts, ouvertures |
+| `verySlow` | `--tds-motion-very-slow` | `500ms` | Changements documentaires, page overlays |
 
 ---
 
@@ -30,10 +30,10 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `standard` | `--dstd-easing-standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Transitions générales |
-| `enter` | `--dstd-easing-enter` | `cubic-bezier(0.3, 0, 0.15, 1)` | Entrées d'éléments |
-| `exit` | `--dstd-easing-exit` | `cubic-bezier(0.4, 0, 1, 1)` | Sorties d'éléments |
-| `linear` | `--dstd-easing-linear` | `linear` | Loaders, barres de progression |
+| `standard` | `--tds-easing-standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Transitions générales |
+| `enter` | `--tds-easing-enter` | `cubic-bezier(0.3, 0, 0.15, 1)` | Entrées d'éléments |
+| `exit` | `--tds-easing-exit` | `cubic-bezier(0.4, 0, 1, 1)` | Sorties d'éléments |
+| `linear` | `--tds-easing-linear` | `linear` | Loaders, barres de progression |
 
 ---
 
@@ -60,11 +60,11 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 </Aside>
 
 ```css
-/* Pattern obligatoire pour toute transition DSTD */
+/* Pattern obligatoire pour toute transition TDS */
 .mon-composant {
   transition:
-    background-color var(--dstd-motion-fast) var(--dstd-easing-standard),
-    border-color var(--dstd-motion-fast) var(--dstd-easing-standard);
+    background-color var(--tds-motion-fast) var(--tds-easing-standard),
+    border-color var(--tds-motion-fast) var(--tds-easing-standard);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -93,14 +93,14 @@ Les animations doivent guider l'utilisateur, pas le distraire.
 ## Variables CSS
 
 ```css
---dstd-motion-instant:   0ms;
---dstd-motion-fast:      120ms;
---dstd-motion-normal:    200ms;
---dstd-motion-slow:      320ms;
---dstd-motion-very-slow: 500ms;
+--tds-motion-instant:   0ms;
+--tds-motion-fast:      120ms;
+--tds-motion-normal:    200ms;
+--tds-motion-slow:      320ms;
+--tds-motion-very-slow: 500ms;
 
---dstd-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
---dstd-easing-enter:    cubic-bezier(0.3, 0, 0.15, 1);
---dstd-easing-exit:     cubic-bezier(0.4, 0, 1, 1);
---dstd-easing-linear:   linear;
+--tds-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+--tds-easing-enter:    cubic-bezier(0.3, 0, 0.15, 1);
+--tds-easing-exit:     cubic-bezier(0.4, 0, 1, 1);
+--tds-easing-linear:   linear;
 ```

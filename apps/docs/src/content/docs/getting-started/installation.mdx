@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Ajouter @dstd/core à votre projet — npm, pnpm, yarn ou CDN.
+description: Ajouter @tds-tchad/core à votre projet — npm, pnpm, yarn ou CDN.
 sidebar:
   order: 2
 ---
@@ -9,30 +9,30 @@ import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components';
 
 # Installation
 
-`@dstd/core` est disponible sur npm. Choisissez votre gestionnaire de paquets.
+`@tds-tchad/core` est disponible sur npm. Choisissez votre gestionnaire de paquets.
 
 ## Gestionnaire de paquets
 
 <Tabs>
   <TabItem label="pnpm">
     ```bash
-    pnpm add @dstd/core
+    pnpm add @tds-tchad/core
     ```
   </TabItem>
   <TabItem label="npm">
     ```bash
-    npm install @dstd/core
+    npm install @tds-tchad/core
     ```
   </TabItem>
   <TabItem label="yarn">
     ```bash
-    yarn add @dstd/core
+    yarn add @tds-tchad/core
     ```
   </TabItem>
 </Tabs>
 
 <Aside type="note" title="Version Node.js">
-  DSTD nécessite Node.js 18 ou supérieur. Le package utilise les modules ES natifs (`"type": "module"`).
+  TDS nécessite Node.js 18 ou supérieur. Le package utilise les modules ES natifs (`"type": "module"`).
 </Aside>
 
 ---
@@ -44,23 +44,23 @@ Elles sont disponibles pour chaque système de tokens.
 
 ```css
 /* Importer tous les tokens (recommandé pour démarrer) */
-@import "@dstd/core/tokens/color.css";
-@import "@dstd/core/tokens/typography.css";
-@import "@dstd/core/tokens/spacing.css";
-@import "@dstd/core/tokens/radius.css";
-@import "@dstd/core/tokens/shadow.css";
-@import "@dstd/core/tokens/motion.css";
-@import "@dstd/core/tokens/z-index.css";
+@import "@tds-tchad/core/tokens/color.css";
+@import "@tds-tchad/core/tokens/typography.css";
+@import "@tds-tchad/core/tokens/spacing.css";
+@import "@tds-tchad/core/tokens/radius.css";
+@import "@tds-tchad/core/tokens/shadow.css";
+@import "@tds-tchad/core/tokens/motion.css";
+@import "@tds-tchad/core/tokens/z-index.css";
 ```
 
-Après import, toutes les variables CSS `--dstd-*` sont disponibles globalement.
+Après import, toutes les variables CSS `--tds-*` sont disponibles globalement.
 
 ```css
 /* Utilisation directe */
 .mon-composant {
-  color: var(--dstd-color-blue-500);
-  padding: var(--dstd-spacing-4);
-  border-radius: var(--dstd-radius-sm);
+  color: var(--tds-color-blue-500);
+  padding: var(--tds-spacing-4);
+  border-radius: var(--tds-radius-sm);
 }
 ```
 
@@ -72,10 +72,10 @@ Importez les CSS des composants que vous utilisez.
 
 ```css
 /* Bouton */
-@import "@dstd/core/components/button/button.css";
+@import "@tds-tchad/core/components/button/button.css";
 
 /* Champs de formulaire */
-@import "@dstd/core/components/input/input.css";
+@import "@tds-tchad/core/components/input/input.css";
 ```
 
 ---
@@ -86,12 +86,12 @@ Pour accéder aux valeurs de tokens dans votre code TypeScript/JavaScript :
 
 ```typescript
 // Importer les tokens individuellement
-import { color } from '@dstd/core/tokens';
-import { typography } from '@dstd/core/tokens';
-import { spacing } from '@dstd/core/tokens';
+import { color } from '@tds-tchad/core/tokens';
+import { typography } from '@tds-tchad/core/tokens';
+import { spacing } from '@tds-tchad/core/tokens';
 
 // Ou tout importer depuis la racine
-import { color, typography, spacing, radius, shadow, motion } from '@dstd/core';
+import { color, typography, spacing, radius, shadow, motion } from '@tds-tchad/core';
 
 // Utiliser les tokens
 const primaryBlue = color.blue[500];    // '#0033A0'
@@ -104,9 +104,9 @@ const gap = spacing.scale[4];           // '1rem' (16px)
 ## Importer les types TypeScript
 
 ```typescript
-import type { ColorTokens } from '@dstd/core/tokens';
-import type { ButtonVariant, ButtonSize } from '@dstd/core/components/button';
-import type { InputVariant, InputSize, InputState } from '@dstd/core/components/input';
+import type { ColorTokens } from '@tds-tchad/core/tokens';
+import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/button';
+import type { InputVariant, InputSize, InputState } from '@tds-tchad/core/components/input';
 ```
 
 ---
@@ -117,16 +117,16 @@ Les tokens sont aussi disponibles en JSON pour l'intégration avec Style Diction
 les plugins Figma ou d'autres outils de design.
 
 ```javascript
-import colorJson from '@dstd/core/tokens/color.json' assert { type: 'json' };
+import colorJson from '@tds-tchad/core/tokens/color.json' assert { type: 'json' };
 // ou en CommonJS
-const colorJson = require('@dstd/core/tokens/color.json');
+const colorJson = require('@tds-tchad/core/tokens/color.json');
 ```
 
 ---
 
 ## Installation sans bundler (CDN / HTML pur)
 
-Pour utiliser DSTD sans outil de build, copiez les fichiers CSS dans votre projet
+Pour utiliser TDS sans outil de build, copiez les fichiers CSS dans votre projet
 ou pointez vers un CDN auto-hébergé.
 
 ```html
@@ -137,18 +137,18 @@ ou pointez vers un CDN auto-hébergé.
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Tokens DSTD (depuis votre serveur) -->
-  <link rel="stylesheet" href="/assets/dstd/tokens/color.css">
-  <link rel="stylesheet" href="/assets/dstd/tokens/typography.css">
-  <link rel="stylesheet" href="/assets/dstd/tokens/spacing.css">
-  <link rel="stylesheet" href="/assets/dstd/tokens/radius.css">
-  <link rel="stylesheet" href="/assets/dstd/tokens/shadow.css">
-  <link rel="stylesheet" href="/assets/dstd/tokens/motion.css">
-  <link rel="stylesheet" href="/assets/dstd/tokens/z-index.css">
+  <!-- Tokens TDS (depuis votre serveur) -->
+  <link rel="stylesheet" href="/assets/tds/tokens/color.css">
+  <link rel="stylesheet" href="/assets/tds/tokens/typography.css">
+  <link rel="stylesheet" href="/assets/tds/tokens/spacing.css">
+  <link rel="stylesheet" href="/assets/tds/tokens/radius.css">
+  <link rel="stylesheet" href="/assets/tds/tokens/shadow.css">
+  <link rel="stylesheet" href="/assets/tds/tokens/motion.css">
+  <link rel="stylesheet" href="/assets/tds/tokens/z-index.css">
 
-  <!-- Composants DSTD -->
-  <link rel="stylesheet" href="/assets/dstd/components/button/button.css">
-  <link rel="stylesheet" href="/assets/dstd/components/input/input.css">
+  <!-- Composants TDS -->
+  <link rel="stylesheet" href="/assets/tds/components/button/button.css">
+  <link rel="stylesheet" href="/assets/tds/components/input/input.css">
 </head>
 ```
 
@@ -167,7 +167,7 @@ Après installation, vérifiez que les tokens CSS sont bien chargés dans le nav
 ```javascript
 // Dans la console du navigateur
 getComputedStyle(document.documentElement)
-  .getPropertyValue('--dstd-color-blue-500')
+  .getPropertyValue('--tds-color-blue-500')
 // Doit retourner : ' #0033A0'
 ```
 
@@ -176,7 +176,7 @@ getComputedStyle(document.documentElement)
 ## Arborescence du package publié
 
 ```
-@dstd/core/
+@tds-tchad/core/
 ├── dist/
 │   ├── index.js              — Point d'entrée principal (ESM)
 │   ├── index.d.ts            — Types TypeScript

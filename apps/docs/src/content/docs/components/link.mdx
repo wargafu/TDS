@@ -1,19 +1,19 @@
 ---
 title: Link
-description: Composant Link DSTD — styles de liens pour navigation et contenu.
+description: Composant Link TDS — styles de liens pour navigation et contenu.
 sidebar:
   order: 6
 ---
 
 # Link
 
-Les liens DSTD sont accessibles, contrastés et cohérents avec la charte institutionnelle.
-La classe `.dstd-link` s'applique aux liens de contenu ; les boutons de navigation utilisent `.dstd-button--tertiary`.
+Les liens TDS sont accessibles, contrastés et cohérents avec la charte institutionnelle.
+La classe `.tds-link` s'applique aux liens de contenu ; les boutons de navigation utilisent `.tds-button--tertiary`.
 
 ## Importation
 
 ```css
-@import "@dstd/core/components/link/link.css";
+@import "@tds-tchad/core/components/link/link.css";
 ```
 
 ---
@@ -22,21 +22,21 @@ La classe `.dstd-link` s'applique aux liens de contenu ; les boutons de navigati
 
 ```html
 <!-- Lien standard -->
-<a href="/services" class="dstd-link">Accéder aux services en ligne</a>
+<a href="/services" class="tds-link">Accéder aux services en ligne</a>
 
 <!-- Lien atténué -->
-<a href="/mentions-legales" class="dstd-link dstd-link--muted">Mentions légales</a>
+<a href="/mentions-legales" class="tds-link tds-link--muted">Mentions légales</a>
 
 <!-- Lien de danger (confirmation de suppression) -->
-<a href="/supprimer" class="dstd-link dstd-link--danger">Supprimer ce dossier</a>
+<a href="/supprimer" class="tds-link tds-link--danger">Supprimer ce dossier</a>
 
 <!-- Lien externe -->
-<a href="https://gouv.td" class="dstd-link dstd-link--external" target="_blank" rel="noopener noreferrer">
+<a href="https://gouv.td" class="tds-link tds-link--external" target="_blank" rel="noopener noreferrer">
   Portail officiel du Gouvernement du Tchad
 </a>
 
 <!-- Lien standalone (CTA de contenu) -->
-<a href="/dossier/001234" class="dstd-link dstd-link--standalone">
+<a href="/dossier/001234" class="tds-link tds-link--standalone">
   Voir le dossier complet
 </a>
 ```
@@ -47,10 +47,10 @@ La classe `.dstd-link` s'applique aux liens de contenu ; les boutons de navigati
 
 | Élément | Quand l'utiliser |
 |---|---|
-| `<a class="dstd-link">` | Navigation vers une autre page ou ressource |
-| `<a class="dstd-button">` | Navigation qui ressemble à une action |
-| `<button class="dstd-button">` | Action qui modifie l'état (soumettre, supprimer) |
-| `<button class="dstd-button--tertiary">` | Action secondaire discrète dans un formulaire |
+| `<a class="tds-link">` | Navigation vers une autre page ou ressource |
+| `<a class="tds-button">` | Navigation qui ressemble à une action |
+| `<button class="tds-button">` | Action qui modifie l'état (soumettre, supprimer) |
+| `<button class="tds-button--tertiary">` | Action secondaire discrète dans un formulaire |
 
 ---
 
@@ -58,14 +58,14 @@ La classe `.dstd-link` s'applique aux liens de contenu ; les boutons de navigati
 
 ```html
 <!-- Lien externe — avertir l'utilisateur -->
-<a href="https://..." class="dstd-link dstd-link--external"
+<a href="https://..." class="tds-link tds-link--external"
    target="_blank" rel="noopener noreferrer"
    aria-label="Portail officiel — s'ouvre dans un nouvel onglet">
   Portail officiel
 </a>
 
 <!-- Lien avec contexte supplémentaire pour les AT -->
-<a href="/dossier/001234" class="dstd-link">
+<a href="/dossier/001234" class="tds-link">
   Consulter
   <span class="sr-only">le dossier REF-2024-001234</span>
 </a>

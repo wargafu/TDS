@@ -1,6 +1,6 @@
 ---
 title: Typographie
-description: Système typographique DSTD — polices, échelle, poids, styles et règles multilingues.
+description: Système typographique TDS — polices, échelle, poids, styles et règles multilingues.
 sidebar:
   order: 2
 ---
@@ -9,7 +9,7 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 # Typographie
 
-Le système typographique DSTD est conçu pour la lisibilité dans les interfaces gouvernementales :
+Le système typographique TDS est conçu pour la lisibilité dans les interfaces gouvernementales :
 hiérarchie claire, tailles suffisantes pour l'accessibilité, polices adaptées au français et à l'arabe.
 
 ---
@@ -18,24 +18,24 @@ hiérarchie claire, tailles suffisantes pour l'accessibilité, polices adaptées
 
 | Rôle | Police | Variable CSS | Usage |
 |---|---|---|---|
-| **Principale** | Source Sans 3 | `--dstd-font-family-primary` | Tous les textes en français |
-| **Arabe** | Noto Naskh Arabic | `--dstd-font-family-arabic` | Textes en arabe (RTL) |
-| **Monospace** | JetBrains Mono | `--dstd-font-family-mono` | Code, références techniques |
+| **Principale** | Source Sans 3 | `--tds-font-family-primary` | Tous les textes en français |
+| **Arabe** | Noto Naskh Arabic | `--tds-font-family-arabic` | Textes en arabe (RTL) |
+| **Monospace** | JetBrains Mono | `--tds-font-family-mono` | Code, références techniques |
 | **Secours** | Public Sans | (dans le stack primary) | Fallback institutionnel |
 
 ```css
 body {
-  font-family: var(--dstd-font-family-primary);
+  font-family: var(--tds-font-family-primary);
 }
 
 /* Passage automatique en arabe */
 html[lang="ar"], :lang(ar) {
   direction: rtl;
-  font-family: var(--dstd-font-family-arabic);
+  font-family: var(--tds-font-family-arabic);
 }
 
 code, kbd, samp, pre {
-  font-family: var(--dstd-font-family-mono);
+  font-family: var(--tds-font-family-mono);
 }
 ```
 
@@ -49,20 +49,20 @@ code, kbd, samp, pre {
 
 ## Échelle de tailles
 
-L'échelle DSTD est basée sur une racine de 16px. Elle utilise `rem` pour respecter
+L'échelle TDS est basée sur une racine de 16px. Elle utilise `rem` pour respecter
 les préférences de zoom des utilisateurs.
 
 | Token | Variable CSS | Valeur | Équivalent px | Usage |
 |---|---|---|---|---|
-| `xs` | `--dstd-font-size-xs` | `0.75rem` | 12px | Captions, légendes |
-| `sm` | `--dstd-font-size-sm` | `0.875rem` | 14px | Labels, helper text |
-| **`md`** | **`--dstd-font-size-md`** | **`1rem`** | **16px** | **Corps, formulaires (défaut)** |
-| `lg` | `--dstd-font-size-lg` | `1.125rem` | 18px | Corps large, descriptions |
-| `xl` | `--dstd-font-size-xl` | `1.25rem` | 20px | Sous-titres, intro |
-| `2xl` | `--dstd-font-size-2xl` | `1.5rem` | 24px | H3, titres de carte |
-| `3xl` | `--dstd-font-size-3xl` | `1.875rem` | 30px | H2, sous-pages |
-| `4xl` | `--dstd-font-size-4xl` | `2.25rem` | 36px | Titre de page principal |
-| `5xl` | `--dstd-font-size-5xl` | `3rem` | 48px | Display, héros |
+| `xs` | `--tds-font-size-xs` | `0.75rem` | 12px | Captions, légendes |
+| `sm` | `--tds-font-size-sm` | `0.875rem` | 14px | Labels, helper text |
+| **`md`** | **`--tds-font-size-md`** | **`1rem`** | **16px** | **Corps, formulaires (défaut)** |
+| `lg` | `--tds-font-size-lg` | `1.125rem` | 18px | Corps large, descriptions |
+| `xl` | `--tds-font-size-xl` | `1.25rem` | 20px | Sous-titres, intro |
+| `2xl` | `--tds-font-size-2xl` | `1.5rem` | 24px | H3, titres de carte |
+| `3xl` | `--tds-font-size-3xl` | `1.875rem` | 30px | H2, sous-pages |
+| `4xl` | `--tds-font-size-4xl` | `2.25rem` | 36px | Titre de page principal |
+| `5xl` | `--tds-font-size-5xl` | `3rem` | 48px | Display, héros |
 
 <Aside type="caution" title="Taille minimum">
   Ne jamais utiliser une taille inférieure à `xs` (12px) pour du contenu lisible.
@@ -77,15 +77,15 @@ Chaque taille a une hauteur de ligne associée, optimisée pour sa taille.
 
 | Token | Variable CSS | Valeur | Principe |
 |---|---|---|---|
-| `xs` | `--dstd-line-height-xs` | 1.2 | Serré pour les micro-labels |
-| `sm` | `--dstd-line-height-sm` | 1.3 | Labels compacts |
-| `md` | `--dstd-line-height-md` | 1.5 | Corps — confort de lecture optimal |
-| `lg` | `--dstd-line-height-lg` | 1.5 | Corps large — même confort |
-| `xl` | `--dstd-line-height-xl` | 1.35 | Sous-titres |
-| `2xl` | `--dstd-line-height-2xl` | 1.3 | H3 |
-| `3xl` | `--dstd-line-height-3xl` | 1.2 | H2 |
-| `4xl` | `--dstd-line-height-4xl` | 1.15 | Titres de page |
-| `5xl` | `--dstd-line-height-5xl` | 1.1 | Display — très serré acceptable |
+| `xs` | `--tds-line-height-xs` | 1.2 | Serré pour les micro-labels |
+| `sm` | `--tds-line-height-sm` | 1.3 | Labels compacts |
+| `md` | `--tds-line-height-md` | 1.5 | Corps — confort de lecture optimal |
+| `lg` | `--tds-line-height-lg` | 1.5 | Corps large — même confort |
+| `xl` | `--tds-line-height-xl` | 1.35 | Sous-titres |
+| `2xl` | `--tds-line-height-2xl` | 1.3 | H3 |
+| `3xl` | `--tds-line-height-3xl` | 1.2 | H2 |
+| `4xl` | `--tds-line-height-4xl` | 1.15 | Titres de page |
+| `5xl` | `--tds-line-height-5xl` | 1.1 | Display — très serré acceptable |
 
 ---
 
@@ -93,75 +93,75 @@ Chaque taille a une hauteur de ligne associée, optimisée pour sa taille.
 
 | Token | Variable CSS | Valeur | Usage recommandé |
 |---|---|---|---|
-| `light` | `--dstd-font-weight-light` | 300 | Display large uniquement |
-| `regular` | `--dstd-font-weight-regular` | 400 | Texte de paragraphe par défaut |
-| `medium` | `--dstd-font-weight-medium` | 500 | Liens, éléments UI modérés |
-| `semibold` | `--dstd-font-weight-semibold` | 600 | Titres, boutons, labels |
-| `bold` | `--dstd-font-weight-bold` | 700 | Emphase, alertes, titres courts |
-| `xbold` | `--dstd-font-weight-xbold` | 800 | Cas rares / identitaires |
+| `light` | `--tds-font-weight-light` | 300 | Display large uniquement |
+| `regular` | `--tds-font-weight-regular` | 400 | Texte de paragraphe par défaut |
+| `medium` | `--tds-font-weight-medium` | 500 | Liens, éléments UI modérés |
+| `semibold` | `--tds-font-weight-semibold` | 600 | Titres, boutons, labels |
+| `bold` | `--tds-font-weight-bold` | 700 | Emphase, alertes, titres courts |
+| `xbold` | `--tds-font-weight-xbold` | 800 | Cas rares / identitaires |
 
 ---
 
 ## Styles textuels officiels
 
 Ces styles combinent taille, hauteur de ligne, poids et espacement de lettres.
-Ils sont les **seules combinaisons validées** pour les interfaces DSTD.
+Ils sont les **seules combinaisons validées** pour les interfaces TDS.
 
 ### Display
 ```css
-font-size: var(--dstd-font-size-5xl);       /* 48px */
-line-height: var(--dstd-line-height-5xl);   /* 1.1 */
-font-weight: var(--dstd-font-weight-semibold); /* 600 */
+font-size: var(--tds-font-size-5xl);       /* 48px */
+line-height: var(--tds-line-height-5xl);   /* 1.1 */
+font-weight: var(--tds-font-weight-semibold); /* 600 */
 letter-spacing: -0.02em;
 /* Usage : héros, bannières d'accueil — utiliser avec parcimonie */
 ```
 
 ### Page Title (H1)
 ```css
-font-size: var(--dstd-font-size-4xl);       /* 36px */
-line-height: var(--dstd-line-height-4xl);   /* 1.15 */
-font-weight: var(--dstd-font-weight-semibold); /* 600 */
+font-size: var(--tds-font-size-4xl);       /* 36px */
+line-height: var(--tds-line-height-4xl);   /* 1.15 */
+font-weight: var(--tds-font-weight-semibold); /* 600 */
 letter-spacing: -0.02em;
 /* Usage : titre principal de chaque page, unique par page */
 ```
 
 ### Section Title (H2)
 ```css
-font-size: var(--dstd-font-size-2xl);       /* 24px */
-line-height: var(--dstd-line-height-2xl);   /* 1.3 */
-font-weight: var(--dstd-font-weight-semibold); /* 600 */
+font-size: var(--tds-font-size-2xl);       /* 24px */
+line-height: var(--tds-line-height-2xl);   /* 1.3 */
+font-weight: var(--tds-font-weight-semibold); /* 600 */
 letter-spacing: -0.01em;
 ```
 
 ### Subsection Title (H3)
 ```css
-font-size: var(--dstd-font-size-xl);        /* 20px */
-line-height: var(--dstd-line-height-xl);    /* 1.35 */
-font-weight: var(--dstd-font-weight-medium); /* 500 */
+font-size: var(--tds-font-size-xl);        /* 20px */
+line-height: var(--tds-line-height-xl);    /* 1.35 */
+font-weight: var(--tds-font-weight-medium); /* 500 */
 letter-spacing: 0;
 ```
 
 ### Body (défaut)
 ```css
-font-size: var(--dstd-font-size-md);        /* 16px */
-line-height: var(--dstd-line-height-md);    /* 1.5 */
-font-weight: var(--dstd-font-weight-regular); /* 400 */
+font-size: var(--tds-font-size-md);        /* 16px */
+line-height: var(--tds-line-height-md);    /* 1.5 */
+font-weight: var(--tds-font-weight-regular); /* 400 */
 /* Usage : texte de paragraphe, formulaires, contenu principal */
 ```
 
 ### Label (champs de formulaire)
 ```css
-font-size: var(--dstd-font-size-sm);        /* 14px */
-line-height: var(--dstd-line-height-sm);    /* 1.3 */
-font-weight: var(--dstd-font-weight-semibold); /* 600 */
+font-size: var(--tds-font-size-sm);        /* 14px */
+line-height: var(--tds-line-height-sm);    /* 1.3 */
+font-weight: var(--tds-font-weight-semibold); /* 600 */
 /* Usage : labels de formulaire, titres de champ */
 ```
 
 ### Button
 ```css
-font-size: var(--dstd-font-size-md);        /* 16px */
-line-height: var(--dstd-line-height-md);    /* 1.5 */
-font-weight: var(--dstd-font-weight-semibold); /* 600 */
+font-size: var(--tds-font-size-md);        /* 16px */
+line-height: var(--tds-line-height-md);    /* 1.5 */
+font-weight: var(--tds-font-weight-semibold); /* 600 */
 letter-spacing: 0.01em;
 /* Usage : texte des boutons et CTA */
 ```
@@ -170,24 +170,24 @@ letter-spacing: 0.01em;
 
 ## Typographie responsive
 
-DSTD recommande d'adapter les titres avec `clamp()` pour une hiérarchie fluide.
+TDS recommande d'adapter les titres avec `clamp()` pour une hiérarchie fluide.
 
 ```css
 /* H1 adaptatif */
 h1 {
   font-size: clamp(
-    var(--dstd-font-size-3xl),  /* min : 30px */
+    var(--tds-font-size-3xl),  /* min : 30px */
     5vw,
-    var(--dstd-font-size-4xl)   /* max : 36px */
+    var(--tds-font-size-4xl)   /* max : 36px */
   );
 }
 
 /* Display pour les héros */
 .hero-title {
   font-size: clamp(
-    var(--dstd-font-size-4xl),  /* min : 36px */
+    var(--tds-font-size-4xl),  /* min : 36px */
     6vw,
-    var(--dstd-font-size-5xl)   /* max : 48px */
+    var(--tds-font-size-5xl)   /* max : 48px */
   );
 }
 ```
@@ -198,37 +198,37 @@ h1 {
 
 ```css
 /* Familles */
---dstd-font-family-primary: "Source Sans 3", "Public Sans", system-ui, ...;
---dstd-font-family-arabic: "Noto Naskh Arabic", "Noto Sans Arabic", ...;
---dstd-font-family-mono: "JetBrains Mono", ui-monospace, ...;
+--tds-font-family-primary: "Source Sans 3", "Public Sans", system-ui, ...;
+--tds-font-family-arabic: "Noto Naskh Arabic", "Noto Sans Arabic", ...;
+--tds-font-family-mono: "JetBrains Mono", ui-monospace, ...;
 
 /* Tailles */
---dstd-font-size-xs:  0.75rem;
---dstd-font-size-sm:  0.875rem;
---dstd-font-size-md:  1rem;
---dstd-font-size-lg:  1.125rem;
---dstd-font-size-xl:  1.25rem;
---dstd-font-size-2xl: 1.5rem;
---dstd-font-size-3xl: 1.875rem;
---dstd-font-size-4xl: 2.25rem;
---dstd-font-size-5xl: 3rem;
+--tds-font-size-xs:  0.75rem;
+--tds-font-size-sm:  0.875rem;
+--tds-font-size-md:  1rem;
+--tds-font-size-lg:  1.125rem;
+--tds-font-size-xl:  1.25rem;
+--tds-font-size-2xl: 1.5rem;
+--tds-font-size-3xl: 1.875rem;
+--tds-font-size-4xl: 2.25rem;
+--tds-font-size-5xl: 3rem;
 
 /* Hauteurs de ligne */
---dstd-line-height-xs:  1.2;
---dstd-line-height-sm:  1.3;
---dstd-line-height-md:  1.5;
---dstd-line-height-lg:  1.5;
---dstd-line-height-xl:  1.35;
---dstd-line-height-2xl: 1.3;
---dstd-line-height-3xl: 1.2;
---dstd-line-height-4xl: 1.15;
---dstd-line-height-5xl: 1.1;
+--tds-line-height-xs:  1.2;
+--tds-line-height-sm:  1.3;
+--tds-line-height-md:  1.5;
+--tds-line-height-lg:  1.5;
+--tds-line-height-xl:  1.35;
+--tds-line-height-2xl: 1.3;
+--tds-line-height-3xl: 1.2;
+--tds-line-height-4xl: 1.15;
+--tds-line-height-5xl: 1.1;
 
 /* Poids */
---dstd-font-weight-light:    300;
---dstd-font-weight-regular:  400;
---dstd-font-weight-medium:   500;
---dstd-font-weight-semibold: 600;
---dstd-font-weight-bold:     700;
---dstd-font-weight-xbold:    800;
+--tds-font-weight-light:    300;
+--tds-font-weight-regular:  400;
+--tds-font-weight-medium:   500;
+--tds-font-weight-semibold: 600;
+--tds-font-weight-bold:     700;
+--tds-font-weight-xbold:    800;
 ```

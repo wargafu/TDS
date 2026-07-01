@@ -1,13 +1,13 @@
 ---
 title: Arrondis
-description: Système de border-radius DSTD — sobre et institutionnel, avec règles par composant.
+description: Système de border-radius TDS — sobre et institutionnel, avec règles par composant.
 sidebar:
   order: 4
 ---
 
 # Arrondis
 
-Les arrondis DSTD sont volontairement limités. Un Design System d'État doit rester sobre :
+Les arrondis TDS sont volontairement limités. Un Design System d'État doit rester sobre :
 les arrondis excessifs appartiennent aux interfaces startup, pas aux services publics.
 
 ---
@@ -16,13 +16,13 @@ les arrondis excessifs appartiennent aux interfaces startup, pas aux services pu
 
 | Token | Variable CSS | Valeur | Usage principal |
 |---|---|---|---|
-| `none` | `--dstd-radius-none` | `0` | Tables, sections formelles, containers de données |
-| `xs` | `--dstd-radius-xs` | `2px` | Surfaces neutres, cards gouvernementales strictes |
-| **`sm`** | **`--dstd-radius-sm`** | **`4px`** | **Boutons, inputs, tags — composants standard** |
-| `md` | `--dstd-radius-md` | `8px` | Cards, modales, menus, sections de formulaire |
-| `lg` | `--dstd-radius-lg` | `12px` | Dialogues, overlays, panels doux |
-| `xl` | `--dstd-radius-xl` | `16px` | Sections majeures, encarts mis en avant |
-| `full` | `--dstd-radius-full` | `9999px` | Badges, tags, pills, boutons full-round |
+| `none` | `--tds-radius-none` | `0` | Tables, sections formelles, containers de données |
+| `xs` | `--tds-radius-xs` | `2px` | Surfaces neutres, cards gouvernementales strictes |
+| **`sm`** | **`--tds-radius-sm`** | **`4px`** | **Boutons, inputs, tags — composants standard** |
+| `md` | `--tds-radius-md` | `8px` | Cards, modales, menus, sections de formulaire |
+| `lg` | `--tds-radius-lg` | `12px` | Dialogues, overlays, panels doux |
+| `xl` | `--tds-radius-xl` | `16px` | Sections majeures, encarts mis en avant |
+| `full` | `--tds-radius-full` | `9999px` | Badges, tags, pills, boutons full-round |
 
 ---
 
@@ -46,22 +46,22 @@ les arrondis excessifs appartiennent aux interfaces startup, pas aux services pu
 ## Variables CSS
 
 ```css
---dstd-radius-none: 0;
---dstd-radius-xs:   2px   /* 0.125rem */
---dstd-radius-sm:   4px   /* 0.25rem  */
---dstd-radius-md:   8px   /* 0.5rem   */
---dstd-radius-lg:   12px  /* 0.75rem  */
---dstd-radius-xl:   16px  /* 1rem     */
---dstd-radius-full: 9999px
+--tds-radius-none: 0;
+--tds-radius-xs:   2px   /* 0.125rem */
+--tds-radius-sm:   4px   /* 0.25rem  */
+--tds-radius-md:   8px   /* 0.5rem   */
+--tds-radius-lg:   12px  /* 0.75rem  */
+--tds-radius-xl:   16px  /* 1rem     */
+--tds-radius-full: 9999px
 ```
 
 ```css
 /* Exemple d'usage */
 .ma-card {
-  border-radius: var(--dstd-radius-md);
+  border-radius: var(--tds-radius-md);
 }
 
 .mon-badge {
-  border-radius: var(--dstd-radius-full);
+  border-radius: var(--tds-radius-full);
 }
 ```

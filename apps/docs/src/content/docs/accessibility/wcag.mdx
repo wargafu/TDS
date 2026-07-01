@@ -1,6 +1,6 @@
 ---
 title: Principes WCAG
-description: Guide d'accessibilité DSTD — WCAG 2.1 AA simplifié pour les services gouvernementaux.
+description: Guide d'accessibilité TDS — WCAG 2.1 AA simplifié pour les services gouvernementaux.
 sidebar:
   order: 1
 ---
@@ -12,7 +12,7 @@ import { Aside } from '@astrojs/starlight/components';
 Les services numériques de l'État du Tchad doivent être accessibles à **tous les citoyens**,
 indépendamment de leurs capacités visuelles, motrices, auditives ou cognitives.
 
-DSTD implémente WCAG 2.1 niveau AA par défaut.
+TDS implémente WCAG 2.1 niveau AA par défaut.
 
 <Aside type="tip" title="Standard de référence">
   Le niveau **AA** est le standard minimum pour les services publics numériques.
@@ -34,7 +34,7 @@ L'information doit être présentable de manière perceptible par tous.
 - Le texte peut être agrandi jusqu'à 200% sans perte de contenu
 - Le contraste texte/fond est ≥ 4.5:1 (normal) ou ≥ 3:1 (grand texte ≥ 18px bold)
 
-**Dans DSTD :**
+**Dans TDS :**
 ```html
 <!-- Icône avec texte alternatif -->
 <img src="/icons/info.svg" alt="Information" width="16" height="16">
@@ -43,7 +43,7 @@ L'information doit être présentable de manière perceptible par tous.
 <svg aria-hidden="true" focusable="false">...</svg>
 
 <!-- Erreur — couleur + icône + texte (pas seulement la couleur rouge) -->
-<p class="dstd-error-text" role="alert">
+<p class="tds-error-text" role="alert">
   <svg aria-hidden="true">...</svg> <!-- Icône d'erreur -->
   Ce champ est requis.
 </p>
@@ -61,15 +61,15 @@ Les composants d'interface doivent être utilisables.
 - Les contenus en mouvement peuvent être mis en pause
 - Les utilisateurs ont assez de temps pour compléter les actions
 
-**Dans DSTD :**
+**Dans TDS :**
 ```css
 /* Focus obligatoire — jamais supprimer outline sans alternative */
 :focus-visible {
-  outline: 2px solid var(--dstd-color-blue-500);
+  outline: 2px solid var(--tds-color-blue-500);
   outline-offset: 3px;
 }
 
-/* INTERDIT en production DSTD */
+/* INTERDIT en production TDS */
 *:focus { outline: none; } /* ← supprime le focus pour tous les utilisateurs */
 ```
 
@@ -84,7 +84,7 @@ L'information et le fonctionnement de l'interface doivent être compréhensibles
 - Les formulaires ont des labels clairs
 - La navigation est cohérente entre les pages
 
-**Dans DSTD :**
+**Dans TDS :**
 ```html
 <!-- Langue déclarée -->
 <html lang="fr">
@@ -110,7 +110,7 @@ Le contenu doit être suffisamment robuste pour être interprété par les techn
 - Les éléments interactifs ont des rôles, états et propriétés ARIA corrects
 - Les mises à jour dynamiques sont annoncées via des live regions
 
-**Dans DSTD :**
+**Dans TDS :**
 ```html
 <!-- Rôles ARIA corrects -->
 <button type="button" aria-pressed="false">Filtrer</button>
@@ -128,7 +128,7 @@ Le contenu doit être suffisamment robuste pour être interprété par les techn
 
 ---
 
-## Critères AA essentiels pour DSTD
+## Critères AA essentiels pour TDS
 
 | Critère | Niveau | Description |
 |---|---|---|
@@ -186,7 +186,7 @@ Vérifier que :
 
 ---
 
-## Ratios de contraste DSTD
+## Ratios de contraste TDS
 
 | Utilisation | Couleur texte | Couleur fond | Ratio | Standard |
 |---|---|---|---|---|

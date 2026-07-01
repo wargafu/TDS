@@ -1,6 +1,6 @@
 ---
 title: Ombres
-description: Système d'ombres DSTD — hiérarchie visuelle, élévation et règles d'usage.
+description: Système d'ombres TDS — hiérarchie visuelle, élévation et règles d'usage.
 sidebar:
   order: 5
 ---
@@ -9,7 +9,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 # Ombres
 
-Les ombres DSTD servent uniquement à exprimer la **hiérarchie visuelle** entre les surfaces.
+Les ombres TDS servent uniquement à exprimer la **hiérarchie visuelle** entre les surfaces.
 Elles ne sont jamais décoratives.
 
 ---
@@ -18,12 +18,12 @@ Elles ne sont jamais décoratives.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `none` | `--dstd-shadow-none` | `none` | Surfaces plates, tables, sections formelles |
-| `xs` | `--dstd-shadow-xs` | `0 1px 2px rgba(0,0,0,0.05)` | Menus légers, badges sur fond clair |
-| `sm` | `--dstd-shadow-sm` | `0 1px 3px rgba(0,0,0,0.08)` | Cards simples, dropdowns, composants actifs |
-| **`md`** | **`--dstd-shadow-md`** | **`0 4px 12px rgba(0,0,0,0.08)`** | **Modales, popovers, panels** |
-| `lg` | `--dstd-shadow-lg` | `0 10px 30px rgba(0,0,0,0.12)` | Overlays, dialogues de niveau supérieur |
-| `xl` | `--dstd-shadow-xl` | `0 20px 60px rgba(0,0,0,0.16)` | Tooltips, floating UI critiques |
+| `none` | `--tds-shadow-none` | `none` | Surfaces plates, tables, sections formelles |
+| `xs` | `--tds-shadow-xs` | `0 1px 2px rgba(0,0,0,0.05)` | Menus légers, badges sur fond clair |
+| `sm` | `--tds-shadow-sm` | `0 1px 3px rgba(0,0,0,0.08)` | Cards simples, dropdowns, composants actifs |
+| **`md`** | **`--tds-shadow-md`** | **`0 4px 12px rgba(0,0,0,0.08)`** | **Modales, popovers, panels** |
+| `lg` | `--tds-shadow-lg` | `0 10px 30px rgba(0,0,0,0.12)` | Overlays, dialogues de niveau supérieur |
+| `xl` | `--tds-shadow-xl` | `0 20px 60px rgba(0,0,0,0.16)` | Tooltips, floating UI critiques |
 
 ---
 
@@ -45,10 +45,10 @@ Elles ne sont jamais décoratives.
 ## Variables CSS
 
 ```css
---dstd-shadow-none: none;
---dstd-shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.05);
---dstd-shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.08);
---dstd-shadow-md:   0 4px 12px rgba(0, 0, 0, 0.08);
---dstd-shadow-lg:   0 10px 30px rgba(0, 0, 0, 0.12);
---dstd-shadow-xl:   0 20px 60px rgba(0, 0, 0, 0.16);
+--tds-shadow-none: none;
+--tds-shadow-xs:   0 1px 2px rgba(0, 0, 0, 0.05);
+--tds-shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.08);
+--tds-shadow-md:   0 4px 12px rgba(0, 0, 0, 0.08);
+--tds-shadow-lg:   0 10px 30px rgba(0, 0, 0, 0.12);
+--tds-shadow-xl:   0 20px 60px rgba(0, 0, 0, 0.16);
 ```

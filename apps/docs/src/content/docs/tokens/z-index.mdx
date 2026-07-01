@@ -1,6 +1,6 @@
 ---
 title: Z-index
-description: Hiérarchie d'empilement DSTD — échelle verrouillée, règles strictes, stacking contexts.
+description: Hiérarchie d'empilement TDS — échelle verrouillée, règles strictes, stacking contexts.
 sidebar:
   order: 7
 ---
@@ -9,7 +9,7 @@ import { Aside } from '@astrojs/starlight/components';
 
 # Z-index
 
-La hiérarchie z-index DSTD est **verrouillée et non négociable**.
+La hiérarchie z-index TDS est **verrouillée et non négociable**.
 Les valeurs arbitraires hors de l'échelle sont interdites.
 
 ---
@@ -18,13 +18,13 @@ Les valeurs arbitraires hors de l'échelle sont interdites.
 
 | Token | Variable CSS | Valeur | Usage |
 |---|---|---|---|
-| `base` | `--dstd-z-base` | `0` | Contenu de base, layout normal |
-| `dropdown` | `--dstd-z-dropdown` | `100` | Menus déroulants, popovers |
-| `sticky` | `--dstd-z-sticky` | `200` | Navigation fixe, barres collantes |
-| `overlay` | `--dstd-z-overlay` | `300` | Backdrops masquants |
-| `modal` | `--dstd-z-modal` | `400` | Fenêtres modales |
-| `toast` | `--dstd-z-toast` | `500` | Notifications, toasts |
-| `tooltip` | `--dstd-z-tooltip` | `600` | Tooltips, info-bulles |
+| `base` | `--tds-z-base` | `0` | Contenu de base, layout normal |
+| `dropdown` | `--tds-z-dropdown` | `100` | Menus déroulants, popovers |
+| `sticky` | `--tds-z-sticky` | `200` | Navigation fixe, barres collantes |
+| `overlay` | `--tds-z-overlay` | `300` | Backdrops masquants |
+| `modal` | `--tds-z-modal` | `400` | Fenêtres modales |
+| `toast` | `--tds-z-toast` | `500` | Notifications, toasts |
+| `tooltip` | `--tds-z-tooltip` | `600` | Tooltips, info-bulles |
 
 **Ordre de priorité absolue :**
 `tooltip (600)` > `toast (500)` > `modal (400)` > `overlay (300)` > `sticky (200)` > `dropdown (100)` > `base (0)`
@@ -50,24 +50,24 @@ Les valeurs arbitraires hors de l'échelle sont interdites.
 ## Variables CSS
 
 ```css
---dstd-z-base:     0;
---dstd-z-dropdown: 100;
---dstd-z-sticky:   200;
---dstd-z-overlay:  300;
---dstd-z-modal:    400;
---dstd-z-toast:    500;
---dstd-z-tooltip:  600;
+--tds-z-base:     0;
+--tds-z-dropdown: 100;
+--tds-z-sticky:   200;
+--tds-z-overlay:  300;
+--tds-z-modal:    400;
+--tds-z-toast:    500;
+--tds-z-tooltip:  600;
 ```
 
 ```css
 /* Exemple d'usage */
 .ma-modale {
-  z-index: var(--dstd-z-modal);    /* 400 */
+  z-index: var(--tds-z-modal);    /* 400 */
   position: fixed;
 }
 
 .mon-backdrop {
-  z-index: var(--dstd-z-overlay);  /* 300 */
+  z-index: var(--tds-z-overlay);  /* 300 */
   position: fixed;
   inset: 0;
 }

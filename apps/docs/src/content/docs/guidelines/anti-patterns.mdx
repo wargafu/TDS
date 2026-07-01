@@ -1,6 +1,6 @@
 ---
 title: Anti-patterns
-description: Erreurs fréquentes à éviter dans les interfaces DSTD — design, code et accessibilité.
+description: Erreurs fréquentes à éviter dans les interfaces TDS — design, code et accessibilité.
 sidebar:
   order: 2
 ---
@@ -27,16 +27,16 @@ qui ne correspond pas à la gravité des actes administratifs.
   animation: gradientShift 3s ease infinite;
 }
 
-/* ✅ DSTD — sobre et institutionnel */
+/* ✅ TDS — sobre et institutionnel */
 .hero {
-  background: var(--dstd-color-neutral-100);
-  border-bottom: 3px solid var(--dstd-color-blue-500);
+  background: var(--tds-color-neutral-100);
+  border-bottom: 3px solid var(--tds-color-blue-500);
 }
 ```
 
 ### Couleurs inventées hors palette
 
-Utiliser des couleurs hors de la palette DSTD casse la cohérence visuelle
+Utiliser des couleurs hors de la palette TDS casse la cohérence visuelle
 et crée des problèmes de contraste non vérifiés.
 
 ```css
@@ -46,9 +46,9 @@ et crée des problèmes de contraste non vérifiés.
   color: #FFF;          /* Contraste non vérifié */
 }
 
-/* ✅ Palette DSTD vérifiée */
+/* ✅ Palette TDS vérifiée */
 .mon-composant {
-  background: var(--dstd-color-blue-500);
+  background: var(--tds-color-blue-500);
   color: white;  /* Contraste 8.59:1 ✅ */
 }
 ```
@@ -61,10 +61,10 @@ et crée des problèmes de contraste non vérifiés.
 .mon-tooltip { z-index: 99999; }
 .ma-nav      { z-index: 1000; }
 
-/* ✅ Échelle DSTD verrouillée */
-.ma-modal    { z-index: var(--dstd-z-modal);    /* 400 */ }
-.mon-tooltip { z-index: var(--dstd-z-tooltip);  /* 600 */ }
-.ma-nav      { z-index: var(--dstd-z-sticky);   /* 200 */ }
+/* ✅ Échelle TDS verrouillée */
+.ma-modal    { z-index: var(--tds-z-modal);    /* 400 */ }
+.mon-tooltip { z-index: var(--tds-z-tooltip);  /* 600 */ }
+.ma-nav      { z-index: var(--tds-z-sticky);   /* 200 */ }
 ```
 
 ---
@@ -78,12 +78,12 @@ et ne peut plus le voir une fois le champ rempli.
 
 ```html
 <!-- ❌ Label absent — le placeholder remplace le label -->
-<input type="text" placeholder="Nom complet" class="dstd-input">
+<input type="text" placeholder="Nom complet" class="tds-input">
 
 <!-- ✅ Label visible toujours -->
-<div class="dstd-field">
-  <label class="dstd-field__label" for="nom">Nom complet</label>
-  <input id="nom" type="text" class="dstd-input dstd-input--md" placeholder="Ex : Moussa Ibrahim">
+<div class="tds-field">
+  <label class="tds-field__label" for="nom">Nom complet</label>
+  <input id="nom" type="text" class="tds-input tds-input--md" placeholder="Ex : Moussa Ibrahim">
 </div>
 ```
 
@@ -110,7 +110,7 @@ Le bouton Reset détruit le travail de l'utilisateur d'un clic accidentel.
 <button type="reset">Effacer tout</button>
 
 <!-- ✅ Préférer un lien "Annuler" qui renvoie à l'étape précédente -->
-<a href="/etape-precedente" class="dstd-button dstd-button--secondary dstd-button--md">
+<a href="/etape-precedente" class="tds-button tds-button--secondary tds-button--md">
   Annuler
 </a>
 ```
@@ -122,14 +122,14 @@ Le bouton Reset détruit le travail de l'utilisateur d'un clic accidentel.
 ### Suppression du focus
 
 ```css
-/* ❌ Suppression globale du focus — interdit en DSTD */
+/* ❌ Suppression globale du focus — interdit en TDS */
 * { outline: none; }
 *:focus { outline: none; }
 button:focus { outline: 0; }
 
 /* ✅ Focus personnalisé mais visible */
 :focus-visible {
-  outline: 2px solid var(--dstd-color-blue-500);
+  outline: 2px solid var(--tds-color-blue-500);
   outline-offset: 3px;
 }
 ```
@@ -141,7 +141,7 @@ button:focus { outline: 0; }
 <div class="btn" onclick="doAction()">Valider</div>
 
 <!-- ✅ Bouton natif — accessible, focus, clavier, AT -->
-<button type="button" class="dstd-button dstd-button--primary dstd-button--md" onclick="doAction()">
+<button type="button" class="tds-button tds-button--primary tds-button--md" onclick="doAction()">
   Valider
 </button>
 ```
@@ -158,7 +158,7 @@ button:focus { outline: 0; }
   aria-invalid="true"
   aria-describedby="nom-error"
 >
-<p id="nom-error" class="dstd-error-text" role="alert">
+<p id="nom-error" class="tds-error-text" role="alert">
   Ce champ est requis.
 </p>
 ```
@@ -192,19 +192,19 @@ button:focus { outline: 0; }
 
 /* ✅ Tokens — maintenable, cohérent, themeable */
 .mon-composant {
-  color: var(--dstd-color-blue-500);
-  padding: var(--dstd-spacing-4);
-  border-radius: var(--dstd-radius-sm);
+  color: var(--tds-color-blue-500);
+  padding: var(--tds-spacing-4);
+  border-radius: var(--tds-radius-sm);
 }
 ```
 
-### Importer `@dstd/core` en entier dans chaque composant
+### Importer `@tds-tchad/core` en entier dans chaque composant
 
 ```typescript
 // ❌ Import massif dans chaque fichier
-import * as dstd from '@dstd/core';
+import * as tds from '@tds-tchad/core';
 
 // ✅ Import ciblé — tree-shakeable
-import { color, spacing } from '@dstd/core/tokens';
-import type { ButtonVariant } from '@dstd/core/components/button';
+import { color, spacing } from '@tds-tchad/core/tokens';
+import type { ButtonVariant } from '@tds-tchad/core/components/button';
 ```

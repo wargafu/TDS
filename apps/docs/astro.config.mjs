@@ -7,22 +7,22 @@ const base = process.env.BASE_PATH ?? '/';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'DSTD',
+      title: 'TDS',
       description: 'Système de Design de l’État — République du Tchad',
       defaultLocale: 'root',
       locales: {
         root: { label: 'Français', lang: 'fr' },
       },
       logo: {
-        light: './src/assets/dstd-logo-official.png',
-        dark: './src/assets/dstd-logo-official.png',
+        light: './src/assets/tds-logo-official.png',
+        dark: './src/assets/tds-logo-official.png',
         replacesTitle: true,
       },
       social: {
-        github: 'https://github.com/wargafu/DSTD',
+        github: 'https://github.com/wargafu/TDS',
       },
       editLink: {
-        baseUrl: 'https://github.com/wargafu/DSTD/edit/main/apps/docs/',
+        baseUrl: 'https://github.com/wargafu/TDS/edit/main/apps/docs/',
       },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
@@ -80,7 +80,7 @@ export default defineConfig({
         {
           label: 'Directives',
           items: [
-            { label: 'Quand utiliser DSTD', slug: 'guidelines/when-to-use' },
+            { label: 'Quand utiliser TDS', slug: 'guidelines/when-to-use' },
             { label: 'Anti-patterns', slug: 'guidelines/anti-patterns' },
             { label: 'Contribution', slug: 'guidelines/contributing' },
           ],

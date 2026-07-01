@@ -1,6 +1,6 @@
 ---
 title: RTL & Arabe
-description: Support de l'arabe et du RTL dans DSTD — configuration, polices, considérations de layout.
+description: Support de l'arabe et du RTL dans TDS — configuration, polices, considérations de layout.
 sidebar:
   order: 4
 ---
@@ -9,11 +9,11 @@ import { Aside } from '@astrojs/starlight/components';
 
 # RTL & Support de l'arabe
 
-L'arabe est la seconde langue officielle du Tchad. DSTD est conçu pour supporter
+L'arabe est la seconde langue officielle du Tchad. TDS est conçu pour supporter
 les interfaces bilingues français/arabe avec une expérience de qualité pour les deux langues.
 
 <Aside type="note" title="Statut du support arabe">
-  Le support RTL est planifié comme une priorité de la prochaine version majeure de DSTD.
+  Le support RTL est planifié comme une priorité de la prochaine version majeure de TDS.
   Les fondations sont en place (police, direction CSS) mais les composants n'ont pas encore
   été testés exhaustivement en contexte RTL.
 </Aside>
@@ -38,15 +38,15 @@ les interfaces bilingues français/arabe avec une expérience de qualité pour l
 
 ## Police arabe
 
-DSTD utilise **Noto Naskh Arabic** pour le texte arabe, activée automatiquement
+TDS utilise **Noto Naskh Arabic** pour le texte arabe, activée automatiquement
 via la déclaration `lang="ar"`.
 
 ```css
-/* Dans le CSS DSTD (tokens/typography.css) */
+/* Dans le CSS TDS (tokens/typography.css) */
 html[lang="ar"],
 :lang(ar) {
   direction: rtl;
-  font-family: var(--dstd-font-family-arabic);
+  font-family: var(--tds-font-family-arabic);
   /* "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif */
   line-height: 1.6; /* Ligne plus haute pour l'arabe */
 }
@@ -64,15 +64,15 @@ Privilégiez-les aux propriétés physiques pour les interfaces bilingues.
 ```css
 /* ✅ Propriétés logiques — s'adaptent à RTL automatiquement */
 .mon-composant {
-  margin-inline-start: var(--dstd-spacing-4);   /* = margin-left en LTR, margin-right en RTL */
-  margin-inline-end: var(--dstd-spacing-4);     /* = margin-right en LTR, margin-left en RTL */
-  padding-block-start: var(--dstd-spacing-3);   /* = padding-top */
+  margin-inline-start: var(--tds-spacing-4);   /* = margin-left en LTR, margin-right en RTL */
+  margin-inline-end: var(--tds-spacing-4);     /* = margin-right en LTR, margin-left en RTL */
+  padding-block-start: var(--tds-spacing-3);   /* = padding-top */
   border-inline-start: 4px solid currentColor; /* = border-left en LTR */
 }
 
 /* ❌ Propriétés physiques — à éviter pour les éléments directionnels */
 .mon-composant {
-  margin-left: var(--dstd-spacing-4);  /* Reste à gauche même en RTL */
+  margin-left: var(--tds-spacing-4);  /* Reste à gauche même en RTL */
 }
 ```
 
@@ -107,21 +107,21 @@ Certaines icônes ont un sens et doivent être retournées en RTL.
   <main>
     <h1>Demande de document</h1>
     <form>
-      <div class="dstd-field">
-        <label class="dstd-field__label" for="nom-fr">Nom complet</label>
-        <input id="nom-fr" type="text" class="dstd-input dstd-input--md" lang="fr">
+      <div class="tds-field">
+        <label class="tds-field__label" for="nom-fr">Nom complet</label>
+        <input id="nom-fr" type="text" class="tds-input tds-input--md" lang="fr">
       </div>
 
       <!-- Champ en arabe (RTL) -->
-      <div class="dstd-field" dir="rtl" lang="ar">
-        <label class="dstd-field__label" for="nom-ar">الاسم الكامل</label>
+      <div class="tds-field" dir="rtl" lang="ar">
+        <label class="tds-field__label" for="nom-ar">الاسم الكامل</label>
         <input
           id="nom-ar"
           type="text"
-          class="dstd-input dstd-input--md"
+          class="tds-input tds-input--md"
           lang="ar"
           dir="rtl"
-          style="font-family: var(--dstd-font-family-arabic);"
+          style="font-family: var(--tds-font-family-arabic);"
         >
       </div>
     </form>
