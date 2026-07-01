@@ -1,11 +1,11 @@
 {
-  "name": "@dstd/tokens",
+  "name": "@tds-tchad/tokens",
   "version": "0.1.0",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "echo \"Build @dstd/tokens placeholder\"",
+    "build": "echo \"Build @tds-tchad/tokens placeholder\"",
     "typecheck": "tsc --build"
   }
 }

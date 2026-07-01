@@ -1,9 +1,9 @@
 {
-  "name": "dstd-site",
+  "name": "tds-site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "echo \"Start DSTD doc site placeholder\"",
-    "build": "echo \"Build DSTD doc site placeholder\""
+    "dev": "echo \"Start TDS doc site placeholder\"",
+    "build": "echo \"Build TDS doc site placeholder\""
   }
 }

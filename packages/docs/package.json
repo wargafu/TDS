@@ -1,8 +1,8 @@
 {
-  "name": "@dstd/docs",
+  "name": "@tds-tchad/docs",
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "build": "echo \"Build @dstd/docs placeholder\""
+    "build": "echo \"Build @tds-tchad/docs placeholder\""
   }
 }
