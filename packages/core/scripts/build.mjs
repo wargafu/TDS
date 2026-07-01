@@ -4,8 +4,9 @@
  *
  * Steps:
  *   1. Clean dist/
- *   2. TypeScript compile (tsc --build)
- *   3. Copy non-TS assets (CSS, JSON) preserving src/ structure → dist/
+ *   2. Generate primitive tokens from tokens-src/ (see generate-tokens.mjs)
+ *   3. TypeScript compile (tsc --build)
+ *   4. Copy non-TS assets (CSS, JSON) preserving src/ structure → dist/
  */
 
 import { execSync } from 'child_process';
@@ -60,7 +61,7 @@ function copyAssets(srcDir, destDir) {
 
 // ─── step 1: clean ───────────────────────────────────────────────────────────
 
-log('Step 1/3 — Cleaning dist/...');
+log('Step 1/4 — Cleaning dist/...');
 if (existsSync(DIST)) {
   rmSync(DIST, { recursive: true, force: true });
   log('  dist/ removed');
@@ -68,9 +69,22 @@ if (existsSync(DIST)) {
   log('  dist/ not found, skipping');
 }
 
-// ─── step 2: typescript ──────────────────────────────────────────────────────
+// ─── step 2: generate tokens ─────────────────────────────────────────────────
 
-log('Step 2/3 — Compiling TypeScript...');
+log('Step 2/4 — Generating primitive tokens from tokens-src/...');
+try {
+  execSync(`node "${join(__dirname, 'generate-tokens.mjs')}"`, {
+    stdio: 'inherit',
+    cwd: ROOT,
+  });
+} catch {
+  err('Token generation failed — aborting build');
+  process.exit(1);
+}
+
+// ─── step 3: typescript ──────────────────────────────────────────────────────
+
+log('Step 3/4 — Compiling TypeScript...');
 if (!existsSync(TSC)) {
   err(`tsc not found at ${TSC} — run npm install first`);
   process.exit(1);
@@ -88,9 +102,9 @@ try {
   process.exit(1);
 }
 
-// ─── step 3: copy assets ─────────────────────────────────────────────────────
+// ─── step 4: copy assets ─────────────────────────────────────────────────────
 
-log('Step 3/3 — Copying CSS & JSON assets...');
+log('Step 4/4 — Copying CSS & JSON assets...');
 if (!existsSync(SRC)) {
   err(`src/ directory not found at ${SRC}`);
   process.exit(1);

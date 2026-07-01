@@ -1,5 +1,4 @@
-// Fichier généré par scripts/generate-tokens.mjs à partir de tokens-src/ — ne pas éditer à la main.
-export const motion = {
+{
   "durations": {
     "instant": "0ms",
     "fast": "120ms",
@@ -13,8 +12,4 @@ export const motion = {
     "exit": "cubic-bezier(0.4, 0, 1, 1)",
     "linear": "linear"
   }
-} as const;
-
-export type MotionTokens = typeof motion;
-
-export default motion;
+}

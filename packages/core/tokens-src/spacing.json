@@ -1,5 +1,4 @@
-// Fichier généré par scripts/generate-tokens.mjs à partir de tokens-src/ — ne pas éditer à la main.
-export const spacing = {
+{
   "scale": {
     "0": "0rem",
     "1": "0.25rem",
@@ -48,8 +47,4 @@ export const spacing = {
     "80": 320,
     "96": 384
   }
-} as const;
-
-export type SpacingTokens = typeof spacing;
-
-export default spacing;
+}

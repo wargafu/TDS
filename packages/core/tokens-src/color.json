@@ -1,0 +1,90 @@
+{
+  "scales": {
+    "blue": {
+      "50": "#F2F5FF",
+      "100": "#D9E3FF",
+      "200": "#A6C1FF",
+      "300": "#6B94FF",
+      "400": "#2F68FF",
+      "500": "#0033A0",
+      "600": "#002B89",
+      "700": "#002063",
+      "800": "#00143E",
+      "900": "#00061A"
+    },
+    "yellow": {
+      "50": "#FFFBEB",
+      "100": "#FFF3CC",
+      "200": "#FFE699",
+      "300": "#FFDA66",
+      "400": "#FFCF33",
+      "500": "#FFD100",
+      "600": "#E6B800",
+      "700": "#B58D00",
+      "800": "#846200",
+      "900": "#4D3A00"
+    },
+    "red": {
+      "50": "#FFF2F1",
+      "100": "#FFD8D6",
+      "200": "#FFB0AD",
+      "300": "#FF8A83",
+      "400": "#FF665D",
+      "500": "#DA291C",
+      "600": "#B21F16",
+      "700": "#82160F",
+      "800": "#560E08",
+      "900": "#2B0604"
+    },
+    "green": {
+      "50": "#F0FBF5",
+      "100": "#D9F6E6",
+      "200": "#A8E9C7",
+      "300": "#6FD8A1",
+      "400": "#38C07F",
+      "500": "#006B3C",
+      "600": "#005B32",
+      "700": "#004224",
+      "800": "#002B18",
+      "900": "#00140C"
+    },
+    "neutral": {
+      "0": "#FFFFFF",
+      "100": "#F3F4F6",
+      "200": "#E5E7EB",
+      "300": "#D1D5DB",
+      "400": "#9CA3AF",
+      "500": "#6B7280",
+      "600": "#4B5563",
+      "700": "#374151",
+      "800": "#1F2937",
+      "900": "#0B1220"
+    }
+  },
+  "semantic": {
+    "info": {
+      "background": { "scale": "blue", "shade": "50" },
+      "border": { "scale": "blue", "shade": "200" },
+      "text": { "scale": "blue", "shade": "700" },
+      "icon": { "scale": "blue", "shade": "500" }
+    },
+    "success": {
+      "background": { "scale": "green", "shade": "50" },
+      "border": { "scale": "green", "shade": "200" },
+      "text": { "scale": "green", "shade": "700" },
+      "icon": { "scale": "green", "shade": "500" }
+    },
+    "warning": {
+      "background": { "scale": "yellow", "shade": "50" },
+      "border": { "scale": "yellow", "shade": "300" },
+      "text": { "scale": "neutral", "shade": "900" },
+      "icon": { "scale": "neutral", "shade": "900" }
+    },
+    "danger": {
+      "background": { "scale": "red", "shade": "50" },
+      "border": { "scale": "red", "shade": "200" },
+      "text": { "scale": "red", "shade": "700" },
+      "icon": { "scale": "red", "shade": "500" }
+    }
+  }
+}

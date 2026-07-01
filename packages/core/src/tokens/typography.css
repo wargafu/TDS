@@ -1,20 +1,20 @@
 /* TDS typography tokens */
 :root{
   /* font families */
-  --tds-font-family-primary: "Source Sans 3", "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --tds-font-family-primary: Source Sans 3, Public Sans, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --tds-font-family-ar: "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif;
   --tds-font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
 
   /* sizes (rem) */
-  --tds-font-size-xs: 0.75rem; /*12px*/
-  --tds-font-size-sm: 0.875rem; /*14px*/
-  --tds-font-size-md: 1rem; /*16px*/
-  --tds-font-size-lg: 1.125rem; /*18px*/
-  --tds-font-size-xl: 1.25rem; /*20px*/
-  --tds-font-size-2xl: 1.5rem; /*24px*/
-  --tds-font-size-3xl: 1.875rem; /*30px*/
-  --tds-font-size-4xl: 2.25rem; /*36px*/
-  --tds-font-size-5xl: 3rem; /*48px*/
+  --tds-font-size-xs: 0.75rem;
+  --tds-font-size-sm: 0.875rem;
+  --tds-font-size-md: 1rem;
+  --tds-font-size-lg: 1.125rem;
+  --tds-font-size-xl: 1.25rem;
+  --tds-font-size-2xl: 1.5rem;
+  --tds-font-size-3xl: 1.875rem;
+  --tds-font-size-4xl: 2.25rem;
+  --tds-font-size-5xl: 3rem;
 
   /* line-heights */
   --tds-line-height-xs: 1.2;

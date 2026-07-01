@@ -1,7 +1,7 @@
 /* TDS color tokens - generated */
 :root{
   /* Blue */
-  --tds-color-blue-50:  #F2F5FF;
+  --tds-color-blue-50: #F2F5FF;
   --tds-color-blue-100: #D9E3FF;
   --tds-color-blue-200: #A6C1FF;
   --tds-color-blue-300: #6B94FF;
@@ -13,7 +13,7 @@
   --tds-color-blue-900: #00061A;
 
   /* Yellow */
-  --tds-color-yellow-50:  #FFFBEB;
+  --tds-color-yellow-50: #FFFBEB;
   --tds-color-yellow-100: #FFF3CC;
   --tds-color-yellow-200: #FFE699;
   --tds-color-yellow-300: #FFDA66;
@@ -25,7 +25,7 @@
   --tds-color-yellow-900: #4D3A00;
 
   /* Red */
-  --tds-color-red-50:  #FFF2F1;
+  --tds-color-red-50: #FFF2F1;
   --tds-color-red-100: #FFD8D6;
   --tds-color-red-200: #FFB0AD;
   --tds-color-red-300: #FF8A83;
@@ -37,7 +37,7 @@
   --tds-color-red-900: #2B0604;
 
   /* Green */
-  --tds-color-green-50:  #F0FBF5;
+  --tds-color-green-50: #F0FBF5;
   --tds-color-green-100: #D9F6E6;
   --tds-color-green-200: #A8E9C7;
   --tds-color-green-300: #6FD8A1;
@@ -49,7 +49,7 @@
   --tds-color-green-900: #00140C;
 
   /* Neutral */
-  --tds-neutral-0:   #FFFFFF;
+  --tds-neutral-0: #FFFFFF;
   --tds-neutral-100: #F3F4F6;
   --tds-neutral-200: #E5E7EB;
   --tds-neutral-300: #D1D5DB;
@@ -61,23 +61,23 @@
   --tds-neutral-900: #0B1220;
 
   /* Semantic */
-  --tds-semantic-info-bg:    var(--tds-color-blue-50);
-  --tds-semantic-info-border:var(--tds-color-blue-200);
-  --tds-semantic-info-text:  var(--tds-color-blue-700);
-  --tds-semantic-info-icon:  var(--tds-color-blue-500);
+  --tds-semantic-info-bg: var(--tds-color-blue-50);
+  --tds-semantic-info-border: var(--tds-color-blue-200);
+  --tds-semantic-info-text: var(--tds-color-blue-700);
+  --tds-semantic-info-icon: var(--tds-color-blue-500);
 
-  --tds-semantic-success-bg:    var(--tds-color-green-50);
-  --tds-semantic-success-border:var(--tds-color-green-200);
-  --tds-semantic-success-text:  var(--tds-color-green-700);
-  --tds-semantic-success-icon:  var(--tds-color-green-500);
+  --tds-semantic-success-bg: var(--tds-color-green-50);
+  --tds-semantic-success-border: var(--tds-color-green-200);
+  --tds-semantic-success-text: var(--tds-color-green-700);
+  --tds-semantic-success-icon: var(--tds-color-green-500);
 
-  --tds-semantic-warning-bg:    var(--tds-color-yellow-50);
-  --tds-semantic-warning-border:var(--tds-color-yellow-300);
-  --tds-semantic-warning-text:  var(--tds-neutral-900);
-  --tds-semantic-warning-icon:  var(--tds-neutral-900);
+  --tds-semantic-warning-bg: var(--tds-color-yellow-50);
+  --tds-semantic-warning-border: var(--tds-color-yellow-300);
+  --tds-semantic-warning-text: var(--tds-neutral-900);
+  --tds-semantic-warning-icon: var(--tds-neutral-900);
 
-  --tds-semantic-danger-bg:    var(--tds-color-red-50);
-  --tds-semantic-danger-border:var(--tds-color-red-200);
-  --tds-semantic-danger-text:  var(--tds-color-red-700);
-  --tds-semantic-danger-icon:  var(--tds-color-red-500);
+  --tds-semantic-danger-bg: var(--tds-color-red-50);
+  --tds-semantic-danger-border: var(--tds-color-red-200);
+  --tds-semantic-danger-text: var(--tds-color-red-700);
+  --tds-semantic-danger-icon: var(--tds-color-red-500);
 }

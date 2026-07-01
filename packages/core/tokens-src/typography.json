@@ -1,0 +1,50 @@
+{
+  "families": {
+    "primary": "Source Sans 3, Public Sans, system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+    "arabic": "\"Noto Naskh Arabic\", \"Noto Sans Arabic\", system-ui, sans-serif",
+    "mono": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, \"Roboto Mono\", \"Courier New\", monospace"
+  },
+  "sizes": {
+    "xs": "0.75rem",
+    "sm": "0.875rem",
+    "md": "1rem",
+    "lg": "1.125rem",
+    "xl": "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.875rem",
+    "4xl": "2.25rem",
+    "5xl": "3rem"
+  },
+  "lineHeights": {
+    "xs": 1.2,
+    "sm": 1.3,
+    "md": 1.5,
+    "lg": 1.5,
+    "xl": 1.35,
+    "2xl": 1.3,
+    "3xl": 1.2,
+    "4xl": 1.15,
+    "5xl": 1.1
+  },
+  "weights": {
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "xbold": 800
+  },
+  "styles": {
+    "display": {"fontFamily":"primary","size":"5xl","lineHeight":"5xl","weight":"semibold","letterSpacing":"-0.02em","usage":"hero / large display — use sparingly; ensure strong contrast"},
+    "pageTitle": {"fontFamily":"primary","size":"4xl","lineHeight":"4xl","weight":"semibold","letterSpacing":"-0.02em","usage":"main page title"},
+    "sectionTitle": {"fontFamily":"primary","size":"2xl","lineHeight":"2xl","weight":"semibold","letterSpacing":"-0.01em","usage":"section headings"},
+    "subsectionTitle": {"fontFamily":"primary","size":"xl","lineHeight":"xl","weight":"medium","letterSpacing":"0em","usage":"subsection headings"},
+    "bodyLarge": {"fontFamily":"primary","size":"lg","lineHeight":"lg","weight":"regular","letterSpacing":"0em","usage":"important body text / descriptions"},
+    "body": {"fontFamily":"primary","size":"md","lineHeight":"md","weight":"regular","letterSpacing":"0em","usage":"default body text / forms"},
+    "bodySmall": {"fontFamily":"primary","size":"sm","lineHeight":"sm","weight":"regular","letterSpacing":"0em","usage":"microcopy / helper text (avoid for critical content)"},
+    "caption": {"fontFamily":"primary","size":"xs","lineHeight":"xs","weight":"regular","letterSpacing":"0em","usage":"captions / image legends"},
+    "label": {"fontFamily":"primary","size":"sm","lineHeight":"sm","weight":"semibold","letterSpacing":"0em","usage":"form labels / field titles"},
+    "button": {"fontFamily":"primary","size":"md","lineHeight":"md","weight":"semibold","letterSpacing":"0.01em","usage":"buttons / CTAs — ensure contrast"},
+    "link": {"fontFamily":"primary","size":"md","lineHeight":"md","weight":"medium","letterSpacing":"0em","usage":"inline links — underline or clear focus style"}
+  }
+}
