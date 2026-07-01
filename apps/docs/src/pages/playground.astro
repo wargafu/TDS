@@ -1,0 +1,154 @@
+---
+// Terrain de jeu visuel : rend chaque variante/taille/état de chaque composant
+// avec le CSS réellement buildé de @tds-tchad/core (copié dans public/tds/ par
+// scripts/copy-core-assets.mjs). Sert de QA visuelle rapide — remplace le
+// placeholder apps/storybook, qui n'apportait rien pour une bibliothèque
+// 100% CSS sans état/props JS à piloter.
+const buttonVariants = ['primary', 'secondary', 'tertiary', 'danger', 'success'];
+const buttonSizes = ['sm', 'md', 'lg'];
+const inputVariants = ['default', 'error', 'success'];
+const badgeVariants = ['default', 'info', 'success', 'warning', 'danger'];
+const alertVariants = ['info', 'success', 'warning', 'danger'];
+const cardVariants = ['flat', 'elevated', 'outlined'];
+const linkVariants = ['default', 'muted', 'danger', 'external', 'nav', 'standalone'];
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>TDS — Terrain de jeu des composants</title>
+  <link rel="stylesheet" href="/tds/base.css" />
+  <link rel="stylesheet" href="/tds/tokens/color.css" />
+  <link rel="stylesheet" href="/tds/tokens/typography.css" />
+  <link rel="stylesheet" href="/tds/tokens/spacing.css" />
+  <link rel="stylesheet" href="/tds/tokens/radius.css" />
+  <link rel="stylesheet" href="/tds/tokens/shadow.css" />
+  <link rel="stylesheet" href="/tds/tokens/motion.css" />
+  <link rel="stylesheet" href="/tds/tokens/z-index.css" />
+  <link rel="stylesheet" href="/tds/components/button/button.css" />
+  <link rel="stylesheet" href="/tds/components/input/input.css" />
+  <link rel="stylesheet" href="/tds/components/alert/alert.css" />
+  <link rel="stylesheet" href="/tds/components/badge/badge.css" />
+  <link rel="stylesheet" href="/tds/components/card/card.css" />
+  <link rel="stylesheet" href="/tds/components/link/link.css" />
+  <link rel="stylesheet" href="/tds/components/table/table.css" />
+  <style>
+    body { max-width: 72rem; margin: 0 auto; padding: var(--tds-spacing-8); font-family: var(--tds-font-family-primary); }
+    section { margin-bottom: var(--tds-spacing-16); }
+    h2 { border-bottom: 1px solid var(--tds-neutral-200); padding-bottom: var(--tds-spacing-2); }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--tds-spacing-4); margin-bottom: var(--tds-spacing-4); }
+    .row-label { width: 8rem; font-size: var(--tds-font-size-sm); color: var(--tds-neutral-600); }
+  </style>
+</head>
+<body>
+  <h1>TDS — Terrain de jeu des composants</h1>
+  <p>Rend chaque variante × taille × état à partir du CSS réellement buildé (<code>packages/core/dist</code>). Page de QA visuelle, non indexée, non liée depuis la navigation Starlight.</p>
+
+  <section id="button" data-pagefind-ignore>
+    <h2>Button</h2>
+    {buttonSizes.map((size) => (
+      <div class="row">
+        <span class="row-label">{size}</span>
+        {buttonVariants.map((variant) => (
+          <button type="button" class={`tds-button tds-button--${variant} tds-button--${size}`}>
+            {variant}
+          </button>
+        ))}
+      </div>
+    ))}
+    <div class="row">
+      <span class="row-label">disabled</span>
+      <button type="button" class="tds-button tds-button--primary tds-button--md" disabled>primary</button>
+      <button type="button" class="tds-button tds-button--secondary tds-button--md" aria-disabled="true">secondary</button>
+    </div>
+    <div class="row">
+      <span class="row-label">loading</span>
+      <button type="button" class="tds-button tds-button--primary tds-button--md" data-loading="true">Envoi…</button>
+    </div>
+  </section>
+
+  <section id="input" data-pagefind-ignore>
+    <h2>Input</h2>
+    {['sm', 'md', 'lg'].map((size) => (
+      <div class="row">
+        <span class="row-label">{size}</span>
+        {inputVariants.map((variant) => (
+          <div class="tds-field">
+            <label class="tds-field__label" for={`input-${size}-${variant}`}>{variant}</label>
+            <input id={`input-${size}-${variant}`} type="text" class={`tds-input tds-input--${size} ${variant !== 'default' ? `tds-input--${variant}` : ''}`} placeholder="Texte…" />
+          </div>
+        ))}
+      </div>
+    ))}
+    <div class="row">
+      <span class="row-label">disabled</span>
+      <input type="text" class="tds-input tds-input--md tds-input--disabled" value="Champ désactivé" disabled />
+      <input type="text" class="tds-input tds-input--md tds-input--readonly" value="Lecture seule" readonly />
+    </div>
+  </section>
+
+  <section id="alert" data-pagefind-ignore>
+    <h2>Alert</h2>
+    {alertVariants.map((variant) => (
+      <div class={`tds-alert tds-alert--${variant}`} role="status" style="margin-bottom: var(--tds-spacing-3);">
+        <div class="tds-alert__content">
+          <p class="tds-alert__title">Titre {variant}</p>
+          <div class="tds-alert__body">Message d'exemple pour la variante {variant}.</div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section id="badge" data-pagefind-ignore>
+    <h2>Badge</h2>
+    {['sm', 'md'].map((size) => (
+      <div class="row">
+        <span class="row-label">{size}</span>
+        {badgeVariants.map((variant) => (
+          <span class={`tds-badge tds-badge--${variant} tds-badge--${size}`}>{variant}</span>
+        ))}
+      </div>
+    ))}
+  </section>
+
+  <section id="card" data-pagefind-ignore>
+    <h2>Card</h2>
+    <div class="row">
+      {cardVariants.map((variant) => (
+        <div class={`tds-card tds-card--${variant}`} style="width: 16rem;">
+          <div class="tds-card__body">
+            <p class="tds-card__title">Carte {variant}</p>
+            <p class="tds-card__description">Contenu d'exemple pour la variante {variant}.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="link" data-pagefind-ignore>
+    <h2>Link</h2>
+    <div class="row">
+      {linkVariants.map((variant) => (
+        <a href="#" class={`tds-link ${variant !== 'default' ? `tds-link--${variant}` : ''}`}>Lien {variant}</a>
+      ))}
+    </div>
+  </section>
+
+  <section id="table" data-pagefind-ignore>
+    <h2>Table</h2>
+    <div class="tds-table-wrapper">
+      <table class="tds-table tds-table--striped tds-table--bordered">
+        <caption>Exemple de tableau strié et bordé</caption>
+        <thead>
+          <tr><th scope="col">Référence</th><th scope="col">Statut</th><th scope="col">Montant</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>REF-001</td><td data-status="success">Validé</td><td>12 400 FCFA</td></tr>
+          <tr><td>REF-002</td><td data-status="warning">En attente</td><td>8 000 FCFA</td></tr>
+          <tr><td>REF-003</td><td data-status="danger">Rejeté</td><td>3 200 FCFA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</body>
+</html>

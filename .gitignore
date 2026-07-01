@@ -9,6 +9,7 @@ dist/
 # Docs build
 apps/docs/dist/
 apps/docs/.astro/
+apps/docs/public/tds/
 
 # Environment
 .env

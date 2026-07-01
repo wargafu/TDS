@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/copy-core-assets.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/copy-core-assets.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check"

@@ -1,9 +1,0 @@
-{
-  "name": "tds-storybook",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "echo \"Start Storybook placeholder\"",
-    "build": "echo \"Build Storybook placeholder\""
-  }
-}

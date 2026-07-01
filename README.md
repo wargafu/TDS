@@ -272,7 +272,7 @@ git push origin feat/nom-du-composant
 ### v0.3 — Patterns et templates
 - [ ] Template portail citoyen
 - [ ] Template tableau de bord administratif
-- [ ] Storybook fonctionnel
+- [x] Terrain de jeu visuel des composants (`apps/docs/src/pages/playground.astro`)
 
 ### v1.0 — Production ready
 - [ ] Dark mode complet
