@@ -1,0 +1,33 @@
+/* TDS Skip Link component */
+:root {
+  --tds-skip-link-bg: var(--tds-color-blue-500);
+  --tds-skip-link-color: var(--tds-neutral-0);
+  --tds-skip-link-padding: var(--tds-spacing-3) var(--tds-spacing-4);
+  --tds-skip-link-radius: var(--tds-radius-sm);
+  --tds-skip-link-focus-outline: 2px solid var(--tds-neutral-0);
+  --tds-skip-link-focus-outline-offset: 2px;
+}
+
+.tds-skip-link {
+  position: absolute;
+  top: var(--tds-spacing-2);
+  left: var(--tds-spacing-2);
+  z-index: var(--tds-z-modal);
+  padding: var(--tds-skip-link-padding);
+  background: var(--tds-skip-link-bg);
+  color: var(--tds-skip-link-color);
+  border-radius: var(--tds-skip-link-radius);
+  font-weight: var(--tds-font-weight-semibold);
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform var(--tds-motion-fast) var(--tds-easing-standard);
+}
+
+.tds-skip-link:focus {
+  transform: translateY(0);
+}
+
+.tds-skip-link:focus-visible {
+  outline: var(--tds-skip-link-focus-outline);
+  outline-offset: var(--tds-skip-link-focus-outline-offset);
+}

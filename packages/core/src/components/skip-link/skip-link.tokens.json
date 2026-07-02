@@ -1,0 +1,15 @@
+{
+  "defaults": {
+    "background": "var(--tds-skip-link-bg)",
+    "color": "var(--tds-skip-link-color)",
+    "padding": "var(--tds-skip-link-padding)",
+    "radius": "var(--tds-skip-link-radius)",
+    "zIndex": "var(--tds-z-modal)"
+  },
+  "states": {
+    "focusVisible": {
+      "outline": "var(--tds-skip-link-focus-outline)",
+      "outlineOffset": "var(--tds-skip-link-focus-outline-offset)"
+    }
+  }
+}

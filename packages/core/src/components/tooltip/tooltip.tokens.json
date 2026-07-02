@@ -1,0 +1,12 @@
+{
+  "defaults": {
+    "background": "var(--tds-tooltip-bg)",
+    "color": "var(--tds-tooltip-color)",
+    "padding": "var(--tds-tooltip-padding)",
+    "radius": "var(--tds-tooltip-radius)",
+    "fontSize": "var(--tds-tooltip-font-size)",
+    "maxWidth": "var(--tds-tooltip-max-width)",
+    "zIndex": "var(--tds-z-tooltip)",
+    "offset": "var(--tds-tooltip-offset)"
+  }
+}

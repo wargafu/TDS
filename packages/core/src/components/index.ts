@@ -10,3 +10,8 @@ export * from './nav/nav.tokens';
 export * from './breadcrumb/breadcrumb.tokens';
 export * from './pagination/pagination.tokens';
 export * from './modal/modal.tokens';
+export * from './skip-link/skip-link.tokens';
+export * from './footer/footer.tokens';
+export * from './accordion/accordion.tokens';
+export * from './tabs/tabs.tokens';
+export * from './tooltip/tooltip.tokens';

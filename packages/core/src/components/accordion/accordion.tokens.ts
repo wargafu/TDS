@@ -1,0 +1,27 @@
+/**
+ * TDS accordion tokens
+ *
+ * Habille les éléments HTML natifs <details>/<summary> — zéro JavaScript,
+ * ouverture/fermeture et sémantique gérées nativement par le navigateur.
+ */
+
+export const accordion = {
+  defaults: {
+    borderColor: 'var(--tds-accordion-border)',
+    triggerPadding: 'var(--tds-accordion-trigger-padding)',
+    triggerColor: 'var(--tds-accordion-trigger-color)',
+    triggerHoverBackground: 'var(--tds-accordion-trigger-hover-bg)',
+    contentPadding: 'var(--tds-accordion-content-padding)',
+    iconSize: 'var(--tds-accordion-icon-size)',
+  },
+  states: {
+    focusVisible: {
+      outline: 'var(--tds-accordion-focus-outline)',
+      outlineOffset: 'var(--tds-accordion-focus-outline-offset)',
+    },
+  },
+} as const;
+
+export type AccordionTokens = typeof accordion;
+
+export default accordion;

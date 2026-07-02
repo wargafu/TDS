@@ -56,6 +56,11 @@ const COMPONENTS = [
   { name: 'breadcrumb', tokenFile: 'breadcrumb.tokens', cssFile: 'breadcrumb' },
   { name: 'pagination', tokenFile: 'pagination.tokens', cssFile: 'pagination' },
   { name: 'modal',       tokenFile: 'modal.tokens',       cssFile: 'modal'       },
+  { name: 'skip-link', tokenFile: 'skip-link.tokens', cssFile: 'skip-link' },
+  { name: 'footer',     tokenFile: 'footer.tokens',     cssFile: 'footer'     },
+  { name: 'accordion', tokenFile: 'accordion.tokens', cssFile: 'accordion' },
+  { name: 'tabs',       tokenFile: 'tabs.tokens',       cssFile: 'tabs'       },
+  { name: 'tooltip',   tokenFile: 'tooltip.tokens',   cssFile: 'tooltip'   },
 ];
 
 process.stdout.write('\n[validate-tokens] Component tokens...\n\n');

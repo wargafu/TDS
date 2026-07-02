@@ -1,0 +1,77 @@
+/* TDS Accordion component */
+:root {
+  --tds-accordion-border: var(--tds-neutral-200);
+  --tds-accordion-trigger-padding: var(--tds-spacing-4);
+  --tds-accordion-trigger-color: var(--tds-neutral-900);
+  --tds-accordion-trigger-hover-bg: var(--tds-neutral-100);
+  --tds-accordion-content-padding: 0 var(--tds-spacing-4) var(--tds-spacing-4);
+  --tds-accordion-icon-size: 1rem;
+  --tds-accordion-focus-outline: 2px solid var(--tds-color-blue-500);
+  --tds-accordion-focus-outline-offset: -2px;
+}
+
+.tds-accordion {
+  border: 1px solid var(--tds-accordion-border);
+  border-radius: var(--tds-radius-sm);
+  overflow: hidden;
+}
+
+.tds-accordion__item {
+  border-bottom: 1px solid var(--tds-accordion-border);
+}
+
+.tds-accordion__item:last-child {
+  border-bottom: none;
+}
+
+.tds-accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tds-spacing-3);
+  width: 100%;
+  padding: var(--tds-accordion-trigger-padding);
+  font-size: var(--tds-font-size-md);
+  font-weight: var(--tds-font-weight-semibold);
+  color: var(--tds-accordion-trigger-color);
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Retire le triangle par défaut du <summary> (Chrome/Safari + Firefox) */
+.tds-accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.tds-accordion__trigger:hover {
+  background: var(--tds-accordion-trigger-hover-bg);
+}
+
+.tds-accordion__trigger:focus-visible {
+  outline: var(--tds-accordion-focus-outline);
+  outline-offset: var(--tds-accordion-focus-outline-offset);
+}
+
+.tds-accordion__icon {
+  flex-shrink: 0;
+  width: var(--tds-accordion-icon-size);
+  height: var(--tds-accordion-icon-size);
+  transition: transform var(--tds-motion-fast) var(--tds-easing-standard);
+}
+
+.tds-accordion__item[open] .tds-accordion__icon {
+  transform: rotate(180deg);
+}
+
+.tds-accordion__content {
+  padding: var(--tds-accordion-content-padding);
+  font-size: var(--tds-font-size-md);
+  line-height: var(--tds-line-height-md);
+  color: var(--tds-neutral-700);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tds-accordion__icon {
+    transition: none;
+  }
+}

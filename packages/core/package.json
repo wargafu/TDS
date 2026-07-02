@@ -101,6 +101,31 @@
       "types": "./dist/components/modal/index.d.ts"
     },
     "./components/modal/modal.css": "./dist/components/modal/modal.css",
+    "./components/skip-link": {
+      "import": "./dist/components/skip-link/index.js",
+      "types": "./dist/components/skip-link/index.d.ts"
+    },
+    "./components/skip-link/skip-link.css": "./dist/components/skip-link/skip-link.css",
+    "./components/footer": {
+      "import": "./dist/components/footer/index.js",
+      "types": "./dist/components/footer/index.d.ts"
+    },
+    "./components/footer/footer.css": "./dist/components/footer/footer.css",
+    "./components/accordion": {
+      "import": "./dist/components/accordion/index.js",
+      "types": "./dist/components/accordion/index.d.ts"
+    },
+    "./components/accordion/accordion.css": "./dist/components/accordion/accordion.css",
+    "./components/tabs": {
+      "import": "./dist/components/tabs/index.js",
+      "types": "./dist/components/tabs/index.d.ts"
+    },
+    "./components/tabs/tabs.css": "./dist/components/tabs/tabs.css",
+    "./components/tooltip": {
+      "import": "./dist/components/tooltip/index.js",
+      "types": "./dist/components/tooltip/index.d.ts"
+    },
+    "./components/tooltip/tooltip.css": "./dist/components/tooltip/tooltip.css",
     "./tokens/color.css": "./dist/tokens/color.css",
     "./tokens/typography.css": "./dist/tokens/typography.css",
     "./tokens/spacing.css": "./dist/tokens/spacing.css",
