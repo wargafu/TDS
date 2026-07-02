@@ -1,40 +1,17 @@
 ---
-// Remplace le Sidebar Starlight par défaut (un seul accordéon géant listant
-// les 8 groupes simultanément) par le pattern DSFR : une barre de sections
-// (Premiers pas / Fondamentaux / Composants / ...) au-dessus, puis une
-// sidebar ("Menu latéral") scopée à la seule section active — retrouvée via
-// le préfixe d'URL de la page courante.
-// Module virtuel résolu par le plugin Vite de Starlight à l'exécution — les
-// déclarations de types de env.d.ts ne sont pas reprises par `astro check`
-// pour ce module précis dans cette version, d'où la suppression ciblée.
+// Sidebar scopée à la seule section active (le switcher de sections vit
+// désormais dans SectionNav.astro, en barre horizontale sous le header —
+// voir PageFrame.astro). Reproduit le "Menu latéral" du DSFR : uniquement
+// les pages de la section courante, retrouvée via le préfixe d'URL.
 // @ts-expect-error — module virtuel, résolu à l'exécution par Astro/Vite
 import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
 import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
 import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+import { SECTION_PREFIXES } from './section-prefixes';
 
-// `starlightRoute` est injecté par l'intégration Starlight à l'exécution ;
-// ses types internes précis (SidebarEntry avec attrs/badge/collapsed...) ne
-// sont pas exposés publiquement pour les composants utilisateur — cast en
-// `any` plutôt que de redéclarer une structure partielle qui romprait dès
-// que Starlight ajoute un champ interne.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { sidebar } = (Astro.locals as any).starlightRoute;
-const base = import.meta.env.BASE_URL;
 const pathname = Astro.url.pathname;
-
-// Même ordre que les groupes définis dans astro.config.mjs — sert à
-// retrouver la page d'atterrissage de chaque section et à détecter la
-// section active à partir de l'URL courante.
-const SECTION_PREFIXES = [
-  'premiers-pas',
-  'fondamentaux',
-  'components',
-  'modeles',
-  'mesure-audience',
-  'communaute',
-  'aide',
-  'about',
-];
 
 const groups = sidebar.filter((entry: { type: string }) => entry.type === 'group');
 
@@ -46,79 +23,9 @@ const activeGroup = activeIndex >= 0 ? groups[activeIndex] : null;
 ---
 
 <SidebarPersister>
-  <nav class="tds-section-switcher" aria-label="Sections de la documentation">
-    <ul>
-      {
-        groups.map((group: { label: string }, i: number) => {
-          const prefix = SECTION_PREFIXES[i];
-          const href = `${base}${prefix}/`;
-          const isActive = i === activeIndex;
-          return (
-            <li>
-              <a href={href} aria-current={isActive ? 'page' : undefined}>
-                {group.label}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </nav>
-
-  {
-    activeGroup && (
-      <div class="tds-section-sidebar">
-        <p class="tds-section-sidebar__heading">Menu latéral</p>
-        <SidebarSublist sublist={activeGroup.entries} />
-      </div>
-    )
-  }
+  {activeGroup && <SidebarSublist sublist={activeGroup.entries} />}
 </SidebarPersister>
 
 <div class="md:sl-hidden">
   <MobileMenuFooter />
 </div>
-
-<style>
-  .tds-section-switcher ul {
-    list-style: none;
-    margin: 0 0 1rem;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    border-bottom: 1px solid var(--sl-color-hairline);
-    padding-bottom: 1rem;
-  }
-
-  .tds-section-switcher a {
-    display: block;
-    padding: 0.35em 0.5rem;
-    border-radius: 0.25rem;
-    font-size: var(--sl-text-sm);
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--sl-color-gray-2);
-  }
-
-  .tds-section-switcher a:hover,
-  .tds-section-switcher a:focus {
-    color: var(--sl-color-white);
-    background-color: var(--sl-color-gray-6);
-  }
-
-  .tds-section-switcher a[aria-current='page'] {
-    color: var(--sl-color-text-invert);
-    background-color: var(--sl-color-text-accent);
-  }
-
-  .tds-section-sidebar__heading {
-    margin: 0 0 0.5rem;
-    padding: 0 0.5rem;
-    font-size: var(--sl-text-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--sl-color-gray-3);
-  }
-</style>

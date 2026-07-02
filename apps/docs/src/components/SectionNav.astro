@@ -1,0 +1,83 @@
+---
+// Barre horizontale des 8 sections (Premiers pas / Fondamentaux / ...),
+// affichée sous le header principal, sur toute la largeur — à la manière
+// du DSFR. Rendue par l'override de PageFrame.astro, entre le header et
+// la zone à deux colonnes (sidebar scopée + contenu).
+import { SECTION_PREFIXES } from './section-prefixes';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { sidebar } = (Astro.locals as any).starlightRoute;
+const base = import.meta.env.BASE_URL;
+const pathname = Astro.url.pathname;
+
+const groups = sidebar.filter((entry: { type: string }) => entry.type === 'group');
+
+const activeIndex = groups.findIndex((_group: unknown, i: number) => {
+  const prefix = SECTION_PREFIXES[i];
+  return prefix && pathname.includes(`/${prefix}/`);
+});
+---
+
+<nav class="tds-section-nav print:hidden" aria-label="Sections de la documentation">
+  <ul>
+    {
+      groups.map((group: { label: string }, i: number) => {
+        const prefix = SECTION_PREFIXES[i];
+        const href = `${base}${prefix}/`;
+        const isActive = i === activeIndex;
+        return (
+          <li>
+            <a href={href} aria-current={isActive ? 'page' : undefined}>
+              {group.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+
+<style>
+  .tds-section-nav {
+    position: fixed;
+    z-index: var(--sl-z-index-navbar);
+    inset-inline-start: 0;
+    inset-block-start: var(--tds-header-height);
+    width: 100%;
+    height: var(--tds-section-nav-height);
+    background-color: var(--sl-color-bg-nav);
+    border-bottom: 1px solid var(--sl-color-hairline-shade);
+    overflow-x: auto;
+  }
+
+  .tds-section-nav ul {
+    display: flex;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--sl-nav-pad-x);
+    gap: 1.5rem;
+  }
+
+  .tds-section-nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--sl-color-gray-2);
+    border-bottom: 2px solid transparent;
+  }
+
+  .tds-section-nav a:hover,
+  .tds-section-nav a:focus {
+    color: var(--sl-color-white);
+  }
+
+  .tds-section-nav a[aria-current='page'] {
+    color: var(--sl-color-text-accent);
+    border-bottom-color: var(--sl-color-text-accent);
+  }
+</style>

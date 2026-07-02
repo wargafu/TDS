@@ -18,6 +18,22 @@
   --sl-color-bg-nav: #0033a0;
 }
 
+/* ─── 3bis. Barre de sections DSFR — ajoute une ligne sous le header ─
+   `--sl-nav-height` pilote déjà la hauteur du header, la position de la
+   sidebar et le padding du contenu (voir PageFrame.astro). En la
+   redéfinissant comme header + barre de sections, ces trois calculs
+   Starlight s'ajustent automatiquement sans dupliquer la logique. */
+:root {
+  --tds-header-height: 3.5rem;
+  --tds-section-nav-height: 2.75rem;
+  --sl-nav-height: calc(var(--tds-header-height) + var(--tds-section-nav-height));
+}
+@media (min-width: 50em) {
+  :root {
+    --tds-header-height: 4rem;
+  }
+}
+
 /* ─── 4. MODE SOMBRE (défaut :root dans Starlight) ───────────── */
 /*
    RÈGLE : gray-1 = texte clair, gray-6 = surface sombre, black = fond page
