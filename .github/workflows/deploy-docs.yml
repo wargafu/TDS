@@ -53,8 +53,8 @@ jobs:
       - name: Build docs
         run: pnpm --filter tds-docs build
         env:
-          SITE_URL: https://wargafu.github.io/TDGS
-          BASE_PATH: /TDGS
+          SITE_URL: https://wargafu.github.io
+          BASE_PATH: /TDS
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

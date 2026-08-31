@@ -3,6 +3,8 @@ import starlight from '@astrojs/starlight';
 
 const site = process.env.SITE_URL ?? 'http://localhost:4321';
 const base = process.env.BASE_PATH ?? '/';
+const basePrefix = base === '/' ? '' : base.replace(/\/$/, '');
+const publicAsset = (path) => `${basePrefix}/${path.replace(/^\//, '')}`;
 
 export default defineConfig({
   integrations: [
@@ -27,8 +29,14 @@ export default defineConfig({
       },
       customCss: ['./src/styles/custom.css'],
       head: [
-        { tag: 'link', attrs: { rel: 'icon', href: '/favicon.png', type: 'image/png' } },
-        { tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
+        {
+          tag: 'link',
+          attrs: { rel: 'icon', href: publicAsset('favicon.png'), type: 'image/png' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'apple-touch-icon', href: publicAsset('apple-touch-icon.png') },
+        },
       ],
       components: {
         Footer: './src/components/Footer.astro',
@@ -59,7 +67,7 @@ export default defineConfig({
             { label: 'Z-index', slug: 'fondamentaux/z-index' },
             { label: 'Principes WCAG', slug: 'fondamentaux/wcag' },
             { label: 'Clavier & focus', slug: 'fondamentaux/keyboard' },
-            { label: 'Lecteurs d\'écran', slug: 'fondamentaux/screen-readers' },
+            { label: "Lecteurs d'écran", slug: 'fondamentaux/screen-readers' },
             { label: 'RTL & Arabe', slug: 'fondamentaux/rtl' },
             { label: 'Quand utiliser TDGS', slug: 'fondamentaux/when-to-use' },
             { label: 'Anti-patterns', slug: 'fondamentaux/anti-patterns' },
@@ -106,15 +114,13 @@ export default defineConfig({
             { label: 'Aperçu', slug: 'modeles/overview' },
             { label: 'Formulaire de connexion', slug: 'modeles/login-form' },
             { label: 'Formulaire multi-étapes', slug: 'modeles/multi-step-form' },
-            { label: 'Résumé d\'erreurs', slug: 'modeles/error-summary' },
+            { label: "Résumé d'erreurs", slug: 'modeles/error-summary' },
             { label: 'Page de confirmation', slug: 'modeles/confirmation-page' },
           ],
         },
         {
-          label: 'Mesure d\'audience',
-          items: [
-            { label: 'Principes', slug: 'mesure-audience/apercu' },
-          ],
+          label: "Mesure d'audience",
+          items: [{ label: 'Principes', slug: 'mesure-audience/apercu' }],
         },
         {
           label: 'Communauté',
@@ -125,9 +131,7 @@ export default defineConfig({
         },
         {
           label: 'Aide',
-          items: [
-            { label: 'FAQ', slug: 'aide/faq' },
-          ],
+          items: [{ label: 'FAQ', slug: 'aide/faq' }],
         },
         {
           label: 'À propos',
