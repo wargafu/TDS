@@ -1,13 +1,13 @@
 ---
 title: Typographie
-description: Système typographique TDS — polices, échelle, poids, styles et règles multilingues.
+description: Système typographique TDGS — polices, échelle, poids, styles et règles multilingues.
 sidebar:
   order: 2
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-Le système typographique TDS est conçu pour la lisibilité dans les interfaces gouvernementales :
+Le système typographique TDGS est conçu pour la lisibilité dans les interfaces gouvernementales :
 hiérarchie claire, tailles suffisantes pour l'accessibilité, polices adaptées au français et à l'arabe.
 
 ---
@@ -17,7 +17,7 @@ hiérarchie claire, tailles suffisantes pour l'accessibilité, polices adaptées
 | Rôle | Police | Variable CSS | Usage |
 |---|---|---|---|
 | **Principale** | Source Sans 3 | `--tds-font-family-primary` | Tous les textes en français |
-| **Arabe** | Noto Naskh Arabic | `--tds-font-family-arabic` | Textes en arabe (RTL) |
+| **Arabe** | Noto Naskh Arabic | `--tds-font-family-ar` | Textes en arabe (RTL) |
 | **Monospace** | JetBrains Mono | `--tds-font-family-mono` | Code, références techniques |
 | **Secours** | Public Sans | (dans le stack primary) | Fallback institutionnel |
 
@@ -29,7 +29,7 @@ body {
 /* Passage automatique en arabe */
 html[lang="ar"], :lang(ar) {
   direction: rtl;
-  font-family: var(--tds-font-family-arabic);
+  font-family: var(--tds-font-family-ar);
 }
 
 code, kbd, samp, pre {
@@ -47,7 +47,7 @@ code, kbd, samp, pre {
 
 ## Échelle de tailles
 
-L'échelle TDS est basée sur une racine de 16px. Elle utilise `rem` pour respecter
+L'échelle TDGS est basée sur une racine de 16px. Elle utilise `rem` pour respecter
 les préférences de zoom des utilisateurs.
 
 | Token | Variable CSS | Valeur | Équivalent px | Usage |
@@ -100,10 +100,10 @@ Chaque taille a une hauteur de ligne associée, optimisée pour sa taille.
 
 ---
 
-## Styles textuels officiels
+## Styles textuels du TDGS
 
 Ces styles combinent taille, hauteur de ligne, poids et espacement de lettres.
-Ils sont les **seules combinaisons validées** pour les interfaces TDS.
+Ils sont les **seules combinaisons validées** pour les interfaces TDGS.
 
 ### Display
 ```css
@@ -168,7 +168,7 @@ letter-spacing: 0.01em;
 
 ## Typographie responsive
 
-TDS recommande d'adapter les titres avec `clamp()` pour une hiérarchie fluide.
+TDGS recommande d'adapter les titres avec `clamp()` pour une hiérarchie fluide.
 
 ```css
 /* H1 adaptatif */
@@ -197,7 +197,7 @@ h1 {
 ```css
 /* Familles */
 --tds-font-family-primary: "Source Sans 3", "Public Sans", system-ui, ...;
---tds-font-family-arabic: "Noto Naskh Arabic", "Noto Sans Arabic", ...;
+--tds-font-family-ar: "Noto Naskh Arabic", "Noto Sans Arabic", ...;
 --tds-font-family-mono: "JetBrains Mono", ui-monospace, ...;
 
 /* Tailles */

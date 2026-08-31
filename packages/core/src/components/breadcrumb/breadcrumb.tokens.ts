@@ -1,5 +1,5 @@
 /**
- * TDS breadcrumb tokens
+ * TDGS breadcrumb tokens
  *
  * Fil d'Ariane. Le dernier élément est le texte courant (aria-current="page",
  * sans lien) ; les séparateurs sont générés en CSS, pas dans le HTML.

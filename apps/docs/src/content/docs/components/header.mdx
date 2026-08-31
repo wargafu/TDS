@@ -1,6 +1,6 @@
 ---
 title: Header
-description: Composant Header TDS — en-tête institutionnel, marque, bandeau tricolore.
+description: Composant Header TDGS — en-tête institutionnel, marque, bandeau tricolore.
 sidebar:
   order: 8
 ---
@@ -53,12 +53,12 @@ d'actions libre (connexion, navigation, recherche). Purement CSS, sans dépendan
 ### Importation
 
 ```css
-@import "@tds-tchad/core/components/header/header.css";
+@import "@tdgs/core/components/header/header.css";
 ```
 
 ```typescript
-import { header } from '@tds-tchad/core/components/header';
-import type { HeaderVariant } from '@tds-tchad/core/components/header';
+import { header } from '@tdgs/core/components/header';
+import type { HeaderVariant } from '@tdgs/core/components/header';
 ```
 
 ### Exemple
@@ -66,10 +66,10 @@ import type { HeaderVariant } from '@tds-tchad/core/components/header';
 ```html
 <header class="tds-header">
   <a href="/" class="tds-header__brand">
-    <img src="/brand/tds-logo-official.png" alt="Tchad Design System" class="tds-header__logo" />
+    <img src="/brand/tdgs-logo.png" alt="TDGS — Tchad Design System" class="tds-header__logo" />
     <div class="tds-header__titles">
-      <span class="tds-header__title">République du Tchad</span>
-      <span class="tds-header__tagline">Ministère du Numérique</span>
+      <span class="tds-header__title">TDGS — Tchad Design System</span>
+      <span class="tds-header__tagline">Service public de démonstration</span>
     </div>
   </a>
   <div class="tds-header__actions">

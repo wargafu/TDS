@@ -1,5 +1,5 @@
 /**
- * TDS pagination tokens
+ * TDGS pagination tokens
  *
  * Liste de liens de pages + précédent/suivant. La page courante se marque
  * avec aria-current="page" ; précédent/suivant désactivés utilisent

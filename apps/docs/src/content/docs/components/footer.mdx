@@ -1,6 +1,6 @@
 ---
 title: Footer
-description: Composant Footer TDS — pied de page institutionnel, liens légaux et navigation.
+description: Composant Footer TDGS — pied de page institutionnel, liens légaux et navigation.
 sidebar:
   order: 14
 ---
@@ -51,11 +51,11 @@ Structure : `tds-footer__top` (marque + groupes de liens) séparé par une bordu
 ### Importation
 
 ```css
-@import "@tds-tchad/core/components/footer/footer.css";
+@import "@tdgs/core/components/footer/footer.css";
 ```
 
 ```typescript
-import { footer } from '@tds-tchad/core/components/footer';
+import { footer } from '@tdgs/core/components/footer';
 ```
 
 ### Exemple
@@ -64,13 +64,13 @@ import { footer } from '@tds-tchad/core/components/footer';
 <footer class="tds-footer">
   <div class="tds-footer__top">
     <div class="tds-footer__brand">
-      <img src="/brand/tds-logo-official.png" alt="Tchad Design System" class="tds-footer__logo" />
+      <img src="/brand/tdgs-logo.png" alt="TDGS — Tchad Design System" class="tds-footer__logo" />
     </div>
     <nav class="tds-footer__nav" aria-label="Liens du pied de page">
       <div class="tds-footer__nav-group">
         <div class="tds-footer__nav-title">Ressources</div>
         <a href="/docs" class="tds-footer__link">Documentation</a>
-        <a href="https://github.com/wargafu/TDS" class="tds-footer__link">GitHub</a>
+        <a href="https://github.com/wargafu/TDGS" class="tds-footer__link">GitHub</a>
       </div>
       <div class="tds-footer__nav-group">
         <div class="tds-footer__nav-title">Légal</div>
@@ -80,7 +80,7 @@ import { footer } from '@tds-tchad/core/components/footer';
     </nav>
   </div>
   <div class="tds-footer__bottom">
-    <span>© 2026 République du Tchad</span>
+    <span>© 2026 contributeurs TDGS</span>
     <div class="tds-footer__legal">
       <a href="/confidentialite" class="tds-footer__link">Confidentialité</a>
       <a href="/plan-du-site" class="tds-footer__link">Plan du site</a>
@@ -95,7 +95,7 @@ import { footer } from '@tds-tchad/core/components/footer';
 <Aside type="tip" title="Règles critiques">
   - Un seul `<footer>` par page, en dernier élément du `<body>`
   - Le groupe de liens de navigation doit avoir un `aria-label` (« Liens du pied de page ») pour se distinguer du menu principal
-  - Le lien vers la déclaration d'accessibilité est **obligatoire** pour tout service public numérique (RGAA / WCAG 2.1 AA)
+  - Le lien vers la déclaration d'accessibilité est fortement recommandé et doit être adapté aux exigences applicables (WCAG 2.2 AA)
 </Aside>
 
 </TabItem>

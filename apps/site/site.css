@@ -1,8 +1,12 @@
-/* TDS Typography Documentation Styles */
+/* TDGS Typography Documentation Styles */
 :root {
-  --tds-font-family-primary: "Source Sans 3", "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --tds-font-family-ar: "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif;
-  --tds-font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  --tds-font-family-primary:
+    'Source Sans 3', 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  --tds-font-family-ar: 'Noto Naskh Arabic', 'Noto Sans Arabic', system-ui, sans-serif;
+  --tds-font-family-mono:
+    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New',
+    monospace;
 
   --tds-font-size-xs: 0.75rem;
   --tds-font-size-sm: 0.875rem;
@@ -36,7 +40,7 @@
   --tds-border: #d1d5db;
   --tds-text: #0b1220;
   --tds-muted: #4b5563;
-  --tds-brand: #0033A0;
+  --tds-brand: #0b3a82;
 }
 
 * {

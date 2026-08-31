@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services publics — Portail citoyen TDGS</title>
+    <link rel="stylesheet" href="../../packages/core/src/tdgs.css" />
+    <link rel="stylesheet" href="../shared/template.css" />
+  </head>
+  <body>
+    <div class="tds-template-shell">
+      <a class="tds-skip-link" href="#contenu">Aller au contenu principal</a>
+
+      <header class="tds-template-header">
+        <div class="tds-template-container tds-template-header__inner">
+          <a class="tds-template-brand" href="./">
+            <span class="tds-template-brand__mark" aria-hidden="true">TD</span>
+            <span>Services publics du Tchad</span>
+          </a>
+          <nav class="tds-template-nav" aria-label="Navigation principale">
+            <a class="tds-link" href="#demarches">Démarches</a>
+            <a class="tds-link" href="#actualites">Actualités</a>
+            <a class="tds-link" href="#aide">Aide</a>
+            <a class="tds-button tds-button--outline tds-button--sm" href="#connexion"
+              >Se connecter</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <main id="contenu" class="tds-template-main">
+        <section class="tds-template-container tds-template-hero" aria-labelledby="titre">
+          <h1 id="titre">Les services publics, simplement</h1>
+          <p>Accédez aux informations et démarches administratives utiles au quotidien.</p>
+          <form class="tds-search" action="#resultats" method="get" role="search">
+            <label class="tds-search__label" for="recherche">Rechercher une démarche</label>
+            <div class="tds-search__controls">
+              <input id="recherche" class="tds-search__input" type="search" name="q" />
+              <button class="tds-search__submit" type="submit">Rechercher</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="demarches" class="tds-template-container" aria-labelledby="demarches-titre">
+          <h2 id="demarches-titre">Démarches populaires</h2>
+          <div class="tds-template-grid">
+            <article class="tds-card">
+              <h3 class="tds-card__title">Documents d’identité</h3>
+              <p class="tds-card__description">
+                Préparer une demande ou consulter les pièces nécessaires.
+              </p>
+              <a class="tds-link" href="#identite">Consulter la démarche</a>
+            </article>
+            <article class="tds-card">
+              <h3 class="tds-card__title">État civil</h3>
+              <p class="tds-card__description">
+                Retrouver les informations sur les actes et certificats.
+              </p>
+              <a class="tds-link" href="#etat-civil">Consulter la démarche</a>
+            </article>
+            <article class="tds-card">
+              <h3 class="tds-card__title">Entreprises</h3>
+              <p class="tds-card__description">Accéder aux formalités de création et de gestion.</p>
+              <a class="tds-link" href="#entreprises">Consulter la démarche</a>
+            </article>
+          </div>
+        </section>
+
+        <section
+          id="actualites"
+          class="tds-template-container tds-template-reading"
+          aria-labelledby="actualites-titre"
+        >
+          <h2 id="actualites-titre">À la une</h2>
+          <div class="tds-alert tds-alert--info" role="status">
+            <div class="tds-alert__content">
+              <p class="tds-alert__title">Information du service</p>
+              <div class="tds-alert__body">
+                Vérifiez les horaires et les pièces demandées avant votre déplacement.
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="tds-template-footer">
+        <div class="tds-template-container tds-template-footer__inner">
+          <span
+            >TDGS — système de design open source proposé pour les services publics du Tchad.</span
+          >
+          <a class="tds-link" href="#accessibilite">Accessibilité</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

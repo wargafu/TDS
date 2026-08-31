@@ -1,0 +1,21 @@
+/** TDGS stepper tokens. */
+export const stepper = {
+  layout: {
+    gap: 'var(--tds-stepper-gap)',
+    itemGap: 'var(--tds-stepper-item-gap)',
+  },
+  marker: {
+    size: 'var(--tds-stepper-marker-size)',
+    background: 'var(--tds-stepper-marker-bg)',
+    text: 'var(--tds-stepper-marker-text)',
+    currentBackground: 'var(--tds-stepper-current-bg)',
+    completeBackground: 'var(--tds-stepper-complete-bg)',
+  },
+  connector: {
+    color: 'var(--tds-stepper-connector)',
+    completeColor: 'var(--tds-stepper-complete-connector)',
+  },
+} as const;
+
+export type StepperTokens = typeof stepper;
+export default stepper;

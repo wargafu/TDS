@@ -1,80 +1,96 @@
-# TDS — Système de Design de l’État
+# TDGS — Tchad Design System
 
-> Le système de design open source destiné aux services numériques publics du Tchad.
+> Système de design open source proposé pour les services numériques publics du Tchad.
 
-[![CI](https://github.com/wargafu/TDS/actions/workflows/ci.yml/badge.svg)](https://github.com/wargafu/TDS/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/@tds-tchad/core.svg)](https://www.npmjs.com/package/@tds-tchad/core)
+[![CI](https://github.com/wargafu/TDGS/actions/workflows/ci.yml/badge.svg)](https://github.com/wargafu/TDGS/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/badge/npm-pr%C3%AAt%20%C3%A0%20publier-lightgrey.svg)](#installation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
 <p align="center">
-  <img src="./apps/docs/public/brand/tds-logo-official.png" width="760" alt="Tchad Design System — Le standard numérique de l’État">
+  <img src="./apps/docs/public/brand/tdgs-logo.png" width="760" alt="TDGS — Tchad Design System">
 </p>
 
 > [!IMPORTANT]
-> TDS est actuellement une initiative indépendante et communautaire. Le projet vise une
+> TDGS est actuellement une initiative indépendante et communautaire. Le projet vise une
 > adoption par les institutions publiques tchadiennes, mais ne se présente pas encore comme
 > une norme officiellement homologuée par l'État.
 
-## Pourquoi TDS ?
+## Pourquoi TDGS ?
 
 Les services numériques gouvernementaux du Tchad manquent d'une identité visuelle cohérente. Chaque ministère, chaque plateforme citoyenne développe ses interfaces de manière indépendante — résultat : incohérence, inaccessibilité et perte de confiance des citoyens.
 
-**TDS** propose une réponse systémique : une bibliothèque de tokens et de composants partagés, accessibles par défaut, conformes WCAG 2.1 AA, et prêts pour le français comme pour l'arabe.
+**TDGS** propose une réponse systémique : une bibliothèque de tokens et de composants partagés,
+conçus selon une cible WCAG 2.2 AA, avec des contrôles automatisés partiels, et prêts pour le
+français comme pour l'arabe.
 
 Inspiré de [GOV.UK Design System](https://design-system.service.gov.uk/), [DSFR](https://www.systeme-de-design.gouv.fr/) et [USWDS](https://designsystem.digital.gov/).
 
 ---
 
-## Ce que TDS fournit
+## Ce que TDGS fournit
 
 ### 🎨 Design Tokens
-| Système | Variables CSS | TypeScript | JSON |
-|---|---|---|---|
-| Couleurs (bleu, jaune, rouge, vert, neutrals, sémantiques) | ✅ | ✅ | ✅ |
-| Typographie (Source Sans 3, Noto Naskh Arabic, JetBrains Mono) | ✅ | ✅ | ✅ |
-| Espacement (grille 4px) | ✅ | ✅ | ✅ |
-| Arrondis, Ombres, Motion, Z-index | ✅ | ✅ | ✅ |
+
+| Système                                                        | Variables CSS | TypeScript | JSON |
+| -------------------------------------------------------------- | ------------- | ---------- | ---- |
+| Couleurs (bleu, jaune, rouge, vert, neutrals, sémantiques)     | ✅            | ✅         | ✅   |
+| Typographie (Source Sans 3, Noto Naskh Arabic, JetBrains Mono) | ✅            | ✅         | ✅   |
+| Espacement (grille 4px)                                        | ✅            | ✅         | ✅   |
+| Arrondis, Ombres, Motion, Z-index                              | ✅            | ✅         | ✅   |
 
 ### 🧩 Composants
-| Composant | Classes CSS | Types TS | Accessibilité |
-|---|---|---|---|
-| Button | `tds-button` | `ButtonVariant`, `ButtonSize` | WCAG AA ✅ |
-| Input / Form | `tds-input`, `tds-field` | `InputVariant`, `InputSize` | WCAG AA ✅ |
-| Alert | `tds-alert` | `AlertVariant` | `role=alert` ✅ |
-| Badge | `tds-badge` | `BadgeVariant` | WCAG AA ✅ |
-| Card | `tds-card` | `CardVariant` | ✅ |
-| Link | `tds-link` | `LinkVariant` | Focus visible ✅ |
-| Table | `tds-table` | — | `scope`, `caption` ✅ |
-| Header | `tds-header` | `HeaderVariant` | Lien d'évitement recommandé ✅ |
-| Navigation | `tds-nav` | — | `aria-current="page"` ✅ |
-| Breadcrumb | `tds-breadcrumb` | — | `aria-current="page"` ✅ |
-| Pagination | `tds-pagination` | — | `aria-label`, `aria-current` ✅ |
-| Modal | `tds-modal` | `ModalSize` | Focus trap natif (`<dialog>`) ✅ |
-| Skip Link | `tds-skip-link` | — | Premier élément focusable ✅ |
-| Footer | `tds-footer` | — | Lien déclaration d'accessibilité ✅ |
-| Accordion | `tds-accordion` | — | `<details>`/`<summary>` natif, zéro JS ✅ |
-| Tabs | `tds-tabs` | — | WAI-ARIA APG (roving tabindex) ✅ |
-| Tooltip | `tds-tooltip` | — | CSS pur, limitation tactile documentée ⚠️ |
+
+| Composant        | Classes CSS              | Types TS                      | Accessibilité                             |
+| ---------------- | ------------------------ | ----------------------------- | ----------------------------------------- |
+| Button           | `tds-button`             | `ButtonVariant`, `ButtonSize` | Focus et états testés ✅                  |
+| Input / Form     | `tds-input`, `tds-field` | `InputVariant`, `InputSize`   | Labels et ARIA testés ✅                  |
+| Alert            | `tds-alert`              | `AlertVariant`                | `role=alert` ✅                           |
+| Badge            | `tds-badge`              | `BadgeVariant`                | Variantes sémantiques ✅                  |
+| Card             | `tds-card`               | `CardVariant`                 | ✅                                        |
+| Link             | `tds-link`               | `LinkVariant`                 | Focus visible ✅                          |
+| Table            | `tds-table`              | —                             | `scope`, `caption` ✅                     |
+| Header           | `tds-header`             | `HeaderVariant`               | Lien d'évitement recommandé ✅            |
+| Navigation       | `tds-nav`                | —                             | `aria-current="page"` ✅                  |
+| Breadcrumb       | `tds-breadcrumb`         | —                             | `aria-current="page"` ✅                  |
+| Pagination       | `tds-pagination`         | —                             | `aria-label`, `aria-current` ✅           |
+| Modal            | `tds-modal`              | `ModalSize`                   | Focus trap natif (`<dialog>`) ✅          |
+| Skip Link        | `tds-skip-link`          | —                             | Premier élément focusable ✅              |
+| Footer           | `tds-footer`             | —                             | Lien déclaration d'accessibilité ✅       |
+| Accordion        | `tds-accordion`          | —                             | `<details>`/`<summary>` natif, zéro JS ✅ |
+| Tabs             | `tds-tabs`               | —                             | WAI-ARIA APG (roving tabindex) ✅         |
+| Tooltip          | `tds-tooltip`            | —                             | CSS pur, limitation tactile documentée ⚠️ |
+| Recherche        | `tds-search`             | `SearchField`                 | `searchbox` natif, libellé obligatoire ✅ |
+| Étapes           | `tds-stepper`            | `Stepper`                     | `aria-current="step"` ✅                  |
+| Dépôt de fichier | `tds-file-upload`        | `FileUpload`                  | `input[type=file]`, erreurs associées ✅  |
+| Progression      | `tds-progress`           | `Progress`                    | `role=progressbar`, valeurs ARIA ✅       |
+
+Le composant `Icon` fournit en complément un jeu initial d'icônes SVG indépendantes, utilisables
+avec les thèmes TDGS.
 
 ---
 
 ## Installation
 
-Le namespace npm `@tds-tchad` et les classes CSS `tds-*` constituent l'API stable
-du projet (le package n'étant pas encore publié, aucune compatibilité
-ascendante n'est requise avec l'ancien namespace `@dstd`).
+Le namespace npm `@tdgs` et les classes CSS `tds-*` constituent l'API publique
+du projet. Les packages sont prêts à être publiés, mais aucune publication npm
+n'a encore été effectuée. Les commandes ci-dessous sont donc la cible d'installation
+pour la première publication ; dans le monorepo, utilisez `pnpm install`.
 
 ```bash
 # pnpm (recommandé)
-pnpm add @tds-tchad/core
+pnpm add @tdgs/core
+
+# Optionnel : bindings framework
+pnpm add @tdgs/react react
+pnpm add @tdgs/vue vue
 
 # npm
-npm install @tds-tchad/core
+npm install @tdgs/core
 
 # yarn
-yarn add @tds-tchad/core
+yarn add @tdgs/core
 ```
 
 **Node.js 18+ requis.** Le package est distribué en ESM (`"type": "module"`).
@@ -87,33 +103,40 @@ yarn add @tds-tchad/core
 
 ```css
 /* Dans votre feuille de style principale */
-@import "@tds-tchad/core/base.css";             /* Reset + styles HTML */
-@import "@tds-tchad/core/tokens/color.css";
-@import "@tds-tchad/core/tokens/typography.css";
-@import "@tds-tchad/core/tokens/spacing.css";
-@import "@tds-tchad/core/tokens/radius.css";
-@import "@tds-tchad/core/tokens/shadow.css";
-@import "@tds-tchad/core/tokens/motion.css";
-@import "@tds-tchad/core/tokens/z-index.css";
+@import '@tdgs/core/tdgs.css'; /* Socle complet en une ligne */
+
+/* Ou importer les fichiers ci-dessous individuellement pour réduire le bundle */
+@import '@tdgs/core/base.css'; /* Reset + styles HTML */
+@import '@tdgs/core/tokens/color.css';
+@import '@tdgs/core/tokens/typography.css';
+@import '@tdgs/core/tokens/spacing.css';
+@import '@tdgs/core/tokens/radius.css';
+@import '@tdgs/core/tokens/shadow.css';
+@import '@tdgs/core/tokens/motion.css';
+@import '@tdgs/core/tokens/z-index.css';
 
 /* Composants selon vos besoins */
-@import "@tds-tchad/core/components/button/button.css";
-@import "@tds-tchad/core/components/input/input.css";
-@import "@tds-tchad/core/components/alert/alert.css";
-@import "@tds-tchad/core/components/badge/badge.css";
-@import "@tds-tchad/core/components/card/card.css";
-@import "@tds-tchad/core/components/link/link.css";
-@import "@tds-tchad/core/components/table/table.css";
-@import "@tds-tchad/core/components/header/header.css";
-@import "@tds-tchad/core/components/nav/nav.css";
-@import "@tds-tchad/core/components/breadcrumb/breadcrumb.css";
-@import "@tds-tchad/core/components/pagination/pagination.css";
-@import "@tds-tchad/core/components/modal/modal.css";
-@import "@tds-tchad/core/components/skip-link/skip-link.css";
-@import "@tds-tchad/core/components/footer/footer.css";
-@import "@tds-tchad/core/components/accordion/accordion.css";
-@import "@tds-tchad/core/components/tabs/tabs.css";
-@import "@tds-tchad/core/components/tooltip/tooltip.css";
+@import '@tdgs/core/components/button/button.css';
+@import '@tdgs/core/components/input/input.css';
+@import '@tdgs/core/components/alert/alert.css';
+@import '@tdgs/core/components/badge/badge.css';
+@import '@tdgs/core/components/card/card.css';
+@import '@tdgs/core/components/link/link.css';
+@import '@tdgs/core/components/table/table.css';
+@import '@tdgs/core/components/header/header.css';
+@import '@tdgs/core/components/nav/nav.css';
+@import '@tdgs/core/components/breadcrumb/breadcrumb.css';
+@import '@tdgs/core/components/pagination/pagination.css';
+@import '@tdgs/core/components/modal/modal.css';
+@import '@tdgs/core/components/skip-link/skip-link.css';
+@import '@tdgs/core/components/footer/footer.css';
+@import '@tdgs/core/components/accordion/accordion.css';
+@import '@tdgs/core/components/tabs/tabs.css';
+@import '@tdgs/core/components/tooltip/tooltip.css';
+@import '@tdgs/core/components/search/search.css';
+@import '@tdgs/core/components/stepper/stepper.css';
+@import '@tdgs/core/components/file-upload/file-upload.css';
+@import '@tdgs/core/components/progress/progress.css';
 ```
 
 ### 2. Utiliser les composants en HTML
@@ -127,7 +150,7 @@ yarn add @tds-tchad/core
 <!-- Champ de formulaire -->
 <div class="tds-field">
   <label class="tds-field__label" for="nom">Nom complet</label>
-  <input id="nom" type="text" class="tds-input tds-input--md" required>
+  <input id="nom" type="text" class="tds-input tds-input--md" required />
 </div>
 
 <!-- Alerte succès -->
@@ -142,12 +165,12 @@ yarn add @tds-tchad/core
 ### 3. Utiliser les tokens TypeScript
 
 ```typescript
-import { color, spacing, typography } from '@tds-tchad/core/tokens';
-import type { ButtonVariant } from '@tds-tchad/core/components/button';
+import { color, spacing, typography } from '@tdgs/core/tokens';
+import type { ButtonVariant } from '@tdgs/core/components/button';
 
-const primary = color.blue[500];      // '#0033A0'
-const gap = spacing.scale[4];         // '1rem' (16px)
-const body = typography.sizes.md;     // '1rem'
+const primary = color.blue[500]; // '#0B3A82'
+const gap = spacing.scale[4]; // '1rem' (16px)
+const body = typography.sizes.md; // '1rem'
 ```
 
 ---
@@ -155,9 +178,9 @@ const body = typography.sizes.md;     // '1rem'
 ## Structure du monorepo
 
 ```
-TDS/
+TDGS/
 ├── packages/
-│   └── core/                  ← Package npm principal @tds-tchad/core
+│   └── core/                  ← Package npm principal @tdgs/core
 │       ├── src/
 │       │   ├── base.css       ← Reset CSS + styles HTML de base
 │       │   ├── tokens/        ← Design tokens (TS + JSON + CSS)
@@ -185,8 +208,8 @@ TDS/
 ### Installation
 
 ```bash
-git clone https://github.com/wargafu/TDS.git
-cd TDS
+git clone https://github.com/wargafu/TDGS.git
+cd TDGS
 pnpm install
 ```
 
@@ -203,11 +226,11 @@ pnpm build
 # Vérifier les types TypeScript
 pnpm typecheck
 
-# Valider les tokens (93 checks)
-pnpm --filter @tds-tchad/core validate:tokens
+# Valider les tokens (109 checks)
+pnpm --filter @tdgs/core validate:tokens
 
 # Valider les exports npm (après build)
-pnpm --filter @tds-tchad/core validate:exports
+pnpm --filter @tdgs/core validate:exports
 
 # Lint
 pnpm lint
@@ -223,7 +246,7 @@ pnpm format
 git checkout -b feat/nom-du-composant
 
 # 2. Développer + valider
-pnpm --filter @tds-tchad/core validate:tokens
+pnpm --filter @tdgs/core validate:tokens
 pnpm build
 pnpm typecheck
 
@@ -238,28 +261,28 @@ git push origin feat/nom-du-composant
 
 ## Contribuer
 
-**Toute contribution est bienvenue.** TDS est un bien numérique commun pour le Tchad.
+**Toute contribution est bienvenue.** TDGS est un bien numérique commun pour le Tchad.
 
 ### Avant d'ouvrir une PR
 
 - [ ] Les tokens ajoutés existent en `.ts`, `.json` ET `.css`
-- [ ] `pnpm --filter @tds-tchad/core validate:tokens` passe à 0 erreur
-- [ ] `pnpm build && pnpm --filter @tds-tchad/core validate:exports` réussit
+- [ ] `pnpm --filter @tdgs/core validate:tokens` passe à 0 erreur
+- [ ] `pnpm build && pnpm --filter @tdgs/core validate:exports` réussit
 - [ ] `pnpm typecheck` → zéro erreur TypeScript
-- [ ] `pnpm --filter @tds-tchad/core test` et `lint:css` passent
-- [ ] Les composants respectent WCAG 2.1 AA (contraste, focus, ARIA) — `cd apps/docs && npm run test:a11y`
+- [ ] `pnpm --filter @tdgs/core test` et `lint:css` passent
+- [ ] Un audit complet WCAG 2.2 AA est réalisé — `pnpm --filter tds-docs test:a11y` ne constitue qu'un contrôle automatisé partiel
 - [ ] La documentation est mise à jour dans `apps/docs/` (page composant + terrain de jeu)
 
 ### Types de contributions acceptées
 
-| Type | Processus |
-|---|---|
-| 🐛 Correction de bug | PR directe avec description du bug |
-| ♿ Amélioration accessibilité | PR avec tests AT décrits |
-| 🎨 Nouveau token | Ouvrir une issue d'abord |
-| 🧩 Nouveau composant | RFC obligatoire — discussion issue |
-| 📚 Documentation | PR directe |
-| 🌐 Traduction arabe | PR directe — contactez les mainteneurs |
+| Type                          | Processus                              |
+| ----------------------------- | -------------------------------------- |
+| 🐛 Correction de bug          | PR directe avec description du bug     |
+| ♿ Amélioration accessibilité | PR avec tests AT décrits               |
+| 🎨 Nouveau token              | Ouvrir une issue d'abord               |
+| 🧩 Nouveau composant          | RFC obligatoire — discussion issue     |
+| 📚 Documentation              | PR directe                             |
+| 🌐 Traduction arabe           | PR directe — contactez les mainteneurs |
 
 ### Ce qui est interdit sans version majeure
 
@@ -267,7 +290,7 @@ git push origin feat/nom-du-composant
 - Supprimer un export public
 - Renommer une classe CSS existante
 
-> TDS suit le versionnement sémantique strict. Les tokens publiés sont **immuables**.
+> TDGS suit le versionnement sémantique strict. Les tokens publiés sont **immuables**.
 
 ### Guide de contribution complet
 
@@ -278,13 +301,15 @@ git push origin feat/nom-du-composant
 ## Feuille de route
 
 ### v0.1 — Fondations ✅
+
 - [x] 7 systèmes de tokens (couleurs, typo, espacement, radius, shadow, motion, z-index)
-- [x] 17 composants (Button, Input, Alert, Badge, Card, Link, Table, Header, Navigation, Breadcrumb, Pagination, Modal, Skip Link, Footer, Accordion, Tabs, Tooltip)
+- [x] 21 composants (Button, Input, Alert, Badge, Card, Link, Table, Header, Navigation, Breadcrumb, Pagination, Modal, Skip Link, Footer, Accordion, Tabs, Tooltip, Recherche, Étapes, Dépôt de fichier, Progression)
 - [x] Build system industriel + CI/CD
 - [x] Documentation Astro Starlight
 - [x] Pipeline de génération de tokens à source unique, tests automatisés, stylelint, vérifications a11y (axe-core)
 
-### v0.2 — Composants navigation ✅ (actuel)
+### v0.2 — Composants et parcours ✅ (actuel)
+
 - [x] Header gouvernemental
 - [x] Navigation principale
 - [x] Breadcrumb
@@ -292,42 +317,44 @@ git push origin feat/nom-du-composant
 - [x] Modal / Dialog
 
 ### v0.3 — Patterns et templates
-- [ ] Template portail citoyen
-- [ ] Template tableau de bord administratif
+
+- [x] Template portail citoyen (`templates/citizen-portal/`)
+- [x] Template tableau de bord administratif (`templates/admin-dashboard/`)
 - [x] Terrain de jeu visuel des composants (`apps/docs/src/pages/playground.astro`)
 
 ### v1.0 — Production ready
+
 - [ ] Dark mode complet
-- [ ] Système d'icônes SVG
+- [x] Système d'icônes SVG initial (`Icon`)
 - [ ] Support arabe RTL complet et testé
-- [ ] Publication npm `@tds-tchad/core`
+- [ ] Publication npm `@tdgs/core`, `@tdgs/react` et `@tdgs/vue`
 
 ---
 
 ## Compatibilité
 
-| Environnement | Support |
-|---|---|
-| HTML + CSS (sans JS) | ✅ Complet |
-| React 18+ | ✅ Via classes CSS |
-| Vue 3+ | ✅ Via classes CSS |
-| Angular | ✅ Via classes CSS |
-| Next.js / Nuxt / Astro | ✅ Via classes CSS |
-| Node.js (tokens JSON/JS) | ✅ |
-| Navigateurs modernes (2 dernières versions) | ✅ |
-| IE11 | ❌ Non supporté |
+| Environnement                               | Support                       |
+| ------------------------------------------- | ----------------------------- |
+| HTML + CSS (sans JS)                        | ✅ Complet                    |
+| React 18+                                   | ✅ Binding typé `@tdgs/react` |
+| Vue 3+                                      | ✅ Binding typé `@tdgs/vue`   |
+| Angular                                     | ✅ Via classes CSS            |
+| Next.js / Nuxt / Astro                      | ✅ Via classes CSS            |
+| Node.js (tokens JSON/JS)                    | ✅                            |
+| Navigateurs modernes (2 dernières versions) | ✅                            |
+| IE11                                        | ❌ Non supporté               |
 
 ---
 
 ## Stack technique
 
-| Outil | Usage |
-|---|---|
-| [pnpm](https://pnpm.io/) + [Turbo](https://turbo.build/) | Monorepo et orchestration |
-| [TypeScript 5.6](https://www.typescriptlang.org/) | Tokens typés |
-| [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/) | Documentation |
-| [GitHub Actions](https://github.com/features/actions) | CI/CD |
-| [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) | Qualité du code |
+| Outil                                                                       | Usage                     |
+| --------------------------------------------------------------------------- | ------------------------- |
+| [pnpm](https://pnpm.io/) + [Turbo](https://turbo.build/)                    | Monorepo et orchestration |
+| [TypeScript 5.6](https://www.typescriptlang.org/)                           | Tokens typés              |
+| [Astro](https://astro.build/) + [Starlight](https://starlight.astro.build/) | Documentation             |
+| [GitHub Actions](https://github.com/features/actions)                       | CI/CD                     |
+| [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/)            | Qualité du code           |
 
 ---
 
@@ -339,9 +366,9 @@ git push origin feat/nom-du-composant
 
 ## Contact
 
-- **Issues** : [github.com/wargafu/TDS/issues](https://github.com/wargafu/TDS/issues)
-- **Discussions** : [github.com/wargafu/TDS/discussions](https://github.com/wargafu/TDS/discussions)
-- **Email** : design-system@gouv.td *(à configurer)*
+- **Issues** : [github.com/wargafu/TDGS/issues](https://github.com/wargafu/TDGS/issues)
+- **Discussions** : [github.com/wargafu/TDGS/discussions](https://github.com/wargafu/TDGS/discussions)
+- **Email** : design-system@gouv.td _(à configurer)_
 
 ---
 

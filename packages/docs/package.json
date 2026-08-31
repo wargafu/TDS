@@ -1,8 +1,6 @@
 {
-  "name": "@tds-tchad/docs",
+  "name": "@tdgs/docs",
   "version": "0.1.0",
-  "private": false,
-  "scripts": {
-    "build": "echo \"Build @tds-tchad/docs placeholder\""
-  }
+  "private": true,
+  "description": "Espace réservé privé ; le site public de documentation est apps/docs."
 }

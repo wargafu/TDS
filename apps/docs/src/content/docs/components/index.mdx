@@ -1,24 +1,32 @@
 ---
 title: Composants
-description: Les 17 composants TDS — variantes, tailles, états, accessibilité et exemples de code.
+description: Les 21 familles de composants TDGS et leur utilitaire d'icônes — variantes, états, accessibilité et exemples de code.
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-17 composants CSS-first, sans dépendance JavaScript (sauf Modal et Tabs, qui nécessitent un
-minimum d'interaction native). Chaque page suit la même structure : Présentation, Démo, Design,
-Code, Accessibilité.
+21 familles de composants, dont 19 CSS-first, sans dépendance JavaScript. Modal et Tabs fournissent en plus une
+interaction gérée par les bindings. Chaque page suit la même structure : Présentation, Démo,
+Design, Code, Accessibilité.
 
 ## Éléments de base
 
 <CardGrid>
   <Card title="Button">Cinq variantes, trois tailles — [lire →](/components/button/)</Card>
-  <Card title="Input">Text, textarea, select, checkbox, radio, switch — [lire →](/components/input/)</Card>
+  <Card title="Input">
+    Text, textarea, select, checkbox, radio, switch — [lire →](/components/input/)
+  </Card>
   <Card title="Alert">Messages contextuels accessibles — [lire →](/components/alert/)</Card>
   <Card title="Badge">Étiquettes de statut — [lire →](/components/badge/)</Card>
   <Card title="Card">Surfaces de contenu groupé — [lire →](/components/card/)</Card>
   <Card title="Link">Styles de liens — [lire →](/components/link/)</Card>
   <Card title="Table">Tableaux de données — [lire →](/components/table/)</Card>
+</CardGrid>
+
+## Utilitaires visuels
+
+<CardGrid>
+  <Card title="Icon">Icônes SVG indépendantes et accessibles — [lire →](/components/icon/)</Card>
 </CardGrid>
 
 ## Navigation
@@ -39,4 +47,8 @@ Code, Accessibilité.
   <Card title="Accordion">`<details>`/`<summary>` natif — [lire →](/components/accordion/)</Card>
   <Card title="Tabs">Onglets WAI-ARIA APG — [lire →](/components/tabs/)</Card>
   <Card title="Tooltip">Bulle contextuelle CSS pur — [lire →](/components/tooltip/)</Card>
+  <Card title="Recherche">Champ de recherche avec soumission accessible — [lire →](/components/search/)</Card>
+  <Card title="Étapes">Progression dans une démarche — [lire →](/components/stepper/)</Card>
+  <Card title="Dépôt de fichier">Sélection native de documents — [lire →](/components/file-upload/)</Card>
+  <Card title="Progression">Avancement déterminé ou indéterminé — [lire →](/components/progress/)</Card>
 </CardGrid>

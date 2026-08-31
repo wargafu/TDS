@@ -1,0 +1,48 @@
+/* TDGS icon tokens and base */
+:root {
+  --tds-icon-size-xs: var(--tds-spacing-4);
+  --tds-icon-size-sm: var(--tds-spacing-5);
+  --tds-icon-size-md: var(--tds-spacing-6);
+  --tds-icon-size-lg: var(--tds-spacing-8);
+  --tds-icon-stroke-width: 1.75;
+}
+
+.tds-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  inline-size: var(--tds-icon-size-md);
+  block-size: var(--tds-icon-size-md);
+  color: currentColor;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tds-icon-stroke-width);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+
+.tds-icon--xs {
+  inline-size: var(--tds-icon-size-xs);
+  block-size: var(--tds-icon-size-xs);
+}
+
+.tds-icon--sm {
+  inline-size: var(--tds-icon-size-sm);
+  block-size: var(--tds-icon-size-sm);
+}
+
+.tds-icon--lg {
+  inline-size: var(--tds-icon-size-lg);
+  block-size: var(--tds-icon-size-lg);
+}
+
+.tds-icon[aria-hidden='true'] {
+  pointer-events: none;
+}
+
+@media (forced-colors: active) {
+  .tds-icon {
+    color: currentColor;
+    forced-color-adjust: auto;
+  }
+}

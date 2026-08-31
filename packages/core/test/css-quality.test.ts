@@ -55,9 +55,36 @@ describe('naming convention: custom properties and classes are prefixed tds-', (
           // or well-known unprefixed a11y utility idioms like .sr-only).
           if (/^\.(sl-|starlight)/.test(selector)) continue;
           if (selector === '.sr-only') continue;
-          expect(selector.startsWith('.tds-'), `unexpected class selector ${selector} in ${relative(SRC_DIR, file)}`).toBe(true);
+          expect(
+            selector.startsWith('.tds-'),
+            `unexpected class selector ${selector} in ${relative(SRC_DIR, file)}`
+          ).toBe(true);
         }
       });
     });
   }
+});
+
+describe('RTL readiness', () => {
+  it('does not ship physical left/right declarations in component CSS', () => {
+    const physicalDeclarations = cssFiles.flatMap((file) => {
+      const text = readFileSync(file, 'utf-8');
+      return (
+        text.match(
+          /\b(?:left|right|margin-left|margin-right|padding-left|padding-right|border-left|border-right|inset-left|inset-right)\s*:/gi
+        ) ?? []
+      );
+    });
+
+    expect(physicalDeclarations).toEqual([]);
+  });
+
+  it('exposes direction-aware hooks for controls with directional visuals', () => {
+    const inputCss = readFileSync(join(SRC_DIR, 'components', 'input', 'input.css'), 'utf-8');
+    const linkCss = readFileSync(join(SRC_DIR, 'components', 'link', 'link.css'), 'utf-8');
+
+    expect(inputCss).toContain('.tds-select:dir(rtl)');
+    expect(inputCss).toContain('.tds-switch input:dir(rtl):checked');
+    expect(linkCss).toContain('.tds-link--standalone:dir(rtl)');
+  });
 });

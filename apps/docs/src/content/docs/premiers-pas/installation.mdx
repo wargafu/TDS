@@ -1,36 +1,31 @@
 ---
 title: Installation
-description: Ajouter @tds-tchad/core à votre projet — npm, pnpm, yarn ou CDN.
+description: Ajouter @tdgs/core à votre projet — monorepo, npm après publication ou CDN auto-hébergé.
 sidebar:
   order: 2
 ---
 
 import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components';
 
-`@tds-tchad/core` est disponible sur npm. Choisissez votre gestionnaire de paquets.
+`@tdgs/core` est préparé pour npm, mais sa publication publique n'a pas encore été effectuée.
+Le guide décrit la cible d'installation ainsi que l'utilisation dans le monorepo.
+
+<Aside type="caution" title="Avant la publication npm">
+  Pour travailler depuis les sources, clonez le dépôt puis lancez `pnpm install` à la racine. Les
+  commandes npm, pnpm et yarn ci-dessous deviennent utilisables dès que le package est publié.
+</Aside>
 
 ## Gestionnaire de paquets
 
 <Tabs>
-  <TabItem label="pnpm">
-    ```bash
-    pnpm add @tds-tchad/core
-    ```
-  </TabItem>
-  <TabItem label="npm">
-    ```bash
-    npm install @tds-tchad/core
-    ```
-  </TabItem>
-  <TabItem label="yarn">
-    ```bash
-    yarn add @tds-tchad/core
-    ```
-  </TabItem>
+  <TabItem label="pnpm">```bash pnpm add @tdgs/core ```</TabItem>
+  <TabItem label="npm">```bash npm install @tdgs/core ```</TabItem>
+  <TabItem label="yarn">```bash yarn add @tdgs/core ```</TabItem>
 </Tabs>
 
 <Aside type="note" title="Version Node.js">
-  TDS nécessite Node.js 18 ou supérieur. Le package utilise les modules ES natifs (`"type": "module"`).
+  TDGS nécessite Node.js 18 ou supérieur. Le package utilise les modules ES natifs (`"type":
+  "module"`).
 </Aside>
 
 ---
@@ -42,13 +37,13 @@ Elles sont disponibles pour chaque système de tokens.
 
 ```css
 /* Importer tous les tokens (recommandé pour démarrer) */
-@import "@tds-tchad/core/tokens/color.css";
-@import "@tds-tchad/core/tokens/typography.css";
-@import "@tds-tchad/core/tokens/spacing.css";
-@import "@tds-tchad/core/tokens/radius.css";
-@import "@tds-tchad/core/tokens/shadow.css";
-@import "@tds-tchad/core/tokens/motion.css";
-@import "@tds-tchad/core/tokens/z-index.css";
+@import '@tdgs/core/tokens/color.css';
+@import '@tdgs/core/tokens/typography.css';
+@import '@tdgs/core/tokens/spacing.css';
+@import '@tdgs/core/tokens/radius.css';
+@import '@tdgs/core/tokens/shadow.css';
+@import '@tdgs/core/tokens/motion.css';
+@import '@tdgs/core/tokens/z-index.css';
 ```
 
 Après import, toutes les variables CSS `--tds-*` sont disponibles globalement.
@@ -70,10 +65,10 @@ Importez les CSS des composants que vous utilisez.
 
 ```css
 /* Bouton */
-@import "@tds-tchad/core/components/button/button.css";
+@import '@tdgs/core/components/button/button.css';
 
 /* Champs de formulaire */
-@import "@tds-tchad/core/components/input/input.css";
+@import '@tdgs/core/components/input/input.css';
 ```
 
 ---
@@ -84,17 +79,17 @@ Pour accéder aux valeurs de tokens dans votre code TypeScript/JavaScript :
 
 ```typescript
 // Importer les tokens individuellement
-import { color } from '@tds-tchad/core/tokens';
-import { typography } from '@tds-tchad/core/tokens';
-import { spacing } from '@tds-tchad/core/tokens';
+import { color } from '@tdgs/core/tokens';
+import { typography } from '@tdgs/core/tokens';
+import { spacing } from '@tdgs/core/tokens';
 
 // Ou tout importer depuis la racine
-import { color, typography, spacing, radius, shadow, motion } from '@tds-tchad/core';
+import { color, typography, spacing, radius, shadow, motion } from '@tdgs/core';
 
 // Utiliser les tokens
-const primaryBlue = color.blue[500];    // '#0033A0'
-const bodySize = typography.sizes.md;   // '1rem'
-const gap = spacing.scale[4];           // '1rem' (16px)
+const primaryBlue = color.blue[500]; // '#0B3A82'
+const bodySize = typography.sizes.md; // '1rem'
+const gap = spacing.scale[4]; // '1rem' (16px)
 ```
 
 ---
@@ -102,9 +97,9 @@ const gap = spacing.scale[4];           // '1rem' (16px)
 ## Importer les types TypeScript
 
 ```typescript
-import type { ColorTokens } from '@tds-tchad/core/tokens';
-import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/button';
-import type { InputVariant, InputSize, InputState } from '@tds-tchad/core/components/input';
+import type { ColorTokens } from '@tdgs/core/tokens';
+import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
+import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/input';
 ```
 
 ---
@@ -115,45 +110,49 @@ Les tokens sont aussi disponibles en JSON pour l'intégration avec Style Diction
 les plugins Figma ou d'autres outils de design.
 
 ```javascript
-import colorJson from '@tds-tchad/core/tokens/color.json' assert { type: 'json' };
+import colorJson from '@tdgs/core/tokens/color.json' assert { type: 'json' };
 // ou en CommonJS
-const colorJson = require('@tds-tchad/core/tokens/color.json');
+const colorJson = require('@tdgs/core/tokens/color.json');
 ```
 
 ---
 
 ## Installation sans bundler (CDN / HTML pur)
 
-Pour utiliser TDS sans outil de build, copiez les fichiers CSS dans votre projet
+Pour utiliser TDGS sans outil de build, copiez les fichiers CSS dans votre projet
 ou pointez vers un CDN auto-hébergé.
 
 ```html
 <!doctype html>
 <html lang="fr">
-<head>
-  <!-- Polices institutionnelles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <head>
+    <!-- Polices institutionnelles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tokens TDS (depuis votre serveur) -->
-  <link rel="stylesheet" href="/assets/tds/tokens/color.css">
-  <link rel="stylesheet" href="/assets/tds/tokens/typography.css">
-  <link rel="stylesheet" href="/assets/tds/tokens/spacing.css">
-  <link rel="stylesheet" href="/assets/tds/tokens/radius.css">
-  <link rel="stylesheet" href="/assets/tds/tokens/shadow.css">
-  <link rel="stylesheet" href="/assets/tds/tokens/motion.css">
-  <link rel="stylesheet" href="/assets/tds/tokens/z-index.css">
+    <!-- Tokens TDGS (depuis votre serveur) -->
+    <link rel="stylesheet" href="/assets/tds/tokens/color.css" />
+    <link rel="stylesheet" href="/assets/tds/tokens/typography.css" />
+    <link rel="stylesheet" href="/assets/tds/tokens/spacing.css" />
+    <link rel="stylesheet" href="/assets/tds/tokens/radius.css" />
+    <link rel="stylesheet" href="/assets/tds/tokens/shadow.css" />
+    <link rel="stylesheet" href="/assets/tds/tokens/motion.css" />
+    <link rel="stylesheet" href="/assets/tds/tokens/z-index.css" />
 
-  <!-- Composants TDS -->
-  <link rel="stylesheet" href="/assets/tds/components/button/button.css">
-  <link rel="stylesheet" href="/assets/tds/components/input/input.css">
-</head>
+    <!-- Composants TDGS -->
+    <link rel="stylesheet" href="/assets/tds/components/button/button.css" />
+    <link rel="stylesheet" href="/assets/tds/components/input/input.css" />
+  </head>
+</html>
 ```
 
 <Aside type="tip" title="Self-hosting des polices">
-  En production, hébergez les fichiers WOFF2 de **Source Sans 3** et **Noto Naskh Arabic**
-  sur vos propres serveurs. Cela évite les requêtes vers Google Fonts et garantit
-  la disponibilité en environnements réseau restreints (intranet gouvernemental).
+  En production, hébergez les fichiers WOFF2 de **Source Sans 3** et **Noto Naskh Arabic** sur vos
+  propres serveurs. Cela évite les requêtes vers Google Fonts et garantit la disponibilité en
+  environnements réseau restreints (intranet gouvernemental).
 </Aside>
 
 ---
@@ -164,9 +163,8 @@ Après installation, vérifiez que les tokens CSS sont bien chargés dans le nav
 
 ```javascript
 // Dans la console du navigateur
-getComputedStyle(document.documentElement)
-  .getPropertyValue('--tds-color-blue-500')
-// Doit retourner : ' #0033A0'
+getComputedStyle(document.documentElement).getPropertyValue('--tds-color-blue-500');
+// Doit retourner : ' #0B3A82'
 ```
 
 ---
@@ -174,7 +172,7 @@ getComputedStyle(document.documentElement)
 ## Arborescence du package publié
 
 ```
-@tds-tchad/core/
+@tdgs/core/
 ├── dist/
 │   ├── index.js              — Point d'entrée principal (ESM)
 │   ├── index.d.ts            — Types TypeScript

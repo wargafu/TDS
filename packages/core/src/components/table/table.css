@@ -1,8 +1,8 @@
-/* TDS Table component */
+/* TDGS Table component */
 .tds-table-wrapper {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid var(--tds-neutral-200);
+  border: 1px solid var(--tds-border-subtle);
   border-radius: var(--tds-radius-sm);
   -webkit-overflow-scrolling: touch;
 }
@@ -12,13 +12,13 @@
   border-collapse: collapse;
   font-size: var(--tds-font-size-sm);
   line-height: var(--tds-line-height-md);
-  background: var(--tds-neutral-0);
+  background: var(--tds-bg);
 }
 
 /* Caption */
 .tds-table caption {
   font-size: var(--tds-font-size-sm);
-  color: var(--tds-neutral-600);
+  color: var(--tds-text-muted);
   padding: var(--tds-spacing-2) 0;
   text-align: start;
   caption-side: bottom;
@@ -26,23 +26,23 @@
 
 /* En-tête */
 .tds-table thead th {
-  background: var(--tds-neutral-100);
-  color: var(--tds-neutral-800);
+  background: var(--tds-bg-subtle);
+  color: var(--tds-text);
   font-weight: var(--tds-font-weight-semibold);
   font-size: var(--tds-font-size-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: var(--tds-spacing-3) var(--tds-spacing-4);
   text-align: start;
-  border-bottom: 2px solid var(--tds-neutral-300);
+  border-bottom: 2px solid var(--tds-border);
   white-space: nowrap;
 }
 
 /* Cellules */
 .tds-table tbody td {
   padding: var(--tds-spacing-3) var(--tds-spacing-4);
-  border-bottom: 1px solid var(--tds-neutral-200);
-  color: var(--tds-neutral-800);
+  border-bottom: 1px solid var(--tds-border-subtle);
+  color: var(--tds-text);
   vertical-align: middle;
 }
 
@@ -57,7 +57,7 @@
 
 /* Lignes alternées */
 .tds-table--striped tbody tr:nth-child(even) td {
-  background: var(--tds-neutral-100);
+  background: var(--tds-bg-subtle);
 }
 
 .tds-table--striped tbody tr:nth-child(even):hover td {
@@ -67,7 +67,7 @@
 /* Bordures */
 .tds-table--bordered td,
 .tds-table--bordered th {
-  border: 1px solid var(--tds-neutral-200);
+  border: 1px solid var(--tds-border-subtle);
 }
 
 /* Compact */
@@ -77,15 +77,15 @@
 }
 
 /* Cellules de statut */
-.tds-table td[data-status="success"] {
+.tds-table td[data-status='success'] {
   color: var(--tds-semantic-success-text);
   font-weight: var(--tds-font-weight-medium);
 }
-.tds-table td[data-status="danger"] {
+.tds-table td[data-status='danger'] {
   color: var(--tds-semantic-danger-text);
   font-weight: var(--tds-font-weight-medium);
 }
-.tds-table td[data-status="warning"] {
+.tds-table td[data-status='warning'] {
   color: var(--tds-semantic-warning-icon);
   font-weight: var(--tds-font-weight-medium);
 }

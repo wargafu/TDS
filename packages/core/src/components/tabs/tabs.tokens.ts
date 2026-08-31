@@ -1,5 +1,5 @@
 /**
- * TDS tabs tokens
+ * TDGS tabs tokens
  *
  * Nécessite un minimum de JavaScript (bascule de aria-selected/hidden et
  * navigation flèches gauche/droite — voir la doc pour le script de

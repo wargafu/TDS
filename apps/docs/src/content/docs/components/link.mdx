@@ -1,6 +1,6 @@
 ---
 title: Link
-description: Composant Link TDS — styles de liens pour navigation et contenu.
+description: Composant Link TDGS — styles de liens pour navigation et contenu.
 sidebar:
   order: 6
 ---
@@ -10,7 +10,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 <Tabs>
 <TabItem label="Présentation">
 
-Les liens TDS sont accessibles, contrastés et cohérents avec la charte institutionnelle.
+Les liens TDGS sont accessibles, contrastés et cohérents avec la charte institutionnelle.
 La classe `.tds-link` s'applique aux liens de contenu ; les boutons de navigation utilisent `.tds-button--tertiary`.
 
 ## Lien vs Bouton
@@ -47,7 +47,7 @@ La classe `.tds-link` s'applique aux liens de contenu ; les boutons de navigatio
 ### Importation
 
 ```css
-@import "@tds-tchad/core/components/link/link.css";
+@import "@tdgs/core/components/link/link.css";
 ```
 
 ### Variantes
@@ -64,7 +64,7 @@ La classe `.tds-link` s'applique aux liens de contenu ; les boutons de navigatio
 
 <!-- Lien externe -->
 <a href="https://gouv.td" class="tds-link tds-link--external" target="_blank" rel="noopener noreferrer">
-  Portail officiel du Gouvernement du Tchad
+  Portail public du Tchad
 </a>
 
 <!-- Lien standalone (CTA de contenu) -->
@@ -80,8 +80,8 @@ La classe `.tds-link` s'applique aux liens de contenu ; les boutons de navigatio
 <!-- Lien externe — avertir l'utilisateur -->
 <a href="https://..." class="tds-link tds-link--external"
    target="_blank" rel="noopener noreferrer"
-   aria-label="Portail officiel — s'ouvre dans un nouvel onglet">
-  Portail officiel
+   aria-label="Portail public — s'ouvre dans un nouvel onglet">
+  Portail public
 </a>
 
 <!-- Lien avec contexte supplémentaire pour les AT -->

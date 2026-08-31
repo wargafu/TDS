@@ -1,12 +1,12 @@
-/* TDS Accordion component */
+/* TDGS Accordion component */
 :root {
-  --tds-accordion-border: var(--tds-neutral-200);
+  --tds-accordion-border: var(--tds-border-subtle);
   --tds-accordion-trigger-padding: var(--tds-spacing-4);
-  --tds-accordion-trigger-color: var(--tds-neutral-900);
-  --tds-accordion-trigger-hover-bg: var(--tds-neutral-100);
+  --tds-accordion-trigger-color: var(--tds-text);
+  --tds-accordion-trigger-hover-bg: var(--tds-bg-subtle);
   --tds-accordion-content-padding: 0 var(--tds-spacing-4) var(--tds-spacing-4);
   --tds-accordion-icon-size: 1rem;
-  --tds-accordion-focus-outline: 2px solid var(--tds-color-blue-500);
+  --tds-accordion-focus-outline: 2px solid var(--tds-action-primary);
   --tds-accordion-focus-outline-offset: -2px;
 }
 
@@ -67,7 +67,7 @@
   padding: var(--tds-accordion-content-padding);
   font-size: var(--tds-font-size-md);
   line-height: var(--tds-line-height-md);
-  color: var(--tds-neutral-700);
+  color: var(--tds-text-muted);
 }
 
 @media (prefers-reduced-motion: reduce) {

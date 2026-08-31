@@ -1,14 +1,14 @@
-/* TDS Pagination component */
+/* TDGS Pagination component */
 :root {
   --tds-pagination-gap: var(--tds-spacing-1);
   --tds-pagination-item-size: 2.5rem;
-  --tds-pagination-item-color: var(--tds-neutral-800);
-  --tds-pagination-item-hover-bg: var(--tds-neutral-100);
+  --tds-pagination-item-color: var(--tds-text);
+  --tds-pagination-item-hover-bg: var(--tds-bg-subtle);
   --tds-pagination-radius: var(--tds-radius-sm);
-  --tds-pagination-current-bg: var(--tds-color-blue-500);
-  --tds-pagination-current-color: var(--tds-neutral-0);
-  --tds-pagination-disabled-color: var(--tds-neutral-400);
-  --tds-pagination-focus-outline: 2px solid var(--tds-color-blue-500);
+  --tds-pagination-current-bg: var(--tds-action-primary);
+  --tds-pagination-current-color: var(--tds-text-inverted);
+  --tds-pagination-disabled-color: var(--tds-text-disabled);
+  --tds-pagination-focus-outline: 2px solid var(--tds-action-primary);
   --tds-pagination-focus-outline-offset: 2px;
 }
 

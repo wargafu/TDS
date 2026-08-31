@@ -1,6 +1,6 @@
 ---
 title: Lecteurs d'écran
-description: Compatibilité des composants TDS avec les technologies d'assistance.
+description: Compatibilité des composants TDGS avec les technologies d'assistance.
 sidebar:
   order: 3
 ---
@@ -8,23 +8,24 @@ sidebar:
 import { Aside } from '@astrojs/starlight/components';
 
 Les lecteurs d'écran transforment l'interface visuelle en retour audio ou braille.
-TDS garantit la compatibilité avec les lecteurs d'écran les plus répandus.
+TDGS fournit des fondations sémantiques destinées aux lecteurs d'écran les plus répandus ; chaque
+service doit encore être vérifié avec les technologies d'assistance de son environnement cible.
 
 ---
 
 ## Lecteurs d'écran supportés
 
-| Lecteur | Système | Navigateur recommandé |
-|---|---|---|
-| NVDA | Windows | Firefox |
-| JAWS | Windows | Chrome ou Firefox |
-| VoiceOver | macOS / iOS | Safari |
-| TalkBack | Android | Chrome |
-| Orca | Linux | Firefox |
+| Lecteur   | Système     | Navigateur recommandé |
+| --------- | ----------- | --------------------- |
+| NVDA      | Windows     | Firefox               |
+| JAWS      | Windows     | Chrome ou Firefox     |
+| VoiceOver | macOS / iOS | Safari                |
+| TalkBack  | Android     | Chrome                |
+| Orca      | Linux       | Firefox               |
 
 ---
 
-## Règles ARIA dans TDS
+## Règles ARIA dans TDGS
 
 ### Boutons et actions
 
@@ -33,9 +34,7 @@ TDS garantit la compatibilité avec les lecteurs d'écran les plus répandus.
 <button type="button" aria-pressed="false">Activer les notifications</button>
 
 <!-- État étendu (accordion, dropdown) -->
-<button type="button" aria-expanded="false" aria-controls="menu-content">
-  Options
-</button>
+<button type="button" aria-expanded="false" aria-controls="menu-content">Options</button>
 
 <!-- Bouton chargement -->
 <button type="button" aria-busy="true" aria-label="Envoi en cours, veuillez patienter">
@@ -47,14 +46,14 @@ TDS garantit la compatibilité avec les lecteurs d'écran les plus répandus.
 
 ```html
 <!-- Champ requis -->
-<input type="text" required aria-required="true">
+<input type="text" required aria-required="true" />
 
 <!-- Champ en erreur -->
-<input type="text" aria-invalid="true" aria-describedby="champ-erreur">
+<input type="text" aria-invalid="true" aria-describedby="champ-erreur" />
 <p id="champ-erreur" role="alert">Ce champ est requis.</p>
 
 <!-- Aide contextuelle -->
-<input type="text" aria-describedby="champ-aide">
+<input type="text" aria-describedby="champ-aide" />
 <p id="champ-aide">Format attendu : JJ/MM/AAAA</p>
 ```
 
@@ -67,9 +66,7 @@ TDS garantit la compatibilité avec les lecteurs d'écran les plus répandus.
 </div>
 
 <!-- Annonces assertives (erreurs critiques) -->
-<div role="alert" aria-live="assertive">
-  Session expirée. Veuillez vous reconnecter.
-</div>
+<div role="alert" aria-live="assertive">Session expirée. Veuillez vous reconnecter.</div>
 ```
 
 ---
@@ -94,6 +91,6 @@ TDS garantit la compatibilité avec les lecteurs d'écran les plus répandus.
 6. Liste de tous les éléments : `NVDA + F7`
 
 <Aside type="tip" title="Test minimal">
-  Au minimum, testez chaque nouveau composant avec VoiceOver + Safari sur macOS.
-  C'est rapide, gratuit et couvre un large éventail d'utilisateurs.
+  Au minimum, testez chaque nouveau composant avec VoiceOver + Safari sur macOS. C'est rapide,
+  gratuit et couvre un large éventail d'utilisateurs.
 </Aside>

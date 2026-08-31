@@ -1,0 +1,90 @@
+/* TDGS progress indicator */
+:root {
+  --tds-progress-gap: var(--tds-spacing-2);
+  --tds-progress-height: var(--tds-spacing-2);
+  --tds-progress-track: var(--tds-bg-subtle);
+  --tds-progress-indicator: var(--tds-action-primary);
+  --tds-progress-success: var(--tds-semantic-success-icon);
+  --tds-progress-warning: var(--tds-semantic-warning-icon);
+  --tds-progress-danger: var(--tds-semantic-danger-icon);
+  --tds-progress-radius: var(--tds-radius-full);
+}
+
+.tds-progress {
+  display: grid;
+  gap: var(--tds-progress-gap);
+  width: 100%;
+}
+
+.tds-progress__label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--tds-spacing-2);
+  color: var(--tds-text);
+  font-size: var(--tds-font-size-sm);
+  font-weight: var(--tds-font-weight-semibold);
+}
+
+.tds-progress__track {
+  overflow: hidden;
+  width: 100%;
+  height: var(--tds-progress-height);
+  background: var(--tds-progress-track);
+  border-radius: var(--tds-progress-radius);
+}
+
+.tds-progress__indicator {
+  width: var(--tds-progress-value, 0%);
+  height: 100%;
+  background: var(--tds-progress-indicator);
+  border-radius: inherit;
+  transition: width var(--tds-motion-normal) var(--tds-easing-standard);
+}
+
+.tds-progress--success .tds-progress__indicator {
+  background: var(--tds-progress-success);
+}
+
+.tds-progress--warning .tds-progress__indicator {
+  background: var(--tds-progress-warning);
+}
+
+.tds-progress--danger .tds-progress__indicator {
+  background: var(--tds-progress-danger);
+}
+
+.tds-progress--indeterminate .tds-progress__indicator {
+  width: 40%;
+  animation: tds-progress-indeterminate 1.4s var(--tds-easing-standard) infinite;
+}
+
+@keyframes tds-progress-indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tds-progress__indicator {
+    transition: none;
+  }
+
+  .tds-progress--indeterminate .tds-progress__indicator {
+    animation: none;
+    width: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .tds-progress__track {
+    background: Canvas;
+    border: 1px solid ButtonText;
+  }
+
+  .tds-progress__indicator {
+    background: Highlight;
+  }
+}

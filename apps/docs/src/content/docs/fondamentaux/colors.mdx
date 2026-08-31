@@ -1,13 +1,13 @@
 ---
 title: Couleurs
-description: Système de couleurs TDS — palette complète, couleurs sémantiques, variables CSS et règles d'usage.
+description: Système de couleurs TDGS — palette complète, couleurs sémantiques, variables CSS et règles d'usage.
 sidebar:
   order: 1
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-Le système de couleurs TDS est construit sur deux niveaux :
+Le système de couleurs TDGS est construit sur deux niveaux :
 **la palette de base** (valeurs brutes) et **les couleurs sémantiques** (significations fonctionnelles).
 
 <Aside type="caution" title="Règle fondamentale">
@@ -30,7 +30,7 @@ Le bleu `500` est la couleur d'action principale. Il représente l'autorité et 
 | `blue.200` | `--tds-color-blue-200` | `#A6C1FF` | Bordure focus, état survol léger |
 | `blue.300` | `--tds-color-blue-300` | `#6B94FF` | Éléments interactifs secondaires |
 | `blue.400` | `--tds-color-blue-400` | `#2F68FF` | Liens actifs, états hover |
-| **`blue.500`** | **`--tds-color-blue-500`** | **`#0033A0`** | **Action principale, couleur de marque** |
+| **`blue.500`** | **`--tds-color-blue-500`** | **`#0B3A82`** | **Action principale, couleur de marque** |
 | `blue.600` | `--tds-color-blue-600` | `#002B89` | Hover sur bleu 500 |
 | `blue.700` | `--tds-color-blue-700` | `#002063` | Active sur bleu 500, texte fort |
 | `blue.800` | `--tds-color-blue-800` | `#00143E` | Texte très fort sur fond clair |
@@ -42,7 +42,7 @@ Le bleu `500` est la couleur d'action principale. Il représente l'autorité et 
   <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#A6C1FF;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.200</span><span class="tds-color-swatch__value">#A6C1FF</span></div></div>
   <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#6B94FF;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.300</span><span class="tds-color-swatch__value">#6B94FF</span></div></div>
   <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#2F68FF;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.400</span><span class="tds-color-swatch__value">#2F68FF</span></div></div>
-  <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#0033A0;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.500 ★</span><span class="tds-color-swatch__value">#0033A0</span></div></div>
+  <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#0B3A82;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.500 ★</span><span class="tds-color-swatch__value">#0B3A82</span></div></div>
   <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#002B89;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.600</span><span class="tds-color-swatch__value">#002B89</span></div></div>
   <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#002063;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.700</span><span class="tds-color-swatch__value">#002063</span></div></div>
   <div class="tds-color-swatch"><div class="tds-color-swatch__preview" style="background:#00143E;"></div><div class="tds-color-swatch__info"><span class="tds-color-swatch__name">blue.800</span><span class="tds-color-swatch__value">#00143E</span></div></div>
@@ -82,7 +82,7 @@ Le jaune est la seconde couleur du drapeau tchadien. Il sert aux avertissements 
 |---|---|---|
 | `red.50` | `#FFF2F1` | Fond d'erreur légère |
 | `red.100` | `#FFD8D6` | Fond de badge erreur |
-| **`red.500`** | **`#DA291C`** | **Action destructive, état d'erreur** |
+| **`red.500`** | **`#D8222A`** | **Action destructive, état d'erreur** |
 | `red.600` | `#B21F16` | Hover bouton danger |
 | `red.700` | `#82160F` | Texte d'erreur sur fond clair |
 
@@ -143,17 +143,17 @@ Utilisée pour les messages informatifs neutres, les aides contextuelles.
 
 | Rôle | Variable CSS | Valeur |
 |---|---|---|
-| background | `--tds-color-semantic-info-background` | `#F2F5FF` (blue.50) |
-| border | `--tds-color-semantic-info-border` | `#A6C1FF` (blue.200) |
-| text | `--tds-color-semantic-info-text` | `#002063` (blue.700) |
-| icon | `--tds-color-semantic-info-icon` | `#0033A0` (blue.500) |
+| background | `--tds-semantic-info-bg` | `#F2F5FF` (blue.50) |
+| border | `--tds-semantic-info-border` | `#A6C1FF` (blue.200) |
+| text | `--tds-semantic-info-text` | `#002063` (blue.700) |
+| icon | `--tds-semantic-info-icon` | `#0B3A82` (blue.500) |
 
 ```html
 <div style="
-  background: var(--tds-color-semantic-info-background);
-  border: 1px solid var(--tds-color-semantic-info-border);
-  border-left: 4px solid var(--tds-color-semantic-info-icon);
-  color: var(--tds-color-semantic-info-text);
+  background: var(--tds-semantic-info-bg);
+  border: 1px solid var(--tds-semantic-info-border);
+  border-left: 4px solid var(--tds-semantic-info-icon);
+  color: var(--tds-semantic-info-text);
   padding: var(--tds-spacing-4);
   border-radius: var(--tds-radius-sm);
 ">
@@ -167,10 +167,10 @@ Confirmations, validations réussies, étapes complétées.
 
 | Rôle | Variable CSS | Valeur |
 |---|---|---|
-| background | `--tds-color-semantic-success-background` | `#F0FBF5` (green.50) |
-| border | `--tds-color-semantic-success-border` | `#A8E9C7` (green.200) |
-| text | `--tds-color-semantic-success-text` | `#004224` (green.700) |
-| icon | `--tds-color-semantic-success-icon` | `#006B3C` (green.500) |
+| background | `--tds-semantic-success-bg` | `#F0FBF5` (green.50) |
+| border | `--tds-semantic-success-border` | `#A8E9C7` (green.200) |
+| text | `--tds-semantic-success-text` | `#004224` (green.700) |
+| icon | `--tds-semantic-success-icon` | `#006B3C` (green.500) |
 
 ### Avertissement
 
@@ -178,10 +178,10 @@ Situations nécessitant attention sans être des erreurs.
 
 | Rôle | Variable CSS | Valeur |
 |---|---|---|
-| background | `--tds-color-semantic-warning-background` | `#FFFBEB` (yellow.50) |
-| border | `--tds-color-semantic-warning-border` | `#FFDA66` (yellow.300) |
-| text | `--tds-color-semantic-warning-text` | `#0B1220` (neutral.900) |
-| icon | `--tds-color-semantic-warning-icon` | `#0B1220` (neutral.900) |
+| background | `--tds-semantic-warning-bg` | `#FFFBEB` (yellow.50) |
+| border | `--tds-semantic-warning-border` | `#FFDA66` (yellow.300) |
+| text | `--tds-semantic-warning-text` | `#0B1220` (neutral.900) |
+| icon | `--tds-semantic-warning-icon` | `#0B1220` (neutral.900) |
 
 <Aside type="note" title="Texte sombre sur fond jaune">
   L'avertissement utilise `neutral.900` pour le texte et l'icône afin de garantir
@@ -194,10 +194,83 @@ Erreurs bloquantes, actions irréversibles, validations échouées.
 
 | Rôle | Variable CSS | Valeur |
 |---|---|---|
-| background | `--tds-color-semantic-danger-background` | `#FFF2F1` (red.50) |
-| border | `--tds-color-semantic-danger-border` | `#FFB0AD` (red.200) |
-| text | `--tds-color-semantic-danger-text` | `#82160F` (red.700) |
-| icon | `--tds-color-semantic-danger-icon` | `#DA291C` (red.500) |
+| background | `--tds-semantic-danger-bg` | `#FFF2F1` (red.50) |
+| border | `--tds-semantic-danger-border` | `#FFB0AD` (red.200) |
+| text | `--tds-semantic-danger-text` | `#82160F` (red.700) |
+| icon | `--tds-semantic-danger-icon` | `#D8222A` (red.500) |
+
+---
+
+## Couleurs sémantiques d'interface & mode sombre
+
+Au-dessus de la palette de base et des couleurs sémantiques fonctionnelles
+(info/succès/avertissement/danger), TDGS expose un **troisième niveau** : des
+tokens sémantiques d'interface — texte, fond, bordure, action, accent — qui
+s'adaptent automatiquement entre thème clair et thème sombre. Cette
+architecture à trois niveaux (palette → sémantique fonctionnel → sémantique
+d'interface) s'inspire de celle du [design système du Bénin](https://dsbj.site/)
+(`--bj-text-*`, `--bj-bg-*`, `--bj-border-*`, `--bj-action-*`), adaptée aux
+couleurs du drapeau tchadien : **bleu** pour l'action primaire, **jaune** pour
+l'accent.
+
+<Aside type="tip" title="Préférer ces tokens dans les composants">
+  Les composants TDGS (Input, Card, Table, Modal, Badge, Accordion, Tabs, Button,
+  Breadcrumb, Pagination, Link…) consomment déjà ces tokens plutôt que des
+  nuances de gris fixes — ils s'adaptent donc automatiquement au mode sombre
+  sans modification. Préférez `--tds-text`, `--tds-bg`, `--tds-border` et
+  `--tds-action-primary` aux nuances `neutral.*`/`blue.*` brutes lors de la
+  création de nouveaux composants.
+</Aside>
+
+| Groupe | Rôle | Variable |
+|---|---|---|
+| Texte | Texte par défaut | `--tds-text` |
+| | Texte atténué (secondaire) | `--tds-text-muted` |
+| | Texte désactivé | `--tds-text-disabled` |
+| | Texte inversé (sur fond coloré/sombre) | `--tds-text-inverted` |
+| Fond | Fond par défaut | `--tds-bg` |
+| | Fond atténué (lignes alternées, hover léger) | `--tds-bg-subtle` |
+| | Fond élevé (carte, modale) | `--tds-bg-elevated` |
+| | Fond désactivé | `--tds-bg-disabled` |
+| Bordure | Bordure par défaut | `--tds-border` |
+| | Bordure forte | `--tds-border-strong` |
+| | Bordure atténuée | `--tds-border-subtle` |
+| | Bordure désactivée | `--tds-border-disabled` |
+| Action | Action primaire | `--tds-action-primary` (+ `-hover`, `-active`) |
+| | Action secondaire | `--tds-action-secondary` (+ `-hover`) |
+| Accent | Accent (jaune) | `--tds-accent`, `--tds-accent-text` |
+
+### Activer le mode sombre
+
+Le mode sombre s'active de deux façons, à l'image de DSBJ :
+
+<Tabs>
+  <TabItem label="Préférence système (automatique)">
+    Aucune action requise : si l'utilisateur a activé le mode sombre au niveau
+    de son système d'exploitation ou navigateur, TDGS bascule automatiquement
+    via `@media (prefers-color-scheme: dark)`.
+  </TabItem>
+  <TabItem label="Override explicite">
+    ```html
+    <html data-tds-theme="dark">
+      <!-- toute la page force le thème sombre -->
+    </html>
+    ```
+    ```html
+    <html data-tds-theme="light">
+      <!-- force le thème clair, même si le système est en sombre -->
+    </html>
+    ```
+  </TabItem>
+</Tabs>
+
+<Aside type="caution" title="Chrome institutionnel volontairement fixe">
+  Header, Footer, Navigation et Skip Link gardent des couleurs fixes (fond
+  institutionnel sombre ou marque) dans les deux thèmes — comme la plupart des
+  design systèmes gouvernementaux, ces éléments de "chrome" n'ont pas vocation
+  à s'inverser avec le thème du contenu. Seuls les composants de contenu
+  (formulaires, cartes, tableaux, alertes…) suivent le thème clair/sombre.
+</Aside>
 
 ---
 
@@ -210,7 +283,7 @@ Erreurs bloquantes, actions irréversibles, validations échouées.
 --tds-color-blue-200:   #A6C1FF;
 --tds-color-blue-300:   #6B94FF;
 --tds-color-blue-400:   #2F68FF;
---tds-color-blue-500:   #0033A0;   /* ← primaire */
+--tds-color-blue-500:   #0B3A82;   /* ← primaire */
 --tds-color-blue-600:   #002B89;
 --tds-color-blue-700:   #002063;
 --tds-color-blue-800:   #00143E;
@@ -234,7 +307,7 @@ Erreurs bloquantes, actions irréversibles, validations échouées.
 --tds-color-red-200:    #FFB0AD;
 --tds-color-red-300:    #FF8A83;
 --tds-color-red-400:    #FF665D;
---tds-color-red-500:    #DA291C;   /* ← danger */
+--tds-color-red-500:    #D8222A;   /* ← danger */
 --tds-color-red-600:    #B21F16;
 --tds-color-red-700:    #82160F;
 --tds-color-red-800:    #560E08;
@@ -264,26 +337,47 @@ Erreurs bloquantes, actions irréversibles, validations échouées.
 --tds-neutral-800: #1F2937;
 --tds-neutral-900: #0B1220;
 
-/* Couleurs sémantiques */
---tds-color-semantic-info-background:       #F2F5FF;
---tds-color-semantic-info-border:           #A6C1FF;
---tds-color-semantic-info-text:             #002063;
---tds-color-semantic-info-icon:             #0033A0;
+/* Couleurs sémantiques (fonctionnelles) */
+--tds-semantic-info-bg:       #F2F5FF;
+--tds-semantic-info-border:   #A6C1FF;
+--tds-semantic-info-text:     #002063;
+--tds-semantic-info-icon:     #0B3A82;
 
---tds-color-semantic-success-background:    #F0FBF5;
---tds-color-semantic-success-border:        #A8E9C7;
---tds-color-semantic-success-text:          #004224;
---tds-color-semantic-success-icon:          #006B3C;
+--tds-semantic-success-bg:     #F0FBF5;
+--tds-semantic-success-border: #A8E9C7;
+--tds-semantic-success-text:   #004224;
+--tds-semantic-success-icon:   #006B3C;
 
---tds-color-semantic-warning-background:    #FFFBEB;
---tds-color-semantic-warning-border:        #FFDA66;
---tds-color-semantic-warning-text:          #0B1220;
---tds-color-semantic-warning-icon:          #0B1220;
+--tds-semantic-warning-bg:     #FFFBEB;
+--tds-semantic-warning-border: #FFDA66;
+--tds-semantic-warning-text:   #0B1220;
+--tds-semantic-warning-icon:   #0B1220;
 
---tds-color-semantic-danger-background:     #FFF2F1;
---tds-color-semantic-danger-border:         #FFB0AD;
---tds-color-semantic-danger-text:           #82160F;
---tds-color-semantic-danger-icon:           #DA291C;
+--tds-semantic-danger-bg:      #FFF2F1;
+--tds-semantic-danger-border:  #FFB0AD;
+--tds-semantic-danger-text:    #82160F;
+--tds-semantic-danger-icon:    #D8222A;
+
+/* Theme — texte/fond/bordure/action/accent (clair par défaut) */
+--tds-text:                   #0B1220;   /* neutral.900 */
+--tds-text-muted:             #4B5563;   /* neutral.600 */
+--tds-text-disabled:          #6B7280;   /* neutral.500 */
+--tds-text-inverted:          #FFFFFF;   /* neutral.0 */
+--tds-bg:                     #FFFFFF;   /* neutral.0 */
+--tds-bg-subtle:               #F3F4F6;   /* neutral.100 */
+--tds-bg-elevated:            #FFFFFF;   /* neutral.0 */
+--tds-bg-disabled:            #F3F4F6;   /* neutral.100 */
+--tds-border:                 #D1D5DB;   /* neutral.300 */
+--tds-border-strong:          #0B1220;   /* neutral.900 */
+--tds-border-subtle:          #E5E7EB;   /* neutral.200 */
+--tds-border-disabled:        #E5E7EB;   /* neutral.200 */
+--tds-action-primary:         #0B3A82;   /* blue.500 */
+--tds-action-primary-hover:   #002B89;   /* blue.600 */
+--tds-action-primary-active:  #002063;   /* blue.700 */
+--tds-action-secondary:       #F2F5FF;   /* blue.50 */
+--tds-action-secondary-hover: #D9E3FF;   /* blue.100 */
+--tds-accent:                 #FFD100;   /* yellow.500 */
+--tds-accent-text:            #B58D00;   /* yellow.700 */
 ```
 
 ---
@@ -291,11 +385,11 @@ Erreurs bloquantes, actions irréversibles, validations échouées.
 ## Utilisation TypeScript
 
 ```typescript
-import { color } from '@tds-tchad/core/tokens';
-import type { ColorTokens } from '@tds-tchad/core/tokens';
+import { color } from '@tdgs/core/tokens';
+import type { ColorTokens } from '@tdgs/core/tokens';
 
 // Accès direct aux valeurs
-const primary = color.blue[500];          // '#0033A0'
+const primary = color.blue[500];          // '#0B3A82'
 const dangerText = color.semantic.danger.text;   // '#82160F'
 const pageBg = color.neutral[0];          // '#FFFFFF'
 
@@ -328,7 +422,7 @@ const theme = {
   <div class="tds-do-dont__card tds-do-dont__card--dont">
     <div class="tds-do-dont__heading">✗ Éviter</div>
     <ul>
-      <li>Inventer des couleurs hors de la palette TDS</li>
+      <li>Inventer des couleurs hors de la palette TDGS</li>
       <li>Utiliser du texte blanc sur fond jaune</li>
       <li>Utiliser <code>red.500</code> pour une action primaire non-destructive</li>
       <li>Utiliser les palettes brutes pour exprimer des états (préférez les sémantiques)</li>

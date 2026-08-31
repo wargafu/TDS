@@ -1,0 +1,32 @@
+---
+title: Étapes
+description: Indicateur de progression pour les démarches et formulaires multi-étapes.
+---
+
+Le composant Étapes indique la position de l’usager dans une démarche. Il distingue les étapes terminées, courante, à venir et en erreur.
+
+## Exemple HTML
+
+```html
+<nav aria-label="Étapes de la demande">
+  <ol class="tds-stepper">
+    <li class="tds-stepper__item tds-stepper--complete">
+      <span class="tds-stepper__marker" aria-hidden="true">✓</span>
+      <span class="tds-stepper__content"><span class="tds-stepper__label">Identité</span></span>
+    </li>
+    <li class="tds-stepper__item tds-stepper--current" aria-current="step">
+      <span class="tds-stepper__marker" aria-hidden="true">2</span>
+      <span class="tds-stepper__content"><span class="tds-stepper__label">Documents</span></span>
+    </li>
+  </ol>
+</nav>
+```
+
+## Accessibilité
+
+- utiliser un `nav` avec un nom accessible ;
+- marquer une seule étape avec `aria-current="step"` ;
+- ne rendre les étapes cliquables que si une navigation est réellement disponible ;
+- conserver une version lisible sur mobile et en RTL.
+
+Le binding React est `Stepper` et le binding Vue est `TdsStepper`.

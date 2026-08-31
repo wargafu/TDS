@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "echo \"Start TDS doc site placeholder\"",
-    "build": "echo \"Build TDS doc site placeholder\""
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/validate.mjs"
   }
 }

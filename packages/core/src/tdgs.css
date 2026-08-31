@@ -1,0 +1,34 @@
+/*
+ * TDGS — feuille de style complète.
+ * Pour un bundle optimisé, importer uniquement les fichiers nécessaires.
+ */
+@import './tokens/color.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/radius.css';
+@import './tokens/shadow.css';
+@import './tokens/motion.css';
+@import './tokens/z-index.css';
+@import './base.css';
+@import './icons/icons.css';
+@import './components/button/button.css';
+@import './components/input/input.css';
+@import './components/alert/alert.css';
+@import './components/badge/badge.css';
+@import './components/card/card.css';
+@import './components/link/link.css';
+@import './components/table/table.css';
+@import './components/header/header.css';
+@import './components/nav/nav.css';
+@import './components/breadcrumb/breadcrumb.css';
+@import './components/pagination/pagination.css';
+@import './components/modal/modal.css';
+@import './components/skip-link/skip-link.css';
+@import './components/footer/footer.css';
+@import './components/accordion/accordion.css';
+@import './components/tabs/tabs.css';
+@import './components/tooltip/tooltip.css';
+@import './components/search/search.css';
+@import './components/stepper/stepper.css';
+@import './components/file-upload/file-upload.css';
+@import './components/progress/progress.css';

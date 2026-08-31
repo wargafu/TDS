@@ -1,5 +1,5 @@
 {
-  "name": "tds",
+  "name": "tdgs",
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@8.11.0",
@@ -15,6 +15,7 @@
     "format:check": "prettier --check \"**/*.{ts,json,css,md}\" --ignore-path .prettierignore",
     "test": "turbo test",
     "test:a11y": "turbo test:a11y",
+    "validate:templates": "node templates/validate.mjs",
     "validate": "turbo validate"
   },
   "devDependencies": {

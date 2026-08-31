@@ -1,7 +1,21 @@
 {
-  "name": "@tds-tchad/core",
+  "name": "@tdgs/core",
   "version": "0.1.0",
   "private": false,
+  "description": "Fondations CSS, tokens et composants agnostiques du TDGS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wargafu/TDGS.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://wargafu.github.io/TDGS/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -18,6 +32,7 @@
     "build": "node scripts/build.mjs",
     "generate:tokens": "node scripts/generate-tokens.mjs",
     "test": "vitest run",
+    "lint": "eslint src",
     "lint:css": "stylelint \"src/**/*.css\"",
     "clean": "node scripts/clean.mjs",
     "dev": "tsc --build tsconfig.json --watch",
@@ -33,6 +48,12 @@
       "types": "./dist/index.d.ts"
     },
     "./base.css": "./dist/base.css",
+    "./tdgs.css": "./dist/tdgs.css",
+    "./icons": {
+      "import": "./dist/icons/index.js",
+      "types": "./dist/icons/index.d.ts"
+    },
+    "./icons/icons.css": "./dist/icons/icons.css",
     "./tokens": {
       "import": "./dist/tokens/index.js",
       "types": "./dist/tokens/index.d.ts"
@@ -126,6 +147,26 @@
       "types": "./dist/components/tooltip/index.d.ts"
     },
     "./components/tooltip/tooltip.css": "./dist/components/tooltip/tooltip.css",
+    "./components/search": {
+      "import": "./dist/components/search/index.js",
+      "types": "./dist/components/search/index.d.ts"
+    },
+    "./components/search/search.css": "./dist/components/search/search.css",
+    "./components/stepper": {
+      "import": "./dist/components/stepper/index.js",
+      "types": "./dist/components/stepper/index.d.ts"
+    },
+    "./components/stepper/stepper.css": "./dist/components/stepper/stepper.css",
+    "./components/file-upload": {
+      "import": "./dist/components/file-upload/index.js",
+      "types": "./dist/components/file-upload/index.d.ts"
+    },
+    "./components/file-upload/file-upload.css": "./dist/components/file-upload/file-upload.css",
+    "./components/progress": {
+      "import": "./dist/components/progress/index.js",
+      "types": "./dist/components/progress/index.d.ts"
+    },
+    "./components/progress/progress.css": "./dist/components/progress/progress.css",
     "./tokens/color.css": "./dist/tokens/color.css",
     "./tokens/typography.css": "./dist/tokens/typography.css",
     "./tokens/spacing.css": "./dist/tokens/spacing.css",

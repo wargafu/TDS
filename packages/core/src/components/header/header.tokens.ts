@@ -1,5 +1,5 @@
 /**
- * TDS header tokens
+ * TDGS header tokens
  *
  * En-tête institutionnel : zone de marque (logo + titre + tagline) et bandeau
  * tricolore. Reste sobre et laisse la navigation/actions en zone libre.

@@ -1,6 +1,6 @@
 ---
 title: Formulaire de connexion
-description: Pattern de connexion TDS — email/mot de passe, gestion des erreurs, accessibilité.
+description: Pattern de connexion TDGS — email/mot de passe, gestion des erreurs, accessibilité.
 sidebar:
   order: 2
 ---
@@ -23,17 +23,17 @@ Il doit être simple, rassurant et sans obstacles.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion — Nom du service</title>
-  <link rel="stylesheet" href="/styles/tds.css">
+  <!-- Importer les feuilles CSS de @tdgs/core via le bundler du service. -->
 </head>
 <body>
   <!-- Skip link -->
   <a href="#main-content" class="tds-skip-link">Aller au contenu principal</a>
 
-  <!-- En-tête gouvernemental -->
-  <header class="tds-gov-header" role="banner">
-    <div class="tds-gov-header__brand">
-      <img src="/images/armoiries-tchad.svg" alt="République du Tchad" height="48">
-      <span>Nom du ministère ou service</span>
+  <!-- En-tête du service -->
+  <header class="tds-header" role="banner">
+    <div class="tds-header__brand">
+      <!-- Les symboles de l'État nécessitent une validation institutionnelle. -->
+      <span class="tds-header__title">Nom du ministère ou service</span>
     </div>
   </header>
 

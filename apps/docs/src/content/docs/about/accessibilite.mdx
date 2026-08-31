@@ -1,15 +1,16 @@
 ---
 title: Déclaration d'accessibilité
-description: État de conformité RGAA / WCAG 2.1 AA de la documentation TDS.
+description: État des contrôles d'accessibilité et cible WCAG 2.2 AA de la documentation TDGS.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
-**République du Tchad** s'engage à rendre son site accessible conformément aux principes du
-Référentiel Général d'Amélioration de l'Accessibilité (RGAA) et de WCAG 2.1 niveau AA.
+TDGS est un projet open source indépendant. Cette déclaration décrit l'état connu des contrôles
+accessibilité de sa documentation et ne constitue pas une déclaration institutionnelle au nom de
+la République du Tchad.
 
-Cette déclaration d'accessibilité s'applique à ce site de documentation
-(**tds.gouv.td** / **wargafu.github.io/TDS**).
+Cette déclaration s'applique au site de documentation publié depuis le dépôt
+**github.com/wargafu/TDGS**. Toute URL miroir doit être vérifiée séparément.
 
 ---
 
@@ -23,15 +24,15 @@ Cette déclaration d'accessibilité s'applique à ce site de documentation
 </Aside>
 
 Ce qui est fait aujourd'hui :
-- Les composants TDS sont conçus selon les principes WCAG 2.1 AA (voir
+- Les composants TDGS sont conçus selon une cible WCAG 2.2 AA (voir
   [Principes WCAG](/fondamentaux/wcag/))
-- Des vérifications automatisées (axe-core) tournent en intégration continue sur chaque
-  changement, contre le terrain de jeu des composants et les pages de documentation
-- Contraste, structure de titres, labels de formulaire, navigation clavier de base sont vérifiés
-  automatiquement
+- Un script de vérification automatisée axe-core est intégré au pipeline du terrain de jeu ; son
+  résultat doit être rejoué et consigné à chaque release
+- Contraste, structure de titres, labels de formulaire et navigation clavier de base font l'objet
+  de contrôles ciblés
 
 Ce qui reste à faire (voir la [roadmap](/communaute/roadmap/)) :
-- Audit RGAA/WCAG 2.1 AA complet mené par un auditeur indépendant
+- Audit WCAG 2.2 AA complet mené par un auditeur indépendant
 - Tests avec de vrais utilisateurs de technologies d'assistance (lecteurs d'écran, navigation
   clavier exclusive, zoom, contraste élevé)
 - Publication d'un taux de conformité et d'un plan d'action correctif
@@ -48,5 +49,5 @@ Cette déclaration a été établie le 2 juillet 2026 sur la base d'une auto-év
 ## Signaler un problème d'accessibilité
 
 Si vous rencontrez un obstacle à l'accessibilité sur ce site, merci de le signaler via
-[une issue GitHub](https://github.com/wargafu/TDS/issues) en décrivant le problème rencontré
+[une issue GitHub](https://github.com/wargafu/TDGS/issues) en décrivant le problème rencontré
 et, si possible, la technologie d'assistance utilisée.

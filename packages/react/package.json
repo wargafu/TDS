@@ -1,0 +1,55 @@
+{
+  "name": "@tdgs/react",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Composants React typés pour le TDGS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wargafu/TDGS.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://wargafu.github.io/TDGS/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "clean": "node scripts/clean.mjs",
+    "dev": "tsc --build tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.typecheck.json"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "@tdgs/core": "^0.1.0",
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@tdgs/core": "workspace:*",
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^18.3.0",
+    "jsdom": "^25.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}

@@ -6,7 +6,7 @@ export const color = {
     "200": "#A6C1FF",
     "300": "#6B94FF",
     "400": "#2F68FF",
-    "500": "#0033A0",
+    "500": "#0B3A82",
     "600": "#002B89",
     "700": "#002063",
     "800": "#00143E",
@@ -18,7 +18,7 @@ export const color = {
     "200": "#FFE699",
     "300": "#FFDA66",
     "400": "#FFCF33",
-    "500": "#FFD100",
+    "500": "#F5C116",
     "600": "#E6B800",
     "700": "#B58D00",
     "800": "#846200",
@@ -30,7 +30,7 @@ export const color = {
     "200": "#FFB0AD",
     "300": "#FF8A83",
     "400": "#FF665D",
-    "500": "#DA291C",
+    "500": "#D8222A",
     "600": "#B21F16",
     "700": "#82160F",
     "800": "#560E08",
@@ -65,7 +65,7 @@ export const color = {
       "background": "#F2F5FF",
       "border": "#A6C1FF",
       "text": "#002063",
-      "icon": "#0033A0"
+      "icon": "#0B3A82"
     },
     "success": {
       "background": "#F0FBF5",
@@ -83,7 +83,97 @@ export const color = {
       "background": "#FFF2F1",
       "border": "#FFB0AD",
       "text": "#82160F",
-      "icon": "#DA291C"
+      "icon": "#D8222A"
+    }
+  },
+  "semanticDark": {
+    "info": {
+      "background": "#00061A",
+      "border": "#002063",
+      "text": "#6B94FF",
+      "icon": "#6B94FF"
+    },
+    "success": {
+      "background": "#00140C",
+      "border": "#004224",
+      "text": "#6FD8A1",
+      "icon": "#6FD8A1"
+    },
+    "warning": {
+      "background": "#4D3A00",
+      "border": "#B58D00",
+      "text": "#FFF3CC",
+      "icon": "#FFF3CC"
+    },
+    "danger": {
+      "background": "#2B0604",
+      "border": "#82160F",
+      "text": "#FF8A83",
+      "icon": "#FF8A83"
+    }
+  },
+  "theme": {
+    "light": {
+      "text": {
+        "default": "#0B1220",
+        "muted": "#4B5563",
+        "disabled": "#6B7280",
+        "inverted": "#FFFFFF"
+      },
+      "background": {
+        "default": "#FFFFFF",
+        "subtle": "#F3F4F6",
+        "elevated": "#FFFFFF",
+        "disabled": "#F3F4F6"
+      },
+      "border": {
+        "default": "#D1D5DB",
+        "strong": "#0B1220",
+        "subtle": "#E5E7EB",
+        "disabled": "#E5E7EB"
+      },
+      "action": {
+        "primary": "#0B3A82",
+        "primaryHover": "#002B89",
+        "primaryActive": "#002063",
+        "secondary": "#F2F5FF",
+        "secondaryHover": "#D9E3FF"
+      },
+      "accent": {
+        "default": "#F5C116",
+        "text": "#B58D00"
+      }
+    },
+    "dark": {
+      "text": {
+        "default": "#FFFFFF",
+        "muted": "#D1D5DB",
+        "disabled": "#4B5563",
+        "inverted": "#0B1220"
+      },
+      "background": {
+        "default": "#0B1220",
+        "subtle": "#1F2937",
+        "elevated": "#1F2937",
+        "disabled": "#374151"
+      },
+      "border": {
+        "default": "#374151",
+        "strong": "#FFFFFF",
+        "subtle": "#1F2937",
+        "disabled": "#374151"
+      },
+      "action": {
+        "primary": "#6B94FF",
+        "primaryHover": "#A6C1FF",
+        "primaryActive": "#D9E3FF",
+        "secondary": "#00143E",
+        "secondaryHover": "#002063"
+      },
+      "accent": {
+        "default": "#FFCF33",
+        "text": "#FFE699"
+      }
     }
   }
 } as const;

@@ -1,0 +1,25 @@
+---
+title: Intégrations
+description: Utiliser TDGS avec HTML pur, React ou Vue.
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+TDGS est **CSS-first et sans dépendance runtime** : `@tdgs/core` fonctionne partout,
+sans framework. Pour les équipes qui utilisent React ou Vue, des bindings dédiés
+exposent chaque composant comme un composant typé, sans jamais dupliquer le CSS source.
+
+<CardGrid>
+  <Card title="Aperçu" icon="open-book">
+    Quelle intégration choisir selon votre stack — [lire →](/integrations/overview/)
+  </Card>
+  <Card title="HTML / CSS" icon="document">
+    Sans framework — classes `tds-*` et variables `--tds-*` — [lire →](/integrations/vanilla/)
+  </Card>
+  <Card title="React" icon="puzzle">
+    `@tdgs/react` — composants typés, hooks React — [lire →](/integrations/react/)
+  </Card>
+  <Card title="Vue" icon="puzzle">
+    `@tdgs/vue` — composants Vue 3, support `v-model` — [lire →](/integrations/vue/)
+  </Card>
+</CardGrid>

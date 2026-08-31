@@ -1,0 +1,33 @@
+---
+title: Dépôt de fichier
+description: Sélection accessible de documents avec validation native et affichage des fichiers choisis.
+---
+
+Le composant Dépôt de fichier s’appuie sur `<input type="file">`. Le navigateur conserve ainsi les contrôles de sécurité et les comportements clavier attendus.
+
+## Exemple HTML
+
+```html
+<div class="tds-file-upload">
+  <label class="tds-field__label" for="identity-document">Pièce d’identité</label>
+  <input
+    id="identity-document"
+    class="tds-file-upload__input"
+    type="file"
+    accept="application/pdf,image/*"
+  />
+  <label class="tds-file-upload__label" for="identity-document">
+    <span class="tds-file-upload__choose">Choisir un fichier</span>
+    <span>PDF ou image, selon les exigences de la démarche.</span>
+  </label>
+</div>
+```
+
+## Accessibilité
+
+- associer les deux libellés au même identifiant de champ ;
+- annoncer les erreurs avec `role="alert"` et `aria-describedby` ;
+- préciser les formats acceptés dans le texte, pas uniquement avec `accept` ;
+- ne jamais supposer qu’un nom de fichier suffit à décrire son contenu.
+
+Les bindings sont `FileUpload` pour React et `TdsFileUpload` pour Vue.

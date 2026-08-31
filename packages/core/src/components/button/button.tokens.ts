@@ -1,8 +1,8 @@
 /**
- * TDS button tokens
+ * TDGS button tokens
  *
- * Ce fichier formalise les variantes, tailles et comportements officiels du système
- * de boutons TDS. Il reste sobre, accessible et aligné sur les tokens existants.
+ * Ce fichier formalise les variantes, tailles et comportements définis du système
+ * de boutons TDGS. Il reste sobre, accessible et aligné sur les tokens existants.
  */
 export const button = {
   defaults: {
@@ -11,10 +11,11 @@ export const button = {
     fontFamily: 'var(--tds-font-family-primary)',
     fontWeight: 'var(--tds-text-button-weight)',
     textTransform: 'none' as const,
-    transition: 'background-color var(--tds-motion-fast) var(--tds-easing-standard), color var(--tds-motion-fast) var(--tds-easing-standard), border-color var(--tds-motion-fast) var(--tds-easing-standard), box-shadow var(--tds-motion-fast) var(--tds-easing-standard)',
-    focusOutline: '2px solid var(--tds-color-blue-500)',
+    transition:
+      'background-color var(--tds-motion-fast) var(--tds-easing-standard), color var(--tds-motion-fast) var(--tds-easing-standard), border-color var(--tds-motion-fast) var(--tds-easing-standard), box-shadow var(--tds-motion-fast) var(--tds-easing-standard)',
+    focusOutline: '2px solid var(--tds-action-primary)',
     focusOutlineOffset: '3px',
-    minHeight: 'var(--tds-button-min-height)'
+    minHeight: 'var(--tds-button-min-height)',
   },
   variants: {
     primary: {
@@ -27,7 +28,7 @@ export const button = {
       activeBorder: 'var(--tds-button-primary-active-border)',
       disabledBackground: 'var(--tds-button-disabled-bg)',
       disabledText: 'var(--tds-button-disabled-text)',
-      disabledBorder: 'var(--tds-button-disabled-border)'
+      disabledBorder: 'var(--tds-button-disabled-border)',
     },
     secondary: {
       background: 'var(--tds-button-secondary-bg)',
@@ -39,7 +40,7 @@ export const button = {
       activeBorder: 'var(--tds-button-secondary-active-border)',
       disabledBackground: 'var(--tds-button-disabled-bg)',
       disabledText: 'var(--tds-button-disabled-text)',
-      disabledBorder: 'var(--tds-button-disabled-border)'
+      disabledBorder: 'var(--tds-button-disabled-border)',
     },
     tertiary: {
       background: 'var(--tds-button-tertiary-bg)',
@@ -51,7 +52,7 @@ export const button = {
       activeBorder: 'var(--tds-button-tertiary-active-border)',
       disabledBackground: 'var(--tds-button-disabled-bg)',
       disabledText: 'var(--tds-button-disabled-text)',
-      disabledBorder: 'var(--tds-button-disabled-border)'
+      disabledBorder: 'var(--tds-button-disabled-border)',
     },
     danger: {
       background: 'var(--tds-button-danger-bg)',
@@ -63,7 +64,7 @@ export const button = {
       activeBorder: 'var(--tds-button-danger-active-border)',
       disabledBackground: 'var(--tds-button-disabled-bg)',
       disabledText: 'var(--tds-button-disabled-text)',
-      disabledBorder: 'var(--tds-button-disabled-border)'
+      disabledBorder: 'var(--tds-button-disabled-border)',
     },
     success: {
       background: 'var(--tds-button-success-bg)',
@@ -75,8 +76,8 @@ export const button = {
       activeBorder: 'var(--tds-button-success-active-border)',
       disabledBackground: 'var(--tds-button-disabled-bg)',
       disabledText: 'var(--tds-button-disabled-text)',
-      disabledBorder: 'var(--tds-button-disabled-border)'
-    }
+      disabledBorder: 'var(--tds-button-disabled-border)',
+    },
   },
   sizes: {
     sm: {
@@ -84,36 +85,36 @@ export const button = {
       lineHeight: 'var(--tds-button-line-height-sm)',
       padding: 'var(--tds-button-padding-sm)',
       minHeight: 'var(--tds-button-min-height)',
-      radius: 'var(--tds-button-radius-sm)'
+      radius: 'var(--tds-button-radius-sm)',
     },
     md: {
       fontSize: 'var(--tds-button-font-size-md)',
       lineHeight: 'var(--tds-button-line-height-md)',
       padding: 'var(--tds-button-padding-md)',
       minHeight: 'var(--tds-button-min-height)',
-      radius: 'var(--tds-button-radius-md)'
+      radius: 'var(--tds-button-radius-md)',
     },
     lg: {
       fontSize: 'var(--tds-button-font-size-lg)',
       lineHeight: 'var(--tds-button-line-height-lg)',
       padding: 'var(--tds-button-padding-lg)',
       minHeight: 'var(--tds-button-min-height)',
-      radius: 'var(--tds-button-radius-md)'
-    }
+      radius: 'var(--tds-button-radius-md)',
+    },
   },
   states: {
     focus: {
       outline: 'var(--tds-button-focus-outline)',
-      outlineOffset: 'var(--tds-button-focus-outline-offset)'
+      outlineOffset: 'var(--tds-button-focus-outline-offset)',
     },
     disabled: {
       cursor: 'not-allowed',
-      opacity: '0.75'
+      opacity: '0.75',
     },
     loading: {
-      cursor: 'progress'
-    }
-  }
+      cursor: 'progress',
+    },
+  },
 } as const;
 
 export type ButtonVariant = keyof typeof button.variants;

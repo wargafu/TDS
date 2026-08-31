@@ -1,6 +1,6 @@
 ---
 title: Page de confirmation
-description: Pattern de confirmation TDS — après soumission d'une demande administrative.
+description: Pattern de confirmation TDGS — après soumission d'une demande administrative.
 sidebar:
   order: 5
 ---
@@ -22,15 +22,15 @@ et de lui fournir une référence pour le suivi.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demande reçue — Nom du service</title>
-  <link rel="stylesheet" href="/styles/tds.css">
+  <!-- Importer les feuilles CSS de @tdgs/core via le bundler du service. -->
   <!-- Empêcher la resoumission sur F5 -->
   <meta name="robots" content="noindex">
 </head>
 <body>
-  <header class="tds-gov-header" role="banner">
-    <div class="tds-gov-header__brand">
-      <img src="/images/armoiries-tchad.svg" alt="République du Tchad" height="48">
-      <span>Nom du service</span>
+  <header class="tds-header" role="banner">
+    <div class="tds-header__brand">
+      <!-- Les symboles de l'État nécessitent une validation institutionnelle. -->
+      <span class="tds-header__title">Nom du service</span>
     </div>
   </header>
 

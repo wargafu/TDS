@@ -7,29 +7,36 @@ const base = process.env.BASE_PATH ?? '/';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'TDS',
+      title: 'TDGS',
       description: 'Système de Design de l’État — République du Tchad',
       defaultLocale: 'root',
       locales: {
         root: { label: 'Français', lang: 'fr' },
       },
       logo: {
-        light: './src/assets/tds-logo-official.png',
-        dark: './src/assets/tds-logo-official.png',
-        replacesTitle: true,
+        light: './src/assets/tdgs-logo.png',
+        dark: './src/assets/tdgs-logo.png',
+        alt: 'TDGS — République du Tchad',
+        replacesTitle: false,
       },
       social: {
-        github: 'https://github.com/wargafu/TDS',
+        github: 'https://github.com/wargafu/TDGS',
       },
       editLink: {
-        baseUrl: 'https://github.com/wargafu/TDS/edit/main/apps/docs/',
+        baseUrl: 'https://github.com/wargafu/TDGS/edit/main/apps/docs/',
       },
       customCss: ['./src/styles/custom.css'],
+      head: [
+        { tag: 'link', attrs: { rel: 'icon', href: '/favicon.png', type: 'image/png' } },
+        { tag: 'link', attrs: { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' } },
+      ],
       components: {
         Footer: './src/components/Footer.astro',
         Sidebar: './src/components/Sidebar.astro',
         PageFrame: './src/components/PageFrame.astro',
         PageTitle: './src/components/PageTitle.astro',
+        SiteTitle: './src/components/SiteTitle.astro',
+        ThemeSelect: './src/components/ThemeToggle.astro',
       },
       sidebar: [
         {
@@ -54,7 +61,7 @@ export default defineConfig({
             { label: 'Clavier & focus', slug: 'fondamentaux/keyboard' },
             { label: 'Lecteurs d\'écran', slug: 'fondamentaux/screen-readers' },
             { label: 'RTL & Arabe', slug: 'fondamentaux/rtl' },
-            { label: 'Quand utiliser TDS', slug: 'fondamentaux/when-to-use' },
+            { label: 'Quand utiliser TDGS', slug: 'fondamentaux/when-to-use' },
             { label: 'Anti-patterns', slug: 'fondamentaux/anti-patterns' },
           ],
         },
@@ -79,6 +86,19 @@ export default defineConfig({
             { label: 'Tabs', slug: 'components/tabs' },
             { label: 'Tooltip', slug: 'components/tooltip' },
           ],
+        },
+        {
+          label: 'Intégrations',
+          items: [
+            { label: 'Aperçu', slug: 'integrations/overview' },
+            { label: 'HTML / CSS', slug: 'integrations/vanilla' },
+            { label: 'React', slug: 'integrations/react' },
+            { label: 'Vue', slug: 'integrations/vue' },
+          ],
+        },
+        {
+          label: 'Showcases',
+          items: [{ label: 'Sites utilisant TDGS', slug: 'showcases/overview' }],
         },
         {
           label: 'Modèles',

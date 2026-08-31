@@ -1,5 +1,5 @@
 /**
- * TDS navigation tokens
+ * TDGS navigation tokens
  *
  * Navigation principale horizontale. L'état "current" (page active) se
  * marque via aria-current="page", pas une classe dédiée — cohérent avec

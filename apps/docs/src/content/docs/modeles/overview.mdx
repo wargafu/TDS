@@ -8,13 +8,14 @@ sidebar:
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
 Les patterns sont des **solutions standardisées** à des problèmes d'interface récurrents.
-Ils combinent les tokens et composants TDS en structures prêtes à l'emploi.
+Ils combinent les tokens et composants TDGS en structures prêtes à l'emploi.
 
 ---
 
 ## Pourquoi des patterns ?
 
 Sans patterns partagés, chaque équipe réinvente :
+
 - Le formulaire de connexion
 - La page d'erreur
 - La confirmation d'action
@@ -28,29 +29,29 @@ qui naviguent entre plusieurs services de l'État.
 
 <CardGrid>
   <Card title="Formulaire de connexion" icon="right-arrow">
-    Email + mot de passe, avec gestion des erreurs et lien de récupération.
-    [Voir le pattern →](../modeles/login-form)
+    Email + mot de passe, avec gestion des erreurs et lien de récupération. [Voir le pattern
+    →](../modeles/login-form)
   </Card>
   <Card title="Formulaire multi-étapes" icon="list-format">
-    Parcours guidé en plusieurs étapes avec barre de progression.
-    [Voir le pattern →](../modeles/multi-step-form)
+    Parcours guidé en plusieurs étapes avec barre de progression. [Voir le pattern
+    →](../modeles/multi-step-form)
   </Card>
   <Card title="Résumé d'erreurs" icon="warning">
-    Page ou section récapitulant toutes les erreurs d'un formulaire.
-    [Voir le pattern →](../modeles/error-summary)
+    Page ou section récapitulant toutes les erreurs d'un formulaire. [Voir le pattern
+    →](../modeles/error-summary)
   </Card>
   <Card title="Page de confirmation" icon="approve-check">
-    Confirmation de soumission d'une demande ou d'un acte administratif.
-    [Voir le pattern →](../modeles/confirmation-page)
+    Confirmation de soumission d'une demande ou d'un acte administratif. [Voir le pattern
+    →](../modeles/confirmation-page)
   </Card>
 </CardGrid>
 
 ---
 
-## Principes des patterns TDS
+## Principes des patterns TDGS
 
 1. **HTML-first** — chaque pattern fonctionne sans JavaScript
-2. **Accessible par défaut** — WCAG AA respecté dans chaque pattern
+2. **Accessibilité intégrée** — cible WCAG 2.2 AA documentée, à vérifier dans chaque contexte
 3. **Mobile-first** — conçus pour fonctionner sur écran 320px
 4. **Institutionnel** — sobre, sans effets superflus
 5. **Complet** — chaque pattern inclut les états d'erreur

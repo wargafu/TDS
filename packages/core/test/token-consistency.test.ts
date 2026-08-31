@@ -20,6 +20,10 @@ function kebab(str: string): string {
   return str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
+function normalizeCssFontFamily(value: string): string {
+  return value.replace(/"/g, "'").replace(/\s+/g, ' ').trim();
+}
+
 const SCALE_CSS_PREFIX: Record<string, string> = {
   blue: 'color-blue',
   yellow: 'color-yellow',
@@ -99,7 +103,9 @@ describe('typography tokens: CSS matches TS', () => {
 
   for (const [key, value] of Object.entries(typography.families)) {
     it(`--tds-font-family-${FAMILY_CSS_KEY[key]} matches typography.families.${key}`, () => {
-      expect(vars.get(`--tds-font-family-${FAMILY_CSS_KEY[key]}`)).toBe(value);
+      expect(normalizeCssFontFamily(vars.get(`--tds-font-family-${FAMILY_CSS_KEY[key]}`)!)).toBe(
+        normalizeCssFontFamily(value)
+      );
     });
   }
 
@@ -127,10 +133,14 @@ describe('typography tokens: CSS matches TS', () => {
       expect(resolveVar(vars, vars.get(`${base}-size`)!)).toBe(typography.sizes[style.size]);
     });
     it(`${base}-line-height resolves to typography.lineHeights.${style.lineHeight}`, () => {
-      expect(resolveVar(vars, vars.get(`${base}-line-height`)!)).toBe(String(typography.lineHeights[style.lineHeight]));
+      expect(resolveVar(vars, vars.get(`${base}-line-height`)!)).toBe(
+        String(typography.lineHeights[style.lineHeight])
+      );
     });
     it(`${base}-weight resolves to typography.weights.${style.weight}`, () => {
-      expect(resolveVar(vars, vars.get(`${base}-weight`)!)).toBe(String(typography.weights[style.weight]));
+      expect(resolveVar(vars, vars.get(`${base}-weight`)!)).toBe(
+        String(typography.weights[style.weight])
+      );
     });
   }
 });

@@ -16,13 +16,20 @@ import { fileURLToPath } from 'url';
 import puppeteer from 'puppeteer';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const AXE_SOURCE = readFileSync(join(__dirname, '..', 'node_modules', 'axe-core', 'axe.min.js'), 'utf-8');
+const AXE_SOURCE = readFileSync(
+  join(__dirname, '..', 'node_modules', 'axe-core', 'axe.min.js'),
+  'utf-8'
+);
 const URL = process.argv[2] ?? 'http://localhost:4322/playground/';
 
 const browser = await puppeteer.launch({ headless: true });
 try {
   const page = await browser.newPage();
-  await page.goto(URL, { waitUntil: 'networkidle0' });
+  // `networkidle0` peut ne jamais être atteint lorsqu’un serveur conserve une
+  // connexion ouverte. Le contrôle axe porte sur le DOM rendu, donc
+  // `domcontentloaded` est plus déterministe en local comme en CI.
+  await page.goto(URL, { waitUntil: 'commit' });
+  await page.waitForSelector('main');
   await page.evaluate(AXE_SOURCE);
 
   const results = await page.evaluate(async () => {
@@ -31,7 +38,9 @@ try {
   });
 
   if (results.violations.length > 0) {
-    process.stderr.write(`[test-a11y] ${results.violations.length} violation(s) trouvée(s) sur ${URL} :\n\n`);
+    process.stderr.write(
+      `[test-a11y] ${results.violations.length} violation(s) trouvée(s) sur ${URL} :\n\n`
+    );
     for (const violation of results.violations) {
       process.stderr.write(`  ✖ ${violation.id} (${violation.impact}) — ${violation.help}\n`);
       for (const node of violation.nodes) {
@@ -41,7 +50,9 @@ try {
     process.exit(1);
   }
 
-  process.stdout.write(`[test-a11y] 0 violation sur ${URL} (${results.passes.length} règles passées).\n`);
+  process.stdout.write(
+    `[test-a11y] 0 violation sur ${URL} (${results.passes.length} règles passées).\n`
+  );
 } finally {
   await browser.close();
 }

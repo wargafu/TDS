@@ -1,11 +1,16 @@
 import postcss from 'postcss';
 
-/** Parses every `--name: value;` custom property declared under `:root` selectors in a CSS file. */
+/**
+ * Parses every `--name: value;` custom property declared under the plain
+ * `:root` selector in a CSS file — deliberately excludes scoped variants like
+ * `:root[data-tds-theme="dark"]` or `:root:not(...)` (dark-mode overrides),
+ * so this always reflects the light/default values that match the TS export.
+ */
 export function parseCssVars(cssText: string): Map<string, string> {
   const root = postcss.parse(cssText);
   const vars = new Map<string, string>();
   root.walkRules((rule) => {
-    if (!rule.selector.includes(':root')) return;
+    if (rule.selector.trim() !== ':root') return;
     rule.walkDecls((decl) => {
       if (decl.prop.startsWith('--')) {
         vars.set(decl.prop, decl.value.trim());

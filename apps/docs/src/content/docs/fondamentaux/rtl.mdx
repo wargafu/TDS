@@ -1,6 +1,6 @@
 ---
 title: RTL & Arabe
-description: Support de l'arabe et du RTL dans TDS — configuration, polices, considérations de layout.
+description: Support de l'arabe et du RTL dans TDGS — configuration, polices, considérations de layout.
 sidebar:
   order: 4
 ---
@@ -9,11 +9,11 @@ import { Aside } from '@astrojs/starlight/components';
 
 # RTL & Support de l'arabe
 
-L'arabe est la seconde langue officielle du Tchad. TDS est conçu pour supporter
+L'arabe est la seconde langue officielle du Tchad. TDGS est conçu pour supporter
 les interfaces bilingues français/arabe avec une expérience de qualité pour les deux langues.
 
 <Aside type="note" title="Statut du support arabe">
-  Le support RTL est planifié comme une priorité de la prochaine version majeure de TDS.
+  Le support RTL est planifié comme une priorité de la prochaine version majeure de TDGS.
   Les fondations sont en place (police, direction CSS) mais les composants n'ont pas encore
   été testés exhaustivement en contexte RTL.
 </Aside>
@@ -38,15 +38,15 @@ les interfaces bilingues français/arabe avec une expérience de qualité pour l
 
 ## Police arabe
 
-TDS utilise **Noto Naskh Arabic** pour le texte arabe, activée automatiquement
+TDGS utilise **Noto Naskh Arabic** pour le texte arabe, activée automatiquement
 via la déclaration `lang="ar"`.
 
 ```css
-/* Dans le CSS TDS (tokens/typography.css) */
+/* Dans le CSS TDGS (tokens/typography.css) */
 html[lang="ar"],
 :lang(ar) {
   direction: rtl;
-  font-family: var(--tds-font-family-arabic);
+  font-family: var(--tds-font-family-ar);
   /* "Noto Naskh Arabic", "Noto Sans Arabic", system-ui, sans-serif */
   line-height: 1.6; /* Ligne plus haute pour l'arabe */
 }
@@ -121,7 +121,7 @@ Certaines icônes ont un sens et doivent être retournées en RTL.
           class="tds-input tds-input--md"
           lang="ar"
           dir="rtl"
-          style="font-family: var(--tds-font-family-arabic);"
+          style="font-family: var(--tds-font-family-ar);"
         >
       </div>
     </form>

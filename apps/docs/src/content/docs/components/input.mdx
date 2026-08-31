@@ -1,6 +1,6 @@
 ---
 title: Input
-description: Composants de formulaire TDS — text input, textarea, select, checkbox, radio, switch. Avec états, accessibilité et exemples HTML/React/Vue.
+description: Composants de formulaire TDGS — text input, textarea, select, checkbox, radio, switch. Avec états, accessibilité et exemples HTML/React/Vue.
 sidebar:
   order: 2
 ---
@@ -10,7 +10,7 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 <Tabs>
 <TabItem label="Présentation">
 
-Le système de champs TDS couvre tous les contrôles de formulaire : text, textarea, select,
+Le système de champs TDGS couvre tous les contrôles de formulaire : text, textarea, select,
 checkbox, radio, switch et file upload. La structure standard est toujours `label + champ + (message)`.
 
 ---
@@ -41,7 +41,7 @@ checkbox, radio, switch et file upload. La structure standard est toujours `labe
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tds-tchad/core` — toutes les tailles, variantes et états.
+Rendu avec le CSS réellement buildé de `@tdgs/core` — toutes les tailles, variantes et états.
 
 <iframe src="/playground/#input" title="Démo interactive du composant Input" style="width:100%; height: 26rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;" loading="lazy"></iframe>
 
@@ -73,11 +73,11 @@ Rendu avec le CSS réellement buildé de `@tds-tchad/core` — toutes les taille
 ### Importation
 
 ```css
-@import "@tds-tchad/core/components/input/input.css";
+@import "@tdgs/core/components/input/input.css";
 ```
 
 ```typescript
-import type { InputVariant, InputSize, InputState } from '@tds-tchad/core/components/input';
+import type { InputVariant, InputSize, InputState } from '@tdgs/core/components/input';
 ```
 
 ### Structure de champ standard
@@ -231,8 +231,8 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="tds-fieldset
   </TabItem>
   <TabItem label="React">
     ```tsx
-    import '@tds-tchad/core/components/input/input.css';
-    import type { InputVariant, InputSize } from '@tds-tchad/core/components/input';
+    import '@tdgs/core/components/input/input.css';
+    import type { InputVariant, InputSize } from '@tdgs/core/components/input';
 
     interface TextFieldProps {
       id: string;
@@ -304,9 +304,9 @@ Lorsqu’un titre doit être visible, préférez un `<legend class="tds-fieldset
   <TabItem label="Vue 3">
     ```vue
     <script setup lang="ts">
-    import '@tds-tchad/core/components/input/input.css';
+    import '@tdgs/core/components/input/input.css';
     import { computed } from 'vue';
-    import type { InputVariant, InputSize } from '@tds-tchad/core/components/input';
+    import type { InputVariant, InputSize } from '@tdgs/core/components/input';
 
     const props = withDefaults(defineProps<{
       id: string;

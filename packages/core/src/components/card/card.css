@@ -1,7 +1,7 @@
-/* TDS Card component */
+/* TDGS Card component */
 .tds-card {
-  background: var(--tds-neutral-0);
-  border: 1px solid var(--tds-neutral-200);
+  background: var(--tds-bg);
+  border: 1px solid var(--tds-border-subtle);
   border-radius: var(--tds-radius-md);
   overflow: hidden;
   display: flex;
@@ -9,9 +9,15 @@
 }
 
 /* Variantes */
-.tds-card--flat     { box-shadow: none; }
-.tds-card--elevated { box-shadow: var(--tds-shadow-sm); }
-.tds-card--outlined { border-color: var(--tds-neutral-300); }
+.tds-card--flat {
+  box-shadow: none;
+}
+.tds-card--elevated {
+  box-shadow: var(--tds-shadow-sm);
+}
+.tds-card--outlined {
+  border-color: var(--tds-border);
+}
 
 /* Card interactive (lien ou bouton) */
 a.tds-card,
@@ -19,8 +25,9 @@ button.tds-card {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  transition: box-shadow var(--tds-motion-fast) var(--tds-easing-standard),
-              border-color var(--tds-motion-fast) var(--tds-easing-standard);
+  transition:
+    box-shadow var(--tds-motion-fast) var(--tds-easing-standard),
+    border-color var(--tds-motion-fast) var(--tds-easing-standard);
 }
 
 a.tds-card:hover,
@@ -44,7 +51,7 @@ button.tds-card:focus-visible {
 
 .tds-card__header {
   padding: var(--tds-spacing-4) var(--tds-spacing-5);
-  border-bottom: 1px solid var(--tds-neutral-200);
+  border-bottom: 1px solid var(--tds-border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,8 +65,8 @@ button.tds-card:focus-visible {
 
 .tds-card__footer {
   padding: var(--tds-spacing-4) var(--tds-spacing-5);
-  border-top: 1px solid var(--tds-neutral-200);
-  background: var(--tds-neutral-100);
+  border-top: 1px solid var(--tds-border-subtle);
+  background: var(--tds-bg-subtle);
   display: flex;
   align-items: center;
   gap: var(--tds-spacing-3);
@@ -70,18 +77,18 @@ button.tds-card:focus-visible {
   font-size: var(--tds-font-size-lg);
   font-weight: var(--tds-font-weight-semibold);
   line-height: var(--tds-line-height-lg);
-  color: var(--tds-neutral-900);
+  color: var(--tds-text);
   margin-bottom: var(--tds-spacing-2);
 }
 
 .tds-card__subtitle {
   font-size: var(--tds-font-size-sm);
-  color: var(--tds-neutral-600);
+  color: var(--tds-text-muted);
   margin-bottom: var(--tds-spacing-3);
 }
 
 .tds-card__description {
   font-size: var(--tds-font-size-md);
-  color: var(--tds-neutral-700);
+  color: var(--tds-text-muted);
   line-height: var(--tds-line-height-md);
 }

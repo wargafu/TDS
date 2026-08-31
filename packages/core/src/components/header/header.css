@@ -1,4 +1,4 @@
-/* TDS Header component */
+/* TDGS Header component */
 :root {
   --tds-header-bg: var(--tds-neutral-0);
   --tds-header-border: var(--tds-neutral-200);
@@ -38,9 +38,15 @@
   flex: 1;
 }
 
-.tds-header__stripe span:nth-child(1) { background: var(--tds-color-blue-500); }
-.tds-header__stripe span:nth-child(2) { background: var(--tds-color-yellow-500); }
-.tds-header__stripe span:nth-child(3) { background: var(--tds-color-red-500); }
+.tds-header__stripe span:nth-child(1) {
+  background: var(--tds-color-blue-500);
+}
+.tds-header__stripe span:nth-child(2) {
+  background: var(--tds-color-yellow-500);
+}
+.tds-header__stripe span:nth-child(3) {
+  background: var(--tds-color-red-500);
+}
 
 .tds-header__brand {
   display: flex;
@@ -93,4 +99,16 @@
   align-items: center;
   gap: var(--tds-spacing-3);
   flex-shrink: 0;
+}
+
+/* Le fond du header reste toujours clair (--tds-header-bg), quel que soit le
+   thème global — les liens et textes qu'il contient doivent donc rester fixes
+   eux aussi plutôt que suivre --tds-action-primary/--tds-text (sombres en
+   mode sombre, ce qui casserait le contraste sur ce fond resté clair). */
+.tds-header .tds-link {
+  color: var(--tds-color-blue-500);
+}
+.tds-header .tds-link:hover,
+.tds-header .tds-link:visited {
+  color: var(--tds-color-blue-700);
 }

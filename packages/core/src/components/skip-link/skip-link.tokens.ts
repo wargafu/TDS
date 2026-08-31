@@ -1,5 +1,5 @@
 /**
- * TDS skip-link tokens
+ * TDGS skip-link tokens
  *
  * Lien d'évitement : invisible par défaut, apparaît en haut à gauche au
  * focus clavier. Doit être le tout premier élément focusable du <body>.

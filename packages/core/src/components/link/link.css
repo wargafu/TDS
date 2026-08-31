@@ -1,6 +1,6 @@
-/* TDS Link component */
+/* TDGS Link component */
 .tds-link {
-  color: var(--tds-color-blue-500);
+  color: var(--tds-action-primary);
   text-decoration: underline;
   text-decoration-color: var(--tds-color-blue-200);
   text-underline-offset: 2px;
@@ -11,16 +11,16 @@
 }
 
 .tds-link:hover {
-  color: var(--tds-color-blue-700);
-  text-decoration-color: var(--tds-color-blue-500);
+  color: var(--tds-action-primary-hover);
+  text-decoration-color: var(--tds-action-primary);
 }
 
 .tds-link:visited {
-  color: var(--tds-color-blue-700);
+  color: var(--tds-action-primary-hover);
 }
 
 .tds-link:focus-visible {
-  outline: 2px solid var(--tds-color-blue-500);
+  outline: 2px solid var(--tds-action-primary);
   outline-offset: 2px;
   border-radius: var(--tds-radius-xs);
   text-decoration: none;
@@ -28,16 +28,20 @@
 
 /* Variantes */
 .tds-link--muted {
-  color: var(--tds-neutral-600);
-  text-decoration-color: var(--tds-neutral-300);
+  color: var(--tds-text-muted);
+  text-decoration-color: var(--tds-border);
 }
-.tds-link--muted:hover { color: var(--tds-neutral-900); }
+.tds-link--muted:hover {
+  color: var(--tds-text);
+}
 
 .tds-link--danger {
-  color: var(--tds-color-red-600);
-  text-decoration-color: var(--tds-color-red-200);
+  color: var(--tds-semantic-danger-text);
+  text-decoration-color: var(--tds-semantic-danger-border);
 }
-.tds-link--danger:hover { color: var(--tds-color-red-800); }
+.tds-link--danger:hover {
+  color: var(--tds-semantic-danger-icon);
+}
 
 /* Lien externe */
 .tds-link--external::after {
@@ -51,7 +55,9 @@
   text-decoration: none;
   font-weight: var(--tds-font-weight-medium);
 }
-.tds-link--nav:hover { text-decoration: underline; }
+.tds-link--nav:hover {
+  text-decoration: underline;
+}
 
 /* Lien standalone (avec flèche) */
 .tds-link--standalone {
@@ -64,4 +70,13 @@
   content: '→';
   transition: transform var(--tds-motion-fast) var(--tds-easing-standard);
 }
-.tds-link--standalone:hover::after { transform: translateX(3px); }
+.tds-link--standalone:hover::after {
+  transform: translateX(3px);
+}
+
+.tds-link--standalone:dir(rtl)::after {
+  content: '←';
+}
+.tds-link--standalone:dir(rtl):hover::after {
+  transform: translateX(-3px);
+}

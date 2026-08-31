@@ -1,0 +1,109 @@
+---
+title: React
+description: Utiliser TDGS dans une application React avec @tdgs/react.
+sidebar:
+  order: 3
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+`@tdgs/react` fournit un composant React typé pour chaque composant TDGS.
+Il ne réimplémente pas le CSS : il déclare `@tdgs/core` en peer dependency et se
+contente de produire le bon balisage sémantique et les bonnes classes `tds-*`.
+
+## Installation
+
+<Aside type="caution" title="Publication npm en attente">
+  Les packages sont prêts à être publiés, mais ne sont pas encore disponibles sur le registre npm
+  public. Les commandes ci-dessous s'appliqueront après la publication ; pour contribuer, utilisez
+  le monorepo TDGS avec `pnpm install`.
+</Aside>
+
+<Tabs>
+  <TabItem label="pnpm">```bash pnpm add @tdgs/react @tdgs/core ```</TabItem>
+  <TabItem label="npm">```bash npm install @tdgs/react @tdgs/core ```</TabItem>
+  <TabItem label="yarn">```bash yarn add @tdgs/react @tdgs/core ```</TabItem>
+</Tabs>
+
+<Aside type="note" title="React 18 et 19">
+  `@tdgs/react` fonctionne avec React 18 et 19 (peer dependency `^18.0.0 || ^19.0.0`).
+</Aside>
+
+## Importer le CSS
+
+Le CSS n'est jamais généré par les composants React eux-mêmes — importez-le une
+seule fois, au point d'entrée de votre application.
+
+```ts
+// main.tsx / App.tsx
+import '@tdgs/core/tokens/color.css';
+import '@tdgs/core/tokens/typography.css';
+import '@tdgs/core/tokens/spacing.css';
+import '@tdgs/core/tokens/radius.css';
+import '@tdgs/core/tokens/shadow.css';
+import '@tdgs/core/tokens/motion.css';
+import '@tdgs/core/components/button/button.css';
+import '@tdgs/core/components/input/input.css';
+// … un import par composant utilisé
+```
+
+## Exemple
+
+```tsx
+import { Button, TextField, Alert } from '@tdgs/react';
+
+function DemandeForm() {
+  return (
+    <form>
+      <Alert variant="info" title="Demande de carte d'identité">
+        Le traitement standard prend entre 5 et 10 jours ouvrés.
+      </Alert>
+
+      <TextField
+        label="Nom complet"
+        name="nom"
+        required
+        hint="Tel qu'il apparaît sur votre acte de naissance"
+      />
+
+      <Button type="submit" variant="primary">
+        Soumettre la demande
+      </Button>
+    </form>
+  );
+}
+```
+
+Les composants à état interactif (Modal, Tabs) gèrent leur propre logique
+d'accessibilité (roving tabindex, `<dialog>`, focus) en interne :
+
+```tsx
+import { useState } from 'react';
+import { Modal, Button } from '@tdgs/react';
+
+function ConfirmDialog() {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Supprimer le dossier</Button>
+      <Modal open={open} onClose={() => setOpen(false)} title="Confirmer la suppression">
+        Cette action est définitive.
+      </Modal>
+    </>
+  );
+}
+```
+
+## Composants disponibles
+
+Button · Link · Badge · SkipLink · Tooltip · Breadcrumb · Nav · Alert · Card
+(+ CardHeader/CardBody/CardFooter/CardMedia/CardTitle/CardSubtitle/CardDescription) ·
+Footer (+ sous-composants) · Header (+ sous-composants) · Table · Pagination ·
+Accordion · Modal · Tabs · TextField · TextareaField · SelectField · Checkbox ·
+Radio · Switch · SearchField · Stepper · FileUpload · Progress.
+
+`Icon` est également disponible comme utilitaire SVG commun.
+
+Chaque composant exporte ses types de props (`ButtonProps`, `ModalProps`, …) —
+consultez la page de [chaque composant](/components/button/) pour le détail du
+balisage HTML produit.

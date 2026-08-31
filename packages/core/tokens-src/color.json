@@ -6,7 +6,7 @@
       "200": "#A6C1FF",
       "300": "#6B94FF",
       "400": "#2F68FF",
-      "500": "#0033A0",
+      "500": "#0B3A82",
       "600": "#002B89",
       "700": "#002063",
       "800": "#00143E",
@@ -18,7 +18,7 @@
       "200": "#FFE699",
       "300": "#FFDA66",
       "400": "#FFCF33",
-      "500": "#FFD100",
+      "500": "#F5C116",
       "600": "#E6B800",
       "700": "#B58D00",
       "800": "#846200",
@@ -30,7 +30,7 @@
       "200": "#FFB0AD",
       "300": "#FF8A83",
       "400": "#FF665D",
-      "500": "#DA291C",
+      "500": "#D8222A",
       "600": "#B21F16",
       "700": "#82160F",
       "800": "#560E08",
@@ -85,6 +85,96 @@
       "border": { "scale": "red", "shade": "200" },
       "text": { "scale": "red", "shade": "700" },
       "icon": { "scale": "red", "shade": "500" }
+    }
+  },
+  "semanticDark": {
+    "info": {
+      "background": { "scale": "blue", "shade": "900" },
+      "border": { "scale": "blue", "shade": "700" },
+      "text": { "scale": "blue", "shade": "300" },
+      "icon": { "scale": "blue", "shade": "300" }
+    },
+    "success": {
+      "background": { "scale": "green", "shade": "900" },
+      "border": { "scale": "green", "shade": "700" },
+      "text": { "scale": "green", "shade": "300" },
+      "icon": { "scale": "green", "shade": "300" }
+    },
+    "warning": {
+      "background": { "scale": "yellow", "shade": "900" },
+      "border": { "scale": "yellow", "shade": "700" },
+      "text": { "scale": "yellow", "shade": "100" },
+      "icon": { "scale": "yellow", "shade": "100" }
+    },
+    "danger": {
+      "background": { "scale": "red", "shade": "900" },
+      "border": { "scale": "red", "shade": "700" },
+      "text": { "scale": "red", "shade": "300" },
+      "icon": { "scale": "red", "shade": "300" }
+    }
+  },
+  "theme": {
+    "light": {
+      "text": {
+        "default": { "scale": "neutral", "shade": "900" },
+        "muted": { "scale": "neutral", "shade": "600" },
+        "disabled": { "scale": "neutral", "shade": "500" },
+        "inverted": { "scale": "neutral", "shade": "0" }
+      },
+      "background": {
+        "default": { "scale": "neutral", "shade": "0" },
+        "subtle": { "scale": "neutral", "shade": "100" },
+        "elevated": { "scale": "neutral", "shade": "0" },
+        "disabled": { "scale": "neutral", "shade": "100" }
+      },
+      "border": {
+        "default": { "scale": "neutral", "shade": "300" },
+        "strong": { "scale": "neutral", "shade": "900" },
+        "subtle": { "scale": "neutral", "shade": "200" },
+        "disabled": { "scale": "neutral", "shade": "200" }
+      },
+      "action": {
+        "primary": { "scale": "blue", "shade": "500" },
+        "primaryHover": { "scale": "blue", "shade": "600" },
+        "primaryActive": { "scale": "blue", "shade": "700" },
+        "secondary": { "scale": "blue", "shade": "50" },
+        "secondaryHover": { "scale": "blue", "shade": "100" }
+      },
+      "accent": {
+        "default": { "scale": "yellow", "shade": "500" },
+        "text": { "scale": "yellow", "shade": "700" }
+      }
+    },
+    "dark": {
+      "text": {
+        "default": { "scale": "neutral", "shade": "0" },
+        "muted": { "scale": "neutral", "shade": "300" },
+        "disabled": { "scale": "neutral", "shade": "600" },
+        "inverted": { "scale": "neutral", "shade": "900" }
+      },
+      "background": {
+        "default": { "scale": "neutral", "shade": "900" },
+        "subtle": { "scale": "neutral", "shade": "800" },
+        "elevated": { "scale": "neutral", "shade": "800" },
+        "disabled": { "scale": "neutral", "shade": "700" }
+      },
+      "border": {
+        "default": { "scale": "neutral", "shade": "700" },
+        "strong": { "scale": "neutral", "shade": "0" },
+        "subtle": { "scale": "neutral", "shade": "800" },
+        "disabled": { "scale": "neutral", "shade": "700" }
+      },
+      "action": {
+        "primary": { "scale": "blue", "shade": "300" },
+        "primaryHover": { "scale": "blue", "shade": "200" },
+        "primaryActive": { "scale": "blue", "shade": "100" },
+        "secondary": { "scale": "blue", "shade": "800" },
+        "secondaryHover": { "scale": "blue", "shade": "700" }
+      },
+      "accent": {
+        "default": { "scale": "yellow", "shade": "400" },
+        "text": { "scale": "yellow", "shade": "200" }
+      }
     }
   }
 }

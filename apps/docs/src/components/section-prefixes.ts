@@ -6,6 +6,8 @@ export const SECTION_PREFIXES = [
   'premiers-pas',
   'fondamentaux',
   'components',
+  'integrations',
+  'showcases',
   'modeles',
   'mesure-audience',
   'communaute',

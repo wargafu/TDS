@@ -6,7 +6,7 @@
     "fontWeight": "var(--tds-text-button-weight)",
     "textTransform": "none",
     "transition": "background-color var(--tds-motion-fast) var(--tds-easing-standard), color var(--tds-motion-fast) var(--tds-easing-standard), border-color var(--tds-motion-fast) var(--tds-easing-standard), box-shadow var(--tds-motion-fast) var(--tds-easing-standard)",
-    "focusOutline": "2px solid var(--tds-color-blue-500)",
+    "focusOutline": "2px solid var(--tds-action-primary)",
     "focusOutlineOffset": "3px",
     "minHeight": "var(--tds-button-min-height)"
   },

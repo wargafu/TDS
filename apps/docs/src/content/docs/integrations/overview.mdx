@@ -1,0 +1,43 @@
+---
+title: Aperçu des intégrations
+description: Quelle intégration TDGS choisir selon la stack de votre projet.
+sidebar:
+  order: 1
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+
+`@tdgs/core` — tokens et CSS des composants — est le socle unique de TDGS.
+Tout le reste (React, Vue) est un **binding fin au-dessus de ce socle** : même CSS,
+mêmes classes `tds-*`, aucune duplication de style. Choisissez l'intégration qui
+correspond à votre projet.
+
+## Comparatif
+
+| | HTML / CSS | React | Vue |
+|---|---|---|---|
+| Package | `@tdgs/core` | `@tdgs/react` | `@tdgs/vue` |
+| Dépendance | Aucune | React 18/19 | Vue ≥ 3.4 |
+| Format | Classes CSS `tds-*` | Composants typés (TSX) | Composants (Composition API) |
+| État interactif (Modal, Tabs…) | À votre charge (voir le HTML documenté par composant) | Géré par le composant | Géré par le composant, `v-model` |
+| Idéal pour | Sites statiques, autres frameworks, intranets, CMS | Applications React (Next.js, Vite, Remix…) | Applications Vue (Nuxt, Vite…) |
+
+<Aside type="note" title="Un seul CSS, plusieurs bindings">
+  Les packages `@tdgs/react` et `@tdgs/vue` déclarent `@tdgs/core` en
+  peer dependency : ils ne réimplémentent ni ne recopient le CSS, ils se contentent de
+  produire le bon balisage et les bonnes classes autour des styles déjà publiés.
+</Aside>
+
+## Par où commencer
+
+<CardGrid>
+  <Card title="HTML / CSS" icon="document">
+    [Guide d'intégration →](/integrations/vanilla/)
+  </Card>
+  <Card title="React" icon="puzzle">
+    [Guide d'intégration →](/integrations/react/)
+  </Card>
+  <Card title="Vue" icon="puzzle">
+    [Guide d'intégration →](/integrations/vue/)
+  </Card>
+</CardGrid>

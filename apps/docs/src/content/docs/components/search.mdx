@@ -1,0 +1,27 @@
+---
+title: Recherche
+description: Champ de recherche TDGS avec libellé, effacement et soumission.
+---
+
+Le composant Recherche conserve un champ `searchbox` natif dans un formulaire. Le libellé reste obligatoire, même lorsqu’il est visuellement masqué.
+
+## Exemple HTML
+
+```html
+<form class="tds-search" role="search">
+  <label class="tds-search__label" for="service-search">Rechercher un service</label>
+  <div class="tds-search__controls">
+    <input id="service-search" class="tds-search__input" type="search" name="q" />
+    <button class="tds-search__submit" type="submit">Rechercher</button>
+  </div>
+</form>
+```
+
+## Accessibilité
+
+- conserver un libellé associé au champ ;
+- utiliser `type="search"` et un bouton de soumission explicite ;
+- ajouter `aria-describedby` pour les indications et erreurs ;
+- ne pas remplacer la recherche par un contrôle uniquement visuel.
+
+Le binding React est `SearchField` et le binding Vue est `TdsSearchField`.

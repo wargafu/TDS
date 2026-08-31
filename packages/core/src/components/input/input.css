@@ -1,19 +1,20 @@
-/* TDS form input tokens */
+/* TDGS form input tokens */
 :root {
-  --tds-input-border: var(--tds-neutral-300);
-  --tds-input-border-focus: var(--tds-color-blue-500);
-  --tds-input-border-error: var(--tds-color-red-500);
-  --tds-input-border-success: var(--tds-color-green-500);
-  --tds-input-border-disabled: var(--tds-neutral-200);
-  --tds-input-bg: var(--tds-neutral-0);
-  --tds-input-bg-disabled: var(--tds-neutral-100);
-  --tds-input-text: var(--tds-neutral-900);
-  --tds-input-text-disabled: var(--tds-neutral-500);
-  --tds-input-placeholder: var(--tds-neutral-500);
-  --tds-input-placeholder-disabled: var(--tds-neutral-400);
-  --tds-input-icon-color: var(--tds-neutral-500);
-  --tds-input-icon-error: var(--tds-color-red-500);
-  --tds-input-icon-success: var(--tds-color-green-500);
+  --tds-input-border: var(--tds-border);
+  --tds-input-border-focus: var(--tds-action-primary);
+  --tds-input-border-error: var(--tds-semantic-danger-icon);
+  --tds-input-border-success: var(--tds-semantic-success-icon);
+  --tds-input-border-disabled: var(--tds-border-disabled);
+  --tds-input-bg: var(--tds-bg);
+  --tds-input-bg-disabled: var(--tds-bg-disabled);
+  --tds-input-text: var(--tds-text);
+  --tds-input-text-disabled: var(--tds-text-disabled);
+  --tds-input-placeholder: var(--tds-text-muted);
+  --tds-input-placeholder-disabled: var(--tds-text-disabled);
+  --tds-input-icon-color: var(--tds-text-muted);
+  --tds-input-icon-error: var(--tds-semantic-danger-icon);
+  --tds-input-icon-success: var(--tds-semantic-success-icon);
+  --tds-input-icon-disabled: var(--tds-text-disabled);
   --tds-input-radius: var(--tds-radius-sm);
   --tds-input-min-height: 2.75rem;
   --tds-input-min-height-lg: 3.25rem;
@@ -26,7 +27,10 @@
   --tds-input-line-height-sm: var(--tds-line-height-sm);
   --tds-input-line-height-md: var(--tds-line-height-md);
   --tds-input-line-height-lg: var(--tds-line-height-md);
-  --tds-input-transition: border-color var(--tds-motion-fast) var(--tds-easing-standard), background-color var(--tds-motion-fast) var(--tds-easing-standard), color var(--tds-motion-fast) var(--tds-easing-standard);
+  --tds-input-transition:
+    border-color var(--tds-motion-fast) var(--tds-easing-standard),
+    background-color var(--tds-motion-fast) var(--tds-easing-standard),
+    color var(--tds-motion-fast) var(--tds-easing-standard);
   --tds-input-focus-outline: 2px solid var(--tds-input-border-focus);
   --tds-input-focus-outline-offset: 2px;
   --tds-input-box-shadow: var(--tds-shadow-none);
@@ -109,11 +113,23 @@
 
 .tds-select {
   appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, var(--tds-neutral-700) 50%), linear-gradient(135deg, var(--tds-neutral-700) 50%, transparent 50%);
-  background-position: calc(100% - 1rem) center, calc(100% - 0.65rem) center;
-  background-size: 0.45em 0.45em, 0.45em 0.45em;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--tds-neutral-700) 50%),
+    linear-gradient(135deg, var(--tds-neutral-700) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1rem) center,
+    calc(100% - 0.65rem) center;
+  background-size:
+    0.45em 0.45em,
+    0.45em 0.45em;
   background-repeat: no-repeat;
-  padding-right: 2.5rem;
+  padding-inline-end: 2.5rem;
+}
+
+.tds-select:dir(rtl) {
+  background-position:
+    1rem center,
+    0.65rem center;
 }
 
 .tds-input::placeholder,
@@ -144,7 +160,13 @@
 
 .tds-input--disabled,
 .tds-select--disabled,
-.tds-textarea--disabled {
+.tds-textarea--disabled,
+.tds-input:disabled,
+.tds-select:disabled,
+.tds-textarea:disabled,
+.tds-input[aria-disabled='true'],
+.tds-select[aria-disabled='true'],
+.tds-textarea[aria-disabled='true'] {
   background: var(--tds-input-bg-disabled);
   color: var(--tds-input-text-disabled);
   border-color: var(--tds-input-border-disabled);
@@ -153,7 +175,9 @@
 
 .tds-input--readonly,
 .tds-select--readonly,
-.tds-textarea--readonly {
+.tds-textarea--readonly,
+.tds-input[readonly],
+.tds-textarea[readonly] {
   background: var(--tds-input-bg-disabled);
   border-color: var(--tds-input-border-disabled);
 }
@@ -229,8 +253,8 @@
 }
 
 .tds-checkbox input:checked {
-  background: var(--tds-color-blue-500);
-  border-color: var(--tds-color-blue-500);
+  background: var(--tds-action-primary);
+  border-color: var(--tds-action-primary);
 }
 
 .tds-checkbox input:checked::after {
@@ -246,8 +270,8 @@
 }
 
 .tds-radio input:checked {
-  background: var(--tds-color-blue-500);
-  border-color: var(--tds-color-blue-500);
+  background: var(--tds-action-primary);
+  border-color: var(--tds-action-primary);
 }
 
 .tds-radio input:checked::after {
@@ -270,14 +294,16 @@
   appearance: none;
   background: var(--tds-neutral-200);
   border: 1px solid var(--tds-neutral-300);
-  transition: background-color var(--tds-motion-fast) var(--tds-easing-standard), border-color var(--tds-motion-fast) var(--tds-easing-standard);
+  transition:
+    background-color var(--tds-motion-fast) var(--tds-easing-standard),
+    border-color var(--tds-motion-fast) var(--tds-easing-standard);
 }
 
 .tds-switch input::before {
   content: '';
   position: absolute;
   top: 0.2rem;
-  left: 0.2rem;
+  inset-inline-start: 0.2rem;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
@@ -286,12 +312,16 @@
 }
 
 .tds-switch input:checked {
-  background: var(--tds-color-blue-500);
-  border-color: var(--tds-color-blue-500);
+  background: var(--tds-action-primary);
+  border-color: var(--tds-action-primary);
 }
 
 .tds-switch input:checked::before {
   transform: translateX(1.1rem);
+}
+
+.tds-switch input:dir(rtl):checked::before {
+  transform: translateX(-1.1rem);
 }
 
 .tds-file-upload {
@@ -324,11 +354,31 @@
   font-size: var(--tds-font-size-sm);
   line-height: var(--tds-line-height-sm);
   color: var(--tds-neutral-0);
-  background: var(--tds-color-blue-500);
+  background: var(--tds-action-primary);
   border: 1px solid transparent;
   border-radius: var(--tds-radius-sm);
 }
 
 .tds-file-upload__button:hover {
-  background: var(--tds-color-blue-600);
+  background: var(--tds-action-primary-hover);
+}
+
+@media (forced-colors: active) {
+  .tds-input,
+  .tds-select,
+  .tds-textarea {
+    background: Canvas;
+    color: CanvasText;
+    border-color: ButtonText;
+  }
+
+  .tds-input:disabled,
+  .tds-select:disabled,
+  .tds-textarea:disabled,
+  .tds-input--disabled,
+  .tds-select--disabled,
+  .tds-textarea--disabled {
+    color: GrayText;
+    border-color: GrayText;
+  }
 }

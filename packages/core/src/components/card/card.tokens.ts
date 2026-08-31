@@ -6,9 +6,9 @@ export const card = {
     padding: 'var(--tds-spacing-5)',
   },
   variants: {
-    flat:     { shadow: 'none',                    border: 'var(--tds-neutral-200)' },
-    elevated: { shadow: 'var(--tds-shadow-sm)',   border: 'var(--tds-neutral-200)' },
-    outlined: { shadow: 'none',                    border: 'var(--tds-neutral-300)' },
+    flat: { shadow: 'none', border: 'var(--tds-neutral-200)' },
+    elevated: { shadow: 'var(--tds-shadow-sm)', border: 'var(--tds-neutral-200)' },
+    outlined: { shadow: 'none', border: 'var(--tds-neutral-300)' },
   },
 } as const;
 

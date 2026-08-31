@@ -1,6 +1,6 @@
 ---
 title: Tooltip
-description: Composant Tooltip TDS — CSS pur au survol/focus, limitation tactile documentée.
+description: Composant Tooltip TDGS — CSS pur au survol/focus, limitation tactile documentée.
 sidebar:
   order: 17
 ---
@@ -10,7 +10,7 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 <Tabs>
 <TabItem label="Présentation">
 
-Le tooltip TDS est CSS pur : la bulle s'affiche via `:hover` et `:focus-within`, sans
+Le tooltip TDGS est CSS pur : la bulle s'affiche via `:hover` et `:focus-within`, sans
 JavaScript. Cette simplicité a une contrepartie assumée : sur écran tactile, il n'existe pas
 d'équivalent fiable au survol, donc l'information de la bulle ne doit **jamais** être la seule
 source d'une information essentielle.
@@ -55,11 +55,11 @@ flèche. Apparition en fondu + léger scale, désactivée si `prefers-reduced-mo
 ### Importation
 
 ```css
-@import "@tds-tchad/core/components/tooltip/tooltip.css";
+@import "@tdgs/core/components/tooltip/tooltip.css";
 ```
 
 ```typescript
-import { tooltip } from '@tds-tchad/core/components/tooltip';
+import { tooltip } from '@tdgs/core/components/tooltip';
 ```
 
 ### Exemple

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tableau de bord — TDGS</title>
+    <link rel="stylesheet" href="../../packages/core/src/tdgs.css" />
+    <link rel="stylesheet" href="../shared/template.css" />
+  </head>
+  <body>
+    <div class="tds-template-shell">
+      <a class="tds-skip-link" href="#contenu">Aller au contenu principal</a>
+
+      <header class="tds-template-header">
+        <div class="tds-template-container tds-template-header__inner">
+          <a class="tds-template-brand" href="./">
+            <span class="tds-template-brand__mark" aria-hidden="true">TD</span>
+            <span>Suivi des demandes</span>
+          </a>
+          <nav class="tds-template-nav" aria-label="Actions du compte">
+            <a class="tds-link" href="#profil">Mon profil</a>
+            <button class="tds-button tds-button--outline tds-button--sm" type="button">
+              Se déconnecter
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <main id="contenu" class="tds-template-main">
+        <div class="tds-template-container tds-template-dashboard">
+          <aside class="tds-template-sidebar" aria-label="Navigation de l'espace">
+            <nav aria-label="Sections du tableau de bord">
+              <ul class="tds-template-sidebar__list">
+                <li><a class="tds-link" href="#resume" aria-current="page">Vue d'ensemble</a></li>
+                <li><a class="tds-link" href="#demandes">Demandes</a></li>
+                <li><a class="tds-link" href="#rapports">Rapports</a></li>
+                <li><a class="tds-link" href="#parametres">Paramètres</a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <div>
+            <section id="resume" aria-labelledby="titre">
+              <h1 id="titre">Vue d'ensemble</h1>
+              <div class="tds-template-kpi-grid">
+                <article class="tds-card tds-template-kpi">
+                  <span>Demandes reçues</span>
+                  <strong class="tds-template-kpi__value">128</strong>
+                </article>
+                <article class="tds-card tds-template-kpi">
+                  <span>En cours</span>
+                  <strong class="tds-template-kpi__value">42</strong>
+                </article>
+                <article class="tds-card tds-template-kpi">
+                  <span>Délai moyen</span>
+                  <strong class="tds-template-kpi__value">4 j</strong>
+                </article>
+              </div>
+            </section>
+
+            <section id="demandes" aria-labelledby="demandes-titre">
+              <h2 id="demandes-titre">Dernières demandes</h2>
+              <div class="tds-table-wrapper">
+                <table class="tds-table tds-table--striped">
+                  <caption class="tds-sr-only">
+                    Liste des dernières demandes
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Référence</th>
+                      <th scope="col">Service</th>
+                      <th scope="col">État</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">TD-2026-0142</th>
+                      <td>État civil</td>
+                      <td><span class="tds-badge tds-badge--success">Traité</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">TD-2026-0141</th>
+                      <td>Documents d’identité</td>
+                      <td><span class="tds-badge tds-badge--warning">En cours</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">TD-2026-0140</th>
+                      <td>Entreprises</td>
+                      <td><span class="tds-badge tds-badge--info">À examiner</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <footer class="tds-template-footer">
+        <div class="tds-template-container tds-template-footer__inner">
+          <span>TDGS — modèle administratif de démonstration.</span>
+          <a class="tds-link" href="#aide">Aide et support</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

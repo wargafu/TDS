@@ -1,6 +1,6 @@
 ---
 title: Button
-description: Composant Button TDS — variantes, tailles, états, accessibilité et exemples HTML/React/Vue.
+description: Composant Button TDGS — variantes, tailles, états, accessibilité et exemples HTML/React/Vue.
 sidebar:
   order: 1
 ---
@@ -10,7 +10,7 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 <Tabs>
 <TabItem label="Présentation">
 
-Le bouton TDS est conçu pour les parcours administratifs : lisible, contrasté, accessible au clavier
+Le bouton TDGS est conçu pour les parcours administratifs : lisible, contrasté, accessible au clavier
 et utilisable sans JavaScript.
 
 Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
@@ -51,7 +51,7 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tds-tchad/core` — toutes les variantes, tailles et états.
+Rendu avec le CSS réellement buildé de `@tdgs/core` — toutes les variantes, tailles et états.
 
 <iframe src="/playground/#button" title="Démo interactive du composant Button" style="width:100%; height: 26rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;" loading="lazy"></iframe>
 
@@ -99,13 +99,13 @@ Rendu avec le CSS réellement buildé de `@tds-tchad/core` — toutes les varian
 
 ```css
 /* CSS — requis pour les styles */
-@import "@tds-tchad/core/components/button/button.css";
+@import "@tdgs/core/components/button/button.css";
 ```
 
 ```typescript
 /* TypeScript — tokens et types */
-import { button } from '@tds-tchad/core/components/button';
-import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/button';
+import { button } from '@tdgs/core/components/button';
+import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
 ```
 
 ### Exemples
@@ -186,8 +186,8 @@ import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/butto
 
     ### Composant Button minimal
     ```tsx
-    import '@tds-tchad/core/components/button/button.css';
-    import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/button';
+    import '@tdgs/core/components/button/button.css';
+    import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
 
     interface ButtonProps {
       variant?: ButtonVariant;
@@ -255,8 +255,9 @@ import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/butto
     ```vue
     <!-- components/TdsButton.vue -->
     <script setup lang="ts">
-    import '@tds-tchad/core/components/button/button.css';
-    import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/button';
+    import { computed } from 'vue';
+    import '@tdgs/core/components/button/button.css';
+    import type { ButtonVariant, ButtonSize } from '@tdgs/core/components/button';
 
     const props = withDefaults(
       defineProps<{
@@ -329,10 +330,10 @@ import type { ButtonVariant, ButtonSize } from '@tds-tchad/core/components/butto
 
 | Variante | Fond | Texte | Ratio |
 |---|---|---|---|
-| primary | `blue.500` (#0033A0) | blanc | 8.59:1 ✅ AAA |
+| primary | `blue.500` (#0B3A82) | blanc | 10.81:1 ✅ AAA |
 | secondary | blanc | `neutral.800` | 14.2:1 ✅ AAA |
 | tertiary | transparent | `neutral.800` | 14.2:1 ✅ AAA |
-| danger | `red.500` (#DA291C) | blanc | 5.1:1 ✅ AA |
+| danger | `red.500` (#D8222A) | blanc | 5.02:1 ✅ AA |
 | success | `green.500` (#006B3C) | blanc | 7.2:1 ✅ AA |
 
 </TabItem>

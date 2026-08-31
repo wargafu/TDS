@@ -1,5 +1,5 @@
 /**
- * TDS modal tokens
+ * TDGS modal tokens
  *
  * Habille l'élément HTML natif <dialog> (showModal()/close() côté
  * consommateur — le CSS seul ne peut pas ouvrir un dialog natif).

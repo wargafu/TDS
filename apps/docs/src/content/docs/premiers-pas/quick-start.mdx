@@ -1,19 +1,19 @@
 ---
 title: Démarrage rapide
-description: Construire votre première interface TDS en 5 minutes.
+description: Construire votre première interface TDGS en 5 minutes.
 sidebar:
   order: 3
 ---
 
 import { Steps, Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-Ce guide vous permet de construire un formulaire de connexion fonctionnel avec TDS en 5 minutes.
+Ce guide vous permet de construire un formulaire de connexion fonctionnel avec TDGS en 5 minutes.
 
 ---
 
 ## Prérequis
 
-- `@tds-tchad/core` installé ([voir Installation](../premiers-pas/installation))
+- `@tdgs/core` installé ([voir Installation](../premiers-pas/installation))
 - Un projet web (HTML, React, Vue ou autre)
 
 ---
@@ -26,15 +26,15 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec T
 
    ```css
    /* styles/global.css */
-   @import "@tds-tchad/core/tokens/color.css";
-   @import "@tds-tchad/core/tokens/typography.css";
-   @import "@tds-tchad/core/tokens/spacing.css";
-   @import "@tds-tchad/core/tokens/radius.css";
-   @import "@tds-tchad/core/tokens/shadow.css";
-   @import "@tds-tchad/core/tokens/motion.css";
+   @import "@tdgs/core/tokens/color.css";
+   @import "@tdgs/core/tokens/typography.css";
+   @import "@tdgs/core/tokens/spacing.css";
+   @import "@tdgs/core/tokens/radius.css";
+   @import "@tdgs/core/tokens/shadow.css";
+   @import "@tdgs/core/tokens/motion.css";
 
-   @import "@tds-tchad/core/components/button/button.css";
-   @import "@tds-tchad/core/components/input/input.css";
+   @import "@tdgs/core/components/button/button.css";
+   @import "@tdgs/core/components/input/input.css";
 
    /* Polices institutionnelles */
    body {
@@ -121,12 +121,12 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec T
      </TabItem>
      <TabItem label="React">
        ```tsx
-       import '@tds-tchad/core/tokens/color.css';
-       import '@tds-tchad/core/tokens/typography.css';
-       import '@tds-tchad/core/tokens/spacing.css';
-       import '@tds-tchad/core/tokens/radius.css';
-       import '@tds-tchad/core/components/button/button.css';
-       import '@tds-tchad/core/components/input/input.css';
+       import '@tdgs/core/tokens/color.css';
+       import '@tdgs/core/tokens/typography.css';
+       import '@tdgs/core/tokens/spacing.css';
+       import '@tdgs/core/tokens/radius.css';
+       import '@tdgs/core/components/button/button.css';
+       import '@tdgs/core/components/input/input.css';
 
        export default function LoginPage() {
          return (
@@ -192,12 +192,12 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec T
      <TabItem label="Vue 3">
        ```vue
        <script setup lang="ts">
-       import '@tds-tchad/core/tokens/color.css';
-       import '@tds-tchad/core/tokens/typography.css';
-       import '@tds-tchad/core/tokens/spacing.css';
-       import '@tds-tchad/core/tokens/radius.css';
-       import '@tds-tchad/core/components/button/button.css';
-       import '@tds-tchad/core/components/input/input.css';
+       import '@tdgs/core/tokens/color.css';
+       import '@tdgs/core/tokens/typography.css';
+       import '@tdgs/core/tokens/spacing.css';
+       import '@tdgs/core/tokens/radius.css';
+       import '@tdgs/core/components/button/button.css';
+       import '@tdgs/core/components/input/input.css';
        </script>
 
        <template>
@@ -263,7 +263,7 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec T
 
 3. **Afficher un état d'erreur**
 
-   Les champs TDS gèrent les états d'erreur via des classes modificatrices.
+   Les champs TDGS gèrent les états d'erreur via des classes modificatrices.
 
    ```html
    <!-- Champ en erreur -->
@@ -288,12 +288,12 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec T
    Accédez aux valeurs de tokens dans votre logique applicative.
 
    ```typescript
-   import { color, spacing, typography } from '@tds-tchad/core';
+   import { color, spacing, typography } from '@tdgs/core';
 
    // Dans un système de thème, une génération CSS dynamique
    // ou des tests de valeurs
    const palette = {
-     primary: color.blue[500],        // '#0033A0'
+     primary: color.blue[500],        // '#0B3A82'
      danger: color.semantic.danger.text,  // '#82160F'
    };
 
@@ -315,7 +315,7 @@ Ce guide vous permet de construire un formulaire de connexion fonctionnel avec T
 
 ## C'est tout
 
-Vous avez une interface TDS fonctionnelle. Explorez la suite :
+Vous avez une interface TDGS fonctionnelle. Explorez la suite :
 
 - [Système de couleurs →](../tokens/colors) — Palette complète et sémantique
 - [Composant Button →](../components/button) — Toutes les variantes avec exemples

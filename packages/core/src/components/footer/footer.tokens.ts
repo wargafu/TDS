@@ -1,5 +1,5 @@
 /**
- * TDS footer tokens
+ * TDGS footer tokens
  *
  * Pied de page institutionnel : liens légaux, logo secondaire, mentions.
  */

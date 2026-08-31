@@ -1,11 +1,7 @@
 {
-  "name": "@tds-tchad/tokens",
+  "name": "@tdgs/tokens",
   "version": "0.1.0",
-  "private": false,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "echo \"Build @tds-tchad/tokens placeholder\"",
-    "typecheck": "echo \"Typecheck @tds-tchad/tokens placeholder\""
-  }
+  "private": true,
+  "description": "Espace réservé aux évolutions futures ; les tokens publics sont distribués par @tdgs/core.",
+  "scripts": {}
 }

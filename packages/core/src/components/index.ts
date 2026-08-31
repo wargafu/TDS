@@ -15,3 +15,7 @@ export * from './footer/footer.tokens';
 export * from './accordion/accordion.tokens';
 export * from './tabs/tabs.tokens';
 export * from './tooltip/tooltip.tokens';
+export * from './search/search.tokens';
+export * from './stepper/stepper.tokens';
+export * from './file-upload/file-upload.tokens';
+export * from './progress/progress.tokens';

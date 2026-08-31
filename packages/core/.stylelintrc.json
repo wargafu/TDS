@@ -8,7 +8,15 @@
     "color-no-invalid-hex": true,
     "unit-no-unknown": true,
     "property-no-unknown": true,
-    "selector-class-pattern": ["^tds(-[a-z0-9]+)*(--[a-z0-9]+(-[a-z0-9]+)*)?(__[a-z0-9]+(-[a-z0-9]+)*)?$|^sr-only$", { "message": "Les classes de composants doivent utiliser le préfixe tds- (BEM-like tds-block--modifier__element)" }],
-    "custom-property-pattern": ["^tds(-[a-z0-9]+)*$", { "message": "Les propriétés personnalisées doivent utiliser le préfixe --tds-" }]
+    "selector-class-pattern": [
+      "^tds(-[a-z0-9]+)*(--[a-z0-9]+(-[a-z0-9]+)*)?(__[a-z0-9]+(-[a-z0-9]+)*)?$|^sr-only$",
+      {
+        "message": "Les classes de composants doivent utiliser le préfixe tds- (BEM-like tds-block--modifier__element)"
+      }
+    ],
+    "custom-property-pattern": [
+      "^tds(-[a-z0-9]+)*$",
+      { "message": "Les propriétés personnalisées doivent utiliser le préfixe --tds-" }
+    ]
   }
 }

@@ -1,0 +1,125 @@
+---
+title: Vue
+description: Utiliser TDGS dans une application Vue avec @tdgs/vue.
+sidebar:
+  order: 4
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+`@tdgs/vue` fournit un composant Vue 3 (Composition API) pour chaque composant
+TDGS, avec support de `v-model` sur les champs de formulaire. Comme pour
+`@tdgs/react`, le CSS n'est jamais dupliqué : `@tdgs/core` reste la seule
+source de style.
+
+## Installation
+
+<Aside type="caution" title="Publication npm en attente">
+  Les packages sont prêts à être publiés, mais ne sont pas encore disponibles sur le registre npm
+  public. Les commandes ci-dessous s'appliqueront après la publication ; pour contribuer, utilisez
+  le monorepo TDGS avec `pnpm install`.
+</Aside>
+
+<Tabs>
+  <TabItem label="pnpm">```bash pnpm add @tdgs/vue @tdgs/core ```</TabItem>
+  <TabItem label="npm">```bash npm install @tdgs/vue @tdgs/core ```</TabItem>
+  <TabItem label="yarn">```bash yarn add @tdgs/vue @tdgs/core ```</TabItem>
+</Tabs>
+
+<Aside type="note" title="Vue 3.4+">
+  `@tdgs/vue` nécessite Vue 3.4 ou supérieur (peer dependency `^3.4.0`).
+</Aside>
+
+## Importer le CSS
+
+```ts
+// main.ts
+import '@tdgs/core/tokens/color.css';
+import '@tdgs/core/tokens/typography.css';
+import '@tdgs/core/tokens/spacing.css';
+import '@tdgs/core/tokens/radius.css';
+import '@tdgs/core/tokens/shadow.css';
+import '@tdgs/core/tokens/motion.css';
+import '@tdgs/core/components/button/button.css';
+import '@tdgs/core/components/input/input.css';
+// … un import par composant utilisé
+```
+
+## Exemple
+
+```vue
+<script setup lang="ts">
+import { ref } from 'vue';
+import { Button, TextField, Alert } from '@tdgs/vue';
+
+const nom = ref('');
+</script>
+
+<template>
+  <form>
+    <Alert variant="info" title="Demande de carte d'identité">
+      Le traitement standard prend entre 5 et 10 jours ouvrés.
+    </Alert>
+
+    <TextField
+      v-model="nom"
+      label="Nom complet"
+      required
+      hint="Tel qu'il apparaît sur votre acte de naissance"
+    />
+
+    <Button type="submit" variant="primary">Soumettre la demande</Button>
+  </form>
+</template>
+```
+
+`Tabs` distribue le contenu de chaque panneau via un slot nommé `panel-<id>` :
+
+```vue
+<script setup lang="ts">
+import { Tabs } from '@tdgs/vue';
+
+const items = [
+  { id: 'apercu', label: 'Aperçu' },
+  { id: 'documents', label: 'Documents' },
+];
+</script>
+
+<template>
+  <Tabs label="Sections du dossier" :items="items">
+    <template #panel-apercu>Contenu de l'onglet Aperçu.</template>
+    <template #panel-documents>Contenu de l'onglet Documents.</template>
+  </Tabs>
+</template>
+```
+
+`Modal` se pilote avec une prop `open` et un événement `@close` :
+
+```vue
+<script setup lang="ts">
+import { ref } from 'vue';
+import { Modal, Button } from '@tdgs/vue';
+
+const open = ref(false);
+</script>
+
+<template>
+  <Button @click="open = true">Supprimer le dossier</Button>
+  <Modal :open="open" title="Confirmer la suppression" @close="open = false">
+    Cette action est définitive.
+  </Modal>
+</template>
+```
+
+## Composants disponibles
+
+Button · Link · Badge · SkipLink · Tooltip · Breadcrumb · Nav · Alert · Card
+(+ CardHeader/CardBody/CardFooter/CardMedia/CardTitle/CardSubtitle/CardDescription) ·
+Footer (+ sous-composants) · Header (+ sous-composants) · Table · Pagination ·
+Accordion · Modal · Tabs · TextField · TextareaField · SelectField · Checkbox ·
+Radio · Switch · SearchField · Stepper · FileUpload · Progress.
+
+`Icon` est également disponible comme utilitaire SVG commun.
+
+Consultez la page de [chaque composant](/components/button/) pour le détail du
+balisage HTML produit.

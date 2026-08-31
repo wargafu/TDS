@@ -1,11 +1,11 @@
-/* TDS Breadcrumb component */
+/* TDGS Breadcrumb component */
 :root {
   --tds-breadcrumb-gap: var(--tds-spacing-2);
-  --tds-breadcrumb-link-color: var(--tds-neutral-600);
+  --tds-breadcrumb-link-color: var(--tds-text-muted);
   --tds-breadcrumb-link-hover-color: var(--tds-color-blue-700);
-  --tds-breadcrumb-current-color: var(--tds-neutral-900);
-  --tds-breadcrumb-separator-color: var(--tds-neutral-400);
-  --tds-breadcrumb-focus-outline: 2px solid var(--tds-color-blue-500);
+  --tds-breadcrumb-current-color: var(--tds-text);
+  --tds-breadcrumb-separator-color: var(--tds-text-disabled);
+  --tds-breadcrumb-focus-outline: 2px solid var(--tds-action-primary);
   --tds-breadcrumb-focus-outline-offset: 2px;
 }
 

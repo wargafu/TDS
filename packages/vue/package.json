@@ -1,0 +1,53 @@
+{
+  "name": "@tdgs/vue",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Composants Vue 3 typés pour le TDGS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wargafu/TDGS.git",
+    "directory": "packages/vue"
+  },
+  "homepage": "https://wargafu.github.io/TDGS/",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "clean": "node scripts/clean.mjs",
+    "dev": "tsc --build tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.typecheck.json"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "@tdgs/core": "^0.1.0",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tdgs/core": "workspace:*",
+    "@vue/test-utils": "^2.4.0",
+    "jsdom": "^25.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9",
+    "vue": "^3.4.0"
+  }
+}

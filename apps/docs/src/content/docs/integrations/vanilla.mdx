@@ -1,0 +1,37 @@
+---
+title: HTML / CSS
+description: Utiliser TDGS sans framework — classes tds-* et variables --tds-*.
+sidebar:
+  order: 2
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+`@tdgs/core` est utilisable tel quel dans n'importe quel projet HTML/CSS, quel
+que soit le framework de rendu côté serveur (PHP, Django, Rails, CMS, intranet…).
+Aucune dépendance JavaScript n'est requise pour les composants statiques
+(Button, Card, Alert, Badge, Table, Header, Footer, Accordion…).
+
+```css
+@import "@tdgs/core/tokens/color.css";
+@import "@tdgs/core/tokens/typography.css";
+@import "@tdgs/core/tokens/spacing.css";
+@import "@tdgs/core/components/button/button.css";
+```
+
+```html
+<button type="button" class="tds-button tds-button--primary tds-button--md">
+  Soumettre la demande
+</button>
+```
+
+Deux composants ont un comportement interactif qui nécessite un peu de JavaScript
+natif (documenté directement sur leur page) : **Modal** (`<dialog>.showModal()`) et
+**Tabs** (roving tabindex WAI-ARIA). Tous les autres composants — y compris
+Accordion — fonctionnent sans JavaScript.
+
+<Aside type="tip">
+  Le guide complet (gestionnaires de paquets, CDN, self-hosting des polices, import
+  des tokens JSON pour Figma/Style Dictionary) est détaillé dans
+  [Premiers pas → Installation](/premiers-pas/installation/).
+</Aside>

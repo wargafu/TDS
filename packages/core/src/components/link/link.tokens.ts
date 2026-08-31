@@ -8,8 +8,8 @@ export const link = {
   },
   variants: {
     default: { color: 'var(--tds-color-blue-500)' },
-    muted:   { color: 'var(--tds-neutral-600)'    },
-    danger:  { color: 'var(--tds-color-red-600)'  },
+    muted: { color: 'var(--tds-neutral-600)' },
+    danger: { color: 'var(--tds-color-red-600)' },
   },
 } as const;
 

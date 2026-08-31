@@ -1,5 +1,15 @@
 dist/
 node_modules/
+.agents/
+apps/docs/.astro/
+apps/docs/public/tds/
 .pnpm-store/
 *.tsbuildinfo
 pnpm-lock.yaml
+# Fichiers générés par le générateur de tokens : la valeur doit rester identique à tokens-src/.
+packages/core/src/tokens/*.ts
+packages/core/src/tokens/*.json
+packages/core/src/tokens/*.css
+# Archives de référence, conservées telles quelles pour la traçabilité.
+tdgs-documentation/PROMPT-MAITRE-TDGS.md
+tdgs-documentation/TDGS-AUDIT-INITIAL.md

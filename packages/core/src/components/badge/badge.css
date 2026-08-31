@@ -1,4 +1,4 @@
-/* TDS Badge / Tag component */
+/* TDGS Badge / Tag component */
 .tds-badge {
   display: inline-flex;
   align-items: center;
@@ -14,17 +14,25 @@
 }
 
 /* Tailles */
-.tds-badge--sm { padding: 0.1rem 0.375rem; font-size: var(--tds-font-size-xs); }
-.tds-badge--md { padding: 0.2rem 0.5rem;   font-size: var(--tds-font-size-xs); }
+.tds-badge--sm {
+  padding: 0.1rem 0.375rem;
+  font-size: var(--tds-font-size-xs);
+}
+.tds-badge--md {
+  padding: 0.2rem 0.5rem;
+  font-size: var(--tds-font-size-xs);
+}
 
 /* Forme rectangulaire */
-.tds-badge--square { border-radius: var(--tds-radius-xs); }
+.tds-badge--square {
+  border-radius: var(--tds-radius-xs);
+}
 
 /* Variantes */
 .tds-badge--default {
-  background: var(--tds-neutral-100);
-  color: var(--tds-neutral-700);
-  border-color: var(--tds-neutral-200);
+  background: var(--tds-bg-subtle);
+  color: var(--tds-text-muted);
+  border-color: var(--tds-border-subtle);
 }
 
 .tds-badge--info {

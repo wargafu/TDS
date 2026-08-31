@@ -1,6 +1,6 @@
 ---
 title: Anti-patterns
-description: Erreurs fréquentes à éviter dans les interfaces TDS — design, code et accessibilité.
+description: Erreurs fréquentes à éviter dans les interfaces TDGS — design, code et accessibilité.
 sidebar:
   order: 2
 ---
@@ -21,11 +21,11 @@ qui ne correspond pas à la gravité des actes administratifs.
 ```css
 /* ❌ Anti-pattern — "startup vibes" sur un service public */
 .hero {
-  background: linear-gradient(135deg, #6B94FF 0%, #0033A0 50%, #006B3C 100%);
+  background: linear-gradient(135deg, #7C3AED 0%, #234E9D 50%, #006B3C 100%);
   animation: gradientShift 3s ease infinite;
 }
 
-/* ✅ TDS — sobre et institutionnel */
+/* ✅ TDGS — sobre et institutionnel */
 .hero {
   background: var(--tds-color-neutral-100);
   border-bottom: 3px solid var(--tds-color-blue-500);
@@ -34,7 +34,7 @@ qui ne correspond pas à la gravité des actes administratifs.
 
 ### Couleurs inventées hors palette
 
-Utiliser des couleurs hors de la palette TDS casse la cohérence visuelle
+Utiliser des couleurs hors de la palette TDGS casse la cohérence visuelle
 et crée des problèmes de contraste non vérifiés.
 
 ```css
@@ -44,7 +44,7 @@ et crée des problèmes de contraste non vérifiés.
   color: #FFF;          /* Contraste non vérifié */
 }
 
-/* ✅ Palette TDS vérifiée */
+/* ✅ Palette TDGS vérifiée */
 .mon-composant {
   background: var(--tds-color-blue-500);
   color: white;  /* Contraste 8.59:1 ✅ */
@@ -59,7 +59,7 @@ et crée des problèmes de contraste non vérifiés.
 .mon-tooltip { z-index: 99999; }
 .ma-nav      { z-index: 1000; }
 
-/* ✅ Échelle TDS verrouillée */
+/* ✅ Échelle TDGS verrouillée */
 .ma-modal    { z-index: var(--tds-z-modal);    /* 400 */ }
 .mon-tooltip { z-index: var(--tds-z-tooltip);  /* 600 */ }
 .ma-nav      { z-index: var(--tds-z-sticky);   /* 200 */ }
@@ -120,7 +120,7 @@ Le bouton Reset détruit le travail de l'utilisateur d'un clic accidentel.
 ### Suppression du focus
 
 ```css
-/* ❌ Suppression globale du focus — interdit en TDS */
+/* ❌ Suppression globale du focus — interdit en TDGS */
 * { outline: none; }
 *:focus { outline: none; }
 button:focus { outline: 0; }
@@ -183,7 +183,7 @@ button:focus { outline: 0; }
 ```css
 /* ❌ Valeur hardcodée — difficile à maintenir, pas lié aux tokens */
 .mon-composant {
-  color: #0033A0;
+  color: #234E9D;
   padding: 16px;
   border-radius: 4px;
 }
@@ -196,13 +196,13 @@ button:focus { outline: 0; }
 }
 ```
 
-### Importer `@tds-tchad/core` en entier dans chaque composant
+### Importer `@tdgs/core` en entier dans chaque composant
 
 ```typescript
 // ❌ Import massif dans chaque fichier
-import * as tds from '@tds-tchad/core';
+import * as tds from '@tdgs/core';
 
 // ✅ Import ciblé — tree-shakeable
-import { color, spacing } from '@tds-tchad/core/tokens';
-import type { ButtonVariant } from '@tds-tchad/core/components/button';
+import { color, spacing } from '@tdgs/core/tokens';
+import type { ButtonVariant } from '@tdgs/core/components/button';
 ```

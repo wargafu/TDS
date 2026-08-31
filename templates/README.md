@@ -1,12 +1,11 @@
-# Templates TDS
+# Templates TDGS
 
 Ce dossier contient des modèles institutionnels de référence.
 
-Structure attendue :
+Templates disponibles :
 
-- `citizen-portal/`
-- `results-portal/`
-- `admin-dashboard/`
-- `government-landing/`
+- `citizen-portal/` — portail citoyen statique
+- `admin-dashboard/` — tableau de bord administratif statique
 
-Chaque template sera construit progressivement avec des cas d’utilisation concrets pour les administrations publiques.
+Les templates sont des bases de composition, pas des interfaces officiellement validées. Les
+contenus, données, logos et liens doivent être revus par le service qui les adopte.

@@ -1,0 +1,63 @@
+---
+// Override de SiteTitle.astro — identité TDGS inspirée du contexte tchadien.
+// Le projet reste indépendant et ne revendique pas une identité institutionnelle.
+// @ts-expect-error — module virtuel, résolu à l'exécution par Astro/Vite
+import { logos } from 'virtual:starlight/user-images';
+const { siteTitle, siteTitleHref } = (Astro.locals as any).starlightRoute;
+const logo = logos.dark ?? logos.light;
+---
+
+<a href={siteTitleHref} class="site-title sl-flex">
+  {logo && <img alt="Logo TDGS" src={logo.src} width={logo.width} height={logo.height} />}
+  <span class="site-title__nation">
+    <span class="site-title__country">TDGS — Tchad Design System</span>
+    <span class="site-title__motto">Proposition open source pour les services publics</span>
+  </span>
+  <span class="sr-only" translate="no">{siteTitle}</span>
+</a>
+
+<style>
+  .site-title {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.2rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-title img {
+    height: 2.75rem;
+    width: 2.75rem;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .site-title__nation {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    min-width: 0;
+  }
+  .site-title__country {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--sl-color-white);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  .site-title__motto {
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: var(--sl-color-gray-3);
+  }
+
+  @media (max-width: 50rem) {
+    .site-title img {
+      height: 2.25rem;
+      width: 2.25rem;
+    }
+    .site-title__motto {
+      display: none;
+    }
+  }
+</style>

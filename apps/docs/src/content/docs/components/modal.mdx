@@ -1,6 +1,6 @@
 ---
 title: Modal
-description: Composant Modal TDS — habille l'élément dialog natif, focus trap et Échap gérés nativement.
+description: Composant Modal TDGS — habille l'élément dialog natif, focus trap et Échap gérés nativement.
 sidebar:
   order: 12
 ---
@@ -10,7 +10,7 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 <Tabs>
 <TabItem label="Présentation">
 
-Contrairement aux autres composants TDS, le modal nécessite un minimum de JavaScript : l'élément
+Contrairement aux autres composants TDGS, le modal nécessite un minimum de JavaScript : l'élément
 `<dialog>` natif ne s'ouvre pas en pur CSS. En contrepartie, `<dialog>` gère **nativement** le
 piège à focus (focus trap), la fermeture avec Échap et le `::backdrop` — pas de librairie requise.
 
@@ -59,12 +59,12 @@ Rendu statique (attribut `open`) pour la QA visuelle — l'ouverture réelle pas
 ### Importation
 
 ```css
-@import "@tds-tchad/core/components/modal/modal.css";
+@import "@tdgs/core/components/modal/modal.css";
 ```
 
 ```typescript
-import { modal } from '@tds-tchad/core/components/modal';
-import type { ModalSize } from '@tds-tchad/core/components/modal';
+import { modal } from '@tdgs/core/components/modal';
+import type { ModalSize } from '@tdgs/core/components/modal';
 ```
 
 ### Exemples
@@ -99,8 +99,8 @@ import type { ModalSize } from '@tds-tchad/core/components/modal';
 
     ```tsx
     import { useRef } from 'react';
-    import '@tds-tchad/core/components/modal/modal.css';
-    import type { ModalSize } from '@tds-tchad/core/components/modal';
+    import '@tdgs/core/components/modal/modal.css';
+    import type { ModalSize } from '@tdgs/core/components/modal';
 
     interface ModalProps {
       title: string;

@@ -1,5 +1,5 @@
 /**
- * TDS accordion tokens
+ * TDGS accordion tokens
  *
  * Habille les éléments HTML natifs <details>/<summary> — zéro JavaScript,
  * ouverture/fermeture et sémantique gérées nativement par le navigateur.

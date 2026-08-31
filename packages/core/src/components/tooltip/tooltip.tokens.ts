@@ -1,5 +1,5 @@
 /**
- * TDS tooltip tokens
+ * TDGS tooltip tokens
  *
  * CSS pur, basé sur :hover/:focus-visible + attribut natif title en repli.
  * Ne s'affiche pas au simple tap tactile — limitation connue documentée.

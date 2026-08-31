@@ -1,0 +1,35 @@
+---
+title: Progression
+description: Barre d’avancement déterminée ou indéterminée pour les traitements et démarches.
+---
+
+Progression expose le rôle ARIA `progressbar`. Sans valeur, elle indique un traitement en cours dont la durée est inconnue.
+
+## Exemple HTML
+
+```html
+<div class="tds-progress">
+  <div class="tds-progress__label" id="upload-progress-label">
+    <span>Envoi des justificatifs</span><span aria-hidden="true">40 %</span>
+  </div>
+  <div
+    class="tds-progress__track"
+    role="progressbar"
+    aria-labelledby="upload-progress-label"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="40"
+  >
+    <div class="tds-progress__indicator" style="--tds-progress-value: 40%"></div>
+  </div>
+</div>
+```
+
+## Accessibilité
+
+- fournir un nom accessible ;
+- renseigner `aria-valuenow`, `aria-valuemin` et `aria-valuemax` quand la valeur est connue ;
+- ne pas utiliser une animation comme seule information d’avancement ;
+- respecter `prefers-reduced-motion`.
+
+Les bindings sont `Progress` pour React et `TdsProgress` pour Vue.

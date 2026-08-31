@@ -1,6 +1,6 @@
-# TDS Documentation Site
+# TDGS Documentation Site
 
-Cette application statique présente la documentation typographique TDS.
+Cette application statique présente la documentation typographique TDGS.
 
 ## Voir la page
 
@@ -10,7 +10,7 @@ Ouvre `apps/site/index.html` dans un navigateur pour afficher la documentation.
 
 - Architecture des polices
 - Échelle typographique
-- Styles textuels officiels
+- Styles textuels du TDGS
 - Règles multilingues français / arabe
 - Accessibilité
 - Exemples visuels

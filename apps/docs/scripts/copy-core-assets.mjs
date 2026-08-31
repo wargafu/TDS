@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Copies the built @tds-tchad/core CSS (packages/core/dist) into
+ * Copies the built @tdgs/core CSS (packages/core/dist) into
  * apps/docs/public/tds/ so the playground page can link the real shipped
  * artifact via plain <link> tags, without a cross-package Vite import.
  * Requires packages/core to be built first (pnpm build runs core before
@@ -17,7 +17,7 @@ const DEST = join(__dirname, '..', 'public', 'tds');
 
 if (!existsSync(CORE_DIST)) {
   process.stderr.write(
-    '[copy-core-assets] ERROR: packages/core/dist not found — run `pnpm --filter @tds-tchad/core build` first.\n'
+    '[copy-core-assets] ERROR: packages/core/dist not found — run `pnpm --filter @tdgs/core build` first.\n'
   );
   process.exit(1);
 }
