@@ -3,7 +3,9 @@
 // identité du projet + ressources + informations légales, en colonnes.
 import Default from '@astrojs/starlight/components/Footer.astro';
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 
 const resourceLinks = [
   { label: 'Documentation', href: '' },

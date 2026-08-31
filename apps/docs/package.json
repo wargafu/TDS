@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/copy-core-assets.mjs && astro dev",
-    "build": "node scripts/copy-core-assets.mjs && astro build",
+    "build": "node scripts/copy-core-assets.mjs && astro build && node scripts/prefix-dist-links.mjs",
     "preview": "astro preview",
     "check:performance": "node scripts/check-performance.mjs",
+    "check:links": "node scripts/check-links.mjs",
     "typecheck": "astro check",
     "test:a11y": "start-server-and-test \"astro preview --port 4322\" http://localhost:4322 \"node scripts/test-a11y.mjs http://localhost:4322/playground/\""
   },

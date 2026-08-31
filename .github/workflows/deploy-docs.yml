@@ -56,6 +56,11 @@ jobs:
           SITE_URL: https://wargafu.github.io
           BASE_PATH: /TDS
 
+      - name: Check generated links and assets
+        run: pnpm --filter tds-docs check:links
+        env:
+          BASE_PATH: /TDS
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
