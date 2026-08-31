@@ -1,0 +1,57 @@
+---
+title: Sommaire
+description: Navigation TDGS vers les sections d'une page longue.
+sidebar:
+  order: 29
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Summary` fournit une navigation courte vers les sections d'une page longue. Il s'utilise en complément
+du fil d'Ariane et ne remplace pas la navigation principale.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#summary"
+  title="Démo du composant Sommaire"
+  style="width:100%; height: 14rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/summary/summary.css';
+```
+
+```html
+<nav class="tds-summary" aria-label="Sommaire de la page">
+  <p class="tds-summary__title">Dans cette page</p>
+  <ol class="tds-summary__list">
+    <li><a class="tds-summary__link" href="#conditions">Conditions</a></li>
+    <li><a class="tds-summary__link" href="#documents">Documents nécessaires</a></li>
+  </ol>
+</nav>
+```
+
+| Intégration | API                                                                      |
+| ----------- | ------------------------------------------------------------------------ |
+| React       | `<Summary items={[{ href: '#conditions', label: 'Conditions' }]} />`     |
+| Vue         | `<TdsSummary :items="[{ href: '#conditions', label: 'Conditions' }]" />` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Navigation courte et stable">
+  Chaque lien doit pointer vers un identifiant unique existant dans la page. Le libellé du nav doit
+  distinguer le sommaire des autres navigations et l'ordre des liens doit suivre celui du contenu.
+</Aside>
+
+</TabItem>
+</Tabs>

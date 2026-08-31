@@ -1,0 +1,57 @@
+---
+title: Citation
+description: Citation ou témoignage sémantique avec auteur et source optionnels.
+sidebar:
+  order: 28
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Quote` structure une citation, un témoignage ou une parole institutionnelle sans utiliser une image
+ou une couleur comme seule information. Utilisez-le avec parcimonie dans les pages de contenu.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#quote"
+  title="Démo du composant Citation"
+  style="width:100%; height: 14rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/quote/quote.css';
+```
+
+```html
+<blockquote class="tds-quote">
+  <p class="tds-quote__text">La citation doit rester compréhensible hors de son contexte visuel.</p>
+  <footer class="tds-quote__footer">
+    <span class="tds-quote__author">Nom de l'auteur</span>
+    <cite class="tds-quote__source">Source publiée</cite>
+  </footer>
+</blockquote>
+```
+
+| Intégration | API                                                   |
+| ----------- | ----------------------------------------------------- |
+| React       | `<Quote author="Nom" source="Source">…</Quote>`       |
+| Vue         | `<TdsQuote author="Nom" source="Source">…</TdsQuote>` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Sémantique native">
+  Utilisez le HTML `<blockquote>` et `<cite>` fournis. L'auteur et la source doivent être lisibles,
+  et la citation ne doit pas contenir de contenu interactif imbriqué sans nécessité.
+</Aside>
+
+</TabItem>
+</Tabs>

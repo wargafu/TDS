@@ -1,0 +1,64 @@
+---
+title: Notice
+description: Bandeau TDGS pour une information prioritaire, visible dans le contexte de la page.
+sidebar:
+  order: 24
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+Le `Notice` signale une information prioritaire au début d'un flux : interruption de service,
+consigne importante ou état critique. Pour un message intégré au contenu, préférez `Alert` ou
+`Callout`.
+
+Les variantes disponibles sont `info`, `success`, `warning` et `danger`.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#notice"
+  title="Démo du composant Notice"
+  style="width:100%; height: 16rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#notice)
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/notice/notice.css';
+```
+
+```html
+<div class="tds-notice tds-notice--warning" role="status" aria-live="polite">
+  <div class="tds-notice__content">
+    <span class="tds-notice__title">Maintenance programmée</span>
+    <div class="tds-notice__body">Le service sera indisponible samedi de 8 h à 10 h.</div>
+  </div>
+  <button class="tds-notice__close" type="button" aria-label="Masquer ce bandeau">×</button>
+</div>
+```
+
+| Intégration | API                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------ |
+| React       | `<Notice title="Maintenance" variant="warning" onClose={…}>…</Notice>`               |
+| Vue         | `<TdsNotice title="Maintenance" variant="warning" closable @close="…">…</TdsNotice>` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="caution" title="Annonce et fréquence">
+  - `danger` utilise `role="alert"` et une annonce assertive ; réservez-le aux situations critiques.
+  - Les autres variantes utilisent `role="status"` et une annonce polie. - Le bouton de fermeture
+  doit avoir un libellé explicite ; masquer un bandeau ne doit pas supprimer une information
+  indispensable.
+</Aside>
+
+</TabItem>
+</Tabs>

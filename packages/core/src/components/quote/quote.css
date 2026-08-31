@@ -1,0 +1,54 @@
+/* TDGS Quote — citation ou témoignage contextualisé */
+:root {
+  --tds-quote-bg: var(--tds-bg-subtle);
+  --tds-quote-border: var(--tds-border-subtle);
+  --tds-quote-accent: var(--tds-color-blue-500);
+  --tds-quote-color: var(--tds-text);
+  --tds-quote-radius: var(--tds-radius-sm);
+  --tds-quote-padding: var(--tds-spacing-5);
+}
+
+.tds-quote {
+  margin: 0;
+  padding: var(--tds-quote-padding);
+  border: 1px solid var(--tds-quote-border);
+  border-inline-start: var(--tds-spacing-1) solid var(--tds-quote-accent);
+  border-radius: var(--tds-quote-radius);
+  background: var(--tds-quote-bg);
+  color: var(--tds-quote-color);
+}
+
+.tds-quote__text {
+  margin: 0;
+  font-size: var(--tds-font-size-lg);
+  font-style: italic;
+  line-height: var(--tds-line-height-lg);
+}
+
+.tds-quote__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tds-spacing-2);
+  margin-block-start: var(--tds-spacing-4);
+  color: var(--tds-text-muted);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-md);
+}
+
+.tds-quote__author {
+  font-weight: var(--tds-font-weight-semibold);
+}
+
+.tds-quote__source {
+  color: inherit;
+}
+
+.tds-quote__source:hover {
+  color: var(--tds-action-primary);
+}
+
+@media (max-width: 40rem) {
+  .tds-quote {
+    padding: var(--tds-spacing-4);
+  }
+}

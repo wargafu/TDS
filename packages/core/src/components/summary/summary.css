@@ -1,0 +1,48 @@
+/* TDGS Summary — navigation vers les sections d'une page */
+:root {
+  --tds-summary-bg: var(--tds-bg-subtle);
+  --tds-summary-border: var(--tds-border-subtle);
+  --tds-summary-accent: var(--tds-action-primary);
+  --tds-summary-color: var(--tds-text);
+  --tds-summary-radius: var(--tds-radius-sm);
+  --tds-summary-padding: var(--tds-spacing-4);
+}
+
+.tds-summary {
+  padding: var(--tds-summary-padding);
+  border: 1px solid var(--tds-summary-border);
+  border-inline-start: var(--tds-spacing-1) solid var(--tds-summary-accent);
+  border-radius: var(--tds-summary-radius);
+  background: var(--tds-summary-bg);
+  color: var(--tds-summary-color);
+}
+
+.tds-summary__title {
+  margin: 0 0 var(--tds-spacing-2);
+  color: var(--tds-summary-color);
+  font-size: var(--tds-font-size-md);
+  font-weight: var(--tds-font-weight-semibold);
+  line-height: var(--tds-line-height-md);
+}
+
+.tds-summary__list {
+  display: grid;
+  gap: var(--tds-spacing-1);
+  margin: 0;
+  padding-inline-start: var(--tds-spacing-5);
+}
+
+.tds-summary__link {
+  color: var(--tds-action-primary);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-md);
+}
+
+.tds-summary__link:hover {
+  color: var(--tds-color-blue-700);
+}
+
+.tds-summary__link:focus-visible {
+  outline: 2px solid var(--tds-action-primary);
+  outline-offset: 2px;
+}

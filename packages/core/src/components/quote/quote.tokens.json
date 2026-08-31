@@ -1,0 +1,8 @@
+{
+  "defaults": {
+    "background": "var(--tds-quote-bg)",
+    "border": "var(--tds-quote-border)",
+    "accent": "var(--tds-quote-accent)",
+    "color": "var(--tds-quote-color)"
+  }
+}

@@ -1,32 +1,109 @@
 ---
 title: Étapes
 description: Indicateur de progression pour les démarches et formulaires multi-étapes.
+sidebar:
+  order: 21
 ---
 
-Le composant Étapes indique la position de l’usager dans une démarche. Il distingue les étapes terminées, courante, à venir et en erreur.
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-## Exemple HTML
+<Tabs>
+<TabItem label="Présentation">
+
+Le composant Étapes indique la position de l'usager dans une démarche. Il distingue les étapes
+terminées, courante, à venir et en erreur sans imposer de logique de navigation.
+
+## Do / Don't
+
+<div class="tds-do-dont">
+  <div class="tds-do-dont__card tds-do-dont__card--do">
+    <div class="tds-do-dont__heading">✓ Faire</div>
+    <ul>
+      <li>Marquer une seule étape avec `aria-current="step"`</li>
+      <li>Conserver des libellés courts et compréhensibles sur mobile</li>
+      <li>Afficher l'état avec un libellé, pas seulement avec une couleur</li>
+    </ul>
+  </div>
+  <div class="tds-do-dont__card tds-do-dont__card--dont">
+    <div class="tds-do-dont__heading">✗ Éviter</div>
+    <ul>
+      <li>Rendre les étapes cliquables si aucune navigation n'est disponible</li>
+      <li>Utiliser les étapes pour des vues alternatives (préférer Tabs)</li>
+      <li>Masquer l'étape courante aux lecteurs d'écran</li>
+    </ul>
+  </div>
+</div>
+
+</TabItem>
+<TabItem label="Démo">
+
+Rendu avec le CSS réellement buildé de `@tdgs/core`.
+
+<iframe
+  src="/playground/#stepper"
+  title="Démo interactive du composant Étapes"
+  style="width:100%; height: 16rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#stepper)
+
+</TabItem>
+<TabItem label="Code">
+
+### HTML / CSS
+
+```css
+@import '@tdgs/core/components/stepper/stepper.css';
+```
 
 ```html
 <nav aria-label="Étapes de la demande">
   <ol class="tds-stepper">
     <li class="tds-stepper__item tds-stepper--complete">
       <span class="tds-stepper__marker" aria-hidden="true">✓</span>
-      <span class="tds-stepper__content"><span class="tds-stepper__label">Identité</span></span>
+      <span class="tds-stepper__content">
+        <span class="tds-stepper__label">Identité</span>
+        <span class="tds-stepper__description">Terminée</span>
+      </span>
     </li>
     <li class="tds-stepper__item tds-stepper--current" aria-current="step">
       <span class="tds-stepper__marker" aria-hidden="true">2</span>
-      <span class="tds-stepper__content"><span class="tds-stepper__label">Documents</span></span>
+      <span class="tds-stepper__content">
+        <span class="tds-stepper__label">Documents</span>
+        <span class="tds-stepper__description">Étape en cours</span>
+      </span>
+    </li>
+    <li class="tds-stepper__item tds-stepper--upcoming">
+      <span class="tds-stepper__marker" aria-hidden="true">3</span>
+      <span class="tds-stepper__content">
+        <span class="tds-stepper__label">Confirmation</span>
+      </span>
     </li>
   </ol>
 </nav>
 ```
 
-## Accessibilité
+### Bindings
 
-- utiliser un `nav` avec un nom accessible ;
-- marquer une seule étape avec `aria-current="step"` ;
-- ne rendre les étapes cliquables que si une navigation est réellement disponible ;
-- conserver une version lisible sur mobile et en RTL.
+| Intégration | Composant    | Socle à importer                            |
+| ----------- | ------------ | ------------------------------------------- |
+| React       | `Stepper`    | `@tdgs/core/components/stepper/stepper.css` |
+| Vue         | `TdsStepper` | `@tdgs/core/components/stepper/stepper.css` |
 
-Le binding React est `Stepper` et le binding Vue est `TdsStepper`.
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Règles critiques">
+  - Utiliser un `nav` avec un nom accessible
+  <br />
+  - Marquer une seule étape avec `aria-current="step"`
+  <br />
+  - Ne rendre les étapes cliquables que si une navigation est réellement disponible
+  <br />
+  - Décrire l'état avec du texte et non avec la seule couleur
+  <br />- Conserver une version lisible sur mobile et en RTL
+</Aside>
+
+</TabItem>
+</Tabs>

@@ -10,7 +10,8 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'TDGS',
-      description: 'Système de Design de l’État — République du Tchad',
+      description:
+        'Système de design open source proposé pour les services numériques publics du Tchad.',
       defaultLocale: 'root',
       locales: {
         root: { label: 'Français', lang: 'fr' },
@@ -18,7 +19,7 @@ export default defineConfig({
       logo: {
         light: './src/assets/tdgs-logo.png',
         dark: './src/assets/tdgs-logo.png',
-        alt: 'TDGS — République du Tchad',
+        alt: 'TDGS — Tchad Design System',
         replacesTitle: false,
       },
       social: {
@@ -36,6 +37,10 @@ export default defineConfig({
         {
           tag: 'link',
           attrs: { rel: 'apple-touch-icon', href: publicAsset('apple-touch-icon.png') },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'manifest', href: publicAsset('site.webmanifest') },
         },
       ],
       components: {
@@ -76,23 +81,64 @@ export default defineConfig({
         {
           label: 'Composants',
           items: [
-            { label: 'Button', slug: 'components/button' },
-            { label: 'Input', slug: 'components/input' },
-            { label: 'Alert', slug: 'components/alert' },
-            { label: 'Badge', slug: 'components/badge' },
-            { label: 'Card', slug: 'components/card' },
-            { label: 'Link', slug: 'components/link' },
-            { label: 'Table', slug: 'components/table' },
-            { label: 'Header', slug: 'components/header' },
-            { label: 'Navigation', slug: 'components/nav' },
-            { label: 'Breadcrumb', slug: 'components/breadcrumb' },
-            { label: 'Pagination', slug: 'components/pagination' },
-            { label: 'Modal', slug: 'components/modal' },
-            { label: 'Skip Link', slug: 'components/skip-link' },
-            { label: 'Footer', slug: 'components/footer' },
-            { label: 'Accordion', slug: 'components/accordion' },
-            { label: 'Tabs', slug: 'components/tabs' },
-            { label: 'Tooltip', slug: 'components/tooltip' },
+            { label: 'Catalogue', slug: 'components' },
+            {
+              label: 'Base',
+              items: [
+                { label: 'Button', slug: 'components/button' },
+                { label: 'Badge', slug: 'components/badge' },
+                { label: 'Card', slug: 'components/card' },
+                { label: 'Link', slug: 'components/link' },
+              ],
+            },
+            {
+              label: 'Formulaires',
+              items: [
+                { label: 'Input', slug: 'components/input' },
+                { label: 'Recherche', slug: 'components/search' },
+                { label: 'Dépôt de fichier', slug: 'components/file-upload' },
+              ],
+            },
+            {
+              label: 'Navigation',
+              items: [
+                { label: 'Header', slug: 'components/header' },
+                { label: 'Navigation', slug: 'components/nav' },
+                { label: 'Breadcrumb', slug: 'components/breadcrumb' },
+                { label: 'Pagination', slug: 'components/pagination' },
+                { label: 'Skip Link', slug: 'components/skip-link' },
+                { label: 'Footer', slug: 'components/footer' },
+              ],
+            },
+            {
+              label: 'Contenu',
+              items: [
+                { label: 'Alert', slug: 'components/alert' },
+                { label: 'Table', slug: 'components/table' },
+                { label: 'Accordion', slug: 'components/accordion' },
+                { label: 'Callout', slug: 'components/callout' },
+                { label: 'Notice', slug: 'components/notice' },
+                { label: 'Tag', slug: 'components/tag' },
+                { label: 'Tile', slug: 'components/tile' },
+                { label: 'Téléchargement', slug: 'components/download' },
+                { label: 'Citation', slug: 'components/quote' },
+                { label: 'Sommaire', slug: 'components/summary' },
+              ],
+            },
+            {
+              label: 'Interaction et progression',
+              items: [
+                { label: 'Modal', slug: 'components/modal' },
+                { label: 'Tabs', slug: 'components/tabs' },
+                { label: 'Tooltip', slug: 'components/tooltip' },
+                { label: 'Étapes', slug: 'components/stepper' },
+                { label: 'Progression', slug: 'components/progress' },
+              ],
+            },
+            {
+              label: 'Utilitaire',
+              items: [{ label: 'Icon', slug: 'components/icon' }],
+            },
           ],
         },
         {

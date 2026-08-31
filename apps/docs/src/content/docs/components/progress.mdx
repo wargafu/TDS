@@ -1,16 +1,54 @@
 ---
 title: Progression
 description: Barre d’avancement déterminée ou indéterminée pour les traitements et démarches.
+sidebar:
+  order: 22
 ---
 
-Progression expose le rôle ARIA `progressbar`. Sans valeur, elle indique un traitement en cours dont la durée est inconnue.
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-## Exemple HTML
+<Tabs>
+<TabItem label="Présentation">
+
+Progression expose le rôle ARIA `progressbar`. Une valeur connue permet d'indiquer un avancement
+mesurable ; sans valeur, la variante indéterminée signale qu'un traitement est en cours sans
+prédire sa durée.
+
+## Choisir la bonne variante
+
+| Variante     | Utilisation                                     | Information obligatoire                           |
+| ------------ | ----------------------------------------------- | ------------------------------------------------- |
+| Déterminée   | Téléversement, traitement ou démarche mesurable | `aria-valuemin`, `aria-valuemax`, `aria-valuenow` |
+| Indéterminée | Chargement dont la durée est inconnue           | Un nom accessible, sans valeur numérique inventée |
+
+</TabItem>
+<TabItem label="Démo">
+
+Rendu avec le CSS réellement buildé de `@tdgs/core`.
+
+<iframe
+  src="/playground/#progress"
+  title="Démo interactive du composant Progression"
+  style="width:100%; height: 14rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#progress)
+
+</TabItem>
+<TabItem label="Code">
+
+### HTML / CSS
+
+```css
+@import '@tdgs/core/components/progress/progress.css';
+```
 
 ```html
 <div class="tds-progress">
   <div class="tds-progress__label" id="upload-progress-label">
-    <span>Envoi des justificatifs</span><span aria-hidden="true">40 %</span>
+    <span>Envoi des justificatifs</span>
+    <span aria-hidden="true">40 %</span>
   </div>
   <div
     class="tds-progress__track"
@@ -25,11 +63,26 @@ Progression expose le rôle ARIA `progressbar`. Sans valeur, elle indique un tra
 </div>
 ```
 
-## Accessibilité
+### Bindings
 
-- fournir un nom accessible ;
-- renseigner `aria-valuenow`, `aria-valuemin` et `aria-valuemax` quand la valeur est connue ;
-- ne pas utiliser une animation comme seule information d’avancement ;
-- respecter `prefers-reduced-motion`.
+| Intégration | Composant     | Socle à importer                              |
+| ----------- | ------------- | --------------------------------------------- |
+| React       | `Progress`    | `@tdgs/core/components/progress/progress.css` |
+| Vue         | `TdsProgress` | `@tdgs/core/components/progress/progress.css` |
 
-Les bindings sont `Progress` pour React et `TdsProgress` pour Vue.
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Règles critiques">
+  - Fournir un nom accessible avec `aria-label` ou `aria-labelledby`
+  <br />
+  - Renseigner les valeurs ARIA quand l'avancement est connu
+  <br />
+  - Ne pas utiliser une animation comme seule information
+  <br />
+  - Respecter `prefers-reduced-motion`
+  <br />- Annoncer les changements importants dans une zone `aria-live` distincte si nécessaire
+</Aside>
+
+</TabItem>
+</Tabs>

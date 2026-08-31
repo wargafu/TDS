@@ -1,0 +1,103 @@
+/* TDGS Tag — classification, filtre ou état lisible */
+:root {
+  --tds-tag-bg: var(--tds-neutral-100);
+  --tds-tag-border: var(--tds-neutral-200);
+  --tds-tag-color: var(--tds-neutral-700);
+  --tds-tag-radius: var(--tds-radius-full);
+  --tds-tag-gap: var(--tds-spacing-1);
+}
+
+.tds-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tds-tag-gap);
+  max-width: 100%;
+  padding: var(--tds-spacing-1) var(--tds-spacing-3);
+  border: 1px solid var(--tds-tag-border);
+  border-radius: var(--tds-tag-radius);
+  background: var(--tds-tag-bg);
+  color: var(--tds-tag-color);
+  font-size: var(--tds-font-size-sm);
+  font-weight: var(--tds-font-weight-medium);
+  line-height: var(--tds-line-height-sm);
+  vertical-align: middle;
+}
+
+.tds-tag--sm {
+  padding: var(--tds-spacing-1) var(--tds-spacing-2);
+  font-size: var(--tds-font-size-xs);
+}
+
+.tds-tag--md {
+  padding: var(--tds-spacing-1) var(--tds-spacing-3);
+  font-size: var(--tds-font-size-sm);
+}
+
+.tds-tag--default {
+  --tds-tag-bg: var(--tds-neutral-100);
+  --tds-tag-border: var(--tds-neutral-200);
+  --tds-tag-color: var(--tds-neutral-700);
+}
+
+.tds-tag--info {
+  --tds-tag-bg: var(--tds-semantic-info-bg);
+  --tds-tag-border: var(--tds-semantic-info-border);
+  --tds-tag-color: var(--tds-semantic-info-text);
+}
+
+.tds-tag--success {
+  --tds-tag-bg: var(--tds-semantic-success-bg);
+  --tds-tag-border: var(--tds-semantic-success-border);
+  --tds-tag-color: var(--tds-semantic-success-text);
+}
+
+.tds-tag--warning {
+  --tds-tag-bg: var(--tds-semantic-warning-bg);
+  --tds-tag-border: var(--tds-semantic-warning-border);
+  --tds-tag-color: var(--tds-semantic-warning-text);
+}
+
+.tds-tag--danger {
+  --tds-tag-bg: var(--tds-semantic-danger-bg);
+  --tds-tag-border: var(--tds-semantic-danger-border);
+  --tds-tag-color: var(--tds-semantic-danger-text);
+}
+
+.tds-tag__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.tds-tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  margin-inline-end: -0.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: currentColor;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.tds-tag__remove:hover {
+  background: color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.tds-tag__remove:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+@media (forced-colors: active) {
+  .tds-tag {
+    border-color: CanvasText;
+  }
+}

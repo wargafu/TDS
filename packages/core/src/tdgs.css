@@ -32,3 +32,10 @@
 @import './components/stepper/stepper.css';
 @import './components/file-upload/file-upload.css';
 @import './components/progress/progress.css';
+@import './components/callout/callout.css';
+@import './components/notice/notice.css';
+@import './components/tag/tag.css';
+@import './components/tile/tile.css';
+@import './components/download/download.css';
+@import './components/quote/quote.css';
+@import './components/summary/summary.css';

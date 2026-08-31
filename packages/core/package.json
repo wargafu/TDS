@@ -167,6 +167,41 @@
       "types": "./dist/components/progress/index.d.ts"
     },
     "./components/progress/progress.css": "./dist/components/progress/progress.css",
+    "./components/callout": {
+      "import": "./dist/components/callout/index.js",
+      "types": "./dist/components/callout/index.d.ts"
+    },
+    "./components/callout/callout.css": "./dist/components/callout/callout.css",
+    "./components/notice": {
+      "import": "./dist/components/notice/index.js",
+      "types": "./dist/components/notice/index.d.ts"
+    },
+    "./components/notice/notice.css": "./dist/components/notice/notice.css",
+    "./components/tag": {
+      "import": "./dist/components/tag/index.js",
+      "types": "./dist/components/tag/index.d.ts"
+    },
+    "./components/tag/tag.css": "./dist/components/tag/tag.css",
+    "./components/tile": {
+      "import": "./dist/components/tile/index.js",
+      "types": "./dist/components/tile/index.d.ts"
+    },
+    "./components/tile/tile.css": "./dist/components/tile/tile.css",
+    "./components/download": {
+      "import": "./dist/components/download/index.js",
+      "types": "./dist/components/download/index.d.ts"
+    },
+    "./components/download/download.css": "./dist/components/download/download.css",
+    "./components/quote": {
+      "import": "./dist/components/quote/index.js",
+      "types": "./dist/components/quote/index.d.ts"
+    },
+    "./components/quote/quote.css": "./dist/components/quote/quote.css",
+    "./components/summary": {
+      "import": "./dist/components/summary/index.js",
+      "types": "./dist/components/summary/index.d.ts"
+    },
+    "./components/summary/summary.css": "./dist/components/summary/summary.css",
     "./tokens/color.css": "./dist/tokens/color.css",
     "./tokens/typography.css": "./dist/tokens/typography.css",
     "./tokens/spacing.css": "./dist/tokens/spacing.css",

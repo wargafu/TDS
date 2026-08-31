@@ -1,32 +1,56 @@
 ---
 title: Composants
-description: Les 21 familles de composants TDGS et leur utilitaire d'icônes — variantes, états, accessibilité et exemples de code.
+description: Les 28 familles de composants UI TDGS et l'utilitaire d'icônes — variantes, états, accessibilité et exemples de code.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-21 familles de composants, dont 19 CSS-first, sans dépendance JavaScript. Modal et Tabs fournissent en plus une
-interaction gérée par les bindings. Chaque page suit la même structure : Présentation, Démo,
-Design, Code, Accessibilité.
+Le catalogue comprend **28 familles de composants UI**, complétées par l'utilitaire `Icon`. Le socle
+CSS reste indépendant des frameworks : les bindings React et Vue réutilisent les mêmes tokens et les
+mêmes classes `tds-*`.
 
-## Éléments de base
+<div class="tds-catalog-summary" aria-label="Résumé du catalogue TDGS">
+  <div class="tds-catalog-summary__item">
+    <strong>28</strong>
+    <span>familles UI</span>
+  </div>
+  <div class="tds-catalog-summary__item">
+    <strong>3</strong>
+    <span>modes d'intégration</span>
+  </div>
+  <div class="tds-catalog-summary__item">
+    <strong>AA</strong>
+    <span>cible WCAG 2.2</span>
+  </div>
+</div>
+
+<Aside type="tip" title="Comment lire une fiche composant">
+  Chaque fiche documente l'intention, les variantes, les états, une démonstration basée sur le CSS
+  buildé, les exemples HTML/React/Vue et les exigences d'accessibilité. Utilisez le terrain de jeu
+  pour vérifier rapidement le rendu des composants dans les thèmes TDGS.
+</Aside>
+
+## Base
 
 <CardGrid>
   <Card title="Button">Cinq variantes, trois tailles — [lire →](/components/button/)</Card>
-  <Card title="Input">
-    Text, textarea, select, checkbox, radio, switch — [lire →](/components/input/)
-  </Card>
-  <Card title="Alert">Messages contextuels accessibles — [lire →](/components/alert/)</Card>
   <Card title="Badge">Étiquettes de statut — [lire →](/components/badge/)</Card>
   <Card title="Card">Surfaces de contenu groupé — [lire →](/components/card/)</Card>
   <Card title="Link">Styles de liens — [lire →](/components/link/)</Card>
-  <Card title="Table">Tableaux de données — [lire →](/components/table/)</Card>
 </CardGrid>
 
-## Utilitaires visuels
+## Formulaires
 
 <CardGrid>
-  <Card title="Icon">Icônes SVG indépendantes et accessibles — [lire →](/components/icon/)</Card>
+  <Card title="Input">
+    Text, textarea, select, checkbox, radio, switch — [lire →](/components/input/)
+  </Card>
+  <Card title="Recherche">
+    Recherche accessible avec soumission explicite — [lire →](/components/search/)
+  </Card>
+  <Card title="Dépôt de fichier">
+    Sélection native de documents — [lire →](/components/file-upload/)
+  </Card>
 </CardGrid>
 
 ## Navigation
@@ -40,15 +64,48 @@ Design, Code, Accessibilité.
   <Card title="Footer">Pied de page institutionnel — [lire →](/components/footer/)</Card>
 </CardGrid>
 
-## Interaction
+## Contenu
+
+<CardGrid>
+  <Card title="Alert">Messages contextuels accessibles — [lire →](/components/alert/)</Card>
+  <Card title="Table">Tableaux de données — [lire →](/components/table/)</Card>
+  <Card title="Accordion">
+    Contenu extensible avec HTML natif — [lire →](/components/accordion/)
+  </Card>
+  <Card title="Callout">Contenu éditorial mis en avant — [lire →](/components/callout/)</Card>
+  <Card title="Notice">Bandeau d'information prioritaire — [lire →](/components/notice/)</Card>
+  <Card title="Tag">Classification et filtres lisibles — [lire →](/components/tag/)</Card>
+  <Card title="Tile">Entrées de navigation vers un service — [lire →](/components/tile/)</Card>
+  <Card title="Téléchargement">Accès explicite aux fichiers — [lire →](/components/download/)</Card>
+  <Card title="Citation">Citations contextualisées — [lire →](/components/quote/)</Card>
+  <Card title="Sommaire">Navigation dans une page — [lire →](/components/summary/)</Card>
+</CardGrid>
+
+## Interaction et progression
 
 <CardGrid>
   <Card title="Modal">Boîte de dialogue native — [lire →](/components/modal/)</Card>
-  <Card title="Accordion">`<details>`/`<summary>` natif — [lire →](/components/accordion/)</Card>
   <Card title="Tabs">Onglets WAI-ARIA APG — [lire →](/components/tabs/)</Card>
   <Card title="Tooltip">Bulle contextuelle CSS pur — [lire →](/components/tooltip/)</Card>
-  <Card title="Recherche">Champ de recherche avec soumission accessible — [lire →](/components/search/)</Card>
   <Card title="Étapes">Progression dans une démarche — [lire →](/components/stepper/)</Card>
-  <Card title="Dépôt de fichier">Sélection native de documents — [lire →](/components/file-upload/)</Card>
-  <Card title="Progression">Avancement déterminé ou indéterminé — [lire →](/components/progress/)</Card>
+  <Card title="Progression">
+    Avancement déterminé ou indéterminé — [lire →](/components/progress/)
+  </Card>
+</CardGrid>
+
+## Utilitaire
+
+<CardGrid>
+  <Card title="Icon">Icônes SVG indépendantes et accessibles — [lire →](/components/icon/)</Card>
+</CardGrid>
+
+## Intégrer le système
+
+<CardGrid>
+  <Card title="HTML / CSS">Le socle sans framework — [démarrer →](/integrations/vanilla/)</Card>
+  <Card title="React">Bindings typés pour React — [démarrer →](/integrations/react/)</Card>
+  <Card title="Vue">Bindings pour Vue 3 — [démarrer →](/integrations/vue/)</Card>
+  <Card title="Terrain de jeu">
+    Voir les variantes réellement buildées — [ouvrir →](/playground/)
+  </Card>
 </CardGrid>

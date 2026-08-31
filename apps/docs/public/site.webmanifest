@@ -1,0 +1,26 @@
+{
+  "name": "TDGS — Tchad Design System",
+  "short_name": "TDGS",
+  "description": "Système de design open source proposé pour les services numériques publics du Tchad.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#0B3A82",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

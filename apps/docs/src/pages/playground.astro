@@ -17,6 +17,14 @@ const breadcrumbTrail = [
   { label: 'Renouvellement de carte' },
 ];
 const paginationPages = [1, 2, 3, 4, 5];
+const calloutVariants = ['neutral', 'info', 'success', 'warning', 'danger'];
+const noticeVariants = ['info', 'success', 'warning', 'danger'];
+const tagVariants = ['default', 'info', 'success', 'warning', 'danger'];
+const summaryItems = [
+  { label: 'Présentation', href: '#callout' },
+  { label: 'Règles d’accessibilité', href: '#notice' },
+  { label: 'Ressources', href: '#download' },
+];
 ---
 <!doctype html>
 <html lang="fr">
@@ -52,6 +60,13 @@ const paginationPages = [1, 2, 3, 4, 5];
   <link rel="stylesheet" href="/tds/components/stepper/stepper.css" />
   <link rel="stylesheet" href="/tds/components/file-upload/file-upload.css" />
   <link rel="stylesheet" href="/tds/components/progress/progress.css" />
+  <link rel="stylesheet" href="/tds/components/callout/callout.css" />
+  <link rel="stylesheet" href="/tds/components/notice/notice.css" />
+  <link rel="stylesheet" href="/tds/components/tag/tag.css" />
+  <link rel="stylesheet" href="/tds/components/tile/tile.css" />
+  <link rel="stylesheet" href="/tds/components/download/download.css" />
+  <link rel="stylesheet" href="/tds/components/quote/quote.css" />
+  <link rel="stylesheet" href="/tds/components/summary/summary.css" />
   <style>
     body {
       max-width: 72rem;
@@ -407,6 +422,102 @@ const paginationPages = [1, 2, 3, 4, 5];
     <div class="tds-progress tds-progress--indeterminate" aria-label="Chargement des données" style="margin-top: var(--tds-spacing-4);">
       <div class="tds-progress__track" role="progressbar" aria-label="Chargement des données"><div class="tds-progress__indicator"></div></div>
     </div>
+  </section>
+
+  <section id="callout" data-pagefind-ignore>
+    <h2>Callout</h2>
+    {calloutVariants.map((variant) => (
+      <aside class={`tds-callout tds-callout--${variant}`} style="margin-bottom: var(--tds-spacing-3);">
+        <div class="tds-callout__content">
+          <h3 class="tds-callout__title">Information {variant}</h3>
+          <div class="tds-callout__body">Conseil éditorial ou explication utile à la démarche.</div>
+        </div>
+      </aside>
+    ))}
+  </section>
+
+  <section id="notice" data-pagefind-ignore>
+    <h2>Notice</h2>
+    {noticeVariants.map((variant) => (
+      <div class={`tds-notice tds-notice--${variant}`} role={variant === 'danger' ? 'alert' : 'status'} style="margin-bottom: var(--tds-spacing-3);">
+        <div class="tds-notice__content">
+          <span class="tds-notice__title">Bandeau {variant}</span>
+          <div class="tds-notice__body">Information prioritaire visible dans le contexte de la page.</div>
+        </div>
+        <button type="button" class="tds-notice__close" aria-label="Masquer ce bandeau"><span aria-hidden="true">×</span></button>
+      </div>
+    ))}
+  </section>
+
+  <section id="tag" data-pagefind-ignore>
+    <h2>Tag</h2>
+    <div class="row">
+      {tagVariants.map((variant) => (
+        <span class={`tds-tag tds-tag--${variant} tds-tag--md`}>
+          <span class="tds-tag__dot" aria-hidden="true"></span>
+          {variant}
+        </span>
+      ))}
+      <span class="tds-tag tds-tag--default tds-tag--md">
+        <span>Filtre actif</span>
+        <button type="button" class="tds-tag__remove" aria-label="Retirer le filtre actif"><span aria-hidden="true">×</span></button>
+      </span>
+    </div>
+  </section>
+
+  <section id="tile" data-pagefind-ignore>
+    <h2>Tile</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--tds-spacing-4);">
+      <a href="#" class="tds-tile tds-tile--default">
+        <span class="tds-tile__content">
+          <span class="tds-tile__title">État civil</span>
+          <span class="tds-tile__description">Actes de naissance, mariage et décès.</span>
+        </span>
+        <span class="tds-tile__arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#" class="tds-tile tds-tile--elevated">
+        <span class="tds-tile__content">
+          <span class="tds-tile__title">Documents d'identité</span>
+          <span class="tds-tile__description">CNI, passeport et autres documents.</span>
+        </span>
+        <span class="tds-tile__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="download" data-pagefind-ignore>
+    <h2>Téléchargement</h2>
+    <a href="#" class="tds-download">
+      <span class="tds-download__icon" aria-hidden="true">↓</span>
+      <span class="tds-download__content">
+        <span class="tds-download__label">Guide des démarches administratives</span>
+        <span class="tds-download__description">Version accessible en français.</span>
+        <span class="tds-download__meta">PDF · 2,4 Mo</span>
+      </span>
+    </a>
+  </section>
+
+  <section id="quote" data-pagefind-ignore>
+    <h2>Citation</h2>
+    <blockquote class="tds-quote">
+      <p class="tds-quote__text">Un service public numérique doit rester compréhensible et accessible, même avec une connexion limitée.</p>
+      <footer class="tds-quote__footer">
+        <span class="tds-quote__author">Équipe TDGS</span>
+        <cite class="tds-quote__source">Principes de conception</cite>
+      </footer>
+    </blockquote>
+  </section>
+
+  <section id="summary" data-pagefind-ignore>
+    <h2>Sommaire</h2>
+    <nav class="tds-summary" aria-label="Sommaire de la page">
+      <p class="tds-summary__title">Dans cette démonstration</p>
+      <ol class="tds-summary__list">
+        {summaryItems.map((item) => (
+          <li><a href={item.href} class="tds-summary__link">{item.label}</a></li>
+        ))}
+      </ol>
+    </nav>
   </section>
 </main>
 </body>

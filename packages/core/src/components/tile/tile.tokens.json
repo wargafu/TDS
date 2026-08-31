@@ -1,0 +1,12 @@
+{
+  "defaults": {
+    "background": "var(--tds-tile-bg)",
+    "border": "var(--tds-tile-border)",
+    "color": "var(--tds-tile-color)",
+    "padding": "var(--tds-tile-padding)"
+  },
+  "variants": {
+    "default": { "shadow": "none" },
+    "elevated": { "shadow": "var(--tds-shadow-sm)" }
+  }
+}

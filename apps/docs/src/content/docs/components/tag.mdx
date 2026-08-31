@@ -1,0 +1,63 @@
+---
+title: Tag
+description: Étiquette TDGS pour classifier un contenu ou afficher un état avec un texte explicite.
+sidebar:
+  order: 25
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+Le `Tag` représente une catégorie, un filtre ou un état court. Il est distinct du `Badge` : le tag
+peut être retiré dans une sélection, tandis que le badge est principalement un indicateur de statut.
+
+Variantes : `default`, `info`, `success`, `warning`, `danger`. Tailles : `sm` et `md`.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#tag"
+  title="Démo du composant Tag"
+  style="width:100%; height: 13rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#tag)
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/tag/tag.css';
+```
+
+```html
+<span class="tds-tag tds-tag--info tds-tag--md">
+  <span>État civil</span>
+</span>
+
+<span class="tds-tag tds-tag--default tds-tag--md">
+  <span>Filtre actif</span>
+  <button class="tds-tag__remove" type="button" aria-label="Retirer le filtre actif">×</button>
+</span>
+```
+
+| Intégration | API                                                                |
+| ----------- | ------------------------------------------------------------------ |
+| React       | `<Tag variant="info" dot>État civil</Tag>`                         |
+| Vue         | `<TdsTag variant="info" removable @remove="…">État civil</TdsTag>` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Le texte fait foi">
+  - Ne communiquez jamais un état par la couleur ou le point seul : gardez un texte visible. - Un
+  tag supprimable doit fournir un bouton avec un nom accessible et une cible tactile suffisante. -
+  N'utilisez pas un tag comme bouton de navigation ; utilisez `Link` ou `Tile`.
+</Aside>
+
+</TabItem>
+</Tabs>

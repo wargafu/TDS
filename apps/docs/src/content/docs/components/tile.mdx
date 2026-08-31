@@ -1,0 +1,62 @@
+---
+title: Tile
+description: Entrée de navigation TDGS pour orienter vers un service, une rubrique ou une démarche.
+sidebar:
+  order: 26
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+Le `Tile` est une entrée de navigation autonome. Il sert à présenter un service ou une rubrique dans
+une liste ou une grille. Pour du contenu non cliquable, utilisez `Card`.
+
+Variantes : `default` pour une liste dense et `elevated` pour une mise en avant modérée.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#tile"
+  title="Démo du composant Tile"
+  style="width:100%; height: 15rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#tile)
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/tile/tile.css';
+```
+
+```html
+<a href="/services/etat-civil" class="tds-tile tds-tile--elevated">
+  <span class="tds-tile__content">
+    <span class="tds-tile__title">État civil</span>
+    <span class="tds-tile__description">Actes de naissance, mariage et décès.</span>
+  </span>
+  <span class="tds-tile__arrow" aria-hidden="true">→</span>
+</a>
+```
+
+| Intégration | API                                                                          |
+| ----------- | ---------------------------------------------------------------------------- |
+| React       | `<Tile href="/services/etat-civil" title="État civil" description="…" />`    |
+| Vue         | `<TdsTile href="/services/etat-civil" title="État civil" description="…" />` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Une navigation compréhensible">
+  - Le titre doit décrire la destination du lien sans dépendre de l'icône ou de la flèche. -
+  L'élément est un lien unique : évitez d'y imbriquer un autre lien ou un bouton. - Respectez
+  l'ordre du DOM dans une grille et conservez un focus visible.
+</Aside>
+
+</TabItem>
+</Tabs>

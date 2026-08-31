@@ -81,6 +81,13 @@ const COMPONENTS = [
   { name: 'stepper', tokenFile: 'stepper.tokens', cssFile: 'stepper' },
   { name: 'file-upload', tokenFile: 'file-upload.tokens', cssFile: 'file-upload' },
   { name: 'progress', tokenFile: 'progress.tokens', cssFile: 'progress' },
+  { name: 'callout', tokenFile: 'callout.tokens', cssFile: 'callout' },
+  { name: 'notice', tokenFile: 'notice.tokens', cssFile: 'notice' },
+  { name: 'tag', tokenFile: 'tag.tokens', cssFile: 'tag' },
+  { name: 'tile', tokenFile: 'tile.tokens', cssFile: 'tile' },
+  { name: 'download', tokenFile: 'download.tokens', cssFile: 'download' },
+  { name: 'quote', tokenFile: 'quote.tokens', cssFile: 'quote' },
+  { name: 'summary', tokenFile: 'summary.tokens', cssFile: 'summary' },
 ];
 
 process.stdout.write('\n[validate-tokens] Component tokens...\n\n');

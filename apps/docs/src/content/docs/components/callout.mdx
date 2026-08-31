@@ -1,0 +1,67 @@
+---
+title: Callout
+description: Contenu éditorial mis en avant avec une accentuation sémantique TDGS.
+sidebar:
+  order: 23
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+Le `Callout` met en avant une explication, une règle ou une information utile dans le flux de la
+page. Il ne remplace pas une erreur de formulaire ni un bandeau urgent.
+
+| Variante  | Usage                                 |
+| --------- | ------------------------------------- |
+| `neutral` | Conseil ou contenu éditorial général  |
+| `info`    | Information contextuelle              |
+| `success` | Résultat positif à mettre en évidence |
+| `warning` | Point d'attention non bloquant        |
+| `danger`  | Conséquence critique à expliquer      |
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#callout"
+  title="Démo du composant Callout"
+  style="width:100%; height: 16rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#callout)
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/callout/callout.css';
+```
+
+```html
+<aside class="tds-callout tds-callout--info">
+  <div class="tds-callout__content">
+    <h3 class="tds-callout__title">Bon à savoir</h3>
+    <div class="tds-callout__body">Préparez vos documents avant de commencer la démarche.</div>
+  </div>
+</aside>
+```
+
+| Intégration | API                                                              |
+| ----------- | ---------------------------------------------------------------- |
+| React       | `<Callout title="Bon à savoir" variant="info">…</Callout>`       |
+| Vue         | `<TdsCallout title="Bon à savoir" variant="info">…</TdsCallout>` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Règles essentielles">
+  - Utilisez un niveau de titre cohérent avec la page ; la couleur ne doit jamais porter seule le
+  sens. - Gardez le texte court et n'utilisez pas `role="alert"` pour un conseil éditorial. - Un
+  lien ou une action dans le callout doit rester visible et atteindre 44 px de cible tactile.
+</Aside>
+
+</TabItem>
+</Tabs>

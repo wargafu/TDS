@@ -1,0 +1,75 @@
+/* TDGS Download — lien vers une ressource téléchargeable */
+:root {
+  --tds-download-bg: var(--tds-bg);
+  --tds-download-border: var(--tds-border-subtle);
+  --tds-download-color: var(--tds-text);
+  --tds-download-accent: var(--tds-action-primary);
+  --tds-download-radius: var(--tds-radius-md);
+  --tds-download-padding: var(--tds-spacing-4);
+  --tds-download-gap: var(--tds-spacing-3);
+}
+
+.tds-download {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tds-download-gap);
+  width: 100%;
+  padding: var(--tds-download-padding);
+  border: 1px solid var(--tds-download-border);
+  border-radius: var(--tds-download-radius);
+  background: var(--tds-download-bg);
+  color: var(--tds-download-color);
+  text-decoration: none;
+}
+
+.tds-download:hover {
+  border-color: var(--tds-download-accent);
+  background: var(--tds-bg-subtle);
+}
+
+.tds-download:focus-visible {
+  outline: 2px solid var(--tds-download-accent);
+  outline-offset: 3px;
+}
+
+.tds-download__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: var(--tds-download-accent);
+  font-size: var(--tds-font-size-xl);
+  line-height: 1;
+}
+
+.tds-download__content {
+  min-width: 0;
+  display: grid;
+  gap: var(--tds-spacing-1);
+}
+
+.tds-download__label {
+  color: var(--tds-download-color);
+  font-weight: var(--tds-font-weight-semibold);
+  line-height: var(--tds-line-height-md);
+}
+
+.tds-download__description,
+.tds-download__meta {
+  color: var(--tds-text-muted);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-md);
+}
+
+.tds-download__meta {
+  font-family: var(--tds-font-family-mono);
+  font-size: var(--tds-font-size-xs);
+}
+
+@media (max-width: 40rem) {
+  .tds-download {
+    padding: var(--tds-spacing-3);
+  }
+}

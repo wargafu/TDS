@@ -1,11 +1,62 @@
 ---
 title: Dépôt de fichier
 description: Sélection accessible de documents avec validation native et affichage des fichiers choisis.
+sidebar:
+  order: 20
 ---
 
-Le composant Dépôt de fichier s’appuie sur `<input type="file">`. Le navigateur conserve ainsi les contrôles de sécurité et les comportements clavier attendus.
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
-## Exemple HTML
+<Tabs>
+<TabItem label="Présentation">
+
+Le composant Dépôt de fichier s'appuie sur `<input type="file">`. Le navigateur conserve ainsi
+les contrôles de sécurité et les comportements clavier attendus. Le texte visible précise les
+formats et limites attendus.
+
+## Do / Don't
+
+<div class="tds-do-dont">
+  <div class="tds-do-dont__card tds-do-dont__card--do">
+    <div class="tds-do-dont__heading">✓ Faire</div>
+    <ul>
+      <li>Indiquer les formats et la taille maximale en texte</li>
+      <li>Associer le label au même identifiant que l'input</li>
+      <li>Afficher le nom et la taille du fichier sélectionné</li>
+    </ul>
+  </div>
+  <div class="tds-do-dont__card tds-do-dont__card--dont">
+    <div class="tds-do-dont__heading">✗ Éviter</div>
+    <ul>
+      <li>Remplacer l'input natif par une zone non accessible</li>
+      <li>Décrire les formats uniquement avec l'attribut `accept`</li>
+      <li>Envoyer automatiquement un fichier sans confirmation du parcours</li>
+    </ul>
+  </div>
+</div>
+
+</TabItem>
+<TabItem label="Démo">
+
+Rendu avec le CSS réellement buildé de `@tdgs/core`.
+
+<iframe
+  src="/playground/#file-upload"
+  title="Démo interactive du composant Dépôt de fichier"
+  style="width:100%; height: 14rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#file-upload)
+
+</TabItem>
+<TabItem label="Code">
+
+### HTML / CSS
+
+```css
+@import '@tdgs/core/components/file-upload/file-upload.css';
+```
 
 ```html
 <div class="tds-file-upload">
@@ -15,19 +66,39 @@ Le composant Dépôt de fichier s’appuie sur `<input type="file">`. Le navigat
     class="tds-file-upload__input"
     type="file"
     accept="application/pdf,image/*"
+    aria-describedby="identity-document-hint identity-document-error"
   />
+  <p id="identity-document-hint" class="tds-helper-text">PDF ou image, 5 Mo maximum.</p>
   <label class="tds-file-upload__label" for="identity-document">
     <span class="tds-file-upload__choose">Choisir un fichier</span>
-    <span>PDF ou image, selon les exigences de la démarche.</span>
+    <span>Parcourir les fichiers de l’appareil.</span>
   </label>
+  <p id="identity-document-error" class="tds-error-text" role="alert" hidden>
+    Le fichier ne respecte pas les exigences de la démarche.
+  </p>
 </div>
 ```
 
-## Accessibilité
+### Bindings
 
-- associer les deux libellés au même identifiant de champ ;
-- annoncer les erreurs avec `role="alert"` et `aria-describedby` ;
-- préciser les formats acceptés dans le texte, pas uniquement avec `accept` ;
-- ne jamais supposer qu’un nom de fichier suffit à décrire son contenu.
+| Intégration | Composant       | Socle à importer                                    |
+| ----------- | --------------- | --------------------------------------------------- |
+| React       | `FileUpload`    | `@tdgs/core/components/file-upload/file-upload.css` |
+| Vue         | `TdsFileUpload` | `@tdgs/core/components/file-upload/file-upload.css` |
 
-Les bindings sont `FileUpload` pour React et `TdsFileUpload` pour Vue.
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Règles critiques">
+  - Associer les labels au même identifiant de champ
+  <br />
+  - Préciser les formats acceptés dans le texte, pas uniquement avec `accept`
+  <br />
+  - Relier les indications et erreurs avec `aria-describedby`
+  <br />
+  - Annoncer les erreurs avec `role="alert"` ou une zone `aria-live` adaptée
+  <br />- Ne jamais supposer qu'un nom de fichier suffit à décrire son contenu
+</Aside>
+
+</TabItem>
+</Tabs>

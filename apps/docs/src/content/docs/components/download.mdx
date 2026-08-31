@@ -1,0 +1,59 @@
+---
+title: Téléchargement
+description: Lien TDGS explicite vers un document téléchargeable et ses métadonnées.
+sidebar:
+  order: 27
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Download` signale clairement une ressource à télécharger et peut afficher son format, sa taille ou
+une description. Il complète `Link` lorsque l'utilisateur doit comprendre la nature du fichier avant
+de l'ouvrir.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#download"
+  title="Démo du composant Téléchargement"
+  style="width:100%; height: 12rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/download/download.css';
+```
+
+```html
+<a href="/documents/guide.pdf" class="tds-download">
+  <span class="tds-download__icon" aria-hidden="true">↓</span>
+  <span class="tds-download__content">
+    <span class="tds-download__label">Guide des démarches</span>
+    <span class="tds-download__description">Version accessible en français.</span>
+    <span class="tds-download__meta">PDF · 2,4 Mo</span>
+  </span>
+</a>
+```
+
+| Intégration | API                                                                                           |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| React       | `<Download href="/documents/guide.pdf" label="Guide des démarches" meta="PDF · 2,4 Mo" />`    |
+| Vue         | `<TdsDownload href="/documents/guide.pdf" label="Guide des démarches" meta="PDF · 2,4 Mo" />` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Destination compréhensible">
+  Le libellé doit identifier le document ou l'action. Ajoutez le format et la taille lorsque cela
+  aide à anticiper le téléchargement ; l'icône reste décorative.
+</Aside>
+
+</TabItem>
+</Tabs>

@@ -13,6 +13,13 @@ import { Progress } from '../src/components/Progress';
 import { SearchField } from '../src/components/SearchField';
 import { Stepper } from '../src/components/Stepper';
 import { Icon } from '../src/components/Icon';
+import { Callout } from '../src/components/Callout';
+import { Notice } from '../src/components/Notice';
+import { Tag } from '../src/components/Tag';
+import { Tile } from '../src/components/Tile';
+import { Download } from '../src/components/Download';
+import { Quote } from '../src/components/Quote';
+import { Summary } from '../src/components/Summary';
 
 describe('Button', () => {
   it('applies variant and size classes', () => {
@@ -94,6 +101,56 @@ describe('Badge', () => {
       </Badge>
     );
     expect(container.querySelector('.tds-badge__dot')).not.toBeNull();
+  });
+});
+
+describe('Editorial and navigation components', () => {
+  it('renders callout, notice and tile semantics', () => {
+    const onClose = vi.fn();
+    render(
+      <>
+        <Callout variant="info" title="Bon à savoir">
+          Préparez vos documents.
+        </Callout>
+        <Notice variant="warning" title="Maintenance" onClose={onClose}>
+          Service temporairement indisponible.
+        </Notice>
+        <Tile href="/services/etat-civil" title="État civil" description="Actes et démarches." />
+      </>
+    );
+
+    expect(screen.getByRole('heading', { name: 'Bon à savoir' })).toBeTruthy();
+    expect(screen.getByRole('status', { name: 'Maintenance' })).toBeTruthy();
+    expect(screen.getByRole('link', { name: /État civil/ }).getAttribute('href')).toBe(
+      '/services/etat-civil'
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Masquer ce bandeau' }));
+    expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it('exposes a labelled remove action on Tag', () => {
+    const onRemove = vi.fn();
+    render(<Tag onRemove={onRemove}>Filtre actif</Tag>);
+    fireEvent.click(screen.getByRole('button', { name: 'Retirer' }));
+    expect(onRemove).toHaveBeenCalledOnce();
+  });
+
+  it('renders downloads, quotes and summaries with native semantics', () => {
+    render(
+      <>
+        <Download href="/guide.pdf" label="Guide des démarches" meta="PDF · 2 Mo" />
+        <Quote author="Équipe TDGS" source="Principes">
+          Un texte utile.
+        </Quote>
+        <Summary items={[{ href: '#conditions', label: 'Conditions' }]} />
+      </>
+    );
+
+    expect(screen.getByRole('link', { name: /Guide des démarches/ }).getAttribute('href')).toBe(
+      '/guide.pdf'
+    );
+    expect(screen.getByText('Un texte utile.')).toBeTruthy();
+    expect(screen.getByRole('navigation', { name: 'Sommaire de la page' })).toBeTruthy();
   });
 });
 

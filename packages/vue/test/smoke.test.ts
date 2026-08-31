@@ -12,6 +12,13 @@ import { Progress } from '../src/components/Progress';
 import { SearchField } from '../src/components/SearchField';
 import { Stepper } from '../src/components/Stepper';
 import { Icon } from '../src/components/Icon';
+import { Callout } from '../src/components/Callout';
+import { Notice } from '../src/components/Notice';
+import { Tag } from '../src/components/Tag';
+import { Tile } from '../src/components/Tile';
+import { Download } from '../src/components/Download';
+import { Quote } from '../src/components/Quote';
+import { Summary } from '../src/components/Summary';
 
 describe('Button', () => {
   it('applies variant and size classes', () => {
@@ -100,6 +107,55 @@ describe('Badge', () => {
   it('renders a dot indicator when requested', () => {
     const wrapper = mount(Badge, { props: { variant: 'success', dot: true } });
     expect(wrapper.find('.tds-badge__dot').exists()).toBe(true);
+  });
+});
+
+describe('Editorial and navigation components', () => {
+  it('renders callout, notice and tile semantics', async () => {
+    const callout = mount(Callout, {
+      props: { variant: 'info', title: 'Bon à savoir' },
+      slots: { default: 'Préparez vos documents.' },
+    });
+    const notice = mount(Notice, {
+      props: { variant: 'warning', title: 'Maintenance', closable: true },
+      slots: { default: 'Service temporairement indisponible.' },
+    });
+    const tile = mount(Tile, {
+      props: {
+        href: '/services/etat-civil',
+        title: 'État civil',
+        description: 'Actes et démarches.',
+      },
+    });
+
+    expect(callout.get('h3').text()).toBe('Bon à savoir');
+    expect(notice.get('[role="status"]').text()).toContain('Maintenance');
+    expect(tile.get('a').attributes('href')).toBe('/services/etat-civil');
+    await notice.get('button').trigger('click');
+    expect(notice.emitted('close')).toHaveLength(1);
+  });
+
+  it('emits remove from a removable Tag', async () => {
+    const wrapper = mount(Tag, { props: { removable: true }, slots: { default: 'Filtre actif' } });
+    await wrapper.get('button').trigger('click');
+    expect(wrapper.emitted('remove')).toHaveLength(1);
+  });
+
+  it('renders downloads, quotes and summaries with native semantics', () => {
+    const download = mount(Download, {
+      props: { href: '/guide.pdf', label: 'Guide des démarches', meta: 'PDF · 2 Mo' },
+    });
+    const quote = mount(Quote, {
+      props: { author: 'Équipe TDGS', source: 'Principes' },
+      slots: { default: 'Un texte utile.' },
+    });
+    const summary = mount(Summary, {
+      props: { items: [{ href: '#conditions', label: 'Conditions' }] },
+    });
+
+    expect(download.get('a').attributes('href')).toBe('/guide.pdf');
+    expect(quote.get('blockquote').text()).toContain('Un texte utile.');
+    expect(summary.get('nav').attributes('aria-label')).toBe('Sommaire de la page');
   });
 });
 

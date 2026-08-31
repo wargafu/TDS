@@ -1,0 +1,8 @@
+{
+  "defaults": {
+    "background": "var(--tds-download-bg)",
+    "border": "var(--tds-download-border)",
+    "color": "var(--tds-download-color)",
+    "accent": "var(--tds-download-accent)"
+  }
+}

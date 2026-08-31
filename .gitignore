@@ -37,3 +37,6 @@ pnpm-debug.log*
 # Cache
 .turbo/
 .cache/
+
+# Dépôts de référence locaux — ne pas empaqueter ni publier
+reference/dsfr/
