@@ -30,6 +30,42 @@ const { hasSidebar } = (Astro.locals as any).starlightRoute;
   <div class="main-frame"><slot /></div>
 </div>
 
+<script is:inline>
+  (() => {
+    const selectTabFromHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash.startsWith('tab-panel-')) return;
+
+      const panel = document.getElementById(hash);
+      const tabs = panel?.closest('starlight-tabs');
+      const tab = tabs?.querySelector(`[role="tab"][href="#${hash}"]`);
+
+      if (tab instanceof HTMLElement && tab.getAttribute('aria-selected') !== 'true') {
+        tab.click();
+      }
+    };
+
+    document.addEventListener(
+      'click',
+      (event) => {
+        if (!(event.target instanceof Element)) return;
+
+        const tab = event.target.closest('starlight-tabs [role="tab"]');
+        if (!(tab instanceof HTMLAnchorElement)) return;
+
+        const hash = tab.getAttribute('href');
+        if (hash?.startsWith('#tab-panel-')) {
+          window.history.replaceState(null, '', hash);
+        }
+      },
+      true
+    );
+
+    window.addEventListener('hashchange', selectTabFromHash);
+    window.addEventListener('DOMContentLoaded', selectTabFromHash);
+  })();
+</script>
+
 <style>
   .page {
     flex-direction: column;

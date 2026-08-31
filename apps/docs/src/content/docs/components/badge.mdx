@@ -10,18 +10,61 @@ import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 <Tabs>
 <TabItem label="Présentation">
 
-Les badges indiquent un statut, une catégorie ou un compteur. Ils sont toujours accompagnés
-d'un texte visible ou d'un `aria-label` pour l'accessibilité.
+<div class="tds-component-intro">
+  <p class="tds-component-intro__eyebrow">Statut · Catégorie · Compteur</p>
+  <p>
+    Les badges mettent en évidence une information courte et immédiatement identifiable sans
+    interrompre la lecture principale.
+  </p>
+</div>
+
+<div class="tds-component-grid">
+  <div class="tds-component-card">
+    <strong>À utiliser pour</strong>
+    <ul>
+      <li>l'état d'un dossier ou d'une démarche ;</li>
+      <li>une catégorie ou un type de contenu ;</li>
+      <li>un compteur court associé à une section.</li>
+    </ul>
+  </div>
+  <div class="tds-component-card">
+    <strong>À éviter pour</strong>
+    <p>
+      Une action, une longue phrase ou une information qui dépendrait uniquement d'une couleur. Dans
+      ces cas, utilisez respectivement un bouton, un texte descriptif ou un composant d'alerte.
+    </p>
+  </div>
+</div>
+
+<Aside type="note" title="Règle de contenu">
+  Un badge doit rester court, lisible et utile au contexte. Le libellé porte toujours l'information
+  : la couleur ne suffit jamais à elle seule.
+</Aside>
 
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#badge" title="Démo interactive du composant Badge" style="width:100%; height: 16rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;" loading="lazy"></iframe>
+<p>
+  Comparez les cinq variantes, la forme rectangulaire et les badges avec point de statut dans le
+  terrain de jeu.
+</p>
+
+<iframe
+  src="/playground/#badge"
+  title="Démo interactive du composant Badge"
+  style="width:100%; height: 20rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
 
 [Ouvrir le terrain de jeu complet →](/playground/#badge)
 
 </TabItem>
 <TabItem label="Design">
+
+<p>
+  Le Badge privilégie une forme compacte, un contraste lisible et une hiérarchie claire entre
+  l'information et la surface colorée.
+</p>
 
 <div class="tds-preview">
   <div class="tds-preview__stage" style="flex-wrap:wrap;gap:0.5rem;">
@@ -40,7 +83,7 @@ d'un texte visible ou d'un `aria-label` pour l'accessibilité.
 ## Importation
 
 ```css
-@import "@tdgs/core/components/badge/badge.css";
+@import '@tdgs/core/components/badge/badge.css';
 ```
 
 ### Variantes
@@ -105,6 +148,23 @@ d'un texte visible ou d'un `aria-label` pour l'accessibilité.
   porte toujours l'information. N'utilisez jamais une couleur seule (ex. un badge vide, juste
   coloré) pour communiquer un statut : ajoutez systématiquement un libellé texte.
 </Aside>
+
+<div class="tds-component-grid">
+  <div class="tds-component-card">
+    <strong>Contraste et couleur</strong>
+    <p>
+      Vérifiez le contraste du texte dans chaque thème. Le rouge institutionnel TDGS n'est pas
+      automatiquement un état d'erreur.
+    </p>
+  </div>
+  <div class="tds-component-card">
+    <strong>Lecteurs d'écran</strong>
+    <p>
+      Le point décoratif est masqué avec <code>aria-hidden="true"</code>. Le texte visible reste la
+      source de l'information annoncée.
+    </p>
+  </div>
+</div>
 
 </TabItem>
 </Tabs>
