@@ -21,15 +21,36 @@ const AXE_SOURCE = readFileSync(
   'utf-8'
 );
 const URL = process.argv[2] ?? 'http://localhost:4322/playground/';
+const IS_CI = process.env.CI === 'true' || process.env.CI === '1';
 
-const browser = await puppeteer.launch({ headless: true });
+let browser;
 try {
+  browser = await puppeteer.launch({
+    headless: true,
+    timeout: 30_000,
+    protocolTimeout: 30_000,
+    waitForInitialPage: false,
+    ...(IS_CI
+      ? {
+          args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+          ],
+          dumpio: true,
+        }
+      : {}),
+  });
+
   const page = await browser.newPage();
+  page.setDefaultNavigationTimeout(30_000);
+  page.setDefaultTimeout(30_000);
   // `networkidle0` peut ne jamais être atteint lorsqu’un serveur conserve une
   // connexion ouverte. Le contrôle axe porte sur le DOM rendu, donc
   // `domcontentloaded` est plus déterministe en local comme en CI.
-  await page.goto(URL, { waitUntil: 'commit' });
-  await page.waitForSelector('main');
+  await page.goto(URL, { waitUntil: 'domcontentloaded' });
+  await page.waitForSelector('main', { timeout: 30_000 });
   await page.evaluate(AXE_SOURCE);
 
   const results = await page.evaluate(async () => {
@@ -47,12 +68,18 @@ try {
         process.stderr.write(`      ${node.target.join(' ')}\n`);
       }
     }
-    process.exit(1);
+    process.exitCode = 1;
+  } else {
+    process.stdout.write(
+      `[test-a11y] 0 violation sur ${URL} (${results.passes.length} règles passées).\n`
+    );
   }
-
-  process.stdout.write(
-    `[test-a11y] 0 violation sur ${URL} (${results.passes.length} règles passées).\n`
-  );
+} catch (error) {
+  const details = error instanceof Error ? (error.stack ?? error.message) : String(error);
+  process.stderr.write(`[test-a11y] Échec du contrôle sur ${URL} :\n${details}\n`);
+  process.exitCode = 1;
 } finally {
-  await browser.close();
+  if (browser) {
+    await browser.close();
+  }
 }

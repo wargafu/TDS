@@ -10,7 +10,7 @@
     "check:performance": "node scripts/check-performance.mjs",
     "check:links": "node scripts/check-links.mjs",
     "typecheck": "astro check",
-    "test:a11y": "start-server-and-test \"astro preview --port 4322\" http://localhost:4322 \"node scripts/test-a11y.mjs http://localhost:4322/playground/\""
+    "test:a11y": "start-server-and-test \"astro preview --host 127.0.0.1 --port 4322\" http://127.0.0.1:4322 \"node scripts/test-a11y.mjs http://127.0.0.1:4322/playground/\""
   },
   "dependencies": {
     "@astrojs/starlight": "^0.32.0",

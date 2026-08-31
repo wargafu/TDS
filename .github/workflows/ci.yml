@@ -103,6 +103,9 @@ jobs:
       - name: Check documentation performance budget
         run: pnpm --filter tds-docs check:performance
 
+      - name: Install Chromium for accessibility tests
+        run: pnpm --filter tds-docs exec puppeteer browsers install chrome
+
       # ── Accessibilité automatisée (axe-core + Puppeteer) ───────
       - name: Test accessibility
         run: pnpm --filter tds-docs test:a11y
