@@ -11,6 +11,9 @@
 :root {
   --sl-font: 'Source Sans 3', 'Public Sans', system-ui, -apple-system, sans-serif;
   --sl-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --tds-brand-blue: #0b3a82;
+  --tds-brand-yellow: #f5c116;
+  --tds-brand-red: #d8222a;
 }
 
 /* ─── 3bis. Barre de sections DSFR — ajoute une ligne sous le header ─
@@ -169,18 +172,55 @@ body::before {
 }
 
 /* ─── 8. Sidebar ─────────────────────────────────────────────── */
-/* Page active dans la sidebar */
-.sidebar-content a[aria-current='page'],
-[data-theme='light'] .sidebar-content a[aria-current='page'] {
-  background: #d9e3ff !important; /* blue.100 */
-  color: #0033a0 !important;
-  font-weight: 600;
+.sidebar-content {
+  padding-block: 1.25rem 2rem;
 }
 
-:root .sidebar-content a[aria-current='page'] {
-  background: #001647 !important; /* accent-low dark mode */
-  color: #6b94ff !important;
-  font-weight: 600;
+.sidebar-content .top-level {
+  padding-block-end: 1rem;
+}
+
+.sidebar-content details > summary {
+  min-height: 2.5rem;
+  border-radius: 0.5rem;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.sidebar-content details > summary:hover,
+.sidebar-content details > summary:focus-visible,
+.sidebar-content details[open] > summary {
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+}
+
+.sidebar-content details > summary:focus-visible,
+.sidebar-content a:focus-visible {
+  outline: 0.1875rem solid var(--sl-color-accent);
+  outline-offset: 0.125rem;
+}
+
+.sidebar-content a {
+  display: flex;
+  min-height: 2.375rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding-block: 0.45rem;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.sidebar-content a:hover {
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+}
+
+.sidebar-content a[aria-current='page'] {
+  background: var(--sl-color-accent-low) !important;
+  color: var(--sl-color-text-accent) !important;
+  font-weight: 700;
 }
 
 /* ─── 9. Tableaux — style institutionnel ─────────────────────── */
@@ -667,21 +707,92 @@ body::before {
 /* La largeur par défaut de Starlight (45rem) est adaptée à un article court,
    mais trop étroite pour comparer des variantes et lire du code. */
 :root {
-  --sl-content-width: 62rem;
+  --tds-doc-content-width: 68rem;
+  --tds-doc-toc-width: 14rem;
+  --sl-content-width: var(--tds-doc-content-width);
+  --tds-tabs-border: var(--sl-color-gray-5);
+  --tds-tabs-surface: var(--sl-color-gray-6);
+  --tds-tabs-panel-surface: var(--sl-color-black);
+  --tds-tabs-label: var(--sl-color-gray-3);
+  --tds-tabs-active-surface: var(--sl-color-accent);
+  --tds-tabs-active-label: var(--sl-color-text-invert);
 }
 
 .sl-markdown-content > starlight-tabs {
   display: block;
-  margin-block-start: 1rem;
+  margin-block: 1.5rem 2rem;
+}
+
+.tds-tabs-heading {
+  margin: 0 0 0.625rem !important;
+  color: var(--tds-tabs-label);
+  font-size: var(--sl-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sl-markdown-content > starlight-tabs > .tablist-wrapper {
+  overflow-x: auto;
+  padding: 0.375rem;
+  border: 1px solid var(--tds-tabs-border);
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: var(--tds-tabs-surface);
+  scrollbar-width: thin;
+  scrollbar-color: var(--sl-color-gray-4) transparent;
+}
+
+.sl-markdown-content > starlight-tabs > .tablist-wrapper > [role='tablist'] {
+  display: flex;
+  min-width: max-content;
+  gap: 0.25rem;
+  border: 0;
+}
+
+.sl-markdown-content > starlight-tabs .tab {
+  margin: 0;
+}
+
+.sl-markdown-content > starlight-tabs .tab > [role='tab'] {
+  min-height: 2.75rem;
+  padding: 0.625rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--tds-tabs-label);
+  font-size: var(--sl-text-sm);
+  font-weight: 600;
+  line-height: 1.25;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.sl-markdown-content > starlight-tabs .tab > [role='tab']:hover {
+  background: var(--sl-color-gray-5);
+  color: var(--sl-color-white);
+}
+
+.sl-markdown-content > starlight-tabs .tab > [role='tab'][aria-selected='true'] {
+  background: var(--tds-tabs-active-surface);
+  color: var(--tds-tabs-active-label);
+  box-shadow: var(--sl-shadow-sm);
+}
+
+.sl-markdown-content > starlight-tabs .tab > [role='tab']:focus-visible {
+  outline: 0.1875rem solid var(--sl-color-accent);
+  outline-offset: 0.125rem;
 }
 
 .sl-markdown-content > starlight-tabs > [role='tabpanel'] {
+  min-height: 8rem;
   margin-top: 0;
   padding: 1.5rem;
-  border: 1px solid var(--sl-color-gray-5);
+  border: 1px solid var(--tds-tabs-border);
   border-top: 0;
-  border-radius: 0 0 0.5rem 0.5rem;
-  background: var(--sl-color-gray-6);
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: var(--tds-tabs-panel-surface);
+  box-shadow: var(--sl-shadow-sm);
 }
 
 .sl-markdown-content > starlight-tabs > [role='tabpanel'] > :first-child {
@@ -738,9 +849,42 @@ body::before {
   padding-inline-start: 1.25rem;
 }
 
+/* Sur les écrans courants, la colonne « Sur cette page » comprime inutilement
+   les exemples de composants. Le sommaire reste disponible via la TOC mobile
+   et les ancres de page, puis revient comme rail compact sur les très grands
+   écrans où l'espace le permet réellement. */
+@media (min-width: 72rem) and (max-width: 95.99rem) {
+  html[data-has-sidebar][data-has-toc] .right-sidebar-container {
+    display: none;
+  }
+
+  html[data-has-sidebar][data-has-toc] .main-pane {
+    width: 100%;
+  }
+}
+
+@media (min-width: 96rem) {
+  html[data-has-sidebar][data-has-toc] .right-sidebar-container {
+    width: var(--tds-doc-toc-width);
+  }
+
+  html[data-has-sidebar][data-has-toc] .main-pane {
+    width: calc(100% - var(--tds-doc-toc-width));
+  }
+
+  html[data-has-sidebar][data-has-toc] .right-sidebar-panel .sl-container {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 @media (max-width: 40rem) {
   .sl-markdown-content > starlight-tabs > [role='tabpanel'] {
     padding: 1rem;
+  }
+
+  .sl-markdown-content > starlight-tabs .tab > [role='tab'] {
+    padding-inline: 0.875rem;
   }
 
   .tds-component-grid {

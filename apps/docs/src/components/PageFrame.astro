@@ -32,17 +32,94 @@ const { hasSidebar } = (Astro.locals as any).starlightRoute;
 
 <script is:inline>
   (() => {
-    const selectTabFromHash = () => {
-      const hash = window.location.hash.slice(1);
-      if (!hash.startsWith('tab-panel-')) return;
+    let suppressTabHashUpdate = false;
 
-      const panel = document.getElementById(hash);
-      const tabs = panel?.closest('starlight-tabs');
-      const tab = tabs?.querySelector(`[role="tab"][href="#${hash}"]`);
+    const enhanceTabs = () => {
+      document.querySelectorAll('starlight-tabs').forEach((tabs) => {
+        if (tabs.querySelector('.tds-tabs-heading')) return;
 
-      if (tab instanceof HTMLElement && tab.getAttribute('aria-selected') !== 'true') {
+        const heading = document.createElement('p');
+        heading.className = 'tds-tabs-heading';
+        heading.textContent = 'Explorer ce composant';
+        tabs.prepend(heading);
+      });
+    };
+
+    const getTabPanel = (element) => {
+      const panel = element?.closest('[role="tabpanel"]');
+      if (!panel || panel.parentElement?.tagName.toLowerCase() !== 'starlight-tabs') return null;
+      return panel;
+    };
+
+    const findTabForPanel = (panel) => {
+      const tabs = panel?.parentElement;
+      if (!tabs) return null;
+
+      return [...tabs.querySelectorAll('[role="tab"]')].find(
+        (tab) => tab.getAttribute('href') === `#${panel.id}`
+      );
+    };
+
+    const activatePanel = (panel) => {
+      const tab = findTabForPanel(panel);
+      if (!tab || tab.getAttribute('aria-selected') === 'true') return;
+
+      suppressTabHashUpdate = true;
+      if (tab instanceof HTMLElement) {
         tab.click();
       }
+      suppressTabHashUpdate = false;
+    };
+
+    const syncTabTableOfContents = () => {
+      document.querySelectorAll('starlight-toc a, mobile-starlight-toc a').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (!href?.startsWith('#')) return;
+
+        const target = document.getElementById(href.slice(1));
+        const panel = getTabPanel(target);
+        const item = link.closest('li');
+        if (!item) return;
+
+        if (panel) {
+          item.dataset.tdsTabPanel = panel.id;
+        } else {
+          delete item.dataset.tdsTabPanel;
+        }
+      });
+
+      const activePanels = new Set(
+        [...document.querySelectorAll('starlight-tabs > [role="tabpanel"]:not([hidden])')].map(
+          (panel) => panel.id
+        )
+      );
+
+      document.querySelectorAll('li[data-tds-tab-panel]').forEach((item) => {
+        item.hidden = !activePanels.has(item.dataset.tdsTabPanel);
+      });
+    };
+
+    const scrollToTarget = (target, panel) => {
+      window.requestAnimationFrame(() => {
+        if (target === panel) {
+          panel.parentElement?.scrollIntoView({ block: 'start' });
+        } else {
+          target?.scrollIntoView({ block: 'start' });
+        }
+      });
+    };
+
+    const selectTabFromHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+
+      const target = document.getElementById(hash);
+      const panel = getTabPanel(target);
+      if (!panel) return;
+
+      activatePanel(panel);
+      scrollToTarget(target, panel);
+      syncTabTableOfContents();
     };
 
     document.addEventListener(
@@ -50,19 +127,39 @@ const { hasSidebar } = (Astro.locals as any).starlightRoute;
       (event) => {
         if (!(event.target instanceof Element)) return;
 
-        const tab = event.target.closest('starlight-tabs [role="tab"]');
-        if (!(tab instanceof HTMLAnchorElement)) return;
+        const anchor = event.target.closest('a[href^="#"]');
+        if (!(anchor instanceof HTMLAnchorElement)) return;
 
-        const hash = tab.getAttribute('href');
-        if (hash?.startsWith('#tab-panel-')) {
-          window.history.replaceState(null, '', hash);
+        const tab = anchor.closest('starlight-tabs [role="tab"]');
+        if (tab instanceof HTMLAnchorElement) {
+          if (!suppressTabHashUpdate) {
+            const tabHash = tab.getAttribute('href');
+            if (tabHash) window.history.replaceState(null, '', tabHash);
+          }
+          window.requestAnimationFrame(syncTabTableOfContents);
+          return;
         }
+
+        const hash = anchor.getAttribute('href');
+        const target = hash ? document.getElementById(hash.slice(1)) : null;
+        const panel = getTabPanel(target);
+        if (!hash || !target || !panel) return;
+
+        event.preventDefault();
+        activatePanel(panel);
+        window.history.pushState(null, '', hash);
+        scrollToTarget(target, panel);
+        window.requestAnimationFrame(syncTabTableOfContents);
       },
       true
     );
 
     window.addEventListener('hashchange', selectTabFromHash);
-    window.addEventListener('DOMContentLoaded', selectTabFromHash);
+    window.addEventListener('DOMContentLoaded', () => {
+      enhanceTabs();
+      syncTabTableOfContents();
+      selectTabFromHash();
+    });
   })();
 </script>
 
