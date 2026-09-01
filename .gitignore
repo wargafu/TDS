@@ -29,6 +29,11 @@ apps/docs/public/tds/
 .DS_Store
 Thumbs.db
 
+# Crash dumps / scratch
+*.stackdump
+scratch-*.log
+scratch-*.txt
+
 # Logs
 *.log
 npm-debug.log*

@@ -2,10 +2,14 @@ dist/
 node_modules/
 .agents/
 apps/docs/.astro/
+apps/docs/dist/
 apps/docs/public/tds/
 .pnpm-store/
+.turbo/
 *.tsbuildinfo
 pnpm-lock.yaml
+# Clone de référence local (git-ignoré, absent en CI) — ne pas formater.
+reference/
 # Fichiers générés par le générateur de tokens : la valeur doit rester identique à tokens-src/.
 packages/core/src/tokens/*.ts
 packages/core/src/tokens/*.json
