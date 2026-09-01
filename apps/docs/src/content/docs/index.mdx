@@ -2,42 +2,70 @@
 title: TDGS — Tchad Design System
 description: Le système de design open source pour les services numériques publics du Tchad.
 template: splash
-hero:
-  title: TDGS — Tchad Design System
-  tagline: Une fondation open source pour construire des services publics tchadiens accessibles, cohérents et dignes de confiance.
-  image:
-    file: ../../assets/tdgs-logo.png
-    alt: TDGS — Tchad Design System
-  actions:
-    - text: Démarrage rapide
-      link: premiers-pas/installation/
-      icon: right-arrow
-      variant: primary
-    - text: Explorer les tokens
-      link: fondamentaux/colors/
-      icon: open-book
-      variant: secondary
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-<p class="tds-motto">Proposition open source pour les services publics du Tchad</p>
+<section class="tds-home-hero">
+  <div>
+    <p class="tds-home-hero__eyebrow">Proposition open source pour les services publics du Tchad</p>
+    <h1>TDGS — Tchad Design System</h1>
+    <p class="tds-home-hero__lead">
+      Une fondation commune pour construire des services publics tchadiens accessibles,
+      cohérents, sobres et maintenables.
+    </p>
+    <div class="tds-home-hero__actions">
+      <a class="tds-home-hero__primary" href="/premiers-pas/installation/">Demarrer</a>
+      <a class="tds-home-hero__secondary" href="/components/">Explorer les composants</a>
+    </div>
+  </div>
+  <div class="tds-home-hero__panel" aria-label="Resume du systeme">
+    <span>WCAG 2.2 AA</span>
+    <strong>Core CSS-first</strong>
+    <span>FR LTR et arabe RTL</span>
+    <span>Clair, sombre, contraste eleve</span>
+  </div>
+</section>
 
-> **Statut du projet :** TDGS est une initiative open source indépendante, conçue en vue
-> d’une adoption par les institutions publiques tchadiennes. Elle ne constitue pas encore
-> une norme officiellement homologuée par l’État.
+<div class="tds-status-banner">
+  <strong>Statut du projet</strong>
+  <span>
+    TDGS est une initiative open source independante, concue en vue d'une adoption par les
+    institutions publiques tchadiennes. Elle ne constitue pas encore une norme officiellement
+    homologuee par l'Etat.
+  </span>
+</div>
+
+## Acces rapides
 
 <CardGrid stagger>
-  <Card title="Design Tokens" icon="seti:json">
-    Couleurs, typographie, espacement, ombres — définis une fois, utilisés partout en TypeScript, JSON et CSS.
+  <Card title="Fondamentaux" icon="seti:json">
+    Couleurs, typographie, espacement, themes et RTL — [ouvrir →](/fondamentaux/)
   </Card>
   <Card title="Composants" icon="puzzle">
-    Button, Input et plus — avec variantes, états, fondations d'accessibilité et exemples HTML / React / Vue.
+    Catalogue, variantes, etats, accessibilite et exemples — [ouvrir →](/components/)
   </Card>
-  <Card title="Patterns gouvernementaux" icon="list-format">
-    Formulaire de connexion, multi-étapes, résumé d'erreurs, page de confirmation.
+  <Card title="Modeles" icon="list-format">
+    Pages types pour demarches et portails publics — [ouvrir →](/modeles/)
   </Card>
-  <Card title="Guide accessibilité" icon="approve-check">
-    Cible WCAG 2.2 AA, navigation clavier, lecteurs d'écran, support arabe RTL.
+  <Card title="Integrations" icon="approve-check">
+    HTML/CSS, React et Vue autour de `@tdgs/core` — [ouvrir →](/integrations/)
   </Card>
 </CardGrid>
+
+## Ce que TDGS apporte
+
+<div class="tds-feature-band">
+  <div>
+    <strong>Une base technique stable</strong>
+    <p>Tokens, CSS distribue, exports controles et composants documentes dans un meme socle.</p>
+  </div>
+  <div>
+    <strong>Une experience publique coherente</strong>
+    <p>Navigation, formulaires, alertes, tableaux et modeles de pages alignes sur des usages administratifs.</p>
+  </div>
+  <div>
+    <strong>Une identite tchadienne sobre</strong>
+    <p>Bleu institutionnel, jaune et rouge utilises avec retenue, sans confusion avec les etats d'erreur.</p>
+  </div>
+</div>

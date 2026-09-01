@@ -6,7 +6,7 @@
 ## Position actuelle
 
 Le dépôt est techniquement fonctionnel et prêt pour des intégrations contrôlées et des projets
-pilotes. Le catalogue couvre 21 familles de composants CSS-first, avec des bindings React et Vue,
+pilotes. Le catalogue couvre 35 familles de composants CSS-first, avec des bindings React et Vue,
 un utilitaire d'icônes SVG initial, des tokens générés et des templates statiques de portail
 citoyen et de tableau de bord administratif.
 

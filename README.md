@@ -2,7 +2,7 @@
 
 > Système de design open source proposé pour les services numériques publics du Tchad.
 
-[![CI](https://github.com/wargafu/TDGS/actions/workflows/ci.yml/badge.svg)](https://github.com/wargafu/TDGS/actions/workflows/ci.yml)
+[![CI](https://github.com/kisaigo/TDGS/actions/workflows/ci.yml/badge.svg)](https://github.com/kisaigo/TDGS/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/badge/npm-pr%C3%AAt%20%C3%A0%20publier-lightgrey.svg)](#installation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -42,36 +42,43 @@ Inspiré de [GOV.UK Design System](https://design-system.service.gov.uk/), [DSFR
 
 ### 🧩 Composants
 
-| Composant        | Classes CSS              | Types TS                      | Accessibilité                                 |
-| ---------------- | ------------------------ | ----------------------------- | --------------------------------------------- |
-| Button           | `tds-button`             | `ButtonVariant`, `ButtonSize` | Focus et états testés ✅                      |
-| Input / Form     | `tds-input`, `tds-field` | `InputVariant`, `InputSize`   | Labels et ARIA testés ✅                      |
-| Alert            | `tds-alert`              | `AlertVariant`                | `role=alert` ✅                               |
-| Badge            | `tds-badge`              | `BadgeVariant`                | Variantes sémantiques ✅                      |
-| Card             | `tds-card`               | `CardVariant`                 | ✅                                            |
-| Link             | `tds-link`               | `LinkVariant`                 | Focus visible ✅                              |
-| Table            | `tds-table`              | —                             | `scope`, `caption` ✅                         |
-| Header           | `tds-header`             | `HeaderVariant`               | Lien d'évitement recommandé ✅                |
-| Navigation       | `tds-nav`                | —                             | `aria-current="page"` ✅                      |
-| Breadcrumb       | `tds-breadcrumb`         | —                             | `aria-current="page"` ✅                      |
-| Pagination       | `tds-pagination`         | —                             | `aria-label`, `aria-current` ✅               |
-| Modal            | `tds-modal`              | `ModalSize`                   | Focus trap natif (`<dialog>`) ✅              |
-| Skip Link        | `tds-skip-link`          | —                             | Premier élément focusable ✅                  |
-| Footer           | `tds-footer`             | —                             | Lien déclaration d'accessibilité ✅           |
-| Accordion        | `tds-accordion`          | —                             | `<details>`/`<summary>` natif, zéro JS ✅     |
-| Tabs             | `tds-tabs`               | —                             | WAI-ARIA APG (roving tabindex) ✅             |
-| Tooltip          | `tds-tooltip`            | —                             | CSS pur, limitation tactile documentée ⚠️     |
-| Recherche        | `tds-search`             | `SearchField`                 | `searchbox` natif, libellé obligatoire ✅     |
-| Étapes           | `tds-stepper`            | `Stepper`                     | `aria-current="step"` ✅                      |
-| Dépôt de fichier | `tds-file-upload`        | `FileUpload`                  | `input[type=file]`, erreurs associées ✅      |
-| Progression      | `tds-progress`           | `Progress`                    | `role=progressbar`, valeurs ARIA ✅           |
-| Callout          | `tds-callout`            | `CalloutVariant`              | Titre structuré, variantes sémantiques ✅     |
-| Notice           | `tds-notice`             | `NoticeVariant`               | Annonce status/alert, fermeture accessible ✅ |
-| Tag              | `tds-tag`                | `TagVariant`, `TagSize`       | Texte explicite, suppression accessible ✅    |
-| Tile             | `tds-tile`               | `TileVariant`                 | Lien unique, focus visible ✅                 |
-| Download         | `tds-download`           | —                             | Lien explicite et métadonnées ✅              |
-| Quote            | `tds-quote`              | —                             | Citation sémantique avec source ✅            |
-| Summary          | `tds-summary`            | `SummaryItem`                 | Navigation structurée et libellée ✅          |
+| Composant         | Classes CSS              | Types TS                      | Accessibilité                                   |
+| ----------------- | ------------------------ | ----------------------------- | ----------------------------------------------- |
+| Button            | `tds-button`             | `ButtonVariant`, `ButtonSize` | Focus et états testés ✅                        |
+| Input / Form      | `tds-input`, `tds-field` | `InputVariant`, `InputSize`   | Labels et ARIA testés ✅                        |
+| Alert             | `tds-alert`              | `AlertVariant`                | `role=alert` ✅                                 |
+| Badge             | `tds-badge`              | `BadgeVariant`                | Variantes sémantiques ✅                        |
+| Card              | `tds-card`               | `CardVariant`                 | ✅                                              |
+| Link              | `tds-link`               | `LinkVariant`                 | Focus visible ✅                                |
+| Table             | `tds-table`              | —                             | `scope`, `caption` ✅                           |
+| Header            | `tds-header`             | `HeaderVariant`               | Lien d'évitement recommandé ✅                  |
+| Navigation        | `tds-nav`                | —                             | `aria-current="page"` ✅                        |
+| Breadcrumb        | `tds-breadcrumb`         | —                             | `aria-current="page"` ✅                        |
+| Pagination        | `tds-pagination`         | —                             | `aria-label`, `aria-current` ✅                 |
+| Modal             | `tds-modal`              | `ModalSize`                   | Focus trap natif (`<dialog>`) ✅                |
+| Skip Link         | `tds-skip-link`          | —                             | Premier élément focusable ✅                    |
+| Footer            | `tds-footer`             | —                             | Lien déclaration d'accessibilité ✅             |
+| Accordion         | `tds-accordion`          | —                             | `<details>`/`<summary>` natif, zéro JS ✅       |
+| Tabs              | `tds-tabs`               | —                             | WAI-ARIA APG (roving tabindex) ✅               |
+| Tooltip           | `tds-tooltip`            | —                             | CSS pur, limitation tactile documentée ⚠️       |
+| Recherche         | `tds-search`             | `SearchField`                 | `searchbox` natif, libellé obligatoire ✅       |
+| Étapes            | `tds-stepper`            | `Stepper`                     | `aria-current="step"` ✅                        |
+| Dépôt de fichier  | `tds-file-upload`        | `FileUpload`                  | `input[type=file]`, erreurs associées ✅        |
+| Progression       | `tds-progress`           | `Progress`                    | `role=progressbar`, valeurs ARIA ✅             |
+| Callout           | `tds-callout`            | `CalloutVariant`              | Titre structuré, variantes sémantiques ✅       |
+| Notice            | `tds-notice`             | `NoticeVariant`               | Annonce status/alert, fermeture accessible ✅   |
+| Tag               | `tds-tag`                | `TagVariant`, `TagSize`       | Texte explicite, suppression accessible ✅      |
+| Tile              | `tds-tile`               | `TileVariant`                 | Lien unique, focus visible ✅                   |
+| Download          | `tds-download`           | —                             | Lien explicite et métadonnées ✅                |
+| Quote             | `tds-quote`              | —                             | Citation sémantique avec source ✅              |
+| Summary           | `tds-summary`            | `SummaryItem`                 | Navigation structurée et libellée ✅            |
+| Mot de passe      | `tds-password`           | `FieldSize`                   | Bascule afficher/masquer annoncée ✅            |
+| Curseur de plage  | `tds-range`              | —                             | `input[type=range]` natif, valeur accessible ✅ |
+| Contrôle segmenté | `tds-segmented`          | `SegmentedOption`             | `radiogroup` natif, clavier ✅                  |
+| Menu déroulant    | `tds-dropdown`           | —                             | `aria-haspopup`/`aria-expanded` ✅              |
+| Menu latéral      | `tds-sidemenu`           | `SidemenuItem`                | `aria-current=\"page\"`, focus visible ✅       |
+| Partage           | `tds-share`              | `ShareNetwork`                | Liens libellés, `target=_blank` ✅              |
+| Bloc de marque    | `tds-logo`               | —                             | Marque décorative, variante fond sombre ✅      |
 
 Le composant `Icon` fournit en complément un jeu initial d'icônes SVG indépendantes, utilisables
 avec les thèmes TDGS.
@@ -222,7 +229,7 @@ TDGS/
 ### Installation
 
 ```bash
-git clone https://github.com/wargafu/TDGS.git
+git clone https://github.com/kisaigo/TDGS.git
 cd TDGS
 pnpm install
 ```
@@ -317,7 +324,7 @@ git push origin feat/nom-du-composant
 ### v0.1 — Fondations ✅
 
 - [x] 7 systèmes de tokens (couleurs, typo, espacement, radius, shadow, motion, z-index)
-- [x] 28 composants (Button, Input, Alert, Badge, Card, Link, Table, Header, Navigation, Breadcrumb, Pagination, Modal, Skip Link, Footer, Accordion, Tabs, Tooltip, Recherche, Étapes, Dépôt de fichier, Progression, Callout, Notice, Tag, Tile, Download, Quote, Summary)
+- [x] 35 composants (Button, Input, Alert, Badge, Card, Link, Table, Header, Navigation, Breadcrumb, Pagination, Modal, Skip Link, Footer, Accordion, Tabs, Tooltip, Recherche, Étapes, Dépôt de fichier, Progression, Callout, Notice, Tag, Tile, Download, Quote, Summary, Mot de passe, Curseur de plage, Contrôle segmenté, Menu déroulant, Menu latéral, Partage, Bloc de marque)
 - [x] Build system industriel + CI/CD
 - [x] Documentation Astro Starlight
 - [x] Pipeline de génération de tokens à source unique, tests automatisés, stylelint, vérifications a11y (axe-core)
@@ -380,8 +387,8 @@ git push origin feat/nom-du-composant
 
 ## Contact
 
-- **Issues** : [github.com/wargafu/TDGS/issues](https://github.com/wargafu/TDGS/issues)
-- **Discussions** : [github.com/wargafu/TDGS/discussions](https://github.com/wargafu/TDGS/discussions)
+- **Issues** : [github.com/kisaigo/TDGS/issues](https://github.com/kisaigo/TDGS/issues)
+- **Discussions** : [github.com/kisaigo/TDGS/discussions](https://github.com/kisaigo/TDGS/discussions)
 - **Email** : design-system@gouv.td _(à configurer)_
 
 ---

@@ -1,0 +1,62 @@
+---
+title: Contrôle segmenté
+description: Sélecteur TDGS à choix unique présenté comme un groupe de boutons.
+sidebar:
+  order: 32
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Segmented` présente un choix unique (comme des radios) sous la forme d'un
+groupe de segments. Idéal pour les préférences d'affichage ou les filtres à
+peu de valeurs, dans un espace réduit.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#segmented"
+  title="Démo du composant Contrôle segmenté"
+  style="width:100%; height: 18rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/segmented/segmented.css';
+```
+
+```html
+<div class="tds-segmented" role="radiogroup" aria-label="Fréquence">
+  <div class="tds-segmented__item">
+    <input id="freq-mois" class="tds-segmented__input" type="radio" name="freq" value="mois" />
+    <label class="tds-segmented__label" for="freq-mois">Mensuel</label>
+  </div>
+  <div class="tds-segmented__item">
+    <input id="freq-annee" class="tds-segmented__input" type="radio" name="freq" value="annee" checked />
+    <label class="tds-segmented__label" for="freq-annee">Annuel</label>
+  </div>
+</div>
+```
+
+| Intégration | API                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------ |
+| React       | `<Segmented label="Fréquence" value="annee" options={[{ value: 'mois', label: 'Mensuel' }, { value: 'annee', label: 'Annuel' }]} />` |
+| Vue         | `<TdsSegmented v-model="freq" label="Fréquence" :options="[{ value: 'mois', label: 'Mensuel' }, { value: 'annee', label: 'Annuel' }]" />` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Choix unique">
+  Le groupe porte `role="radiogroup"` et un `aria-label`. Les radios natives
+  restent focalisables et annoncent l'état sélectionné. La flèche de
+  navigation entre options est native.
+</Aside>
+
+</TabItem>
+</Tabs>

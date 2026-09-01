@@ -18,18 +18,18 @@ const logo = logos.dark ?? logos.light;
 
 <style>
   .site-title {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    gap: 0.2rem;
+    gap: 0.625rem;
     text-decoration: none;
     white-space: nowrap;
   }
   .site-title img {
-    height: 2.75rem;
-    width: 2.75rem;
-    border-radius: 6px;
-    object-fit: cover;
+    height: 2.5rem;
+    width: auto;
+    max-width: 2.5rem;
+    object-fit: contain;
     flex-shrink: 0;
   }
   .site-title__nation {
@@ -39,8 +39,8 @@ const logo = logos.dark ?? logos.light;
     min-width: 0;
   }
   .site-title__country {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 800;
     color: var(--sl-color-white);
     text-transform: uppercase;
     letter-spacing: 0.01em;

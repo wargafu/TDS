@@ -18,7 +18,7 @@
 <script is:inline>
   (() => {
     const storageKey = 'starlight-theme';
-    const getPreferred = () => (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    const getPreferred = () => 'light';
     const load = () => {
       const stored = typeof localStorage !== 'undefined' ? localStorage.getItem(storageKey) : null;
       return stored === 'light' || stored === 'dark' ? stored : getPreferred();

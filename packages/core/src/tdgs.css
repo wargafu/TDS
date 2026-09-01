@@ -39,3 +39,10 @@
 @import './components/download/download.css';
 @import './components/quote/quote.css';
 @import './components/summary/summary.css';
+@import './components/password/password.css';
+@import './components/range/range.css';
+@import './components/segmented/segmented.css';
+@import './components/dropdown/dropdown.css';
+@import './components/sidemenu/sidemenu.css';
+@import './components/share/share.css';
+@import './components/logo/logo.css';

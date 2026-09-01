@@ -20,6 +20,13 @@ import { Tile } from '../src/components/Tile';
 import { Download } from '../src/components/Download';
 import { Quote } from '../src/components/Quote';
 import { Summary } from '../src/components/Summary';
+import { Password } from '../src/components/Password';
+import { Range } from '../src/components/Range';
+import { Segmented } from '../src/components/Segmented';
+import { Dropdown } from '../src/components/Dropdown';
+import { Sidemenu } from '../src/components/Sidemenu';
+import { Share } from '../src/components/Share';
+import { Logo } from '../src/components/Logo';
 
 describe('Button', () => {
   it('applies variant and size classes', () => {
@@ -279,5 +286,107 @@ describe('Icon', () => {
 
     expect(container.querySelector('.tds-icon')?.getAttribute('aria-hidden')).toBe('true');
     expect(screen.getByRole('img', { name: 'Information' })).toBeTruthy();
+  });
+});
+
+describe('Password', () => {
+  it('starts as password and reveals the value on toggle', () => {
+    render(<Password label="Mot de passe" />);
+    const input = screen.getByLabelText('Mot de passe') as HTMLInputElement;
+    expect(input.type).toBe('password');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Afficher le mot de passe' }));
+    expect(input.type).toBe('text');
+  });
+});
+
+describe('Range', () => {
+  it('renders a labelled range input', () => {
+    render(<Range label="Budget" min={0} max={1000} defaultValue={250} />);
+    const slider = screen.getByRole('slider', { name: 'Budget' }) as HTMLInputElement;
+    expect(slider.type).toBe('range');
+    expect(slider.min).toBe('0');
+    expect(slider.max).toBe('1000');
+  });
+});
+
+describe('Segmented', () => {
+  it('checks the selected option inside a labelled radiogroup', () => {
+    render(
+      <Segmented
+        label="Fréquence"
+        defaultValue="annee"
+        options={[
+          { value: 'mois', label: 'Mensuel' },
+          { value: 'annee', label: 'Annuel' },
+        ]}
+      />
+    );
+    const radio = screen.getByRole('radio', { name: 'Annuel' }) as HTMLInputElement;
+    expect(radio.checked).toBe(true);
+    expect(screen.getByRole('radiogroup', { name: 'Fréquence' })).toBeTruthy();
+  });
+});
+
+describe('Dropdown', () => {
+  it('exposes a labelled menu trigger and toggles open state', () => {
+    render(
+      <Dropdown
+        trigger="Actions"
+        triggerProps={{ 'aria-label': 'Actions du dossier' }}
+      >
+        <li className="tds-dropdown__item">
+          <button type="button" className="tds-dropdown__link">
+            Modifier
+          </button>
+        </li>
+      </Dropdown>
+    );
+    const trigger = screen.getByRole('button', { name: 'Actions du dossier' });
+    expect(trigger.getAttribute('aria-haspopup')).toBe('menu');
+    expect(trigger.getAttribute('aria-expanded')).toBe('false');
+
+    fireEvent.click(trigger);
+    expect(trigger.getAttribute('aria-expanded')).toBe('true');
+  });
+});
+
+describe('Sidemenu', () => {
+  it('marks the current page link', () => {
+    render(
+      <Sidemenu
+        title="Mon dossier"
+        items={[
+          { id: '1', label: 'Aperçu', href: '#apercu', current: true },
+          { id: '2', label: 'Documents', href: '#documents' },
+        ]}
+      />
+    );
+    const current = screen.getByRole('link', { name: 'Aperçu' });
+    expect(current.getAttribute('aria-current')).toBe('page');
+  });
+});
+
+describe('Share', () => {
+  it('renders external share links', () => {
+    render(
+      <Share
+        links={[{ network: 'x', label: 'Partager sur X', href: 'https://x.com' }]}
+      />
+    );
+    const link = screen.getByRole('link', { name: 'Partager sur X' });
+    expect(link.getAttribute('target')).toBe('_blank');
+    expect(link.className).toContain('tds-share__link-x');
+  });
+});
+
+describe('Logo', () => {
+  it('renders the title and a decorative mark', () => {
+    const { container } = render(
+      <Logo mark={<span>T</span>} title="République du Tchad" subtitle="Portail des services" href="/" />
+    );
+    const link = screen.getByRole('link', { name: /République du Tchad/ });
+    expect(link.className).toContain('tds-logo');
+    expect(container.querySelector('.tds-logo__mark')?.getAttribute('aria-hidden')).toBe('true');
   });
 });

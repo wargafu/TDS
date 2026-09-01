@@ -17,8 +17,8 @@ export default defineConfig({
         root: { label: 'Français', lang: 'fr' },
       },
       logo: {
-        light: './src/assets/tdgs-logo.png',
-        dark: './src/assets/tdgs-logo.png',
+        light: './src/assets/Coat_of_arms_of_Chad.svg',
+        dark: './src/assets/Coat_of_arms_of_Chad.svg',
         alt: 'TDGS — Tchad Design System',
         replacesTitle: false,
       },
@@ -97,6 +97,9 @@ export default defineConfig({
                 { label: 'Input', slug: 'components/input' },
                 { label: 'Recherche', slug: 'components/search' },
                 { label: 'Dépôt de fichier', slug: 'components/file-upload' },
+                { label: 'Mot de passe', slug: 'components/password' },
+                { label: 'Curseur de plage', slug: 'components/range' },
+                { label: 'Contrôle segmenté', slug: 'components/segmented' },
               ],
             },
             {
@@ -108,6 +111,8 @@ export default defineConfig({
                 { label: 'Pagination', slug: 'components/pagination' },
                 { label: 'Skip Link', slug: 'components/skip-link' },
                 { label: 'Footer', slug: 'components/footer' },
+                { label: 'Menu latéral', slug: 'components/sidemenu' },
+                { label: 'Menu déroulant', slug: 'components/dropdown' },
               ],
             },
             {
@@ -123,6 +128,8 @@ export default defineConfig({
                 { label: 'Téléchargement', slug: 'components/download' },
                 { label: 'Citation', slug: 'components/quote' },
                 { label: 'Sommaire', slug: 'components/summary' },
+                { label: 'Bloc de marque', slug: 'components/logo' },
+                { label: 'Partage', slug: 'components/share' },
               ],
             },
             {

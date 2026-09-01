@@ -1,0 +1,59 @@
+---
+title: Curseur de plage
+description: Contrôle TDGS de saisie d'une valeur numérique dans une plage.
+sidebar:
+  order: 31
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Range` permet de choisir une valeur dans un intervalle (min/max) à l'aide d'un
+curseur. La valeur courante est affichée à côté du libellé. Le contrôle natif
+`input[type=range]` reste utilisable au clavier sans JavaScript.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#range"
+  title="Démo du composant Curseur de plage"
+  style="width:100%; height: 18rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/range/range.css';
+```
+
+```html
+<div class="tds-range">
+  <div class="tds-range__header">
+    <label class="tds-range__label" for="budget">Budget mensuel</label>
+    <span class="tds-range__value" aria-hidden="true">250 000 FCFA</span>
+  </div>
+  <input id="budget" class="tds-range__input" type="range" min="0" max="1000" value="250" step="10" />
+</div>
+```
+
+| Intégration | API                                                                 |
+| ----------- | ------------------------------------------------------------------- |
+| React       | `<Range label="Budget" min={0} max={1000} defaultValue={250} />`    |
+| Vue         | `<TdsRange v-model="budget" label="Budget" :min="0" :max="1000" />` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Valeur exposée">
+  La valeur affichée est décorative (`aria-hidden`) ; c'est l'élément `range`
+  natif qui porte le rôle `slider` et la valeur accessible. Les flèches du
+  clavier restent actives.
+</Aside>
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,10 @@
+{
+  "defaults": {
+    "background": "var(--tds-dropdown-bg)",
+    "border": "var(--tds-dropdown-border)",
+    "color": "var(--tds-dropdown-text)",
+    "muted": "var(--tds-dropdown-muted)",
+    "hoverBackground": "var(--tds-dropdown-hover-bg)",
+    "active": "var(--tds-dropdown-active)"
+  }
+}

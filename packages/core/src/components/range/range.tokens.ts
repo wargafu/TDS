@@ -1,0 +1,12 @@
+/** TDGS range tokens — curseur de plage. */
+export const range = {
+  defaults: {
+    trackBackground: 'var(--tds-range-track-bg)',
+    trackFilled: 'var(--tds-range-track-filled)',
+    thumbBackground: 'var(--tds-range-thumb-bg)',
+    color: 'var(--tds-range-color)',
+  },
+} as const;
+
+export type RangeTokens = typeof range;
+export default range;

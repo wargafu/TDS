@@ -1,0 +1,10 @@
+{
+  "defaults": {
+    "background": "var(--tds-sidemenu-bg)",
+    "border": "var(--tds-sidemenu-border)",
+    "color": "var(--tds-sidemenu-color)",
+    "muted": "var(--tds-sidemenu-muted)",
+    "active": "var(--tds-sidemenu-active)",
+    "hoverBackground": "var(--tds-sidemenu-hover-bg)"
+  }
+}

@@ -6,10 +6,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wargafu/TDGS.git",
+    "url": "https://github.com/kisaigo/TDGS.git",
     "directory": "packages/core"
   },
-  "homepage": "https://wargafu.github.io/TDGS/",
+  "homepage": "https://kisaigo.github.io/TDGS/",
   "publishConfig": {
     "access": "public"
   },
@@ -202,6 +202,41 @@
       "types": "./dist/components/summary/index.d.ts"
     },
     "./components/summary/summary.css": "./dist/components/summary/summary.css",
+    "./components/password": {
+      "import": "./dist/components/password/index.js",
+      "types": "./dist/components/password/index.d.ts"
+    },
+    "./components/password/password.css": "./dist/components/password/password.css",
+    "./components/range": {
+      "import": "./dist/components/range/index.js",
+      "types": "./dist/components/range/index.d.ts"
+    },
+    "./components/range/range.css": "./dist/components/range/range.css",
+    "./components/segmented": {
+      "import": "./dist/components/segmented/index.js",
+      "types": "./dist/components/segmented/index.d.ts"
+    },
+    "./components/segmented/segmented.css": "./dist/components/segmented/segmented.css",
+    "./components/dropdown": {
+      "import": "./dist/components/dropdown/index.js",
+      "types": "./dist/components/dropdown/index.d.ts"
+    },
+    "./components/dropdown/dropdown.css": "./dist/components/dropdown/dropdown.css",
+    "./components/sidemenu": {
+      "import": "./dist/components/sidemenu/index.js",
+      "types": "./dist/components/sidemenu/index.d.ts"
+    },
+    "./components/sidemenu/sidemenu.css": "./dist/components/sidemenu/sidemenu.css",
+    "./components/share": {
+      "import": "./dist/components/share/index.js",
+      "types": "./dist/components/share/index.d.ts"
+    },
+    "./components/share/share.css": "./dist/components/share/share.css",
+    "./components/logo": {
+      "import": "./dist/components/logo/index.js",
+      "types": "./dist/components/logo/index.d.ts"
+    },
+    "./components/logo/logo.css": "./dist/components/logo/logo.css",
     "./tokens/color.css": "./dist/tokens/color.css",
     "./tokens/typography.css": "./dist/tokens/typography.css",
     "./tokens/spacing.css": "./dist/tokens/spacing.css",

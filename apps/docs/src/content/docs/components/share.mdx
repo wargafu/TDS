@@ -1,0 +1,67 @@
+---
+title: Partage
+description: Boutons TDGS de partage réseau accessibles.
+sidebar:
+  order: 35
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Share` propose un ensemble de liens vers les réseaux sociaux pour partager
+une page. Chaque bouton est un vrai lien, ouvrant la cible dans un nouvel
+onglet, sans copier de logo propriétaire.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#share"
+  title="Démo du composant Partage"
+  style="width:100%; height: 18rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/share/share.css';
+```
+
+```html
+<div class="tds-share">
+  <p class="tds-share__title">Partager cette page</p>
+  <ul class="tds-share__list">
+    <li class="tds-share__item">
+      <a class="tds-share__link tds-share__link-x" href="#" target="_blank" rel="noopener noreferrer">
+        <span>Partager sur X</span>
+      </a>
+    </li>
+    <li class="tds-share__item">
+      <a class="tds-share__link tds-share__link-mail" href="mailto:?subject=TDGS" target="_blank" rel="noopener noreferrer">
+        <span>Envoyer par courriel</span>
+      </a>
+    </li>
+  </ul>
+</div>
+```
+
+| Intégration | API                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------- |
+| React       | `<Share links={[{ network: 'x', label: 'Partager sur X', href: '#' }]} />`             |
+| Vue         | `<TdsShare :links="[{ network: 'x', label: 'Partager sur X', href: '#' }]" />`          |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Libellé du lien">
+  Chaque lien porte un libellé complet (« Partager sur X ») même en mode
+  icône (`iconOnly`), pour être compréhensible hors contexte et par les
+  technologies d'assistance.
+</Aside>
+
+</TabItem>
+</Tabs>

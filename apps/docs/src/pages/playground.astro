@@ -67,6 +67,13 @@ const summaryItems = [
   <link rel="stylesheet" href="/tds/components/download/download.css" />
   <link rel="stylesheet" href="/tds/components/quote/quote.css" />
   <link rel="stylesheet" href="/tds/components/summary/summary.css" />
+  <link rel="stylesheet" href="/tds/components/password/password.css" />
+  <link rel="stylesheet" href="/tds/components/range/range.css" />
+  <link rel="stylesheet" href="/tds/components/segmented/segmented.css" />
+  <link rel="stylesheet" href="/tds/components/dropdown/dropdown.css" />
+  <link rel="stylesheet" href="/tds/components/sidemenu/sidemenu.css" />
+  <link rel="stylesheet" href="/tds/components/share/share.css" />
+  <link rel="stylesheet" href="/tds/components/logo/logo.css" />
   <style>
     body {
       max-width: 72rem;
@@ -76,7 +83,7 @@ const summaryItems = [
       background: var(--tds-bg);
       color: var(--tds-text);
     }
-    section { margin-bottom: var(--tds-spacing-16); }
+    section { margin-bottom: var(--tds-spacing-16); scroll-margin-top: var(--tds-spacing-6); }
     h2 { border-bottom: 1px solid var(--tds-border-subtle); padding-bottom: var(--tds-spacing-2); }
     .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--tds-spacing-4); margin-bottom: var(--tds-spacing-4); }
     .row-label { width: 8rem; font-size: var(--tds-font-size-sm); color: var(--tds-text-muted); }
@@ -518,6 +525,112 @@ const summaryItems = [
         ))}
       </ol>
     </nav>
+  </section>
+
+  <section id="password" data-pagefind-ignore>
+    <h2>Mot de passe</h2>
+    <div style="max-width: 24rem;">
+      <div class="tds-password">
+        <label class="tds-field__label" for="pw-demo">Mot de passe</label>
+        <div class="tds-password__control">
+          <input id="pw-demo" class="tds-input" type="password" autocomplete="current-password" placeholder="••••••••" />
+          <button type="button" class="tds-password__toggle" aria-label="Afficher le mot de passe" aria-pressed="false" data-toggle-password>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="range" data-pagefind-ignore>
+    <h2>Curseur de plage</h2>
+    <div style="max-width: 28rem;">
+      <div class="tds-range">
+        <div class="tds-range__header">
+          <label class="tds-range__label" for="range-demo">Budget mensuel (FCFA)</label>
+          <span class="tds-range__value" aria-hidden="true">250 000</span>
+        </div>
+        <input id="range-demo" class="tds-range__input" type="range" min="0" max="1000" value="250" step="10" />
+      </div>
+    </div>
+  </section>
+
+  <section id="segmented" data-pagefind-ignore>
+    <h2>Contrôle segmenté</h2>
+    <div class="tds-segmented" role="radiogroup" aria-label="Fréquence">
+      <div class="tds-segmented__item">
+        <input id="seg-mois" class="tds-segmented__input" type="radio" name="freq-demo" value="mois" />
+        <label class="tds-segmented__label" for="seg-mois">Mensuel</label>
+      </div>
+      <div class="tds-segmented__item">
+        <input id="seg-trim" class="tds-segmented__input" type="radio" name="freq-demo" value="trimestriel" />
+        <label class="tds-segmented__label" for="seg-trim">Trimestriel</label>
+      </div>
+      <div class="tds-segmented__item">
+        <input id="seg-annee" class="tds-segmented__input" type="radio" name="freq-demo" value="annee" checked />
+        <label class="tds-segmented__label" for="seg-annee">Annuel</label>
+      </div>
+    </div>
+  </section>
+
+  <section id="dropdown" data-pagefind-ignore>
+    <h2>Menu déroulant</h2>
+    <div class="tds-dropdown" data-open="true">
+      <button type="button" class="tds-button tds-button--tertiary tds-button--md" aria-haspopup="menu" aria-expanded="true">
+        Actions <span aria-hidden="true">▾</span>
+      </button>
+      <ul class="tds-dropdown__menu" role="menu">
+        <li class="tds-dropdown__item"><a class="tds-dropdown__link" href="#">Modifier</a></li>
+        <li class="tds-dropdown__item"><a class="tds-dropdown__link" href="#">Dupliquer</a></li>
+        <li class="tds-dropdown__item tds-dropdown__item-danger"><button type="button" class="tds-dropdown__link">Supprimer</button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="sidemenu" data-pagefind-ignore>
+    <h2>Menu latéral</h2>
+    <nav class="tds-sidemenu" aria-label="Sommaire du dossier">
+      <p class="tds-sidemenu__title">Mon dossier</p>
+      <ul class="tds-sidemenu__list">
+        <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#" aria-current="page">Aperçu</a></li>
+        <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#">Documents</a></li>
+        <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#">Suivi</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section id="share" data-pagefind-ignore>
+    <h2>Partage</h2>
+    <div class="tds-share">
+      <p class="tds-share__title">Partager cette page</p>
+      <ul class="tds-share__list">
+        <li class="tds-share__item">
+          <a class="tds-share__link tds-share__link-x" href="#" target="_blank" rel="noopener noreferrer"><span>Partager sur X</span></a>
+        </li>
+        <li class="tds-share__item">
+          <a class="tds-share__link tds-share__link-linkedin" href="#" target="_blank" rel="noopener noreferrer"><span>Partager sur LinkedIn</span></a>
+        </li>
+        <li class="tds-share__item">
+          <a class="tds-share__link tds-share__link-mail" href="mailto:?subject=TDGS" target="_blank" rel="noopener noreferrer"><span>Envoyer par courriel</span></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="logo" data-pagefind-ignore>
+    <h2>Bloc de marque</h2>
+    <div class="row">
+      <a class="tds-logo" href="#">
+        <span class="tds-logo__mark" aria-hidden="true"><span style="font-weight: 700;">★</span></span>
+        <span class="tds-logo__text">
+          <span class="tds-logo__title">République du Tchad</span>
+          <span class="tds-logo__subtitle">Portail des services publics</span>
+        </span>
+      </a>
+    </div>
   </section>
 </main>
 </body>

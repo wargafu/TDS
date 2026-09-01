@@ -159,6 +159,18 @@ const { hasSidebar } = (Astro.locals as any).starlightRoute;
       enhanceTabs();
       syncTabTableOfContents();
       selectTabFromHash();
+
+      const footer = document.querySelector('.tds-institutional-footer');
+      if (!footer || !('IntersectionObserver' in window)) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          document.documentElement.toggleAttribute('data-tds-footer-visible', entry.isIntersecting);
+        },
+        { rootMargin: '0px 0px -12% 0px', threshold: 0.01 }
+      );
+
+      observer.observe(footer);
     });
   })();
 </script>
@@ -230,6 +242,11 @@ const { hasSidebar } = (Astro.locals as any).starlightRoute;
       width: var(--sl-sidebar-width);
       background-color: var(--sl-color-bg-sidebar);
       border-inline-end: 1px solid var(--sl-color-hairline-shade);
+    }
+
+    :global(html[data-tds-footer-visible]) .sidebar-pane {
+      visibility: hidden;
+      pointer-events: none;
     }
   }
 </style>

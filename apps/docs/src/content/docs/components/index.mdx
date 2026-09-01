@@ -1,17 +1,17 @@
 ---
 title: Composants
-description: Les 28 familles de composants UI TDGS et l'utilitaire d'icônes — variantes, états, accessibilité et exemples de code.
+description: Les 35 familles de composants UI TDGS et l'utilitaire d'icônes — variantes, états, accessibilité et exemples de code.
 ---
 
 import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-Le catalogue comprend **28 familles de composants UI**, complétées par l'utilitaire `Icon`. Le socle
+Le catalogue comprend **35 familles de composants UI**, complétées par l'utilitaire `Icon`. Le socle
 CSS reste indépendant des frameworks : les bindings React et Vue réutilisent les mêmes tokens et les
 mêmes classes `tds-*`.
 
 <div class="tds-catalog-summary" aria-label="Résumé du catalogue TDGS">
   <div class="tds-catalog-summary__item">
-    <strong>28</strong>
+    <strong>35</strong>
     <span>familles UI</span>
   </div>
   <div class="tds-catalog-summary__item">
@@ -51,6 +51,15 @@ mêmes classes `tds-*`.
   <Card title="Dépôt de fichier">
     Sélection native de documents — [lire →](/components/file-upload/)
   </Card>
+  <Card title="Mot de passe">
+    Saisie avec bascule d'affichage — [lire →](/components/password/)
+  </Card>
+  <Card title="Curseur de plage">
+    Valeur dans un intervalle — [lire →](/components/range/)
+  </Card>
+  <Card title="Contrôle segmenté">
+    Choix unique en segments — [lire →](/components/segmented/)
+  </Card>
 </CardGrid>
 
 ## Navigation
@@ -62,6 +71,8 @@ mêmes classes `tds-*`.
   <Card title="Pagination">Navigation entre pages — [lire →](/components/pagination/)</Card>
   <Card title="Skip Link">Lien d'évitement — [lire →](/components/skip-link/)</Card>
   <Card title="Footer">Pied de page institutionnel — [lire →](/components/footer/)</Card>
+  <Card title="Menu latéral">Navigation secondaire — [lire →](/components/sidemenu/)</Card>
+  <Card title="Menu déroulant">Actions contextuelles — [lire →](/components/dropdown/)</Card>
 </CardGrid>
 
 ## Contenu
@@ -79,6 +90,8 @@ mêmes classes `tds-*`.
   <Card title="Téléchargement">Accès explicite aux fichiers — [lire →](/components/download/)</Card>
   <Card title="Citation">Citations contextualisées — [lire →](/components/quote/)</Card>
   <Card title="Sommaire">Navigation dans une page — [lire →](/components/summary/)</Card>
+  <Card title="Bloc de marque">Marque institutionnelle — [lire →](/components/logo/)</Card>
+  <Card title="Partage">Boutons de partage réseau — [lire →](/components/share/)</Card>
 </CardGrid>
 
 ## Interaction et progression

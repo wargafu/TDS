@@ -6,10 +6,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wargafu/TDGS.git",
+    "url": "https://github.com/kisaigo/TDGS.git",
     "directory": "packages/react"
   },
-  "homepage": "https://wargafu.github.io/TDGS/",
+  "homepage": "https://kisaigo.github.io/TDGS/",
   "publishConfig": {
     "access": "public"
   },

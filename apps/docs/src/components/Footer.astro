@@ -1,17 +1,31 @@
 ---
-// Étend le Footer Starlight par défaut avec un bandeau de ressources TDGS :
-// identité du projet + ressources + informations légales, en colonnes.
+// Pied de page institutionnel classique et épuré :
+//   brand + tagline (gauche) · colonnes de liens (droite) · légal + copyright (bas)
+// Fond adapté au thème, aligné sur la colonne de contenu de la page.
 import Default from '@astrojs/starlight/components/Footer.astro';
 
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const resourceLinks = [
-  { label: 'Documentation', href: '' },
-  { label: 'Composants', href: 'components/' },
-  { label: 'Dépôt GitHub', href: 'https://github.com/wargafu/TDGS', external: true },
-  { label: 'Feuille de route', href: 'communaute/roadmap/' },
+const columns = [
+  {
+    label: 'Ressources',
+    links: [
+      { label: 'Documentation', href: '' },
+      { label: 'Composants', href: 'components/' },
+      { label: 'Dépôt GitHub', href: 'https://github.com/kisaigo/TDGS', external: true },
+      { label: 'Feuille de route', href: 'communaute/roadmap/' },
+    ],
+  },
+  {
+    label: 'Communauté',
+    links: [
+      { label: 'Contribution', href: 'communaute/contribution/' },
+      { label: 'Support', href: 'aide/faq/' },
+      { label: 'Statut du projet', href: 'about/statut/' },
+    ],
+  },
 ];
 
 const legalLinks = [
@@ -28,57 +42,76 @@ const year = new Date().getFullYear();
 
 <Default><slot /></Default>
 
-<div class="tds-institutional-footer">
-  <div class="tds-institutional-footer__grid">
-    <div class="tds-institutional-footer__brand">
-      <img src={`${base}brand/tdgs-logo.png`} alt="" width="40" height="40" />
-      <div>
-        <p class="tds-institutional-footer__country">TDGS — Tchad Design System</p>
-        <p class="tds-institutional-footer__motto">Proposition open source pour les services publics du Tchad</p>
+<footer class="tds-institutional-footer" role="contentinfo">
+  <div class="tds-institutional-footer__container">
+    <div class="tds-institutional-footer__main">
+      <div class="tds-institutional-footer__brand">
+        <a class="tds-institutional-footer__brand-link" href={base} aria-label="TDGS — accueil">
+          <img src={`${base}brand/coat-of-arms-chad.svg`} alt="" width="60" height="60" loading="lazy" />
+          <span class="tds-institutional-footer__brand-name">
+            <strong>TDGS</strong>
+            <span>Tchad Design System</span>
+          </span>
+        </a>
+        <p class="tds-institutional-footer__tagline">
+          Système de design open source proposé pour les services numériques publics du Tchad.
+        </p>
+        <p class="tds-institutional-footer__notice">
+          Logo de démonstration : armoiries du Tchad (© Milenioscuro, CC BY 3.0) — usage provisoire,
+          en attente de validation institutionnelle.
+        </p>
       </div>
+
+      <nav class="tds-institutional-footer__columns" aria-label="Liens du pied de page">
+        {columns.map((col) => (
+          <div class="tds-institutional-footer__column">
+            <h2>{col.label}</h2>
+            <ul>
+              {col.links.map((link) => (
+                <li>
+                  <a
+                    href={link.external ? link.href : `${base}${link.href}`}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </nav>
     </div>
 
-    <nav aria-label="Ressources">
-      <p class="tds-institutional-footer__heading">Ressources</p>
-      <ul>
-        {resourceLinks.map((link) => (
-          <li>
-            <a
-              href={link.external ? link.href : `${base}${link.href}`}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noopener noreferrer' : undefined}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-
-    <nav aria-label="Informations légales">
-      <p class="tds-institutional-footer__heading">Informations légales</p>
-      <ul>
+    <div class="tds-institutional-footer__bottom">
+      <ul class="tds-institutional-footer__legal">
         {legalLinks.map((link) => (
           <li><a href={`${base}${link.href}`}>{link.label}</a></li>
         ))}
       </ul>
-    </nav>
+      <p class="tds-institutional-footer__copyright">
+        © {year} contributeurs TDGS — MIT
+      </p>
+    </div>
   </div>
-
-  <div class="tds-institutional-footer__bottom">
-    <p>© {year} contributeurs TDGS — projet open source sous licence MIT.</p>
-  </div>
-</div>
+</footer>
 
 <style>
   .tds-institutional-footer {
     position: relative;
-    margin: 3rem calc(-1 * var(--sl-content-pad-x)) -1.5rem;
-    border-top: 1px solid var(--sl-color-gray-5);
-    padding: 3rem var(--sl-content-pad-x) 1.5rem;
+    width: 100vw;
+    margin: 5rem calc(-1 * var(--sl-content-pad-x)) -1.5rem;
     background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
   }
 
+  :global(html[data-has-sidebar]) .tds-institutional-footer {
+    margin-inline-start: calc(-1 * (var(--sl-content-inline-start) + var(--sl-content-pad-x)));
+    margin-inline-end: calc(-1 * var(--sl-content-pad-x));
+  }
+
+  /* Liseré tricolore TDGS, fin et discret. */
   .tds-institutional-footer::before {
     content: '';
     position: absolute;
@@ -93,99 +126,169 @@ const year = new Date().getFullYear();
     );
   }
 
-  .tds-institutional-footer__grid {
+  /* Conteneur pleine largeur, contenu aligné sur la colonne de la page. */
+  .tds-institutional-footer__container {
     max-width: var(--sl-content-width);
-    margin-inline: auto;
-    display: grid;
-    grid-template-columns: minmax(16rem, 1.5fr) repeat(2, minmax(12rem, 1fr));
-    gap: 2.5rem;
+    margin-inline: 0;
+    padding-inline: var(--sl-content-pad-x);
   }
 
-  .tds-institutional-footer__grid nav {
-    min-width: 0;
+  :global(html[data-has-sidebar]) .tds-institutional-footer__container {
+    padding-inline-start: calc(var(--sl-content-inline-start) + var(--sl-content-pad-x));
   }
 
-  @media (max-width: 45rem) {
-    .tds-institutional-footer__grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+  /* ── Zone principale : marque à gauche, colonnes à droite ────── */
+  .tds-institutional-footer__main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2.5rem 3.5rem;
+    padding-block: 3rem 2.5rem;
   }
 
   .tds-institutional-footer__brand {
     display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.875rem;
+    max-width: 22rem;
+  }
+
+  .tds-institutional-footer__brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.875rem;
+    width: fit-content;
+    text-decoration: none;
   }
 
   .tds-institutional-footer__brand img {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 0.625rem;
+    width: 3.75rem;
+    height: auto;
+    max-height: 3.75rem;
+    object-fit: contain;
     flex-shrink: 0;
   }
 
-  .tds-institutional-footer__country {
-    margin: 0;
-    font-size: var(--sl-text-lg);
-    font-weight: 700;
+  .tds-institutional-footer__brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .tds-institutional-footer__brand-name strong {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
     color: var(--sl-color-white);
   }
 
-  .tds-institutional-footer__motto {
-    max-width: 22rem;
-    margin: 0.375rem 0 0;
+  .tds-institutional-footer__brand-name > span {
     font-size: var(--sl-text-sm);
-    line-height: 1.45;
-    font-style: italic;
     color: var(--sl-color-gray-3);
   }
 
-  .tds-institutional-footer__heading {
-    margin: 0 0 0.75rem;
+  .tds-institutional-footer__tagline {
+    margin: 0;
     font-size: var(--sl-text-sm);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--sl-color-text-accent);
+    line-height: 1.5;
+    color: var(--sl-color-gray-3);
   }
 
-  .tds-institutional-footer ul {
+  .tds-institutional-footer__notice {
+    margin: 0.375rem 0 0;
+    font-size: var(--sl-text-xs);
+    line-height: 1.4;
+    color: var(--sl-color-gray-4);
+  }
+
+  .tds-institutional-footer__columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem 4rem;
+  }
+
+  .tds-institutional-footer__column h2 {
+    margin: 0 0 0.875rem;
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+  }
+
+  .tds-institutional-footer__column ul {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.625rem;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  .tds-institutional-footer a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.25rem;
+  .tds-institutional-footer__column a {
     font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-3);
+    color: var(--sl-color-gray-2);
     text-decoration: none;
+    text-underline-offset: 0.25rem;
   }
 
-  .tds-institutional-footer a:hover,
-  .tds-institutional-footer a:focus-visible {
+  .tds-institutional-footer__column a:hover,
+  .tds-institutional-footer__column a:focus-visible {
+    color: var(--sl-color-white);
+    text-decoration: underline;
+    text-decoration-color: var(--tds-brand-yellow);
+  }
+
+  /* ── Barre du bas : légal + copyright ────────────────────────── */
+  .tds-institutional-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
+  .tds-institutional-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tds-institutional-footer__legal li + li {
+    border-inline-start: 1px solid var(--sl-color-gray-5);
+    margin-inline-start: 1rem;
+    padding-inline-start: 1rem;
+  }
+
+  .tds-institutional-footer__legal a {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-4);
+    text-decoration: none;
+    text-underline-offset: 0.25rem;
+  }
+
+  .tds-institutional-footer__legal a:hover,
+  .tds-institutional-footer__legal a:focus-visible {
     color: var(--sl-color-white);
     text-decoration: underline;
   }
 
-  .tds-institutional-footer__bottom {
-    max-width: var(--sl-content-width);
-    margin-inline: auto;
-    margin-top: 2.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--sl-color-gray-6);
-  }
-
-  .tds-institutional-footer__bottom p {
+  .tds-institutional-footer__copyright {
     margin: 0;
     font-size: var(--sl-text-sm);
-    line-height: 1.45;
     color: var(--sl-color-gray-4);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────── */
+  @media (max-width: 45rem) {
+    .tds-institutional-footer__main {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 </style>
