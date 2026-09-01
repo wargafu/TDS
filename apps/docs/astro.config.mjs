@@ -23,10 +23,10 @@ export default defineConfig({
         replacesTitle: false,
       },
       social: {
-        github: 'https://github.com/wargafu/TDGS',
+        github: 'https://github.com/kisaigo/TDGS',
       },
       editLink: {
-        baseUrl: 'https://github.com/wargafu/TDGS/edit/main/apps/docs/',
+        baseUrl: 'https://github.com/kisaigo/TDGS/edit/main/apps/docs/',
       },
       customCss: ['./src/styles/custom.css'],
       head: [

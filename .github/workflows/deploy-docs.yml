@@ -53,13 +53,13 @@ jobs:
       - name: Build docs
         run: pnpm --filter tds-docs build
         env:
-          SITE_URL: https://wargafu.github.io
-          BASE_PATH: /TDS
+          SITE_URL: https://kisaigo.github.io
+          BASE_PATH: /TDGS
 
       - name: Check generated links and assets
         run: pnpm --filter tds-docs check:links
         env:
-          BASE_PATH: /TDS
+          BASE_PATH: /TDGS
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
