@@ -107,7 +107,7 @@ npm install @tdgs/core
 yarn add @tdgs/core
 ```
 
-**Node.js 18+ requis.** Le package est distribué en ESM (`"type": "module"`).
+**Node.js 20.18+ requis.** Le package est distribué en ESM (`"type": "module"`).
 
 ---
 
@@ -223,7 +223,7 @@ TDGS/
 
 ### Prérequis
 
-- [Node.js](https://nodejs.org/) 18+
+- [Node.js](https://nodejs.org/) 20.18+ (voir `.nvmrc`)
 - [pnpm](https://pnpm.io/) 8+ : `npm install -g pnpm`
 
 ### Installation
