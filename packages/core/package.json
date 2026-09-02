@@ -271,7 +271,7 @@
   },
   "devDependencies": {
     "@size-limit/file": "^13.0.3",
-    "jsdom": "^25.0.0",
+    "jsdom": "^30.0.1",
     "postcss": "^8.5.16",
     "size-limit": "^13.0.3",
     "stylelint": "^17.14.0",
