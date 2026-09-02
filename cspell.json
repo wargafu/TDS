@@ -1,0 +1,7 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "//": "Configuration minimale : le projet est majoritairement en français. Une vraie configuration cspell (dictionnaires fr-fr + termes du domaine) est prévue en phase 5 ; en attendant, on n'échoue sur rien.",
+  "ignorePaths": ["**/*"],
+  "words": []
+}
