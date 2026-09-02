@@ -33,3 +33,5 @@ export * from './dropdown/dropdown.tokens';
 export * from './sidemenu/sidemenu.tokens';
 export * from './share/share.tokens';
 export * from './logo/logo.tokens';
+export * from './toast/toast.tokens';
+export * from './consent/consent.tokens';

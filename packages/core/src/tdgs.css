@@ -47,3 +47,5 @@
 @import './components/sidemenu/sidemenu.css';
 @import './components/share/share.css';
 @import './components/logo/logo.css';
+@import './components/toast/toast.css';
+@import './components/consent/consent.css';

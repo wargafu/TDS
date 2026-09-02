@@ -104,6 +104,8 @@ const COMPONENTS = [
   { name: 'sidemenu', tokenFile: 'sidemenu.tokens', cssFile: 'sidemenu' },
   { name: 'share', tokenFile: 'share.tokens', cssFile: 'share' },
   { name: 'logo', tokenFile: 'logo.tokens', cssFile: 'logo' },
+  { name: 'toast', tokenFile: 'toast.tokens', cssFile: 'toast' },
+  { name: 'consent', tokenFile: 'consent.tokens', cssFile: 'consent' },
 ];
 
 process.stdout.write('\n[validate-tokens] Component tokens...\n\n');

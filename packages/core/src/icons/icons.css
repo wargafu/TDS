@@ -40,6 +40,12 @@
   pointer-events: none;
 }
 
+/* Icônes directionnelles : retournées horizontalement en contexte RTL. */
+[dir='rtl'] .tds-icon--mirror,
+:root[lang='ar'] .tds-icon--mirror {
+  transform: scaleX(-1);
+}
+
 @media (forced-colors: active) {
   .tds-icon {
     color: currentColor;
