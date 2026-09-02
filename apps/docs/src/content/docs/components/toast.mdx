@@ -27,12 +27,27 @@ Variantes : `info` (défaut), `success`, `warning`, `danger`.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#toast"
-  title="Démo du composant Toast"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu statique des trois variantes (hors de la région flottante `position: fixed`)
+pour la revue visuelle. Le déclenchement réel — empilement, disparition
+automatique, `aria-live` — passe par `@tdgs/core/elements` (onglet Code). Un exemple
+interactif complet est dans le terrain de jeu.
+
+<Preview title="Les trois variantes de toast" align="start" stack>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;max-width:22rem">
+    <div class="tds-toast tds-toast--success" role="status">
+      <div class="tds-toast__body">Votre demande a été enregistrée.</div>
+      <button type="button" class="tds-toast__close" aria-label="Fermer"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="tds-toast" role="status">
+      <div class="tds-toast__body">Brouillon sauvegardé automatiquement.</div>
+      <button type="button" class="tds-toast__close" aria-label="Fermer"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="tds-toast tds-toast--danger" role="alert">
+      <div class="tds-toast__body">L'envoi a échoué. Vérifiez votre connexion.</div>
+      <button type="button" class="tds-toast__close" aria-label="Fermer"><span aria-hidden="true">×</span></button>
+    </div>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#toast)
 

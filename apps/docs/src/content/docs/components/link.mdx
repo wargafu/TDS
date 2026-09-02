@@ -24,7 +24,24 @@ La classe `.tds-link` s'applique aux liens de contenu ; les boutons de navigatio
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#link" title="Démo interactive du composant Link" style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Lien par défaut et dans un paragraphe" align="start" stack>
+  <p style="margin:0">
+    Consultez la <a href="#" class="tds-link">liste des pièces à fournir</a> avant
+    de commencer, puis <a href="#" class="tds-link">créez votre demande en ligne</a>.
+  </p>
+</Preview>
+
+### Variantes
+
+<Variants min={13}>
+  <Variant label="tds-link" start><a href="#" class="tds-link">Lien standard</a></Variant>
+  <Variant label="tds-link--muted" start><a href="#" class="tds-link tds-link--muted">Lien discret</a></Variant>
+  <Variant label="tds-link--danger" start><a href="#" class="tds-link tds-link--danger">Supprimer le compte</a></Variant>
+  <Variant label="tds-link--external" start><a href="https://example.td" class="tds-link tds-link--external" rel="noopener noreferrer" target="_blank">Site partenaire</a></Variant>
+  <Variant label="tds-link--standalone" start><a href="#" class="tds-link tds-link--standalone">Télécharger le formulaire</a></Variant>
+</Variants>
 
 [Ouvrir le terrain de jeu complet →](/playground/#link)
 

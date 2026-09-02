@@ -1,0 +1,12 @@
+---
+/** Grille d'exemples étiquetés : chaque `<Variant label>` affiche un cas concret. */
+interface Props {
+  /** Largeur minimale d'une cellule (rem). */
+  min?: number;
+}
+const { min = 12 } = Astro.props;
+---
+
+<div class="doc-variants" style={`--doc-variant-min:${min}rem`}>
+  <slot />
+</div>

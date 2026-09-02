@@ -18,12 +18,32 @@ Les variantes disponibles sont `info`, `success`, `warning` et `danger`.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#notice"
-  title="Démo du composant Notice"
-  style="width:100%; height: 20rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Le bouton de fermeture est
+purement visuel ici (le masquage réel est géré côté consommateur).
+
+<Preview title="Bandeaux d'information de page" align="start" stack>
+  <div class="tds-notice tds-notice--info" role="status">
+    <div class="tds-notice__content">
+      <span class="tds-notice__title">Maintenance planifiée</span>
+      <div class="tds-notice__body">Le téléservice sera indisponible le dimanche 10 mars de 2 h à 5 h.</div>
+    </div>
+    <button type="button" class="tds-notice__close" aria-label="Masquer ce bandeau"><span aria-hidden="true">×</span></button>
+  </div>
+  <div class="tds-notice tds-notice--warning" role="status">
+    <div class="tds-notice__content">
+      <span class="tds-notice__title">Version de démonstration</span>
+      <div class="tds-notice__body">Les données saisies dans cet environnement ne sont pas conservées.</div>
+    </div>
+    <button type="button" class="tds-notice__close" aria-label="Masquer ce bandeau"><span aria-hidden="true">×</span></button>
+  </div>
+  <div class="tds-notice tds-notice--danger" role="alert">
+    <div class="tds-notice__content">
+      <span class="tds-notice__title">Incident en cours</span>
+      <div class="tds-notice__body">Le dépôt de pièces jointes est momentanément perturbé. Réessayez plus tard.</div>
+    </div>
+    <button type="button" class="tds-notice__close" aria-label="Masquer ce bandeau"><span aria-hidden="true">×</span></button>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#notice)
 

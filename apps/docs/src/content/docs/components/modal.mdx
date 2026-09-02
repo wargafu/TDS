@@ -35,9 +35,25 @@ piège à focus (focus trap), la fermeture avec Échap et le `::backdrop` — pa
 </TabItem>
 <TabItem label="Démo">
 
-Rendu statique (attribut `open`) pour la QA visuelle — l'ouverture réelle passe par `dialog.showModal()`.
+Rendu statique (attribut `open`, position neutralisée) pour la revue visuelle —
+l'ouverture réelle passe par `dialog.showModal()` côté consommateur (voir l'onglet
+Code).
 
-<iframe src="/playground/#modal" title="Démo interactive du composant Modal" style="width:100%; height: 28rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+<Preview title="Fenêtre de confirmation" align="start" stack>
+  <dialog class="tds-modal" open style="position:static;margin:0">
+    <div class="tds-modal__header">
+      <h3 class="tds-modal__title">Confirmer la soumission</h3>
+      <button type="button" class="tds-modal__close" aria-label="Fermer">✕</button>
+    </div>
+    <div class="tds-modal__body">
+      <p>Votre demande sera transmise au service concerné. Après validation, elle ne pourra plus être modifiée.</p>
+    </div>
+    <div class="tds-modal__footer">
+      <button type="button" class="tds-button tds-button--tertiary tds-button--md">Annuler</button>
+      <button type="button" class="tds-button tds-button--primary tds-button--md">Confirmer l'envoi</button>
+    </div>
+  </dialog>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#modal)
 

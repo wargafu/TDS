@@ -16,12 +16,21 @@ léger, sans JavaScript.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#sidemenu"
-  title="Démo du composant Menu latéral"
-  style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Aucun JavaScript requis.
+
+<Preview title="Menu latéral d'un dossier" align="start" stack>
+  <nav class="tds-sidemenu" aria-label="Sections du dossier" style="max-width:16rem">
+    <p class="tds-sidemenu__title">Mon dossier</p>
+    <ul class="tds-sidemenu__list">
+      <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#" aria-current="page">Aperçu</a></li>
+      <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#">Pièces justificatives</a></li>
+      <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#">Suivi de l'instruction</a></li>
+      <li class="tds-sidemenu__item"><a class="tds-sidemenu__link" href="#">Messages</a></li>
+    </ul>
+  </nav>
+</Preview>
+
+[Ouvrir le terrain de jeu complet →](/playground/#sidemenu)
 
 </TabItem>
 <TabItem label="Code">

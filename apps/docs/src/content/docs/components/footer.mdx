@@ -34,12 +34,36 @@ obligatoires (accessibilité, confidentialité, plan du site).
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#footer"
-  title="Démo interactive du composant Footer"
-  style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Pied de page institutionnel" align="start" stack>
+  <footer class="tds-footer">
+    <div class="tds-footer__top">
+      <div class="tds-footer__brand">
+        <span style="color:var(--tds-neutral-0);font-weight:var(--tds-font-weight-semibold)">Portail des services publics</span>
+      </div>
+      <nav class="tds-footer__nav" aria-label="Liens du pied de page">
+        <div class="tds-footer__nav-group">
+          <div class="tds-footer__nav-title">Ressources</div>
+          <a href="#" class="tds-footer__link">Documentation</a>
+          <a href="#" class="tds-footer__link">Nous contacter</a>
+        </div>
+        <div class="tds-footer__nav-group">
+          <div class="tds-footer__nav-title">Légal</div>
+          <a href="#" class="tds-footer__link">Mentions légales</a>
+          <a href="#" class="tds-footer__link">Accessibilité : partiellement conforme</a>
+        </div>
+      </nav>
+    </div>
+    <div class="tds-footer__bottom">
+      <span>© 2026 République du Tchad</span>
+      <div class="tds-footer__legal">
+        <a href="#" class="tds-footer__link">Données personnelles</a>
+        <a href="#" class="tds-footer__link">Plan du site</a>
+      </div>
+    </div>
+  </footer>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#footer)
 

@@ -36,14 +36,26 @@ terminées, courante, à venir et en erreur sans imposer de logique de navigatio
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tdgs/core`.
+Rendu avec le CSS réellement livré par `@tdgs/core`.
 
-<iframe
-  src="/playground/#stepper"
-  title="Démo interactive du composant Étapes"
-  style="width:100%; height: 20rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+<Preview title="Parcours de demande en trois étapes" align="start" stack>
+  <nav aria-label="Étapes de la demande">
+    <ol class="tds-stepper">
+      <li class="tds-stepper__item tds-stepper--complete">
+        <span class="tds-stepper__marker" aria-hidden="true">✓</span>
+        <span class="tds-stepper__content"><span class="tds-stepper__label">Identité</span><span class="tds-stepper__description">Terminée</span></span>
+      </li>
+      <li class="tds-stepper__item tds-stepper--current" aria-current="step">
+        <span class="tds-stepper__marker" aria-hidden="true">2</span>
+        <span class="tds-stepper__content"><span class="tds-stepper__label">Pièces justificatives</span><span class="tds-stepper__description">Étape en cours</span></span>
+      </li>
+      <li class="tds-stepper__item tds-stepper--upcoming">
+        <span class="tds-stepper__marker" aria-hidden="true">3</span>
+        <span class="tds-stepper__content"><span class="tds-stepper__label">Confirmation</span></span>
+      </li>
+    </ol>
+  </nav>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#stepper)
 

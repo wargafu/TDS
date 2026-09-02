@@ -35,7 +35,35 @@ JavaScript n'est nécessaire pour l'ouverture/fermeture, la sémantique et l'acc
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#accordion" title="Démo interactive du composant Accordion" style="width:100%; height: 20rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. L'accordéon fonctionne sans
+JavaScript — c'est un groupe de `<details>` natifs. Basculez l'aperçu en thème
+sombre ou en RTL avec la barre d'outils.
+
+<Preview title="Questions fréquentes" align="start" stack>
+  <div class="tds-accordion">
+    <details class="tds-accordion__item" open>
+      <summary class="tds-accordion__trigger">
+        Quels documents sont nécessaires ?
+        <svg class="tds-accordion__icon" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4" /></svg>
+      </summary>
+      <div class="tds-accordion__content">Carte d'identité, justificatif de domicile de moins de 3 mois, et photo d'identité récente.</div>
+    </details>
+    <details class="tds-accordion__item">
+      <summary class="tds-accordion__trigger">
+        Quel est le délai de traitement ?
+        <svg class="tds-accordion__icon" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4" /></svg>
+      </summary>
+      <div class="tds-accordion__content">Le traitement standard prend entre 5 et 10 jours ouvrés.</div>
+    </details>
+    <details class="tds-accordion__item">
+      <summary class="tds-accordion__trigger">
+        Comment suivre l'avancement ?
+        <svg class="tds-accordion__icon" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4" /></svg>
+      </summary>
+      <div class="tds-accordion__content">Un numéro de suivi vous est communiqué par courriel après le dépôt.</div>
+    </details>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#accordion)
 

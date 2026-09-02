@@ -35,7 +35,25 @@ même si le rendu est fait côté serveur sans logique JS.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#nav" title="Démo interactive du composant Navigation" style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Aucun JavaScript requis.
+
+<Preview title="Navigation principale et secondaire" align="start" stack>
+  <nav class="tds-nav" aria-label="Navigation principale">
+    <ul class="tds-nav__list">
+      <li><a href="#" class="tds-nav__link" aria-current="page">Accueil</a></li>
+      <li><a href="#" class="tds-nav__link">Démarches</a></li>
+      <li><a href="#" class="tds-nav__link">Services</a></li>
+      <li><a href="#" class="tds-nav__link">Contact</a></li>
+    </ul>
+  </nav>
+  <nav class="tds-nav tds-nav--muted" aria-label="Navigation secondaire">
+    <ul class="tds-nav__list">
+      <li><a href="#" class="tds-nav__link">Présentation</a></li>
+      <li><a href="#" class="tds-nav__link" aria-current="page">Pièces à fournir</a></li>
+      <li><a href="#" class="tds-nav__link">Suivi</a></li>
+    </ul>
+  </nav>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#nav)
 

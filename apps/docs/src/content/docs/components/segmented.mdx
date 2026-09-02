@@ -16,12 +16,26 @@ peu de valeurs, dans un espace réduit.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#segmented"
-  title="Démo du composant Contrôle segmenté"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Contrôle segmenté (groupe de boutons radio)" align="start" stack>
+  <div class="tds-segmented" role="radiogroup" aria-label="Périodicité">
+    <div class="tds-segmented__item">
+      <input id="demo-seg-mois" class="tds-segmented__input" type="radio" name="demo-freq" value="mois" />
+      <label class="tds-segmented__label" for="demo-seg-mois">Mensuel</label>
+    </div>
+    <div class="tds-segmented__item">
+      <input id="demo-seg-trim" class="tds-segmented__input" type="radio" name="demo-freq" value="trimestriel" />
+      <label class="tds-segmented__label" for="demo-seg-trim">Trimestriel</label>
+    </div>
+    <div class="tds-segmented__item">
+      <input id="demo-seg-annee" class="tds-segmented__input" type="radio" name="demo-freq" value="annee" checked />
+      <label class="tds-segmented__label" for="demo-seg-annee">Annuel</label>
+    </div>
+  </div>
+</Preview>
+
+[Ouvrir le terrain de jeu complet →](/playground/#segmented)
 
 </TabItem>
 <TabItem label="Code">

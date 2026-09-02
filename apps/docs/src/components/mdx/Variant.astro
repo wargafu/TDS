@@ -1,0 +1,15 @@
+---
+interface Props {
+  label: string;
+  /** Aligne le contenu à gauche plutôt qu'au centre. */
+  start?: boolean;
+}
+const { label, start = false } = Astro.props;
+---
+
+<div class="doc-variant">
+  <div class={`doc-variant__stage tds-theme-light${start ? ' is-start' : ''}`}>
+    <slot />
+  </div>
+  <span class="doc-variant__label">{label}</span>
+</div>

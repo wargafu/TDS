@@ -15,7 +15,23 @@ données administratives. Ils sont accessibles et responsive par défaut.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#table" title="Démo interactive du composant Table" style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Tableau strié et bordé" align="start" stack>
+  <div class="tds-table-wrapper">
+    <table class="tds-table tds-table--striped tds-table--bordered">
+      <caption>Suivi des demandes déposées</caption>
+      <thead>
+        <tr><th scope="col">Référence</th><th scope="col">Usager</th><th scope="col">Statut</th><th scope="col">Montant</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>REF-2024-0187</td><td>Zara Ahmat</td><td data-status="success">Validé</td><td>12 400 FCFA</td></tr>
+        <tr><td>REF-2024-0188</td><td>Ali Brahim</td><td data-status="warning">En attente</td><td>8 000 FCFA</td></tr>
+        <tr><td>REF-2024-0189</td><td>Mariam Ousmane</td><td data-status="danger">Rejeté</td><td>3 200 FCFA</td></tr>
+      </tbody>
+    </table>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#table)
 

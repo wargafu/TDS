@@ -17,12 +17,35 @@ Variantes : `default`, `info`, `success`, `warning`, `danger`. Tailles : `sm` et
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#tag"
-  title="Démo du composant Tag"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Étiquettes de statut avec point">
+  <span class="tds-tag tds-tag--default tds-tag--md"><span class="tds-tag__dot" aria-hidden="true"></span>Brouillon</span>
+  <span class="tds-tag tds-tag--info tds-tag--md"><span class="tds-tag__dot" aria-hidden="true"></span>En instruction</span>
+  <span class="tds-tag tds-tag--success tds-tag--md"><span class="tds-tag__dot" aria-hidden="true"></span>Validé</span>
+  <span class="tds-tag tds-tag--warning tds-tag--md"><span class="tds-tag__dot" aria-hidden="true"></span>En attente</span>
+  <span class="tds-tag tds-tag--danger tds-tag--md"><span class="tds-tag__dot" aria-hidden="true"></span>Rejeté</span>
+</Preview>
+
+### Filtre retirable
+
+<Preview title="Tag avec bouton de suppression" compact>
+  <span class="tds-tag tds-tag--default tds-tag--md">
+    <span>Région : Kanem</span>
+    <button type="button" class="tds-tag__remove" aria-label="Retirer le filtre Région : Kanem"><span aria-hidden="true">×</span></button>
+  </span>
+  <span class="tds-tag tds-tag--default tds-tag--md">
+    <span>Année : 2024</span>
+    <button type="button" class="tds-tag__remove" aria-label="Retirer le filtre Année : 2024"><span aria-hidden="true">×</span></button>
+  </span>
+</Preview>
+
+### Tailles
+
+<Variants min={9}>
+  <Variant label="tds-tag--sm"><span class="tds-tag tds-tag--info tds-tag--sm"><span class="tds-tag__dot" aria-hidden="true"></span>Petit</span></Variant>
+  <Variant label="tds-tag--md"><span class="tds-tag tds-tag--info tds-tag--md"><span class="tds-tag__dot" aria-hidden="true"></span>Moyen</span></Variant>
+</Variants>
 
 [Ouvrir le terrain de jeu complet →](/playground/#tag)
 
