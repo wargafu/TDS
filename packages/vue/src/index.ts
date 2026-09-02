@@ -28,6 +28,7 @@ export * from './components/Progress';
 export * from './components/Icon';
 export * from './components/Callout';
 export * from './components/Notice';
+export * from './components/Toast';
 export * from './components/Tag';
 export * from './components/Tile';
 export * from './components/Download';
