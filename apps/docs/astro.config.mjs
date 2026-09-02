@@ -17,8 +17,8 @@ export default defineConfig({
         root: { label: 'Français', lang: 'fr' },
       },
       logo: {
-        light: './src/assets/Coat_of_arms_of_Chad.svg',
-        dark: './src/assets/Coat_of_arms_of_Chad.svg',
+        light: './src/assets/tdgs-mark.svg',
+        dark: './src/assets/tdgs-mark.svg',
         alt: 'TDGS — Tchad Design System',
         replacesTitle: false,
       },
@@ -32,7 +32,11 @@ export default defineConfig({
       head: [
         {
           tag: 'link',
-          attrs: { rel: 'icon', href: publicAsset('favicon.png'), type: 'image/png' },
+          attrs: { rel: 'icon', href: publicAsset('favicon.svg'), type: 'image/svg+xml' },
+        },
+        {
+          tag: 'link',
+          attrs: { rel: 'icon', href: publicAsset('favicon-32.png'), sizes: '32x32', type: 'image/png' },
         },
         {
           tag: 'link',
@@ -41,6 +45,17 @@ export default defineConfig({
         {
           tag: 'link',
           attrs: { rel: 'manifest', href: publicAsset('site.webmanifest') },
+        },
+        { tag: 'meta', attrs: { name: 'theme-color', content: '#0B3A82' } },
+        { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+        {
+          tag: 'meta',
+          attrs: { property: 'og:image', content: `${site}${publicAsset('brand/og-image.png')}` },
+        },
+        { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+        {
+          tag: 'meta',
+          attrs: { name: 'twitter:image', content: `${site}${publicAsset('brand/og-image.png')}` },
         },
       ],
       components: {

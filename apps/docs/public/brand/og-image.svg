@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="TDGS — Tchad Design System">
+  <title>TDGS — Tchad Design System</title>
+  <rect width="1200" height="630" fill="#00143E"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#0B3A82"/>
+  <rect x="400" y="0" width="400" height="10" fill="#F5C116"/>
+  <rect x="800" y="0" width="400" height="10" fill="#D8222A"/>
+
+  <g transform="translate(110 210)">
+    <rect x="0" y="120" width="48" height="96" rx="12" fill="#6B94FF"/>
+    <rect x="72" y="60" width="48" height="156" rx="12" fill="#F5C116"/>
+    <rect x="144" y="0" width="48" height="216" rx="12" fill="#FF665D"/>
+  </g>
+
+  <text x="360" y="330" font-family="'Source Sans 3','Segoe UI',system-ui,sans-serif" font-size="132" font-weight="800" letter-spacing="2" fill="#FFFFFF">TDGS</text>
+  <text x="365" y="392" font-family="'Source Sans 3','Segoe UI',system-ui,sans-serif" font-size="34" font-weight="600" letter-spacing="6" fill="#A6C1FF">TCHAD DESIGN SYSTEM</text>
+
+  <text x="110" y="520" font-family="'Source Sans 3','Segoe UI',system-ui,sans-serif" font-size="30" font-weight="400" fill="#D1D5DB">Système de design open source pour les services numériques publics du Tchad.</text>
+  <text x="110" y="566" font-family="'Source Sans 3','Segoe UI',system-ui,sans-serif" font-size="26" font-weight="600" fill="#F5C116">Tokens · 35+ composants · React &amp; Vue · Cible WCAG 2.2 AA</text>
+</svg>

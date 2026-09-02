@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-  <img src="./apps/docs/public/brand/tdgs-logo.png" width="760" alt="TDGS — Tchad Design System">
+  <img src="./apps/docs/public/brand/tdgs-logo.svg" width="360" alt="TDGS — Tchad Design System">
 </p>
 
 > [!IMPORTANT]

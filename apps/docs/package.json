@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node scripts/copy-core-assets.mjs && astro dev",
     "build": "node scripts/copy-core-assets.mjs && astro build && node scripts/prefix-dist-links.mjs",
+    "gen:brand": "node scripts/generate-brand-rasters.mjs",
     "preview": "astro preview",
     "check:performance": "node scripts/check-performance.mjs",
     "check:links": "node scripts/check-links.mjs",

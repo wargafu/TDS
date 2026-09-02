@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="TDGS">
+  <title>TDGS</title>
+  <!--
+    Marque TDGS — trois barres ascendantes reprenant l'ordre du drapeau tchadien
+    (bleu, or, rouge) et suggérant la progression des services publics numériques.
+  -->
+  <rect x="4" y="24" width="10" height="20" rx="2.5" fill="#0B3A82"/>
+  <rect x="19" y="14" width="10" height="30" rx="2.5" fill="#F5C116"/>
+  <rect x="34" y="4" width="10" height="40" rx="2.5" fill="#D8222A"/>
+</svg>
