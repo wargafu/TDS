@@ -1,0 +1,84 @@
+---
+title: Bandeau de consentement
+description: Recueil du consentement pour la mesure d'audience et les cookies non essentiels.
+badge: Bêta
+---
+
+<Tabs>
+<TabItem label="Présentation">
+
+Le **bandeau de consentement** recueille un choix explicite avant tout dépôt de
+cookies non essentiels ou toute mesure d'audience non exemptée. Il propose au
+minimum « Tout accepter » et « Continuer sans accepter » avec le **même niveau de
+visibilité**, et un accès au réglage détaillé par catégorie.
+
+Le choix est mémorisé (`localStorage`, clé `tds-consent`) ; le bandeau ne
+réapparaît pas tant qu'un choix valide existe. L'événement `tds-consent-change`
+permet d'activer ou non les scripts concernés.
+
+<Aside type="caution" title="Cadre légal">
+  Ce composant fournit l'ossature d'interface ; il ne constitue pas à lui seul
+  une conformité. La liste des finalités, les durées de conservation et le
+  registre des traitements relèvent d'une analyse juridique.
+</Aside>
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#consent"
+  title="Démo du bandeau de consentement"
+  style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#consent)
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/consent/consent.css';
+```
+
+```html
+<tds-consent aria-label="Gestion des cookies" hidden>
+  <h2 class="tds-consent__title">Cookies et mesure d'audience</h2>
+  <p class="tds-consent__body">
+    Nous utilisons des cookies pour mesurer l'audience du site. Vous pouvez
+    accepter, refuser ou choisir par catégorie.
+  </p>
+  <div class="tds-consent__categories">
+    <label><input type="checkbox" name="audience" checked /> Mesure d'audience</label>
+  </div>
+  <div class="tds-consent__actions">
+    <button class="tds-button tds-button--primary" data-consent="all">Tout accepter</button>
+    <button class="tds-button tds-button--secondary" data-consent="essential">
+      Continuer sans accepter
+    </button>
+    <button class="tds-button tds-button--tertiary" data-consent="custom">
+      Enregistrer mes choix
+    </button>
+  </div>
+</tds-consent>
+```
+
+```js
+import '@tdgs/core/elements';
+
+document.querySelector('tds-consent')?.addEventListener('tds-consent-change', (event) => {
+  if (event.detail.categories.audience) startAnalytics();
+});
+```
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+- `role="dialog"` **non modal** (`aria-modal="false"`) : n'emprisonne pas le focus,
+  le reste de la page reste utilisable.
+- Boutons d'action réels, pas de piège au clavier, `Échap` non requis.
+- Accepter et refuser ont la même proéminence visuelle (exigence RGPD/CNIL).
+- Réapparaît uniquement si aucun choix valide n'est stocké.
+
+</TabItem>
+</Tabs>

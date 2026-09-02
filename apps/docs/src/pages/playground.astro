@@ -74,6 +74,9 @@ const summaryItems = [
   <link rel="stylesheet" href="/tds/components/sidemenu/sidemenu.css" />
   <link rel="stylesheet" href="/tds/components/share/share.css" />
   <link rel="stylesheet" href="/tds/components/logo/logo.css" />
+  <link rel="stylesheet" href="/tds/components/toast/toast.css" />
+  <link rel="stylesheet" href="/tds/components/consent/consent.css" />
+  <link rel="stylesheet" href="/tds/icons/icons.css" />
   <style>
     body {
       max-width: 72rem;
@@ -639,6 +642,94 @@ const summaryItems = [
       </a>
     </div>
   </section>
+
+  <section id="toast" data-pagefind-ignore>
+    <h2>Toast</h2>
+    <div class="row">
+      <button class="tds-button tds-button--primary tds-button--md" type="button" data-toast="success">
+        Succès
+      </button>
+      <button class="tds-button tds-button--secondary tds-button--md" type="button" data-toast="info">
+        Info
+      </button>
+      <button class="tds-button tds-button--danger tds-button--md" type="button" data-toast="danger">
+        Erreur
+      </button>
+    </div>
+  </section>
+
+  <section id="consent" data-pagefind-ignore>
+    <h2>Bandeau de consentement</h2>
+    <div class="row">
+      <button class="tds-button tds-button--tertiary tds-button--md" type="button" id="consent-reset">
+        Réafficher le bandeau
+      </button>
+    </div>
+    <tds-consent aria-label="Gestion des cookies" hidden>
+      <h3 class="tds-consent__title">Cookies et mesure d'audience</h3>
+      <p class="tds-consent__body">
+        Nous mesurons l'audience du site. Acceptez, refusez ou choisissez par catégorie.
+      </p>
+      <div class="tds-consent__categories">
+        <label><input type="checkbox" name="audience" checked /> Mesure d'audience</label>
+      </div>
+      <div class="tds-consent__actions">
+        <button class="tds-button tds-button--primary tds-button--md" data-consent="all">
+          Tout accepter
+        </button>
+        <button class="tds-button tds-button--secondary tds-button--md" data-consent="essential">
+          Continuer sans accepter
+        </button>
+      </div>
+    </tds-consent>
+  </section>
+
+  <section id="icons" data-pagefind-ignore>
+    <h2>Icônes</h2>
+    <div class="row" style="gap: 1rem; font-size: 0; color: var(--tds-text);">
+      <tds-icon name="home" label="Accueil"></tds-icon>
+      <tds-icon name="search"></tds-icon>
+      <tds-icon name="user"></tds-icon>
+      <tds-icon name="mail"></tds-icon>
+      <tds-icon name="calendar"></tds-icon>
+      <tds-icon name="download"></tds-icon>
+      <tds-icon name="file-text"></tds-icon>
+      <tds-icon name="check-circle" size="lg"></tds-icon>
+      <tds-icon name="alert-circle" size="lg"></tds-icon>
+      <tds-icon name="arrow-right"></tds-icon>
+      <tds-icon name="settings"></tds-icon>
+      <tds-icon name="lock"></tds-icon>
+    </div>
+  </section>
 </main>
+
+<script>
+  import '@tdgs/core/elements';
+  import { toast, type ToastVariant } from '@tdgs/core/elements';
+
+  const messages: Record<ToastVariant, string> = {
+    success: 'Dossier enregistré — référence REF-2024-001234',
+    info: 'Brouillon sauvegardé automatiquement',
+    warning: 'Certaines pièces jointes sont trop lourdes',
+    danger: 'La connexion a échoué, réessayez',
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-toast]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const variant = (btn.dataset.toast ?? 'info') as ToastVariant;
+      toast(messages[variant] ?? 'Notification', { variant });
+    });
+  });
+
+  document.getElementById('consent-reset')?.addEventListener('click', () => {
+    localStorage.removeItem('tds-consent');
+    const section = document.getElementById('consent');
+    const el = section?.querySelector('tds-consent');
+    if (!el || !section) return;
+    const fresh = el.cloneNode(true) as HTMLElement;
+    el.remove();
+    section.appendChild(fresh);
+  });
+</script>
 </body>
 </html>

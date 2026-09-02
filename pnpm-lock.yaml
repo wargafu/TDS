@@ -80,6 +80,9 @@ importers:
 
   packages/core:
     devDependencies:
+      jsdom:
+        specifier: ^25.0.0
+        version: 25.0.1
       postcss:
         specifier: ^8.5.16
         version: 8.5.16

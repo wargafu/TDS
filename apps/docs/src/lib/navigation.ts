@@ -124,8 +124,18 @@ export const SECTIONS: NavSection[] = [
         ],
       },
       {
+        label: "Retour d'information",
+        items: [
+          { label: 'Toast', slug: 'components/toast', badge: 'Bêta' },
+          { label: 'Bandeau de consentement', slug: 'components/consent', badge: 'Bêta' },
+        ],
+      },
+      {
         label: 'Utilitaire',
-        items: [{ label: 'Icon', slug: 'components/icon' }],
+        items: [
+          { label: 'Icon', slug: 'components/icon' },
+          { label: 'Web Components', slug: 'components/web-components' },
+        ],
       },
     ],
   },

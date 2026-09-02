@@ -1,0 +1,77 @@
+---
+title: Toast
+description: Retour d'information transitoire et non bloquant, après une action de l'utilisateur.
+badge: Bêta
+---
+
+<Tabs>
+<TabItem label="Présentation">
+
+Le **Toast** confirme brièvement le résultat d'une action (« Dossier enregistré »,
+« Lien copié ») sans interrompre le parcours. Il disparaît seul au bout de quelques
+secondes.
+
+Ne l'utilisez **pas** pour une information critique, une erreur bloquante ou un
+contenu que l'utilisateur doit pouvoir relire : préférez alors `Alert`, `Notice`
+ou un résumé d'erreurs.
+
+Variantes : `info` (défaut), `success`, `warning`, `danger`.
+
+<Aside type="caution" title="Accessibilité">
+  La région des toasts est une zone live polie (`aria-live="polite"`), sauf pour
+  `danger` qui utilise `role="alert"`. Le focus n'est jamais déplacé
+  automatiquement. Chaque toast a un bouton de fermeture ; le minuteur se met en
+  pause au survol.
+</Aside>
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#toast"
+  title="Démo du composant Toast"
+  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+[Ouvrir le terrain de jeu complet →](/playground/#toast)
+
+</TabItem>
+<TabItem label="Code">
+
+Le toast nécessite la couche JavaScript agnostique (`@tdgs/core/elements`).
+
+```css
+@import '@tdgs/core/components/toast/toast.css';
+```
+
+```js
+import { toast } from '@tdgs/core/elements';
+
+toast('Dossier enregistré', { variant: 'success' });
+// toast persistant + fermeture manuelle :
+const dismiss = toast('Envoi en cours…', { duration: 0 });
+```
+
+```html
+<!-- Optionnel : placer la région soi-même (sinon créée à la volée) -->
+<tds-toast-region aria-label="Notifications"></tds-toast-region>
+```
+
+| Intégration | API                                                                    |
+| ----------- | --------------------------------------------------------------------- |
+| React       | `import { Toaster, toast } from '@tdgs/react'` — monter `<Toaster />` |
+| Vue         | `import { Toaster, toast } from '@tdgs/vue'`                          |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+- Région `role="region"` + `aria-live="polite"` ; `role="alert"` pour `danger`.
+- Le focus reste sur l'élément déclencheur.
+- Bouton de fermeture avec libellé explicite ; `Échap` n'est pas requis (non modal).
+- Animations neutralisées sous `prefers-reduced-motion`.
+- Durée par défaut 6 s ; `duration: 0` pour un toast persistant que
+  l'utilisateur ferme lui-même.
+
+</TabItem>
+</Tabs>
