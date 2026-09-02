@@ -15,7 +15,7 @@
     "test:a11y:templates": "node scripts/test-a11y-templates.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^7.0.8",
     "@astrojs/sitemap": "^3.2.0",
     "@fontsource-variable/source-sans-3": "^5.1.0",
     "@fontsource/jetbrains-mono": "^5.1.0",
