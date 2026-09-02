@@ -19,6 +19,27 @@ La seule implémentation de référence est **ce site de documentation lui-même
 ainsi que le [playground de composants](/playground/), tous deux construits avec
 `@tdgs/core`.
 
+## Modèles de référence livrés
+
+Le dépôt fournit sept modèles de pages institutionnelles en HTML statique
+(dossier [`templates/`](https://github.com/kisaigo/TDGS/tree/main/templates)),
+construits uniquement avec `@tdgs/core` et une feuille de composition partagée —
+aucun framework :
+
+| Modèle | Ce qu'il montre |
+| --- | --- |
+| [Portail citoyen](https://github.com/kisaigo/TDGS/blob/main/templates/citizen-portal/index.html) | En-tête, recherche, cartes de démarches, alerte |
+| [Tableau de bord agent](https://github.com/kisaigo/TDGS/blob/main/templates/admin-dashboard/index.html) | Barre latérale, indicateurs, tableau, badges d'état |
+| [Page éditoriale](https://github.com/kisaigo/TDGS/blob/main/templates/content-page/index.html) | Fil d'Ariane, sommaire, callout, téléchargement, partage |
+| [Parcours de formulaire](https://github.com/kisaigo/TDGS/blob/main/templates/form-tunnel/index.html) | Étapes, résumé d'erreurs, champs en erreur |
+| [Connexion](https://github.com/kisaigo/TDGS/blob/main/templates/login/index.html) | Panneau centré, mot de passe avec bascule |
+| [Connexion — arabe (RTL)](https://github.com/kisaigo/TDGS/blob/main/templates/login-ar/index.html) | `dir="rtl"`, police arabe, mise en page miroir |
+| [Page d'erreur 404](https://github.com/kisaigo/TDGS/blob/main/templates/error-page/index.html) | Message d'état, recherche de secours |
+
+`pnpm validate:templates` contrôle leur structure (doctype, `lang`/`dir`, `<main>`
+unique, lien d'évitement, feuilles liées, marqueurs). Ce ne sont pas des
+interfaces officiellement validées.
+
 ## Faire figurer votre site ici
 
 Si votre administration ou votre projet utilise TDGS en production, ouvrez une

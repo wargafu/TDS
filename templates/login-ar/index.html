@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تسجيل الدخول — فضاء المستخدم</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../packages/core/src/tdgs.css" />
+    <link rel="stylesheet" href="../shared/template.css" />
+  </head>
+  <body>
+    <div class="tds-template-shell">
+      <a class="tds-skip-link" href="#contenu">تخطَّ إلى المحتوى الرئيسي</a>
+      <div class="tds-template-band" aria-hidden="true"></div>
+
+      <header class="tds-template-header">
+        <div class="tds-template-container tds-template-header__inner">
+          <a class="tds-template-brand" href="#">
+            <span class="tds-template-brand__mark" aria-hidden="true">TD</span>
+            <span>فضاء المستخدم</span>
+          </a>
+        </div>
+      </header>
+
+      <main id="contenu" class="tds-template-main tds-template-centered">
+        <div class="tds-template-panel">
+          <h1>تسجيل الدخول</h1>
+          <p>ادخل إلى متابعة إجراءاتك باستخدام رقم هويتك الوطنية.</p>
+
+          <form method="post" action="#" novalidate>
+            <div class="tds-field">
+              <label class="tds-field__label" for="identifiant">المُعرِّف</label>
+              <input
+                id="identifiant"
+                class="tds-input tds-input--md"
+                type="text"
+                name="identifiant"
+                autocomplete="username"
+                required
+              />
+            </div>
+
+            <div class="tds-field" style="margin-block-start: 1rem">
+              <label class="tds-field__label" for="mdp">كلمة المرور</label>
+              <div class="tds-password">
+                <input
+                  id="mdp"
+                  class="tds-input tds-input--md tds-password__input"
+                  type="password"
+                  name="mot_de_passe"
+                  autocomplete="current-password"
+                  required
+                />
+                <button class="tds-password__toggle" type="button" aria-pressed="false">إظهار</button>
+              </div>
+              <p class="tds-field__hint"><a class="tds-link" href="#oubli">هل نسيت كلمة المرور؟</a></p>
+            </div>
+
+            <div class="tds-template-form__actions">
+              <button class="tds-button tds-button--primary tds-button--md" type="submit">
+                تسجيل الدخول
+              </button>
+              <a class="tds-button tds-button--tertiary tds-button--md" href="#creer">إنشاء حساب</a>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <footer class="tds-template-footer">
+        <div class="tds-template-container tds-template-footer__inner">
+          <span>TDGS — نظام تصميم مفتوح المصدر مقترَح للخدمات العمومية في تشاد.</span>
+          <a class="tds-link" href="#accessibilite">إمكانية الوصول</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.querySelectorAll('.tds-password__toggle').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const input = btn.parentElement.querySelector('.tds-password__input');
+          const shown = input.type === 'text';
+          input.type = shown ? 'password' : 'text';
+          btn.setAttribute('aria-pressed', String(!shown));
+          btn.textContent = shown ? 'إظهار' : 'إخفاء';
+        });
+      });
+    </script>
+  </body>
+</html>

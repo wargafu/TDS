@@ -157,6 +157,132 @@ body {
   font-weight: var(--tds-font-weight-semibold);
 }
 
+/* ── Bandeau tricolore (identité drapeau, fin) ─────────────────────── */
+.tds-template-band {
+  block-size: 0.25rem;
+  background: linear-gradient(
+    to right,
+    var(--tds-color-blue-500) 0 33.333%,
+    var(--tds-color-yellow-500) 33.333% 66.666%,
+    var(--tds-color-red-500) 66.666% 100%
+  );
+}
+[dir='rtl'] .tds-template-band {
+  background: linear-gradient(
+    to left,
+    var(--tds-color-blue-500) 0 33.333%,
+    var(--tds-color-yellow-500) 33.333% 66.666%,
+    var(--tds-color-red-500) 66.666% 100%
+  );
+}
+
+/* ── Fil d'Ariane ─────────────────────────────────────────────────── */
+.tds-template-breadcrumb {
+  padding-block: var(--tds-spacing-4) 0;
+  font-size: var(--tds-font-size-sm);
+  color: var(--tds-text-muted);
+}
+.tds-template-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tds-spacing-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tds-template-breadcrumb li + li::before {
+  content: '/';
+  margin-inline-end: var(--tds-spacing-2);
+  color: var(--tds-border);
+}
+
+/* ── Article / page éditoriale ────────────────────────────────────── */
+.tds-template-article {
+  max-inline-size: var(--tds-template-reading-max);
+}
+.tds-template-article > * + * {
+  margin-block-start: var(--tds-spacing-5);
+}
+.tds-template-article h2 {
+  margin-block-start: var(--tds-spacing-8);
+}
+.tds-template-article figure {
+  margin: 0;
+}
+.tds-template-article figcaption {
+  margin-block-start: var(--tds-spacing-2);
+  font-size: var(--tds-font-size-sm);
+  color: var(--tds-text-muted);
+}
+
+/* ── Pages centrées : connexion, confirmation, erreur ─────────────── */
+.tds-template-centered {
+  display: grid;
+  place-items: center;
+  padding-block: clamp(var(--tds-spacing-8), 10vw, var(--tds-spacing-24));
+}
+.tds-template-panel {
+  inline-size: min(100% - 2 * var(--tds-template-page-padding), 28rem);
+  padding: clamp(var(--tds-spacing-6), 5vw, var(--tds-spacing-10));
+  border: 1px solid var(--tds-border);
+  border-radius: var(--tds-radius-md);
+  background: var(--tds-bg-elevated);
+}
+.tds-template-panel > * + * {
+  margin-block-start: var(--tds-spacing-4);
+}
+.tds-template-panel h1 {
+  margin: 0;
+  font-size: var(--tds-font-size-2xl);
+}
+
+/* ── Formulaire multi-étapes ──────────────────────────────────────── */
+.tds-template-form {
+  max-inline-size: var(--tds-template-reading-max);
+}
+.tds-template-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.tds-template-form legend {
+  padding: 0;
+  font-size: var(--tds-font-size-xl);
+  font-weight: var(--tds-font-weight-semibold);
+}
+.tds-template-form .tds-field + .tds-field {
+  margin-block-start: var(--tds-spacing-4);
+}
+.tds-template-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tds-spacing-3);
+  margin-block-start: var(--tds-spacing-6);
+}
+
+/* ── Grille d'erreur / état vide ──────────────────────────────────── */
+.tds-template-status {
+  text-align: center;
+  padding-block: clamp(var(--tds-spacing-10), 12vw, var(--tds-spacing-24));
+}
+.tds-template-status h1 {
+  margin-block: var(--tds-spacing-2) var(--tds-spacing-3);
+  font-size: var(--tds-font-size-4xl);
+  line-height: var(--tds-line-height-4xl);
+}
+.tds-template-status p {
+  max-inline-size: 46ch;
+  margin-inline: auto;
+  color: var(--tds-text-muted);
+}
+.tds-template-status__code {
+  font-size: var(--tds-font-size-sm);
+  font-weight: var(--tds-font-weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tds-action-primary);
+}
+
 @media (max-width: 48rem) {
   .tds-template-header__inner,
   .tds-template-footer__inner {
