@@ -66,3 +66,16 @@ test('axe sur le playground (rendu réel des composants)', async ({ page }) => {
   const results = await new AxeBuilder({ page }).withTags(WCAG).analyze();
   expect(results.violations).toEqual([]);
 });
+
+// Les aperçus vivants de l'onglet « Démo » sont dans un panneau masqué par
+// défaut : on l'active pour qu'axe analyse le balisage réellement rendu.
+for (const slug of ['button', 'input', 'alert', 'tag', 'table', 'modal']) {
+  test(`axe sur l'onglet Démo — ${slug}`, async ({ page }) => {
+    await page.goto(`/components/${slug}/`);
+    await page.getByRole('tab', { name: 'Démo' }).click();
+    const preview = page.locator('[data-preview]').first();
+    await expect(preview).toBeVisible();
+    const results = await new AxeBuilder({ page }).include('.mdx-tabs').withTags(WCAG).analyze();
+    expect(results.violations).toEqual([]);
+  });
+}

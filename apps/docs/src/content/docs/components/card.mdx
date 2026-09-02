@@ -21,7 +21,30 @@ Elles structurent les portails citoyens, tableaux de bord et listes de services.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#card" title="Démo interactive du composant Card" style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Les trois variantes de surface" align="start">
+  <div style="display:flex;flex-wrap:wrap;gap:1rem">
+    <div class="tds-card tds-card--outlined" style="width:15rem">
+      <div class="tds-card__body">
+        <p class="tds-card__title">Contour</p>
+        <p class="tds-card__description">Surface neutre bordée, pour regrouper de l'information secondaire.</p>
+      </div>
+    </div>
+    <div class="tds-card tds-card--elevated" style="width:15rem">
+      <div class="tds-card__body">
+        <p class="tds-card__title">Surélevée</p>
+        <p class="tds-card__description">Ombre portée légère : utile pour un élément mis en avant.</p>
+      </div>
+    </div>
+    <div class="tds-card tds-card--flat" style="width:15rem">
+      <div class="tds-card__body">
+        <p class="tds-card__title">Plate</p>
+        <p class="tds-card__description">Aplat sans bordure ni ombre, pour une grille dense.</p>
+      </div>
+    </div>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#card)
 

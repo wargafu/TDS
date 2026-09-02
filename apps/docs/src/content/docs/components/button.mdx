@@ -50,27 +50,52 @@ Cinq variantes couvrent tous les niveaux de hiérarchie d'action.
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tdgs/core` — toutes les variantes, tailles et états.
+Exemples rendus avec le CSS réellement livré par `@tdgs/core`. Utilisez la barre
+d'outils de chaque aperçu pour basculer en **thème sombre**, en **RTL** ou voir
+le **balisage**.
 
-<iframe src="/playground/#button" title="Démo interactive du composant Button" style="width:100%; height: 28rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+<Preview title="Les cinq variantes">
+  <button class="tds-button tds-button--primary tds-button--md" type="button">Valider la demande</button>
+  <button class="tds-button tds-button--secondary tds-button--md" type="button">Annuler</button>
+  <button class="tds-button tds-button--tertiary tds-button--md" type="button">Voir plus</button>
+  <button class="tds-button tds-button--danger tds-button--md" type="button">Supprimer</button>
+  <button class="tds-button tds-button--success tds-button--md" type="button">Approuver</button>
+</Preview>
 
-[Ouvrir le terrain de jeu complet →](/playground/#button)
+### Tailles
+
+<Variants min={11}>
+  <Variant label="tds-button--sm"><button class="tds-button tds-button--primary tds-button--sm" type="button">Petit</button></Variant>
+  <Variant label="tds-button--md"><button class="tds-button tds-button--primary tds-button--md" type="button">Moyen</button></Variant>
+  <Variant label="tds-button--lg"><button class="tds-button tds-button--primary tds-button--lg" type="button">Grand</button></Variant>
+</Variants>
+
+### États
+
+<Variants min={12}>
+  <Variant label="normal"><button class="tds-button tds-button--primary tds-button--md" type="button">Envoyer</button></Variant>
+  <Variant label="hover"><button class="tds-button tds-button--primary tds-button--md" type="button" style="background:var(--tds-action-primary-hover);border-color:var(--tds-action-primary-hover)">Survol</button></Variant>
+  <Variant label="focus"><button class="tds-button tds-button--primary tds-button--md" type="button" style="outline:2px solid var(--tds-action-primary);outline-offset:3px">Focus clavier</button></Variant>
+  <Variant label="disabled"><button class="tds-button tds-button--primary tds-button--md" type="button" disabled aria-disabled="true">Indisponible</button></Variant>
+  <Variant label="loading"><button class="tds-button tds-button--primary tds-button--md" type="button" aria-busy="true" disabled><span aria-hidden="true">Envoi en cours…</span><span class="sr-only">Envoi en cours, veuillez patienter.</span></button></Variant>
+  <Variant label="avec icône"><button class="tds-button tds-button--secondary tds-button--md" type="button"><svg class="tds-icon tds-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>Télécharger</button></Variant>
+</Variants>
+
+### En contexte
+
+<Preview title="Barre d'actions d'un formulaire" align="start" compact>
+  <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+    <button class="tds-button tds-button--primary tds-button--md" type="submit">Enregistrer les modifications</button>
+    <button class="tds-button tds-button--tertiary tds-button--md" type="button">Annuler</button>
+  </div>
+</Preview>
+
+[Voir tous les composants dans le terrain de jeu →](/playground/#button)
 
 </TabItem>
 <TabItem label="Design">
 
-### Variantes
-
-<div class="tds-preview">
-  <div class="tds-preview__stage">
-    <button class="tds-button tds-button--primary tds-button--md" type="button">Valider</button>
-    <button class="tds-button tds-button--secondary tds-button--md" type="button">Retour</button>
-    <button class="tds-button tds-button--tertiary tds-button--md" type="button">Voir plus</button>
-    <button class="tds-button tds-button--danger tds-button--md" type="button">Supprimer</button>
-    <button class="tds-button tds-button--success tds-button--md" type="button">Approuver</button>
-  </div>
-  <div class="tds-preview__label">Aperçu des variantes (taille md)</div>
-</div>
+Spécifications de référence. Les aperçus vivants sont dans l'onglet **Démo**.
 
 ### Tailles
 

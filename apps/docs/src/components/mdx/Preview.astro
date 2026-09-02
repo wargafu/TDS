@@ -1,0 +1,112 @@
+---
+/**
+ * Aperçu vivant d'un composant, rendu avec le CSS réel de `@tdgs/core`.
+ * Barre d'outils : thème de l'îlot (clair / sombre), sens de lecture (LTR / RTL),
+ * et affichage du balisage. Pas d'iframe — le composant est dans la page.
+ */
+interface Props {
+  title?: string;
+  /** Alignement du contenu dans le cadre. */
+  align?: 'start' | 'center';
+  /** Cadre compact (moins de hauteur). */
+  compact?: boolean;
+  /** Empile les enfants directs sur toute la largeur (composants en bloc). */
+  stack?: boolean;
+  /** Masque la bascule de thème. */
+  noTheme?: boolean;
+  /** Masque la bascule LTR/RTL. */
+  noDir?: boolean;
+}
+
+const {
+  title,
+  align = 'center',
+  compact = false,
+  stack = false,
+  noTheme = false,
+  noDir = false,
+} = Astro.props;
+const raw = (await Astro.slots.render('default')).trim();
+// Nettoyage léger pour l'affichage du code : retire les attributs internes Astro.
+const code = raw
+  .replace(/\s+data-astro-cid-[\w-]+(="[^"]*")?/g, '')
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(/^\s+$/gm, '')
+  .trim();
+---
+
+<figure
+  class={`doc-preview${compact ? ' doc-preview--compact' : ''}${stack ? ' doc-preview--stack' : ''}`}
+  data-preview
+>
+  <div class="doc-preview__bar">
+    <span class="doc-preview__title">{title ?? 'Aperçu'}</span>
+    <div class="doc-preview__tools" role="group" aria-label="Options de l'aperçu">
+      {
+        !noTheme && (
+          <div class="doc-preview__seg" role="group" aria-label="Thème de l'aperçu">
+            <button type="button" data-preview-theme="light" aria-pressed="true">
+              Clair
+            </button>
+            <button type="button" data-preview-theme="dark" aria-pressed="false">
+              Sombre
+            </button>
+          </div>
+        )
+      }
+      {
+        !noDir && (
+          <button type="button" class="doc-preview__btn" data-preview-dir aria-pressed="false">
+            RTL
+          </button>
+        )
+      }
+      <button type="button" class="doc-preview__btn" data-preview-code aria-expanded="false">
+        Code
+      </button>
+    </div>
+  </div>
+
+  <div
+    class={`doc-preview__canvas tds-theme-light${align === 'center' ? ' is-center' : ''}`}
+    data-preview-canvas
+    set:html={raw}
+  />
+
+  <details class="doc-preview__code" data-preview-code-panel>
+    <summary class="visually-hidden">Balisage HTML</summary>
+    <pre><code>{code}</code></pre>
+  </details>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-preview]').forEach((root) => {
+    const canvas = root.querySelector<HTMLElement>('[data-preview-canvas]')!;
+
+    root.querySelectorAll<HTMLButtonElement>('[data-preview-theme]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.previewTheme!;
+        canvas.classList.toggle('tds-theme-dark', theme === 'dark');
+        canvas.classList.toggle('tds-theme-light', theme === 'light');
+        root
+          .querySelectorAll<HTMLButtonElement>('[data-preview-theme]')
+          .forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      });
+    });
+
+    const dir = root.querySelector<HTMLButtonElement>('[data-preview-dir]');
+    dir?.addEventListener('click', () => {
+      const rtl = canvas.getAttribute('dir') === 'rtl';
+      canvas.setAttribute('dir', rtl ? 'ltr' : 'rtl');
+      dir.setAttribute('aria-pressed', String(!rtl));
+    });
+
+    const codeBtn = root.querySelector<HTMLButtonElement>('[data-preview-code]');
+    const panel = root.querySelector<HTMLDetailsElement>('[data-preview-code-panel]');
+    codeBtn?.addEventListener('click', () => {
+      const open = !panel!.open;
+      panel!.open = open;
+      codeBtn.setAttribute('aria-expanded', String(open));
+    });
+  });
+</script>

@@ -17,12 +17,26 @@ Variantes : `default` pour une liste dense et `elevated` pour une mise en avant 
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#tile"
-  title="Démo du composant Tile"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="Tuiles de navigation" align="start">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;width:100%">
+    <a href="#" class="tds-tile tds-tile--default">
+      <span class="tds-tile__content">
+        <span class="tds-tile__title">État civil</span>
+        <span class="tds-tile__description">Actes de naissance, mariage et décès.</span>
+      </span>
+      <span class="tds-tile__arrow" aria-hidden="true">→</span>
+    </a>
+    <a href="#" class="tds-tile tds-tile--elevated">
+      <span class="tds-tile__content">
+        <span class="tds-tile__title">Documents d'identité</span>
+        <span class="tds-tile__description">Carte nationale, passeport, laissez-passer.</span>
+      </span>
+      <span class="tds-tile__arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#tile)
 

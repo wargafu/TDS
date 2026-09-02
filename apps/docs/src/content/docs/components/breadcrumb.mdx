@@ -34,7 +34,18 @@ CSS (`::before`), pas insérés dans le HTML — le contenu lu par un lecteur d'
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#breadcrumb" title="Démo interactive du composant Breadcrumb" style="width:100%; height: 16rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Aucun JavaScript requis.
+
+<Preview title="Fil d'Ariane sur trois niveaux" align="start" stack>
+  <nav class="tds-breadcrumb" aria-label="Fil d'Ariane">
+    <ol class="tds-breadcrumb__list">
+      <li class="tds-breadcrumb__item"><a href="#" class="tds-breadcrumb__link">Accueil</a></li>
+      <li class="tds-breadcrumb__item"><a href="#" class="tds-breadcrumb__link">Démarches</a></li>
+      <li class="tds-breadcrumb__item"><a href="#" class="tds-breadcrumb__link">État civil</a></li>
+      <li class="tds-breadcrumb__item"><span class="tds-breadcrumb__current" aria-current="page">Acte de naissance</span></li>
+    </ol>
+  </nav>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#breadcrumb)
 

@@ -36,14 +36,17 @@ avec un clavier, un lecteur d'écran et un navigateur sans JavaScript.
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tdgs/core`.
+Rendu avec le CSS réellement livré par `@tdgs/core`.
 
-<iframe
-  src="/playground/#search"
-  title="Démo interactive du composant Recherche"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+<Preview title="Champ de recherche de service" align="start" stack>
+  <form class="tds-search" role="search">
+    <label class="tds-search__label" for="demo-search">Rechercher un service</label>
+    <div class="tds-search__controls">
+      <input id="demo-search" class="tds-search__input" type="search" placeholder="Ex. carte nationale d'identité" />
+      <button type="submit" class="tds-search__submit">Rechercher</button>
+    </div>
+  </form>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#search)
 

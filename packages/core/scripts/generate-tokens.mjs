@@ -165,6 +165,17 @@ function generateColor() {
   while (cssLines[cssLines.length - 1] === '  ') cssLines.pop();
   cssLines.push('  }');
   cssLines.push('}');
+  cssLines.push('');
+  cssLines.push('/* Îlots de thème — appliquer un thème à un sous-arbre (aperçus, encarts). */');
+  cssLines.push('.tds-theme-light{');
+  cssLines.push(...themeDeclarations('light'));
+  while (cssLines[cssLines.length - 1] === '') cssLines.pop();
+  cssLines.push('}');
+  cssLines.push('.tds-theme-dark{');
+  cssLines.push(...themeDeclarations('dark'));
+  cssLines.push(...semanticDarkDeclarations());
+  while (cssLines[cssLines.length - 1] === '') cssLines.pop();
+  cssLines.push('}');
 
   return { ts, json, css: cssLines.join('\n') + '\n' };
 }

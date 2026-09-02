@@ -34,7 +34,21 @@ Navigation entre pages de résultats. Les liens précédent/suivant en bordure d
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#pagination" title="Démo interactive du composant Pagination" style="width:100%; height: 16rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Aucun JavaScript requis.
+
+<Preview title="Pagination avec troncature" align="start" stack>
+  <nav aria-label="Pagination des résultats">
+    <ul class="tds-pagination__list">
+      <li><a href="#" class="tds-pagination__link" aria-disabled="true" aria-label="Page précédente">‹</a></li>
+      <li><a href="#" class="tds-pagination__link" aria-current="page" aria-label="Page 1">1</a></li>
+      <li><a href="#" class="tds-pagination__link" aria-label="Page 2">2</a></li>
+      <li><a href="#" class="tds-pagination__link" aria-label="Page 3">3</a></li>
+      <li><span class="tds-pagination__ellipsis">…</span></li>
+      <li><a href="#" class="tds-pagination__link" aria-label="Page 12">12</a></li>
+      <li><a href="#" class="tds-pagination__link" aria-label="Page suivante">›</a></li>
+    </ul>
+  </nav>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#pagination)
 

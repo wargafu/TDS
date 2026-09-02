@@ -16,12 +16,25 @@ bindings, au clic via un état `data-open`.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#dropdown"
-  title="Démo du composant Menu déroulant"
-  style="width:100%; height: 20rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu statique (`data-open` fixé) pour la revue visuelle — l'ouverture au clavier
+et le repli au clic extérieur passent par le script de référence (onglet Code).
+
+<Preview title="Menu d'actions ouvert" align="start" stack>
+  <div class="tds-dropdown" data-open="true" style="padding-bottom:8rem">
+    <button type="button" class="tds-button tds-button--tertiary tds-button--md" aria-haspopup="true" aria-expanded="true" aria-controls="demo-dropdown-menu">
+      Actions <span aria-hidden="true">▾</span>
+    </button>
+    <ul class="tds-dropdown__menu" id="demo-dropdown-menu">
+      <li class="tds-dropdown__item"><a class="tds-dropdown__link" href="#">Modifier la demande</a></li>
+      <li class="tds-dropdown__item"><a class="tds-dropdown__link" href="#">Dupliquer</a></li>
+      <li class="tds-dropdown__item tds-dropdown__item-danger">
+        <button type="button" class="tds-dropdown__link">Supprimer</button>
+      </li>
+    </ul>
+  </div>
+</Preview>
+
+[Ouvrir le terrain de jeu complet →](/playground/#dropdown)
 
 </TabItem>
 <TabItem label="Code">

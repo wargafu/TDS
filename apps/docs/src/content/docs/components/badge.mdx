@@ -43,17 +43,31 @@ sidebar:
 </TabItem>
 <TabItem label="Démo">
 
-<p>
-  Comparez les cinq variantes, la forme rectangulaire et les badges avec point de statut dans le
-  terrain de jeu.
-</p>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
 
-<iframe
-  src="/playground/#badge"
-  title="Démo interactive du composant Badge"
-  style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+<Preview title="Les cinq variantes">
+  <span class="tds-badge tds-badge--default tds-badge--md">Brouillon</span>
+  <span class="tds-badge tds-badge--info tds-badge--md">En cours</span>
+  <span class="tds-badge tds-badge--success tds-badge--md">Validé</span>
+  <span class="tds-badge tds-badge--warning tds-badge--md">En attente</span>
+  <span class="tds-badge tds-badge--danger tds-badge--md">Rejeté</span>
+</Preview>
+
+### Tailles
+
+<Variants min={9}>
+  <Variant label="tds-badge--sm"><span class="tds-badge tds-badge--info tds-badge--sm">Nouveau</span></Variant>
+  <Variant label="tds-badge--md"><span class="tds-badge tds-badge--info tds-badge--md">Nouveau</span></Variant>
+</Variants>
+
+### En contexte
+
+<Preview title="Badge dans un titre de liste" align="start" compact>
+  <p style="display:flex;align-items:center;gap:0.5rem;margin:0;font-weight:var(--tds-font-weight-semibold)">
+    Demande REF-2024-0187
+    <span class="tds-badge tds-badge--success tds-badge--sm">Validée</span>
+  </p>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#badge)
 

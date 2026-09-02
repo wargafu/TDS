@@ -16,12 +16,21 @@ ressource DSFR n'est copiée.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#logo"
-  title="Démo du composant Bloc de marque"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Le contenu de `tds-logo__mark`
+(ici un glyphe de substitution) est fourni par le consommateur — SVG d'armoiries,
+sceau ou monogramme.
+
+<Preview title="Bloc de marque institutionnel" align="start" stack>
+  <a class="tds-logo" href="#">
+    <span class="tds-logo__mark" aria-hidden="true"><span style="font-weight:700">★</span></span>
+    <span class="tds-logo__text">
+      <span class="tds-logo__title">République du Tchad</span>
+      <span class="tds-logo__subtitle">Portail des services publics</span>
+    </span>
+  </a>
+</Preview>
+
+[Ouvrir le terrain de jeu complet →](/playground/#logo)
 
 </TabItem>
 <TabItem label="Code">

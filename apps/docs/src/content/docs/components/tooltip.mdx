@@ -36,9 +36,15 @@ source d'une information essentielle.
 </TabItem>
 <TabItem label="Démo">
 
-Survolez ou tabulez jusqu'à l'élément pour révéler la bulle.
+Rendu avec le CSS réellement livré par `@tdgs/core`. La bulle apparaît au survol
+**et** au focus clavier (Tab) — aucun JavaScript requis pour la version CSS.
 
-<iframe src="/playground/#tooltip" title="Démo interactive du composant Tooltip" style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+<Preview title="Bulle d'information contextuelle">
+  <span class="tds-tooltip" tabindex="0" aria-describedby="tt-demo">
+    Montant plafonné
+    <span class="tds-tooltip__bubble" id="tt-demo" role="tooltip">Le plafond est fixé à 500 000 FCFA par trimestre civil.</span>
+  </span>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#tooltip)
 

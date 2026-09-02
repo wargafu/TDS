@@ -37,14 +37,18 @@ formats et limites attendus.
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tdgs/core`.
+Rendu avec le CSS réellement livré par `@tdgs/core`.
 
-<iframe
-  src="/playground/#file-upload"
-  title="Démo interactive du composant Dépôt de fichier"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+<Preview title="Champ de dépôt de fichier" align="start" stack>
+  <div class="tds-file-upload">
+    <label class="tds-field__label" for="demo-file">Justificatif de domicile</label>
+    <input id="demo-file" class="tds-file-upload__input" type="file" accept="application/pdf,image/*" />
+    <label class="tds-file-upload__label" for="demo-file">
+      <span class="tds-file-upload__choose">Choisir un fichier</span>
+      <span>PDF ou image, 5 Mo maximum.</span>
+    </label>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#file-upload)
 

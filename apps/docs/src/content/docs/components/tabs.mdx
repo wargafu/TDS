@@ -35,10 +35,22 @@ Le script fourni suit le pattern [WAI-ARIA APG Tabs](https://www.w3.org/WAI/ARIA
 </TabItem>
 <TabItem label="Démo">
 
-Rendu statique (`aria-selected`/`hidden` fixés dans le HTML) pour la QA visuelle — l'interaction
-réelle passe par le script de référence de l'onglet Code.
+Rendu statique (`aria-selected` / `hidden` fixés dans le HTML) pour la revue
+visuelle — l'interaction clavier réelle passe par le script de référence de
+l'onglet Code.
 
-<iframe src="/playground/#tabs" title="Démo interactive du composant Tabs" style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+<Preview title="Groupe d'onglets" align="start" stack>
+  <div>
+    <div class="tds-tabs__list" role="tablist" aria-label="Détail de la demande">
+      <button type="button" class="tds-tabs__trigger" role="tab" aria-selected="true" aria-controls="demo-panel-1" id="demo-tab-1">Aperçu</button>
+      <button type="button" class="tds-tabs__trigger" role="tab" aria-selected="false" aria-controls="demo-panel-2" id="demo-tab-2" tabindex="-1">Documents</button>
+      <button type="button" class="tds-tabs__trigger" role="tab" aria-selected="false" aria-controls="demo-panel-3" id="demo-tab-3" tabindex="-1">Historique</button>
+    </div>
+    <div class="tds-tabs__panel" role="tabpanel" id="demo-panel-1" aria-labelledby="demo-tab-1">Résumé de la demande REF-2024-0187 et prochaines étapes.</div>
+    <div class="tds-tabs__panel" role="tabpanel" id="demo-panel-2" aria-labelledby="demo-tab-2" hidden>Liste des pièces justificatives déposées.</div>
+    <div class="tds-tabs__panel" role="tabpanel" id="demo-panel-3" aria-labelledby="demo-tab-3" hidden>Journal des changements de statut.</div>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#tabs)
 

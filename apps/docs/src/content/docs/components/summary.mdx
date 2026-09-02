@@ -15,12 +15,21 @@ du fil d'Ariane et ne remplace pas la navigation principale.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#summary"
-  title="Démo du composant Sommaire"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`. Aucun JavaScript requis.
+
+<Preview title="Sommaire de page" align="start" stack>
+  <nav class="tds-summary" aria-label="Sommaire de la page">
+    <p class="tds-summary__title">Sur cette page</p>
+    <ol class="tds-summary__list">
+      <li><a href="#etape-1" class="tds-summary__link">Pièces à fournir</a></li>
+      <li><a href="#etape-2" class="tds-summary__link">Déposer la demande</a></li>
+      <li><a href="#etape-3" class="tds-summary__link">Suivre l'instruction</a></li>
+      <li><a href="#etape-4" class="tds-summary__link">Retirer le document</a></li>
+    </ol>
+  </nav>
+</Preview>
+
+[Ouvrir le terrain de jeu complet →](/playground/#summary)
 
 </TabItem>
 <TabItem label="Code">

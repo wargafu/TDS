@@ -182,3 +182,63 @@
     --tds-semantic-danger-icon: var(--tds-color-red-300);
   }
 }
+
+/* Îlots de thème — appliquer un thème à un sous-arbre (aperçus, encarts). */
+.tds-theme-light{
+  --tds-text: var(--tds-neutral-900);
+  --tds-text-muted: var(--tds-neutral-600);
+  --tds-text-disabled: var(--tds-neutral-500);
+  --tds-text-inverted: var(--tds-neutral-0);
+  --tds-bg: var(--tds-neutral-0);
+  --tds-bg-subtle: var(--tds-neutral-100);
+  --tds-bg-elevated: var(--tds-neutral-0);
+  --tds-bg-disabled: var(--tds-neutral-100);
+  --tds-border: var(--tds-neutral-300);
+  --tds-border-strong: var(--tds-neutral-900);
+  --tds-border-subtle: var(--tds-neutral-200);
+  --tds-border-disabled: var(--tds-neutral-200);
+  --tds-action-primary: var(--tds-color-blue-500);
+  --tds-action-primary-hover: var(--tds-color-blue-600);
+  --tds-action-primary-active: var(--tds-color-blue-700);
+  --tds-action-secondary: var(--tds-color-blue-50);
+  --tds-action-secondary-hover: var(--tds-color-blue-100);
+  --tds-accent: var(--tds-color-yellow-500);
+  --tds-accent-text: var(--tds-color-yellow-800);
+}
+.tds-theme-dark{
+  --tds-text: var(--tds-neutral-0);
+  --tds-text-muted: var(--tds-neutral-300);
+  --tds-text-disabled: var(--tds-neutral-600);
+  --tds-text-inverted: var(--tds-neutral-900);
+  --tds-bg: var(--tds-neutral-900);
+  --tds-bg-subtle: var(--tds-neutral-800);
+  --tds-bg-elevated: var(--tds-neutral-800);
+  --tds-bg-disabled: var(--tds-neutral-700);
+  --tds-border: var(--tds-neutral-700);
+  --tds-border-strong: var(--tds-neutral-0);
+  --tds-border-subtle: var(--tds-neutral-800);
+  --tds-border-disabled: var(--tds-neutral-700);
+  --tds-action-primary: var(--tds-color-blue-300);
+  --tds-action-primary-hover: var(--tds-color-blue-200);
+  --tds-action-primary-active: var(--tds-color-blue-100);
+  --tds-action-secondary: var(--tds-color-blue-800);
+  --tds-action-secondary-hover: var(--tds-color-blue-700);
+  --tds-accent: var(--tds-color-yellow-400);
+  --tds-accent-text: var(--tds-color-yellow-200);
+  --tds-semantic-info-bg: var(--tds-color-blue-900);
+  --tds-semantic-info-border: var(--tds-color-blue-700);
+  --tds-semantic-info-text: var(--tds-color-blue-300);
+  --tds-semantic-info-icon: var(--tds-color-blue-300);
+  --tds-semantic-success-bg: var(--tds-color-green-900);
+  --tds-semantic-success-border: var(--tds-color-green-700);
+  --tds-semantic-success-text: var(--tds-color-green-300);
+  --tds-semantic-success-icon: var(--tds-color-green-300);
+  --tds-semantic-warning-bg: var(--tds-color-yellow-900);
+  --tds-semantic-warning-border: var(--tds-color-yellow-700);
+  --tds-semantic-warning-text: var(--tds-color-yellow-100);
+  --tds-semantic-warning-icon: var(--tds-color-yellow-100);
+  --tds-semantic-danger-bg: var(--tds-color-red-900);
+  --tds-semantic-danger-border: var(--tds-color-red-700);
+  --tds-semantic-danger-text: var(--tds-color-red-300);
+  --tds-semantic-danger-icon: var(--tds-color-red-300);
+}

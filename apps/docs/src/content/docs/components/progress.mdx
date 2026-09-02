@@ -23,14 +23,24 @@ prédire sa durée.
 </TabItem>
 <TabItem label="Démo">
 
-Rendu avec le CSS réellement buildé de `@tdgs/core`.
+Rendu avec le CSS réellement livré par `@tdgs/core`.
 
-<iframe
-  src="/playground/#progress"
-  title="Démo interactive du composant Progression"
-  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+<Preview title="Progression déterminée" align="start" stack>
+  <div class="tds-progress">
+    <div class="tds-progress__label" id="demo-progress-label"><span>Traitement de la demande</span><span aria-hidden="true">65 %</span></div>
+    <div class="tds-progress__track" role="progressbar" aria-labelledby="demo-progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65">
+      <div class="tds-progress__indicator" style="--tds-progress-value: 65%"></div>
+    </div>
+  </div>
+</Preview>
+
+### Progression indéterminée
+
+<Preview title="tds-progress--indeterminate" align="start" stack compact>
+  <div class="tds-progress tds-progress--indeterminate">
+    <div class="tds-progress__track" role="progressbar" aria-label="Chargement des données"><div class="tds-progress__indicator"></div></div>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#progress)
 

@@ -34,7 +34,31 @@ d'actions libre (connexion, navigation, recherche). Purement CSS, sans dépendan
 </TabItem>
 <TabItem label="Démo">
 
-<iframe src="/playground/#header" title="Démo interactive du composant Header" style="width:100%; height: 20rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;" loading="lazy"></iframe>
+Rendu avec le CSS réellement livré par `@tdgs/core`.
+
+<Preview title="En-tête institutionnel" align="start" stack>
+  <div class="tds-header" style="border:1px solid var(--tds-border-subtle)">
+    <a href="#" class="tds-header__brand">
+      <div class="tds-header__titles">
+        <span class="tds-header__title">Ministère de la Fonction publique</span>
+        <span class="tds-header__tagline">République du Tchad</span>
+      </div>
+    </a>
+    <div class="tds-header__actions">
+      <a href="#" class="tds-link">Se connecter</a>
+    </div>
+  </div>
+</Preview>
+
+### Variante compacte
+
+<Preview title="tds-header--compact" align="start" stack compact>
+  <div class="tds-header tds-header--compact" style="border:1px solid var(--tds-border-subtle)">
+    <a href="#" class="tds-header__brand">
+      <span class="tds-header__title">Portail des services publics</span>
+    </a>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#header)
 

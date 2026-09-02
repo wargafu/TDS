@@ -25,12 +25,27 @@ permet d'activer ou non les scripts concernés.
 </TabItem>
 <TabItem label="Démo">
 
-<iframe
-  src="/playground/#consent"
-  title="Démo du bandeau de consentement"
-  style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
-  loading="lazy"
-></iframe>
+Rendu statique (position flottante neutralisée) pour la revue visuelle.
+L'affichage conditionnel, la mémorisation du choix et l'événement `tds-consent`
+passent par `@tdgs/core/elements` (onglet Code). Un exemple interactif est dans le
+terrain de jeu.
+
+<Preview title="Bandeau de gestion des cookies" align="start" stack noDir>
+  <div class="tds-consent" style="position:static;width:auto;inset:auto;box-shadow:none">
+    <h3 class="tds-consent__title">Cookies et mesure d'audience</h3>
+    <p class="tds-consent__body">
+      Nous mesurons l'audience du site pour l'améliorer. Vous pouvez accepter, refuser,
+      ou choisir catégorie par catégorie.
+    </p>
+    <div class="tds-consent__categories">
+      <label><input type="checkbox" name="audience" checked /> Mesure d'audience</label>
+    </div>
+    <div class="tds-consent__actions">
+      <button type="button" class="tds-button tds-button--primary tds-button--md">Tout accepter</button>
+      <button type="button" class="tds-button tds-button--secondary tds-button--md">Continuer sans accepter</button>
+    </div>
+  </div>
+</Preview>
 
 [Ouvrir le terrain de jeu complet →](/playground/#consent)
 
