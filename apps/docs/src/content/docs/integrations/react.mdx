@@ -5,7 +5,6 @@ sidebar:
   order: 3
 ---
 
-import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
 `@tdgs/react` fournit un composant React typé pour chaque composant TDGS.
 Il ne réimplémente pas le CSS : il déclare `@tdgs/core` en peer dependency et se
@@ -20,9 +19,27 @@ contente de produire le bon balisage sémantique et les bonnes classes `tds-*`.
 </Aside>
 
 <Tabs>
-  <TabItem label="pnpm">```bash pnpm add @tdgs/react @tdgs/core ```</TabItem>
-  <TabItem label="npm">```bash npm install @tdgs/react @tdgs/core ```</TabItem>
-  <TabItem label="yarn">```bash yarn add @tdgs/react @tdgs/core ```</TabItem>
+  <TabItem label="pnpm">
+
+```bash
+pnpm add @tdgs/react @tdgs/core
+```
+
+  </TabItem>
+  <TabItem label="npm">
+
+```bash
+npm install @tdgs/react @tdgs/core
+```
+
+  </TabItem>
+  <TabItem label="yarn">
+
+```bash
+yarn add @tdgs/react @tdgs/core
+```
+
+  </TabItem>
 </Tabs>
 
 <Aside type="note" title="React 18 et 19">

@@ -1,0 +1,27 @@
+---
+import { breadcrumbs } from '../lib/navigation';
+import { docHref } from '../lib/site';
+
+interface Props {
+  slug: string;
+  title: string;
+}
+const { slug, title } = Astro.props;
+const crumbs = breadcrumbs(slug, title);
+---
+
+<nav class="breadcrumbs" aria-label="Fil d'Ariane">
+  <ol>
+    {
+      crumbs.map((crumb, i) => (
+        <li>
+          {crumb.slug && i < crumbs.length - 1 ? (
+            <a href={docHref(crumb.slug)}>{crumb.label}</a>
+          ) : (
+            <span aria-current="page">{crumb.label}</span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

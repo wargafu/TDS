@@ -1,0 +1,11 @@
+---
+interface Props {
+  label: string;
+  icon?: string;
+}
+const { label } = Astro.props;
+---
+
+<div class="mdx-tabs__panel" role="tabpanel" data-label={label}>
+  <slot />
+</div>

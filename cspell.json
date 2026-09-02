@@ -1,0 +1,26 @@
+{
+  "version": "0.2",
+  "language": "en,fr",
+  "dictionaries": ["fr-fr", "tdgs"],
+  "dictionaryDefinitions": [
+    {
+      "name": "tdgs",
+      "path": "./.cspell/project-words.txt",
+      "addWords": true
+    }
+  ],
+  "import": ["@cspell/dict-fr-fr/cspell-ext.json"],
+  "ignorePaths": [
+    "node_modules/**",
+    "**/dist/**",
+    "**/.astro/**",
+    "pnpm-lock.yaml",
+    "reference/**",
+    "**/*.svg",
+    "packages/core/src/tokens/**",
+    "apps/docs/public/tds/**",
+    "CHANGELOG.md",
+    "**/CHANGELOG.md"
+  ],
+  "ignoreRegExpList": ["/#[0-9a-fA-F]{3,8}\\b/", "/--tds-[a-z0-9-]+/", "/\\btds-[a-z0-9-]+/"]
+}

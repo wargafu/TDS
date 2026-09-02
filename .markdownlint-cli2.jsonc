@@ -1,0 +1,25 @@
+{
+  "config": {
+    "default": true,
+    // Titres non uniques tolérés (fiches composants : « Usage » revient par section).
+    "MD024": { "siblings_only": true },
+    // Longueur de ligne : la prose FR et les tableaux dépassent souvent 80.
+    "MD013": false,
+    // HTML inline autorisé (composants MDX, démos).
+    "MD033": false,
+    // Premier élément pas forcément un titre (frontmatter MDX).
+    "MD041": false,
+    // Emphase utilisée comme titre : toléré dans les notes.
+    "MD036": false
+  },
+  "globs": ["**/*.md"],
+  "ignores": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "reference/**",
+    ".agents/**",
+    "apps/docs/dist/**",
+    "**/CHANGELOG.md",
+    ".changeset/**"
+  ]
+}

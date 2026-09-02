@@ -1,0 +1,90 @@
+---
+/**
+ * Onglets pour l'affichage MDX. Sans JavaScript, tous les panneaux sont
+ * affichés avec leur libellé ; avec JavaScript, une barre d'onglets est
+ * générée à partir des `data-label` des enfants `TabItem`.
+ */
+interface Props {
+  syncKey?: string;
+}
+const { syncKey } = Astro.props;
+---
+
+<div class="mdx-tabs" data-mdx-tabs data-sync-key={syncKey}>
+  <slot />
+</div>
+
+<script>
+  class MdxTabs {
+    static enhanceAll() {
+      document.querySelectorAll<HTMLElement>('[data-mdx-tabs]').forEach((el, i) => new MdxTabs(el, i));
+    }
+    constructor(root: HTMLElement, index: number) {
+      const panels = [...root.querySelectorAll<HTMLElement>('.mdx-tabs__panel')];
+      if (panels.length < 2) return;
+      const list = document.createElement('div');
+      list.className = 'mdx-tabs__list';
+      list.setAttribute('role', 'tablist');
+
+      const syncKey = root.dataset.syncKey;
+      let active = 0;
+      if (syncKey) {
+        try {
+          const saved = sessionStorage.getItem(`mdx-tabs:${syncKey}`);
+          const found = panels.findIndex((p) => p.dataset.label === saved);
+          if (found >= 0) active = found;
+        } catch {}
+      }
+
+      const tabs = panels.map((panel, i) => {
+        const id = `tab-${index}-${i}`;
+        const panelId = `panel-${index}-${i}`;
+        panel.id = panelId;
+        panel.setAttribute('aria-labelledby', id);
+        panel.hidden = i !== active;
+
+        const tab = document.createElement('button');
+        tab.className = 'mdx-tabs__tab';
+        tab.id = id;
+        tab.type = 'button';
+        tab.textContent = panel.dataset.label ?? `Onglet ${i + 1}`;
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-controls', panelId);
+        tab.setAttribute('aria-selected', String(i === active));
+        tab.tabIndex = i === active ? 0 : -1;
+        tab.addEventListener('click', () => this.select(i));
+        tab.addEventListener('keydown', (e) => {
+          const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+          if (!dir) return;
+          e.preventDefault();
+          this.select((i + dir + tabs.length) % tabs.length, true);
+        });
+        list.append(tab);
+        return tab;
+      });
+
+      this.panels = panels;
+      this.tabs = tabs;
+      this.syncKey = syncKey;
+      root.prepend(list);
+    }
+    panels: HTMLElement[] = [];
+    tabs: HTMLButtonElement[] = [];
+    syncKey?: string;
+
+    select(i: number, focus = false) {
+      this.panels.forEach((p, n) => (p.hidden = n !== i));
+      this.tabs.forEach((t, n) => {
+        t.setAttribute('aria-selected', String(n === i));
+        t.tabIndex = n === i ? 0 : -1;
+      });
+      if (focus) this.tabs[i].focus();
+      if (this.syncKey) {
+        try {
+          sessionStorage.setItem(`mdx-tabs:${this.syncKey}`, this.panels[i].dataset.label ?? '');
+        } catch {}
+      }
+    }
+  }
+  MdxTabs.enhanceAll();
+</script>

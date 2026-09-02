@@ -1,18 +1,17 @@
 # Documentation structurante du TDGS
 
-Ce dossier complète le socle du **Tchad Design System (TDGS)**. Il doit être intégré à la racine du dépôt, puis ajusté après audit du code et validation institutionnelle.
+Ce dossier réunit la documentation de référence et d'analyse du **Tchad Design
+System (TDGS)**. Les fichiers de « santé communautaire » reconnus par GitHub
+(`CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, `SUPPORT`, `GOVERNANCE`) ont été
+déplacés à la **racine du dépôt** (phase 5 de la refonte).
 
 > Statut : projet open source proposé pour les services numériques publics du Tchad. Le terme « officiel », l’usage des symboles de l’État et le caractère obligatoire nécessitent une homologation par les autorités compétentes.
 
-## Documents
+## Documents de ce dossier
 
 | Fichier                   | Objet                                                |
 | ------------------------- | ---------------------------------------------------- |
-| `GOVERNANCE.md`           | Autorité, rôles, décisions et cycle de vie           |
-| `CONTRIBUTING.md`         | Processus de contribution                            |
-| `CODE_OF_CONDUCT.md`      | Règles de la communauté                              |
-| `SECURITY.md`             | Signalement et traitement des vulnérabilités         |
-| `SUPPORT.md`              | Canaux et niveaux de support                         |
+| `DESIGN-PRINCIPLES.md`    | Principes de design et identité de marque            |
 | `ACCESSIBILITY.md`        | Politique WCAG 2.2 AA et tests                       |
 | `INTERNATIONALIZATION.md` | Français, arabe et RTL                               |
 | `ARCHITECTURE.md`         | Principes d’architecture du monorepo                 |
@@ -20,7 +19,15 @@ Ce dossier complète le socle du **Tchad Design System (TDGS)**. Il doit être i
 | `VERSIONING.md`           | SemVer, changelog et migrations                      |
 | `ROADMAP.md`              | Trajectoire proposée vers TDGS 1.0                   |
 | `STATUS.md`               | État de maturité et conditions de mise en production |
-| `TDGS-AUDIT-INITIAL.md`   | Modèle d’audit à compléter depuis le dépôt réel      |
+| `DSFR-COMPARISON.md`      | Référence comparative DSFR (traçabilité)             |
+| `TDGS-AUDIT-INITIAL.md`   | Audit initial daté (archive, non maintenu)           |
+| `PROMPT-MAITRE-TDGS.md`   | Prompt maître d'origine (archive)                    |
+
+## À la racine du dépôt
+
+`CONTRIBUTING.md` · `CODE_OF_CONDUCT.md` · `SECURITY.md` · `SUPPORT.md` ·
+`GOVERNANCE.md` · `CHANGELOG.md` · `.github/` (templates issue/PR, `CODEOWNERS`,
+`dependabot.yml`).
 
 ## Règle de mise en œuvre
 

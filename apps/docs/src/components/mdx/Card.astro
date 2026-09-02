@@ -1,0 +1,12 @@
+---
+interface Props {
+  title: string;
+  icon?: string;
+}
+const { title } = Astro.props;
+---
+
+<article class="mdx-card">
+  <p class="mdx-card__title">{title}</p>
+  <div class="mdx-card__body"><slot /></div>
+</article>

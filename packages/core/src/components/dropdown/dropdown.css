@@ -1,0 +1,111 @@
+/* TDGS Dropdown — menu déroulant.
+   Fonctionne en CSS pur au survol et à la focalisation : le menu reste
+   disponible au clavier sans JavaScript. Un état JavaScript (data-open)
+   est aussi pris en charge pour les bindings React/Vue. */
+:root {
+  --tds-dropdown-bg: var(--tds-bg-elevated);
+  --tds-dropdown-border: var(--tds-border-subtle);
+  --tds-dropdown-text: var(--tds-text);
+  --tds-dropdown-muted: var(--tds-text-muted);
+  --tds-dropdown-hover-bg: var(--tds-bg-subtle);
+  --tds-dropdown-active: var(--tds-action-primary);
+  --tds-dropdown-radius: var(--tds-radius-md);
+  --tds-dropdown-shadow: var(--tds-shadow-lg);
+  --tds-dropdown-z-index: var(--tds-z-dropdown);
+  --tds-dropdown-transition:
+    opacity var(--tds-motion-fast) var(--tds-easing-standard),
+    transform var(--tds-motion-fast) var(--tds-easing-standard),
+    visibility var(--tds-motion-fast) var(--tds-easing-standard);
+}
+
+.tds-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.tds-dropdown__menu {
+  position: absolute;
+  inset-block-start: calc(100% + var(--tds-spacing-2));
+  inset-inline-start: 0;
+  min-width: 14rem;
+  padding: var(--tds-spacing-2);
+  background: var(--tds-dropdown-bg);
+  border: 1px solid var(--tds-dropdown-border);
+  border-radius: var(--tds-dropdown-radius);
+  box-shadow: var(--tds-dropdown-shadow);
+  z-index: var(--tds-dropdown-z-index);
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.25rem);
+  transition: var(--tds-dropdown-transition);
+}
+
+.tds-dropdown--right .tds-dropdown__menu {
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+}
+
+/* Ouverture au survol ou à la focalisation (CSS pur). */
+.tds-dropdown:hover .tds-dropdown__menu,
+.tds-dropdown:focus-within .tds-dropdown__menu,
+.tds-dropdown[data-open='true'] .tds-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tds-dropdown__item {
+  margin: 0;
+}
+
+.tds-dropdown__link {
+  display: flex;
+  align-items: center;
+  gap: var(--tds-spacing-2);
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 0;
+  border-radius: var(--tds-radius-sm);
+  background: transparent;
+  color: var(--tds-dropdown-text);
+  font-family: var(--tds-font-family-primary);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-sm);
+  text-decoration: none;
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--tds-motion-fast) var(--tds-easing-standard);
+}
+
+.tds-dropdown__link:hover {
+  background: var(--tds-dropdown-hover-bg);
+  color: var(--tds-dropdown-active);
+}
+
+.tds-dropdown__link:focus-visible {
+  outline: 2px solid var(--tds-dropdown-active);
+  outline-offset: -2px;
+}
+
+.tds-dropdown__item-danger .tds-dropdown__link {
+  color: var(--tds-semantic-danger-icon);
+}
+
+.tds-dropdown__item-danger .tds-dropdown__link:hover {
+  background: var(--tds-semantic-danger-bg);
+  color: var(--tds-semantic-danger-text);
+}
+
+@media (forced-colors: active) {
+  .tds-dropdown__menu {
+    border-color: ButtonText;
+    background: Canvas;
+  }
+
+  .tds-dropdown__link:hover {
+    background: Highlight;
+    color: HighlightText;
+  }
+}

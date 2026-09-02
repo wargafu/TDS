@@ -28,7 +28,7 @@ françaises. Ces contraintes ne sont pas transposables telles quelles au TDGS.
 | Identité             | Marianne, marque et polices propres à l'administration française | Identité tchadienne proposée, couleurs TDGS et polices déclarées dans le projet | Conserver l'identité TDGS ; aucune ressource DSFR copiée                                           |
 | Architecture         | HTML/CSS/JS et modules par composant                             | `@tdgs/core` indépendant des frameworks, `@tdgs/react`, `@tdgs/vue`             | Garder le socle actuel et ajouter les composants par lots testables                                |
 | Tokens               | Variables et couches de styles organisées par composant          | Primitifs générés puis tokens de composant et variables CSS                     | Étendre les trois couches sans valeurs visuelles dispersées                                        |
-| Catalogue            | Environ 40 familles repérées dans `src/dsfr/component`           | 28 familles UI après ce lot, plus `Icon`                                        | Prioriser les besoins des services publics tchadiens plutôt que viser une copie numérique          |
+| Catalogue            | Environ 40 familles repérées dans `src/dsfr/component`           | 35 familles UI après ce lot, plus `Icon`                                        | Prioriser les besoins des services publics tchadiens plutôt que viser une copie numérique          |
 | Documentation        | Fiches riches : présentation, démo, design, code, accessibilité  | Fiches Starlight avec présentation, démo, code et accessibilité                 | Conserver une fiche par composant et ajouter les règles éditoriales au besoin                      |
 | Démonstration        | Exemples et Storybook                                            | Playground basé sur le CSS réellement buildé                                    | Garder le playground léger et vérifier chaque route en build local et GitHub Pages                 |
 | Accessibilité        | Documentation et scripts de vérification intégrés au cycle       | Cible WCAG 2.2 AA, rôles ARIA et tests de bindings                              | Tester le clavier, les annonces, le contraste et les thèmes ; ne pas confondre build et audit a11y |
@@ -56,8 +56,9 @@ les bindings.
 
 ## Prochaines étapes recommandées
 
-1. Ajouter les composants de données et de contenu à forte réutilisation
-   (`Select` documenté, `Password`, `Range`, `Share`).
+1. Ajouter les composants de données et de contenu encore absents (`Combobox`,
+   `Transcription`, `Consentement`, `Sidemenu` imbriqué, `Share` enrichi de copie
+   de lien) ainsi qu'une documentation dédiée de `Select` et `Radio`.
 2. Formaliser une matrice de tests d'accessibilité navigateur pour les patterns
    interactifs et les thèmes clair, sombre, contraste élevé et RTL.
 3. Ajouter une génération contrôlée de métadonnées de composants et de pages,

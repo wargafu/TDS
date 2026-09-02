@@ -1,0 +1,19 @@
+---
+interface Props {
+  type?: 'note' | 'tip' | 'caution' | 'danger';
+  title?: string;
+}
+const { type = 'note', title } = Astro.props;
+const defaultTitles: Record<string, string> = {
+  note: 'Note',
+  tip: 'Astuce',
+  caution: 'Attention',
+  danger: 'Danger',
+};
+const heading = title ?? defaultTitles[type];
+---
+
+<aside class={`mdx-aside mdx-aside--${type}`} aria-label={heading}>
+  <p class="mdx-aside__title">{heading}</p>
+  <div class="mdx-aside__body"><slot /></div>
+</aside>

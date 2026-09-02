@@ -29,6 +29,11 @@ apps/docs/public/tds/
 .DS_Store
 Thumbs.db
 
+# Crash dumps / scratch
+*.stackdump
+scratch-*.log
+scratch-*.txt
+
 # Logs
 *.log
 npm-debug.log*
@@ -40,3 +45,7 @@ pnpm-debug.log*
 
 # Dépôts de référence locaux — ne pas empaqueter ni publier
 reference/dsfr/
+
+# Playwright
+test-results/
+playwright-report/

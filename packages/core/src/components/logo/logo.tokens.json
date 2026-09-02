@@ -1,0 +1,8 @@
+{
+  "defaults": {
+    "color": "var(--tds-logo-text)",
+    "muted": "var(--tds-logo-muted)",
+    "accent": "var(--tds-logo-accent)",
+    "markBackground": "var(--tds-logo-mark-bg)"
+  }
+}

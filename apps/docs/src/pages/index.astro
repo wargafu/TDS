@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, docHref } from '../lib/site';
+
+const quickLinks = [
+  {
+    title: 'Fondamentaux',
+    body: 'Couleurs, typographie, espacement, thèmes clair / sombre et RTL.',
+    href: docHref('fondamentaux/index'),
+  },
+  {
+    title: 'Composants',
+    body: 'Catalogue, variantes, états, accessibilité et exemples HTML / React / Vue.',
+    href: docHref('components/index'),
+  },
+  {
+    title: 'Modèles',
+    body: 'Pages types pour démarches et portails de services publics.',
+    href: docHref('modeles/index'),
+  },
+  {
+    title: 'Intégrations',
+    body: 'HTML/CSS, React et Vue autour de @tdgs/core.',
+    href: docHref('integrations/overview'),
+  },
+];
+
+const pillars = [
+  {
+    title: 'Une base technique stable',
+    body: 'Tokens générés, CSS distribué, exports vérifiés et composants documentés dans un même socle versionné.',
+  },
+  {
+    title: 'Une expérience publique cohérente',
+    body: 'Navigation, formulaires, alertes, tableaux et modèles de pages alignés sur des usages administratifs réels.',
+  },
+  {
+    title: 'Une identité tchadienne sobre',
+    body: 'Bleu, or et rouge du drapeau utilisés avec retenue, sans confusion avec les états d’erreur.',
+  },
+];
+---
+
+<BaseLayout title={SITE.longName} mainClass="home">
+  <section class="container home-hero">
+    <div>
+      <p class="home-hero__eyebrow">Proposition open source pour les services publics du Tchad</p>
+      <h1>Construisez des services publics accessibles et cohérents.</h1>
+      <p class="home-hero__lead">
+        TDGS fournit les tokens, les composants et les modèles pour bâtir des interfaces
+        publiques tchadiennes sobres, accessibles et maintenables.
+      </p>
+      <div class="home-hero__actions">
+        <a class="tds-button tds-button--primary tds-button--md" href={docHref('premiers-pas/installation')}>
+          Démarrer
+        </a>
+        <a class="tds-button tds-button--tertiary tds-button--md" href={docHref('components/index')}>
+          Explorer les composants
+        </a>
+      </div>
+    </div>
+    <dl class="home-hero__panel" aria-label="Résumé du système">
+      <div><dt>Accessibilité</dt><dd>Cible WCAG 2.2 AA</dd></div>
+      <div><dt>Socle</dt><dd>CSS-first, sans dépendance</dd></div>
+      <div><dt>Langues</dt><dd>Français LTR · arabe RTL</dd></div>
+      <div><dt>Thèmes</dt><dd>Clair · sombre · contraste élevé</dd></div>
+      <div><dt>Cadres</dt><dd>HTML · React · Vue</dd></div>
+    </dl>
+  </section>
+
+  <div class="container">
+    <div class="tds-status-banner" role="note">
+      <strong>Statut du projet</strong>
+      <span>
+        TDGS est une initiative open source indépendante, conçue en vue d'une adoption par les
+        institutions publiques tchadiennes. Elle ne constitue pas encore une norme officiellement
+        homologuée par l'État.
+      </span>
+    </div>
+  </div>
+
+  <section class="container home-section">
+    <h2>Accès rapides</h2>
+    <ul class="tds-component-grid">
+      {
+        quickLinks.map((link) => (
+          <li>
+            <a class="tds-component-card" href={link.href}>
+              <span class="tds-component-card__name">{link.title}</span>
+              <span class="tds-component-card__desc">{link.body}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="container home-section">
+    <h2>Ce que TDGS apporte</h2>
+    <div class="tds-feature-band">
+      {
+        pillars.map((pillar) => (
+          <div>
+            <strong>{pillar.title}</strong>
+            <p>{pillar.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+title: Menu latéral
+description: Navigation secondaire verticale TDGS au sein d'une rubrique.
+sidebar:
+  order: 34
+---
+
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Sidemenu` organise la navigation secondaire d'une rubrique (sections d'un
+dossier, chapitres d'un guide). Il met en évidence la page courante et reste
+léger, sans JavaScript.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#sidemenu"
+  title="Démo du composant Menu latéral"
+  style="width:100%; height: 22rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/sidemenu/sidemenu.css';
+```
+
+```html
+<nav class="tds-sidemenu" aria-label="Sommaire du dossier">
+  <p class="tds-sidemenu__title">Mon dossier</p>
+  <ul class="tds-sidemenu__list">
+    <li class="tds-sidemenu__item">
+      <a class="tds-sidemenu__link" href="#apercu" aria-current="page">Aperçu</a>
+    </li>
+    <li class="tds-sidemenu__item">
+      <a class="tds-sidemenu__link" href="#documents">Documents</a>
+    </li>
+  </ul>
+</nav>
+```
+
+| Intégration | API                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------ |
+| React       | `<Sidemenu title="Mon dossier" items={[{ id: '1', label: 'Aperçu', href: '#apercu', current: true }]} />` |
+| Vue         | `<TdsSidemenu title="Mon dossier" :items="[{ id: '1', label: 'Aperçu', href: '#apercu', current: true }]" />` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Page courante">
+  Le lien actif porte `aria-current="page"`. Fournissez un `aria-label`
+  explicite sur la navigation si vous en avez plusieurs dans la page.
+</Aside>
+
+</TabItem>
+</Tabs>

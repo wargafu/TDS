@@ -6,15 +6,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wargafu/TDGS.git",
+    "url": "git+https://github.com/kisaigo/TDGS.git",
     "directory": "packages/core"
   },
-  "homepage": "https://wargafu.github.io/TDGS/",
+  "homepage": "https://kisaigo.github.io/TDGS/",
   "publishConfig": {
     "access": "public"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20.18.1"
   },
   "type": "module",
   "main": "dist/index.js",
@@ -22,7 +22,9 @@
   "types": "dist/index.d.ts",
   "sideEffects": [
     "**/*.css",
-    "dist/**/*.css"
+    "dist/**/*.css",
+    "./dist/elements/*.js",
+    "./dist/elements/index.js"
   ],
   "files": [
     "dist",
@@ -39,179 +41,239 @@
     "typecheck": "tsc -p tsconfig.typecheck.json",
     "validate:exports": "node scripts/validate-exports.mjs",
     "validate:tokens": "node scripts/validate-tokens.mjs",
-    "validate": "pnpm validate:tokens && pnpm build && pnpm validate:exports",
-    "prepare": "node scripts/build.mjs"
+    "validate:contrast": "node scripts/validate-contrast.mjs",
+    "validate:manifest": "node scripts/validate-manifest.mjs",
+    "validate": "pnpm validate:tokens && pnpm validate:manifest && pnpm build && pnpm validate:contrast && pnpm validate:exports",
+    "prepare": "node scripts/build.mjs",
+    "size": "size-limit"
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./base.css": "./dist/base.css",
     "./tdgs.css": "./dist/tdgs.css",
+    "./manifest": {
+      "types": "./dist/manifest.d.ts",
+      "import": "./dist/manifest.js"
+    },
+    "./elements": {
+      "types": "./dist/elements/index.d.ts",
+      "import": "./dist/elements/index.js"
+    },
     "./icons": {
-      "import": "./dist/icons/index.js",
-      "types": "./dist/icons/index.d.ts"
+      "types": "./dist/icons/index.d.ts",
+      "import": "./dist/icons/index.js"
     },
     "./icons/icons.css": "./dist/icons/icons.css",
     "./tokens": {
-      "import": "./dist/tokens/index.js",
-      "types": "./dist/tokens/index.d.ts"
+      "types": "./dist/tokens/index.d.ts",
+      "import": "./dist/tokens/index.js"
     },
     "./components": {
-      "import": "./dist/components/index.js",
-      "types": "./dist/components/index.d.ts"
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
     },
     "./components/button": {
-      "import": "./dist/components/button/index.js",
-      "types": "./dist/components/button/index.d.ts"
+      "types": "./dist/components/button/index.d.ts",
+      "import": "./dist/components/button/index.js"
     },
     "./components/button/button.css": "./dist/components/button/button.css",
     "./components/input": {
-      "import": "./dist/components/input/index.js",
-      "types": "./dist/components/input/index.d.ts"
+      "types": "./dist/components/input/index.d.ts",
+      "import": "./dist/components/input/index.js"
     },
     "./components/input/input.css": "./dist/components/input/input.css",
     "./components/alert": {
-      "import": "./dist/components/alert/index.js",
-      "types": "./dist/components/alert/index.d.ts"
+      "types": "./dist/components/alert/index.d.ts",
+      "import": "./dist/components/alert/index.js"
     },
     "./components/alert/alert.css": "./dist/components/alert/alert.css",
     "./components/badge": {
-      "import": "./dist/components/badge/index.js",
-      "types": "./dist/components/badge/index.d.ts"
+      "types": "./dist/components/badge/index.d.ts",
+      "import": "./dist/components/badge/index.js"
     },
     "./components/badge/badge.css": "./dist/components/badge/badge.css",
     "./components/card": {
-      "import": "./dist/components/card/index.js",
-      "types": "./dist/components/card/index.d.ts"
+      "types": "./dist/components/card/index.d.ts",
+      "import": "./dist/components/card/index.js"
     },
     "./components/card/card.css": "./dist/components/card/card.css",
     "./components/link": {
-      "import": "./dist/components/link/index.js",
-      "types": "./dist/components/link/index.d.ts"
+      "types": "./dist/components/link/index.d.ts",
+      "import": "./dist/components/link/index.js"
     },
     "./components/link/link.css": "./dist/components/link/link.css",
     "./components/table": {
-      "import": "./dist/components/table/index.js",
-      "types": "./dist/components/table/index.d.ts"
+      "types": "./dist/components/table/index.d.ts",
+      "import": "./dist/components/table/index.js"
     },
     "./components/table/table.css": "./dist/components/table/table.css",
     "./components/header": {
-      "import": "./dist/components/header/index.js",
-      "types": "./dist/components/header/index.d.ts"
+      "types": "./dist/components/header/index.d.ts",
+      "import": "./dist/components/header/index.js"
     },
     "./components/header/header.css": "./dist/components/header/header.css",
     "./components/nav": {
-      "import": "./dist/components/nav/index.js",
-      "types": "./dist/components/nav/index.d.ts"
+      "types": "./dist/components/nav/index.d.ts",
+      "import": "./dist/components/nav/index.js"
     },
     "./components/nav/nav.css": "./dist/components/nav/nav.css",
     "./components/breadcrumb": {
-      "import": "./dist/components/breadcrumb/index.js",
-      "types": "./dist/components/breadcrumb/index.d.ts"
+      "types": "./dist/components/breadcrumb/index.d.ts",
+      "import": "./dist/components/breadcrumb/index.js"
     },
     "./components/breadcrumb/breadcrumb.css": "./dist/components/breadcrumb/breadcrumb.css",
     "./components/pagination": {
-      "import": "./dist/components/pagination/index.js",
-      "types": "./dist/components/pagination/index.d.ts"
+      "types": "./dist/components/pagination/index.d.ts",
+      "import": "./dist/components/pagination/index.js"
     },
     "./components/pagination/pagination.css": "./dist/components/pagination/pagination.css",
     "./components/modal": {
-      "import": "./dist/components/modal/index.js",
-      "types": "./dist/components/modal/index.d.ts"
+      "types": "./dist/components/modal/index.d.ts",
+      "import": "./dist/components/modal/index.js"
     },
     "./components/modal/modal.css": "./dist/components/modal/modal.css",
     "./components/skip-link": {
-      "import": "./dist/components/skip-link/index.js",
-      "types": "./dist/components/skip-link/index.d.ts"
+      "types": "./dist/components/skip-link/index.d.ts",
+      "import": "./dist/components/skip-link/index.js"
     },
     "./components/skip-link/skip-link.css": "./dist/components/skip-link/skip-link.css",
     "./components/footer": {
-      "import": "./dist/components/footer/index.js",
-      "types": "./dist/components/footer/index.d.ts"
+      "types": "./dist/components/footer/index.d.ts",
+      "import": "./dist/components/footer/index.js"
     },
     "./components/footer/footer.css": "./dist/components/footer/footer.css",
     "./components/accordion": {
-      "import": "./dist/components/accordion/index.js",
-      "types": "./dist/components/accordion/index.d.ts"
+      "types": "./dist/components/accordion/index.d.ts",
+      "import": "./dist/components/accordion/index.js"
     },
     "./components/accordion/accordion.css": "./dist/components/accordion/accordion.css",
     "./components/tabs": {
-      "import": "./dist/components/tabs/index.js",
-      "types": "./dist/components/tabs/index.d.ts"
+      "types": "./dist/components/tabs/index.d.ts",
+      "import": "./dist/components/tabs/index.js"
     },
     "./components/tabs/tabs.css": "./dist/components/tabs/tabs.css",
     "./components/tooltip": {
-      "import": "./dist/components/tooltip/index.js",
-      "types": "./dist/components/tooltip/index.d.ts"
+      "types": "./dist/components/tooltip/index.d.ts",
+      "import": "./dist/components/tooltip/index.js"
     },
     "./components/tooltip/tooltip.css": "./dist/components/tooltip/tooltip.css",
     "./components/search": {
-      "import": "./dist/components/search/index.js",
-      "types": "./dist/components/search/index.d.ts"
+      "types": "./dist/components/search/index.d.ts",
+      "import": "./dist/components/search/index.js"
     },
     "./components/search/search.css": "./dist/components/search/search.css",
     "./components/stepper": {
-      "import": "./dist/components/stepper/index.js",
-      "types": "./dist/components/stepper/index.d.ts"
+      "types": "./dist/components/stepper/index.d.ts",
+      "import": "./dist/components/stepper/index.js"
     },
     "./components/stepper/stepper.css": "./dist/components/stepper/stepper.css",
     "./components/file-upload": {
-      "import": "./dist/components/file-upload/index.js",
-      "types": "./dist/components/file-upload/index.d.ts"
+      "types": "./dist/components/file-upload/index.d.ts",
+      "import": "./dist/components/file-upload/index.js"
     },
     "./components/file-upload/file-upload.css": "./dist/components/file-upload/file-upload.css",
     "./components/progress": {
-      "import": "./dist/components/progress/index.js",
-      "types": "./dist/components/progress/index.d.ts"
+      "types": "./dist/components/progress/index.d.ts",
+      "import": "./dist/components/progress/index.js"
     },
     "./components/progress/progress.css": "./dist/components/progress/progress.css",
     "./components/callout": {
-      "import": "./dist/components/callout/index.js",
-      "types": "./dist/components/callout/index.d.ts"
+      "types": "./dist/components/callout/index.d.ts",
+      "import": "./dist/components/callout/index.js"
     },
     "./components/callout/callout.css": "./dist/components/callout/callout.css",
     "./components/notice": {
-      "import": "./dist/components/notice/index.js",
-      "types": "./dist/components/notice/index.d.ts"
+      "types": "./dist/components/notice/index.d.ts",
+      "import": "./dist/components/notice/index.js"
     },
     "./components/notice/notice.css": "./dist/components/notice/notice.css",
     "./components/tag": {
-      "import": "./dist/components/tag/index.js",
-      "types": "./dist/components/tag/index.d.ts"
+      "types": "./dist/components/tag/index.d.ts",
+      "import": "./dist/components/tag/index.js"
     },
     "./components/tag/tag.css": "./dist/components/tag/tag.css",
     "./components/tile": {
-      "import": "./dist/components/tile/index.js",
-      "types": "./dist/components/tile/index.d.ts"
+      "types": "./dist/components/tile/index.d.ts",
+      "import": "./dist/components/tile/index.js"
     },
     "./components/tile/tile.css": "./dist/components/tile/tile.css",
     "./components/download": {
-      "import": "./dist/components/download/index.js",
-      "types": "./dist/components/download/index.d.ts"
+      "types": "./dist/components/download/index.d.ts",
+      "import": "./dist/components/download/index.js"
     },
     "./components/download/download.css": "./dist/components/download/download.css",
     "./components/quote": {
-      "import": "./dist/components/quote/index.js",
-      "types": "./dist/components/quote/index.d.ts"
+      "types": "./dist/components/quote/index.d.ts",
+      "import": "./dist/components/quote/index.js"
     },
     "./components/quote/quote.css": "./dist/components/quote/quote.css",
     "./components/summary": {
-      "import": "./dist/components/summary/index.js",
-      "types": "./dist/components/summary/index.d.ts"
+      "types": "./dist/components/summary/index.d.ts",
+      "import": "./dist/components/summary/index.js"
     },
     "./components/summary/summary.css": "./dist/components/summary/summary.css",
+    "./components/password": {
+      "types": "./dist/components/password/index.d.ts",
+      "import": "./dist/components/password/index.js"
+    },
+    "./components/password/password.css": "./dist/components/password/password.css",
+    "./components/range": {
+      "types": "./dist/components/range/index.d.ts",
+      "import": "./dist/components/range/index.js"
+    },
+    "./components/range/range.css": "./dist/components/range/range.css",
+    "./components/segmented": {
+      "types": "./dist/components/segmented/index.d.ts",
+      "import": "./dist/components/segmented/index.js"
+    },
+    "./components/segmented/segmented.css": "./dist/components/segmented/segmented.css",
+    "./components/dropdown": {
+      "types": "./dist/components/dropdown/index.d.ts",
+      "import": "./dist/components/dropdown/index.js"
+    },
+    "./components/dropdown/dropdown.css": "./dist/components/dropdown/dropdown.css",
+    "./components/sidemenu": {
+      "types": "./dist/components/sidemenu/index.d.ts",
+      "import": "./dist/components/sidemenu/index.js"
+    },
+    "./components/sidemenu/sidemenu.css": "./dist/components/sidemenu/sidemenu.css",
+    "./components/share": {
+      "types": "./dist/components/share/index.d.ts",
+      "import": "./dist/components/share/index.js"
+    },
+    "./components/share/share.css": "./dist/components/share/share.css",
+    "./components/logo": {
+      "types": "./dist/components/logo/index.d.ts",
+      "import": "./dist/components/logo/index.js"
+    },
+    "./components/logo/logo.css": "./dist/components/logo/logo.css",
+    "./components/toast": {
+      "types": "./dist/components/toast/index.d.ts",
+      "import": "./dist/components/toast/index.js"
+    },
+    "./components/toast/toast.css": "./dist/components/toast/toast.css",
+    "./components/consent": {
+      "types": "./dist/components/consent/index.d.ts",
+      "import": "./dist/components/consent/index.js"
+    },
+    "./components/consent/consent.css": "./dist/components/consent/consent.css",
     "./tokens/color.css": "./dist/tokens/color.css",
     "./tokens/typography.css": "./dist/tokens/typography.css",
     "./tokens/spacing.css": "./dist/tokens/spacing.css",
     "./tokens/radius.css": "./dist/tokens/radius.css",
     "./tokens/shadow.css": "./dist/tokens/shadow.css",
     "./tokens/motion.css": "./dist/tokens/motion.css",
-    "./tokens/z-index.css": "./dist/tokens/z-index.css"
+    "./tokens/z-index.css": "./dist/tokens/z-index.css",
+    "./tokens/focus.css": "./dist/tokens/focus.css"
   },
   "devDependencies": {
+    "@size-limit/file": "^13.0.3",
+    "jsdom": "^25.0.0",
     "postcss": "^8.5.16",
+    "size-limit": "^13.0.3",
     "stylelint": "^17.14.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.9"

@@ -1,0 +1,226 @@
+---
+import { SECTIONS } from '../lib/navigation';
+import { SITE, url, docHref } from '../lib/site';
+
+interface Props {
+  activeSlug?: string;
+}
+const { activeSlug } = Astro.props;
+
+const activeSection = SECTIONS.find(
+  (s) => s.rootSlug === activeSlug || s.items.some((i) => matches(i, activeSlug))
+);
+
+function matches(item: { slug?: string; items?: any[] }, slug?: string): boolean {
+  if (!slug) return false;
+  if (item.slug === slug) return true;
+  return (item.items ?? []).some((child) => matches(child, slug));
+}
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href={url('/')}>
+      <img src={url('/brand/tdgs-mark.svg')} alt="" width="28" height="28" />
+      TDGS
+      <span>Tchad Design System</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Sections principales">
+      {
+        SECTIONS.map((section) => (
+          <a
+            href={docHref(section.rootSlug)}
+            aria-current={activeSection?.label === section.label ? 'true' : undefined}
+          >
+            {section.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="site-header__actions">
+      <button type="button" class="search-trigger" data-search-open aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+        </svg>
+        <span>Rechercher</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+
+      <button
+        type="button"
+        class="icon-button"
+        data-theme-toggle
+        aria-label="Changer de thème"
+        title="Changer de thème"
+      >
+        <svg
+          class="theme-icon-light"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+          ></path>
+        </svg>
+        <svg
+          class="theme-icon-dark"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+          style="display:none"
+        >
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+        </svg>
+      </button>
+
+      <a
+        class="icon-button"
+        href={SITE.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Dépôt GitHub"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12 1C5.9 1 1 5.9 1 12c0 4.9 3.2 9 7.6 10.5.6.1.8-.2.8-.5v-1.8c-3.1.7-3.7-1.5-3.7-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1.9-.2 1.8-.4 2.7-.4.9 0 1.8.1 2.7.4 2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5C19.8 21 23 16.9 23 12c0-6.1-4.9-11-11-11Z"
+          ></path>
+        </svg>
+      </a>
+
+      <button
+        type="button"
+        class="icon-button nav-toggle"
+        data-nav-open
+        aria-label="Ouvrir la navigation"
+        aria-haspopup="dialog"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav__head">
+    <strong>Navigation</strong>
+    <button type="button" class="icon-button" data-nav-close aria-label="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M6 6l12 12M18 6 6 18"></path>
+      </svg>
+    </button>
+  </div>
+  <nav aria-label="Sections">
+    {
+      SECTIONS.map((section) => (
+        <details open={activeSection?.label === section.label}>
+          <summary>{section.label}</summary>
+          <ul>
+            {section.items.map((item) =>
+              item.slug ? (
+                <li>
+                  <a href={docHref(item.slug)}>{item.label}</a>
+                </li>
+              ) : (
+                (item.items ?? []).map((child) => (
+                  <li>
+                    <a href={docHref(child.slug!)}>{child.label}</a>
+                  </li>
+                ))
+              )
+            )}
+          </ul>
+        </details>
+      ))
+    }
+  </nav>
+</dialog>
+
+<style>
+  .mobile-nav {
+    width: min(22rem, 90vw);
+    max-height: 100dvh;
+    height: 100dvh;
+    margin: 0 0 0 auto;
+    padding: 1.25rem;
+    border: 0;
+    border-inline-start: 1px solid var(--tds-border);
+    background: var(--tds-bg);
+    color: var(--tds-text);
+  }
+  .mobile-nav::backdrop {
+    background: rgb(0 0 0 / 0.5);
+  }
+  .mobile-nav__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 1rem;
+  }
+  .mobile-nav details {
+    border-block-end: 1px solid var(--tds-border-subtle);
+    padding-block: 0.5rem;
+  }
+  .mobile-nav summary {
+    font-weight: var(--tds-font-weight-semibold);
+    cursor: pointer;
+    padding-block: 0.35rem;
+  }
+  .mobile-nav ul {
+    list-style: none;
+    padding-inline-start: 0.75rem;
+    margin-block: 0.35rem 0.5rem;
+  }
+  .mobile-nav li a {
+    display: block;
+    padding: 0.4rem 0.5rem;
+    color: var(--tds-text-muted);
+    text-decoration: none;
+  }
+  .mobile-nav li a:hover {
+    color: var(--tds-text);
+  }
+</style>
+
+<script>
+  const root = document.documentElement;
+
+  document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+    const current =
+      root.getAttribute('data-tds-theme') ??
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-tds-theme', next);
+    try {
+      localStorage.setItem('tds-theme', next);
+    } catch {}
+    syncThemeIcon();
+  });
+
+  function syncThemeIcon() {
+    const dark =
+      root.getAttribute('data-tds-theme') === 'dark' ||
+      (!root.getAttribute('data-tds-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    const light = document.querySelector<HTMLElement>('.theme-icon-light');
+    const moon = document.querySelector<HTMLElement>('.theme-icon-dark');
+    if (light) light.style.display = dark ? 'none' : '';
+    if (moon) moon.style.display = dark ? '' : 'none';
+  }
+  syncThemeIcon();
+
+  const dialog = document.getElementById('mobile-nav') as HTMLDialogElement | null;
+  document.querySelector('[data-nav-open]')?.addEventListener('click', () => dialog?.showModal());
+  document.querySelector('[data-nav-close]')?.addEventListener('click', () => dialog?.close());
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+</script>

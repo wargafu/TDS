@@ -1,0 +1,57 @@
+name: 📐 RFC — nouveau composant ou changement de fondation
+description: Obligatoire avant tout nouveau composant, changement de token ou d'API publique (voir GOVERNANCE.md).
+labels: ['rfc', 'discussion']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Une RFC est requise pour : un nouveau composant, la modification d'un
+        token publié, un changement d'API (`tds-*`, `--tds-*`, exports,
+        événements, structure DOM), ou une évolution de l'identité.
+  - type: input
+    id: title
+    attributes:
+      label: Titre court
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 1. Problème et preuves d'usage
+      description: Qui, quand, pourquoi. Données de recherche UX / retours d'agents si disponibles.
+    validations:
+      required: true
+  - type: textarea
+    id: existing
+    attributes:
+      label: 2. Pourquoi l'existant ne suffit pas
+      description: Composants et patterns déjà présents évalués.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: 3. Anatomie et comportements proposés
+      description: Structure DOM, variantes, états, clavier, RTL, annonces lecteur d'écran.
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: 4. Contrat public
+      description: Classes `tds-*`, variables, props React/Vue, événements. Impact semver.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: 5. Risques, alternatives, questions ouvertes
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Revues nécessaires
+      options:
+        - label: Design & contenu
+        - label: Technique / architecture
+        - label: Accessibilité
+        - label: Linguistique (FR / AR)

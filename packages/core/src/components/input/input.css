@@ -63,7 +63,7 @@
   font-size: var(--tds-font-size-lg);
   line-height: var(--tds-line-height-lg);
   font-weight: var(--tds-font-weight-semibold);
-  color: var(--tds-neutral-900);
+  color: var(--tds-text);
 }
 
 .tds-fieldset__element {
@@ -76,7 +76,7 @@
   font-size: var(--tds-font-size-sm);
   line-height: var(--tds-line-height-sm);
   font-weight: var(--tds-font-weight-semibold);
-  color: var(--tds-neutral-900);
+  color: var(--tds-text);
 }
 
 .tds-field__control,
@@ -114,8 +114,8 @@
 .tds-select {
   appearance: none;
   background-image:
-    linear-gradient(45deg, transparent 50%, var(--tds-neutral-700) 50%),
-    linear-gradient(135deg, var(--tds-neutral-700) 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, var(--tds-input-icon-color) 50%),
+    linear-gradient(135deg, var(--tds-input-icon-color) 50%, transparent 50%);
   background-position:
     calc(100% - 1rem) center,
     calc(100% - 0.65rem) center;
@@ -208,15 +208,15 @@
 }
 
 .tds-helper-text {
-  color: var(--tds-neutral-600);
+  color: var(--tds-text-muted);
 }
 
 .tds-error-text {
-  color: var(--tds-color-red-600);
+  color: var(--tds-semantic-danger-text);
 }
 
 .tds-success-text {
-  color: var(--tds-color-green-700);
+  color: var(--tds-semantic-success-text);
 }
 
 .tds-messages-group {
@@ -292,8 +292,8 @@
   border-radius: 9999px;
   position: relative;
   appearance: none;
-  background: var(--tds-neutral-200);
-  border: 1px solid var(--tds-neutral-300);
+  background: var(--tds-bg-subtle);
+  border: 1px solid var(--tds-border);
   transition:
     background-color var(--tds-motion-fast) var(--tds-easing-standard),
     border-color var(--tds-motion-fast) var(--tds-easing-standard);

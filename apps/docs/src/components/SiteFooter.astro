@@ -1,0 +1,77 @@
+---
+import { SITE, url, docHref } from '../lib/site';
+
+const columns = [
+  {
+    label: 'Ressources',
+    links: [
+      { label: 'Composants', href: docHref('components/index') },
+      { label: 'Fondamentaux', href: docHref('fondamentaux/index') },
+      { label: 'Modèles', href: docHref('modeles/index') },
+      { label: 'Feuille de route', href: docHref('communaute/roadmap') },
+    ],
+  },
+  {
+    label: 'Communauté',
+    links: [
+      { label: 'Contribution', href: docHref('communaute/contribution') },
+      { label: 'FAQ', href: docHref('aide/faq') },
+      { label: 'État du projet', href: docHref('about/statut') },
+      { label: 'Dépôt GitHub', href: SITE.repo, external: true },
+    ],
+  },
+];
+
+const legal = [
+  { label: 'Déclaration d’accessibilité', href: docHref('about/accessibilite') },
+  { label: 'Mentions légales', href: docHref('about/mentions-legales') },
+  { label: "Conditions d'utilisation", href: docHref('about/cgu') },
+  { label: 'Gestion des cookies', href: docHref('about/cookies') },
+  { label: 'Plan du site', href: docHref('about/plan-du-site') },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <strong>TDGS</strong>
+        <p>{SITE.tagline}</p>
+        <p>
+          Initiative indépendante et communautaire. TDGS ne revendique pas d'homologation officielle
+          de l'État ni l'usage de ses symboles.
+        </p>
+      </div>
+      <nav class="site-footer__cols" aria-label="Liens de pied de page">
+        {
+          columns.map((col) => (
+            <div class="site-footer__col">
+              <h2>{col.label}</h2>
+              <ul>
+                {col.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      target={link.external ? '_blank' : undefined}
+                      rel={link.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <ul class="site-footer__legal">
+        {legal.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+      <p>© {year} contributeurs TDGS — <a href={url('/')}>MIT</a></p>
+    </div>
+  </div>
+</footer>

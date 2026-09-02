@@ -1,0 +1,76 @@
+/* TDGS Logo — bloc de marque institutionnel (en-tête, pied de page, cartes).
+   Le pictogramme est fourni par le contenu (slot), jamais copié du DSFR. */
+:root {
+  --tds-logo-text: var(--tds-text);
+  --tds-logo-muted: var(--tds-text-muted);
+  --tds-logo-accent: var(--tds-action-primary);
+  --tds-logo-mark-bg: var(--tds-bg-subtle);
+  --tds-logo-mark-radius: var(--tds-radius-md);
+  --tds-logo-mark-size: 2.75rem;
+  --tds-logo-gap: var(--tds-spacing-3);
+}
+
+.tds-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tds-logo-gap);
+  color: var(--tds-logo-text);
+  text-decoration: none;
+}
+
+.tds-logo__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: var(--tds-logo-mark-size);
+  height: var(--tds-logo-mark-size);
+  border-radius: var(--tds-logo-mark-radius);
+  background: var(--tds-logo-mark-bg);
+  color: var(--tds-logo-accent);
+  overflow: hidden;
+}
+
+.tds-logo__text {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.tds-logo__title {
+  font-size: var(--tds-font-size-md);
+  line-height: var(--tds-line-height-md);
+  font-weight: var(--tds-font-weight-semibold);
+  color: var(--tds-logo-text);
+}
+
+.tds-logo__subtitle {
+  font-size: var(--tds-font-size-xs);
+  line-height: var(--tds-line-height-sm);
+  color: var(--tds-logo-muted);
+}
+
+/* Sur fond sombre (en-tête institutionnel par ex.) */
+.tds-logo--on-dark .tds-logo__title {
+  color: var(--tds-neutral-0);
+}
+
+.tds-logo--on-dark .tds-logo__subtitle {
+  color: var(--tds-neutral-300);
+}
+
+.tds-logo--on-dark .tds-logo__mark {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--tds-neutral-0);
+}
+
+.tds-logo:focus-visible {
+  outline: 2px solid var(--tds-logo-accent);
+  outline-offset: 3px;
+  border-radius: var(--tds-radius-sm);
+}
+
+@media (forced-colors: active) {
+  .tds-logo__mark {
+    border: 1px solid ButtonText;
+  }
+}

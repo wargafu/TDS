@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Tout le CSS livré — base + tokens + composants (gzip)",
+    "path": ["dist/base.css", "dist/tokens/*.css", "dist/components/**/*.css", "dist/icons/*.css"],
+    "limit": "36 kB",
+    "gzip": true
+  },
+  {
+    "name": "Tokens seuls — dist/tokens/*.css (gzip)",
+    "path": "dist/tokens/*.css",
+    "limit": "3.5 kB",
+    "gzip": true
+  },
+  {
+    "name": "Base + reset — base.css (gzip)",
+    "path": "dist/base.css",
+    "limit": "2.5 kB",
+    "gzip": true
+  },
+  {
+    "name": "Custom elements — dist/elements/*.js (gzip)",
+    "path": "dist/elements/*.js",
+    "limit": "12 kB",
+    "gzip": true
+  }
+]

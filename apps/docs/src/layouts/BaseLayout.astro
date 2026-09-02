@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import ThemeScript from '../components/ThemeScript.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Search from '../components/Search.astro';
+import { SITE, url } from '../lib/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Slug de la page (pour l'état actif du menu). */
+  activeSlug?: string;
+  /** Ajoute une classe sur <main>. */
+  mainClass?: string;
+  lang?: string;
+  dir?: 'ltr' | 'rtl';
+}
+
+const {
+  title,
+  description = SITE.tagline,
+  activeSlug,
+  mainClass,
+  lang = 'fr',
+  dir = 'ltr',
+} = Astro.props;
+
+const pageTitle = title === SITE.longName ? title : `${title} — ${SITE.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+const ogImage = `${(Astro.site ?? Astro.url).origin}${url('/brand/og-image.png')}`;
+---
+
+<!doctype html>
+<html lang={lang} dir={dir} class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    <link rel="icon" href={url('/favicon-32.png')} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
+    <link rel="manifest" href={url('/site.webmanifest')} />
+    <meta name="theme-color" content="#0B3A82" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="sitemap" href={url('/sitemap-index.xml')} />
+    <ThemeScript />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu principal</a>
+    <div class="tricolore" aria-hidden="true"></div>
+    <SiteHeader activeSlug={activeSlug} />
+    <main id="main" class={mainClass} tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter />
+    <Search />
+
+    <script is:inline>
+      /* Rend les blocs de code défilables accessibles au clavier (WCAG 2.1.1). */
+      (function () {
+        function tag() {
+          document.querySelectorAll('.expressive-code pre').forEach(function (pre) {
+            if (pre.scrollWidth > pre.clientWidth + 2) {
+              pre.setAttribute('tabindex', '0');
+              pre.setAttribute('role', 'region');
+              if (!pre.hasAttribute('aria-label')) pre.setAttribute('aria-label', 'Bloc de code');
+            }
+          });
+        }
+        tag();
+        addEventListener('resize', tag, { passive: true });
+      })();
+    </script>
+  </body>
+</html>

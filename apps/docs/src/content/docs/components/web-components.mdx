@@ -1,0 +1,44 @@
+---
+title: Web Components
+description: La couche JavaScript agnostique de TDGS — des custom elements tds-* en amélioration progressive.
+---
+
+`@tdgs/core/elements` fournit une poignée de **custom elements** framework-agnostiques
+qui _améliorent_ un balisage HTML/CSS déjà fonctionnel. Aucune dépendance de
+runtime, sûrs côté serveur.
+
+```js
+import '@tdgs/core/elements'; // enregistre tous les éléments tds-*
+import { toast } from '@tdgs/core/elements';
+```
+
+<Aside type="tip" title="Amélioration progressive">
+  Chaque élément part d'un HTML valide sans JavaScript. Si le script ne se
+  charge pas, l'utilisateur garde l'accès à l'information et aux démarches — les
+  éléments ne font qu'ajouter le comportement clavier, les attributs ARIA
+  dynamiques et les transitions.
+</Aside>
+
+## Éléments disponibles
+
+| Élément | Rôle | Améliore |
+| --- | --- | --- |
+| `<tds-disclosure>` | Bouton `aria-expanded` ↔ contenu, fermeture `Échap` / clic extérieur | menu déroulant, menu mobile, sous-menus |
+| `<tds-tabs>` | Onglets WAI-ARIA APG (roving tabindex, flèches, Home/Fin) | `.tds-tabs` |
+| `<tds-tooltip>` | Infobulle survol / focus, placement adaptatif, `Échap` | `.tds-tooltip` (repli CSS conservé) |
+| `<tds-toast-region>` + `toast()` | Notifications transitoires, région live polie | — (composant `Toast`) |
+| `<tds-sortable-table>` | Tri de colonnes, `aria-sort` annoncé | `.tds-table` |
+| `<tds-consent>` | Bandeau de consentement mémorisé | composant `Consent` |
+| `<tds-copy value="…">` | Bouton « copier » avec retour annoncé | boutons de code, partage |
+| `<tds-back-to-top>` | Retour en haut, visible après défilement | lien `#top` |
+| `<tds-icon name="…">` | Icône SVG pour le HTML pur | jeu `@tdgs/core/icons` |
+
+## Principes communs
+
+- **Pas de Shadow DOM** : les éléments stylent des enfants en lumière du jour, avec
+  les classes `tds-*` habituelles.
+- **Événements** préfixés `tds-` (`tds-toggle`, `tds-tab-change`,
+  `tds-table-sort`, `tds-consent-change`), qui _bubblent_.
+- **`prefers-reduced-motion`** respecté partout.
+- Réutilisables via React (`@tdgs/react`) et Vue (`@tdgs/vue`), qui les wrappent
+  quand une ergonomie propre au framework est utile (`Toaster`, `toast`).

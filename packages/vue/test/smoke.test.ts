@@ -19,6 +19,13 @@ import { Tile } from '../src/components/Tile';
 import { Download } from '../src/components/Download';
 import { Quote } from '../src/components/Quote';
 import { Summary } from '../src/components/Summary';
+import { Password } from '../src/components/Password';
+import { Range } from '../src/components/Range';
+import { Segmented } from '../src/components/Segmented';
+import { Dropdown } from '../src/components/Dropdown';
+import { Sidemenu } from '../src/components/Sidemenu';
+import { Share } from '../src/components/Share';
+import { Logo } from '../src/components/Logo';
 
 describe('Button', () => {
   it('applies variant and size classes', () => {
@@ -266,5 +273,110 @@ describe('Icon', () => {
     expect(decorative.attributes('aria-hidden')).toBe('true');
     expect(informative.attributes('role')).toBe('img');
     expect(informative.text()).toBe('Information');
+  });
+});
+
+describe('Password', () => {
+  it('starts as password and reveals the value on toggle', async () => {
+    const wrapper = mount(Password, { props: { label: 'Mot de passe', modelValue: 'secret' } });
+    const input = wrapper.get('input');
+    expect(input.attributes('type')).toBe('password');
+
+    await wrapper.get('button[aria-label="Afficher le mot de passe"]').trigger('click');
+    expect(input.attributes('type')).toBe('text');
+    expect(wrapper.get('button').attributes('aria-pressed')).toBe('true');
+  });
+});
+
+describe('Range', () => {
+  it('renders a labelled range input and emits the value', async () => {
+    const wrapper = mount(Range, {
+      props: { label: 'Budget', min: 0, max: 1000, modelValue: 250 },
+    });
+    const input = wrapper.get('input[type="range"]');
+    expect(input.attributes('min')).toBe('0');
+    expect(input.attributes('max')).toBe('1000');
+    expect(wrapper.text()).toContain('250');
+
+    await input.setValue('500');
+    expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([500]);
+  });
+});
+
+describe('Segmented', () => {
+  it('renders a radiogroup and checks the current value', () => {
+    const wrapper = mount(Segmented, {
+      props: {
+        label: 'Fréquence',
+        modelValue: 'annee',
+        options: [
+          { value: 'mois', label: 'Mensuel' },
+          { value: 'annee', label: 'Annuel' },
+        ],
+      },
+    });
+    expect(wrapper.get('[role="radiogroup"]').attributes('aria-label')).toBe('Fréquence');
+    const radio = wrapper.get('input[value="annee"]') as unknown as { element: HTMLInputElement };
+    expect(radio.element.checked).toBe(true);
+  });
+});
+
+describe('Dropdown', () => {
+  it('exposes a labelled menu trigger and toggles open state', async () => {
+    const wrapper = mount(Dropdown, {
+      props: { label: 'Actions du dossier' },
+      slots: {
+        default:
+          '<li class="tds-dropdown__item"><button class="tds-dropdown__link">Modifier</button></li>',
+      },
+    });
+    const trigger = wrapper.get('button');
+    expect(trigger.attributes('aria-haspopup')).toBe('menu');
+    expect(trigger.attributes('aria-expanded')).toBe('false');
+
+    await trigger.trigger('click');
+    expect(trigger.attributes('aria-expanded')).toBe('true');
+    expect(wrapper.get('.tds-dropdown').attributes('data-open')).toBe('true');
+  });
+});
+
+describe('Sidemenu', () => {
+  it('marks the current page link', () => {
+    const wrapper = mount(Sidemenu, {
+      props: {
+        title: 'Mon dossier',
+        items: [
+          { id: '1', label: 'Aperçu', href: '#apercu', current: true },
+          { id: '2', label: 'Documents', href: '#documents' },
+        ],
+      },
+    });
+    expect(wrapper.get('a[href="#apercu"]').attributes('aria-current')).toBe('page');
+    expect(wrapper.get('a[href="#documents"]').attributes('aria-current')).toBeUndefined();
+  });
+});
+
+describe('Share', () => {
+  it('renders external share links', () => {
+    const wrapper = mount(Share, {
+      props: {
+        links: [{ network: 'x', label: 'Partager sur X', href: 'https://x.com' }],
+      },
+    });
+    const link = wrapper.get('a');
+    expect(link.attributes('target')).toBe('_blank');
+    expect(link.classes()).toContain('tds-share__link-x');
+  });
+});
+
+describe('Logo', () => {
+  it('renders the title and a decorative mark', () => {
+    const wrapper = mount(Logo, {
+      props: { title: 'République du Tchad', subtitle: 'Portail des services', href: '/' },
+      slots: { mark: '<span>T</span>' },
+    });
+    expect(wrapper.get('a').classes()).toContain('tds-logo');
+    expect(wrapper.get('.tds-logo__mark').attributes('aria-hidden')).toBe('true');
+    expect(wrapper.text()).toContain('République du Tchad');
   });
 });

@@ -1,0 +1,63 @@
+---
+title: Menu déroulant
+description: Menu TDGS d'actions contextuelles accessible au clavier.
+sidebar:
+  order: 33
+---
+
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Dropdown` regroupe des actions secondaires derrière un bouton déclencheur.
+Le menu s'ouvre au survol et à la focalisation (CSS pur) et, pour les
+bindings, au clic via un état `data-open`.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#dropdown"
+  title="Démo du composant Menu déroulant"
+  style="width:100%; height: 20rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/dropdown/dropdown.css';
+```
+
+```html
+<div class="tds-dropdown">
+  <button type="button" class="tds-button tds-button--tertiary" aria-haspopup="menu" aria-expanded="true">
+    Actions <span aria-hidden="true">▾</span>
+  </button>
+  <ul class="tds-dropdown__menu" role="menu">
+    <li class="tds-dropdown__item">
+      <a class="tds-dropdown__link" href="#">Modifier</a>
+    </li>
+    <li class="tds-dropdown__item tds-dropdown__item-danger">
+      <button type="button" class="tds-dropdown__link">Supprimer</button>
+    </li>
+  </ul>
+</div>
+```
+
+| Intégration | API                                                                                          |
+| ----------- | -------------------------------------------------------------------------------------------- |
+| React       | `<Dropdown trigger="Actions">` + éléments `<li class="tds-dropdown__item">` dans le children |
+| Vue         | `<TdsDropdown label="Actions">` + slot `default` et slot `trigger`                            |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Déclencheur annoncé">
+  Le bouton porte `aria-haspopup="menu"` et `aria-expanded`. Les liens du menu
+  restent des liens ; un bouton destructif porte la variante `tds-dropdown__item-danger`.
+</Aside>
+
+</TabItem>
+</Tabs>

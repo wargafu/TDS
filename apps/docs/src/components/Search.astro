@@ -1,0 +1,64 @@
+---
+import { url } from '../lib/site';
+---
+
+<dialog class="search-dialog" id="search-dialog" aria-label="Recherche">
+  <div class="search-dialog__body">
+    <div id="pagefind-search" class="pagefind-ui"></div>
+    <p class="search-dialog__hint">
+      La recherche est générée au build (Pagefind) et n'est pas disponible en développement.
+    </p>
+  </div>
+</dialog>
+
+<link rel="stylesheet" href={url('/pagefind/pagefind-ui.css')} />
+
+<style>
+  .search-dialog__hint {
+    margin-block-start: 0.75rem;
+    font-size: var(--tds-font-size-xs);
+    color: var(--tds-text-muted);
+  }
+  :global(#pagefind-search:not(:empty)) + .search-dialog__hint {
+    display: none;
+  }
+</style>
+
+<script is:inline define:vars={{ uiSrc: url('/pagefind/pagefind-ui.js') }}>
+  (function () {
+    const dialog = document.getElementById('search-dialog');
+    let loaded = false;
+
+    function open() {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      if (loaded) {
+        dialog.querySelector('input')?.focus();
+        return;
+      }
+      loaded = true;
+      const script = document.createElement('script');
+      script.src = uiSrc;
+      script.onload = function () {
+        if (window.PagefindUI) {
+          new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false });
+          setTimeout(() => dialog.querySelector('input')?.focus(), 50);
+        }
+      };
+      script.onerror = function () {
+        /* Pas de bundle Pagefind (mode dev) : l'indice s'affiche. */
+      };
+      document.head.appendChild(script);
+    }
+
+    document.querySelectorAll('[data-search-open]').forEach((btn) => btn.addEventListener('click', open));
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        open();
+      }
+    });
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  })();
+</script>

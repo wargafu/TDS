@@ -1,0 +1,93 @@
+/* TDGS Share — boutons de partage réseau.
+   Les liens restent de vrais liens (target=_blank) ; les variantes
+   s'appliquent par modificateur sémantique, sans copier d'actifs propriétaires. */
+:root {
+  --tds-share-bg: var(--tds-bg);
+  --tds-share-border: var(--tds-border-subtle);
+  --tds-share-text: var(--tds-text);
+  --tds-share-muted: var(--tds-text-muted);
+  --tds-share-hover: var(--tds-action-primary);
+  --tds-share-radius: var(--tds-radius-sm);
+  --tds-share-transition:
+    background-color var(--tds-motion-fast) var(--tds-easing-standard),
+    color var(--tds-motion-fast) var(--tds-easing-standard),
+    border-color var(--tds-motion-fast) var(--tds-easing-standard);
+}
+
+.tds-share__title {
+  margin-block-end: var(--tds-spacing-2);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-sm);
+  font-weight: var(--tds-font-weight-semibold);
+  color: var(--tds-share-muted);
+}
+
+.tds-share__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--tds-spacing-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tds-share__item {
+  margin: 0;
+}
+
+.tds-share__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tds-spacing-2);
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--tds-share-border);
+  border-radius: var(--tds-share-radius);
+  background: var(--tds-share-bg);
+  color: var(--tds-share-text);
+  font-family: var(--tds-font-family-primary);
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-sm);
+  font-weight: var(--tds-font-weight-medium);
+  text-decoration: none;
+  transition: var(--tds-share-transition);
+}
+
+.tds-share__link:hover {
+  color: var(--tds-share-hover);
+  border-color: var(--tds-share-hover);
+}
+
+.tds-share__link:focus-visible {
+  outline: 2px solid var(--tds-share-hover);
+  outline-offset: 2px;
+}
+
+/* Variante icon-only (carré) pour réduire l'encombrement. */
+.tds-share__link-icon {
+  width: 2.5rem;
+  padding: 0;
+}
+
+/* Modificateurs de réseau : teinte discrète au survol, adaptée au thème,
+   sans logo ni couleur propriétaire. */
+.tds-share__link-x:hover,
+.tds-share__link-linkedin:hover,
+.tds-share__link-facebook:hover,
+.tds-share__link-mail:hover {
+  color: var(--tds-action-primary);
+  border-color: var(--tds-action-primary);
+}
+
+@media (forced-colors: active) {
+  .tds-share__link {
+    border-color: ButtonText;
+    color: ButtonText;
+  }
+
+  .tds-share__link:hover {
+    background: Highlight;
+    color: HighlightText;
+  }
+}

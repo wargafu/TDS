@@ -3,7 +3,13 @@ title: Aide
 description: Questions fréquentes et ressources d'aide pour TDGS.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<div class="tds-section-intro">
+  <p>
+    Retrouvez les reponses rapides pour installer TDGS, comprendre son statut, tester les composants
+    et signaler un probleme.
+  </p>
+</div>
 
 <CardGrid>
   <Card title="FAQ" icon="comment">
@@ -12,7 +18,12 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
   <Card title="Terrain de jeu des composants" icon="laptop">
     Tester chaque composant en direct avec le CSS réellement buildé — [ouvrir →](/playground/)
   </Card>
+  <Card title="Support GitHub" icon="github">
+    Issues, discussions et suivi public — [ouvrir →](https://github.com/kisaigo/TDGS/issues)
+  </Card>
 </CardGrid>
 
-Une question sans réponse ici ? Ouvrez une [issue GitHub](https://github.com/wargafu/TDGS/issues)
-ou une [discussion](https://github.com/wargafu/TDGS/discussions).
+<div class="tds-status-banner">
+  <strong>Avant d'ouvrir une issue</strong>
+  <span>Precisez le composant, la version, le navigateur et un exemple minimal reproductible.</span>
+</div>

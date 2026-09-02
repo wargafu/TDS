@@ -141,7 +141,7 @@ export const color = {
       },
       "accent": {
         "default": "#F5C116",
-        "text": "#B58D00"
+        "text": "#846200"
       }
     },
     "dark": {

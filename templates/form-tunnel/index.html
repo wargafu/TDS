@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Démarche — Renouvellement de carte d'identité (étape 2 sur 3)</title>
+    <link rel="stylesheet" href="../../packages/core/src/tdgs.css" />
+    <link rel="stylesheet" href="../shared/template.css" />
+  </head>
+  <body>
+    <div class="tds-template-shell">
+      <a class="tds-skip-link" href="#contenu">Aller au contenu principal</a>
+      <div class="tds-template-band" aria-hidden="true"></div>
+
+      <header class="tds-template-header">
+        <div class="tds-template-container tds-template-header__inner">
+          <a class="tds-template-brand" href="../citizen-portal/">
+            <span class="tds-template-brand__mark" aria-hidden="true">TD</span>
+            <span>Renouvellement de carte d'identité</span>
+          </a>
+          <nav class="tds-template-nav" aria-label="Actions">
+            <a class="tds-link" href="#enregistrer">Enregistrer et quitter</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="contenu" class="tds-template-main">
+        <div class="tds-template-container tds-template-form">
+          <ol class="tds-stepper" aria-label="Progression de la démarche">
+            <li class="tds-stepper__item tds-stepper--complete">
+              <span class="tds-stepper__label">Identité</span>
+            </li>
+            <li class="tds-stepper__item tds-stepper--current" aria-current="step">
+              <span class="tds-stepper__label">Coordonnées</span>
+            </li>
+            <li class="tds-stepper__item tds-stepper--upcoming">
+              <span class="tds-stepper__label">Récapitulatif</span>
+            </li>
+          </ol>
+
+          <div class="tds-alert tds-alert--danger" role="alert" aria-labelledby="err-titre">
+            <div class="tds-alert__content">
+              <p class="tds-alert__title" id="err-titre">2 champs à corriger</p>
+              <div class="tds-alert__body">
+                <ul>
+                  <li><a class="tds-link" href="#ville">Indiquez votre ville</a></li>
+                  <li><a class="tds-link" href="#tel">Le numéro de téléphone est incomplet</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <form method="post" action="../confirmation-page/" novalidate>
+            <fieldset>
+              <legend>Étape 2 — Vos coordonnées</legend>
+              <p class="tds-field__hint">Tous les champs sont obligatoires sauf mention contraire.</p>
+
+              <div class="tds-field">
+                <label class="tds-field__label" for="adresse">Adresse</label>
+                <input id="adresse" class="tds-input tds-input--md" type="text" name="adresse" required />
+              </div>
+
+              <div class="tds-field">
+                <label class="tds-field__label" for="ville">Ville</label>
+                <input
+                  id="ville"
+                  class="tds-input tds-input--md tds-input--error"
+                  type="text"
+                  name="ville"
+                  aria-describedby="ville-err"
+                  aria-invalid="true"
+                  required
+                />
+                <p class="tds-field__error" id="ville-err">Indiquez votre ville.</p>
+              </div>
+
+              <div class="tds-field">
+                <label class="tds-field__label" for="tel">Téléphone</label>
+                <input
+                  id="tel"
+                  class="tds-input tds-input--md tds-input--error"
+                  type="tel"
+                  name="telephone"
+                  inputmode="tel"
+                  aria-describedby="tel-err"
+                  aria-invalid="true"
+                  required
+                />
+                <p class="tds-field__error" id="tel-err">Le numéro doit comporter 8 chiffres.</p>
+              </div>
+
+              <div class="tds-field">
+                <label class="tds-field__label" for="courriel">
+                  Courriel <span class="tds-field__optional">(facultatif)</span>
+                </label>
+                <input
+                  id="courriel"
+                  class="tds-input tds-input--md"
+                  type="email"
+                  name="courriel"
+                  autocomplete="email"
+                />
+              </div>
+            </fieldset>
+
+            <div class="tds-template-form__actions">
+              <a class="tds-button tds-button--tertiary tds-button--md" href="#etape-1">Étape précédente</a>
+              <button class="tds-button tds-button--primary tds-button--md" type="submit">
+                Continuer
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <footer class="tds-template-footer">
+        <div class="tds-template-container tds-template-footer__inner">
+          <span>TDGS — système de design open source proposé pour les services publics du Tchad.</span>
+          <a class="tds-link" href="#accessibilite">Accessibilité</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

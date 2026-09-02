@@ -1,31 +1,19 @@
 ---
-// Sidebar scopée à la seule section active (le switcher de sections vit
-// désormais dans SectionNav.astro, en barre horizontale sous le header —
-// voir PageFrame.astro). Reproduit le "Menu latéral" du DSFR : uniquement
-// les pages de la section courante, retrouvée via le préfixe d'URL.
-// @ts-expect-error — module virtuel, résolu à l'exécution par Astro/Vite
-import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
-import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
-import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
-import { SECTION_PREFIXES } from './section-prefixes';
+import { sectionForSlug } from '../lib/navigation';
+import SidebarList from './SidebarList.astro';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const { sidebar } = (Astro.locals as any).starlightRoute;
-const pathname = Astro.url.pathname;
-
-const groups = sidebar.filter((entry: { type: string }) => entry.type === 'group');
-
-const activeIndex = groups.findIndex((_group: unknown, i: number) => {
-  const prefix = SECTION_PREFIXES[i];
-  return prefix && pathname.includes(`/${prefix}/`);
-});
-const activeGroup = activeIndex >= 0 ? groups[activeIndex] : null;
+interface Props {
+  activeSlug: string;
+}
+const { activeSlug } = Astro.props;
+const section = sectionForSlug(activeSlug);
 ---
 
-<SidebarPersister>
-  {activeGroup && <SidebarSublist sublist={activeGroup.entries} />}
-</SidebarPersister>
-
-<div class="md:sl-hidden">
-  <MobileMenuFooter />
-</div>
+{
+  section && (
+    <nav class="sidebar" aria-label={`Navigation — ${section.label}`}>
+      <p class="sidebar__title">{section.label}</p>
+      <SidebarList items={section.items} activeSlug={activeSlug} />
+    </nav>
+  )
+}

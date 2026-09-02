@@ -1,0 +1,58 @@
+---
+title: Bloc de marque
+description: Bloc TDGS de marque institutionnelle pour en-tête, pied de page et cartes.
+sidebar:
+  order: 36
+---
+
+
+<Tabs>
+<TabItem label="Présentation">
+
+`Logo` affiche la marque d'une institution (pictogramme + nom + sous-titre)
+de façon cohérente. Le pictogramme est fourni par le contenu ; aucune
+ressource DSFR n'est copiée.
+
+</TabItem>
+<TabItem label="Démo">
+
+<iframe
+  src="/playground/#logo"
+  title="Démo du composant Bloc de marque"
+  style="width:100%; height: 18rem; border: 1px solid var(--tds-border-subtle); border-radius: 0.5rem;"
+  loading="lazy"
+></iframe>
+
+</TabItem>
+<TabItem label="Code">
+
+```css
+@import '@tdgs/core/components/logo/logo.css';
+```
+
+```html
+<a class="tds-logo" href="/">
+  <span class="tds-logo__mark" aria-hidden="true"><!-- pictogramme --></span>
+  <span class="tds-logo__text">
+    <span class="tds-logo__title">République du Tchad</span>
+    <span class="tds-logo__subtitle">Portail des services publics</span>
+  </span>
+</a>
+```
+
+| Intégration | API                                                                      |
+| ----------- | ------------------------------------------------------------------------ |
+| React       | `<Logo href="/" mark={<span>★</span>} title="République du Tchad" subtitle="Portail des services publics" />` |
+| Vue         | `<TdsLogo href="/" title="République du Tchad" subtitle="Portail des services publics" />` avec slot `mark` |
+
+</TabItem>
+<TabItem label="Accessibilité">
+
+<Aside type="tip" title="Marque décorative">
+  Le pictogramme est décoratif (`aria-hidden`) ; le nom de l'institution est
+  le texte accessible du bloc. Sur fond sombre, utilisez la variante
+  `tds-logo--on-dark`.
+</Aside>
+
+</TabItem>
+</Tabs>

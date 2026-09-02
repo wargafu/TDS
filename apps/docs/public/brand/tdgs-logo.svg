@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="172" height="48" viewBox="0 0 172 48" role="img" aria-label="TDGS — Tchad Design System">
+  <title>TDGS — Tchad Design System</title>
+  <rect x="4" y="24" width="10" height="20" rx="2.5" fill="#0B3A82"/>
+  <rect x="19" y="14" width="10" height="30" rx="2.5" fill="#F5C116"/>
+  <rect x="34" y="4" width="10" height="40" rx="2.5" fill="#D8222A"/>
+  <text x="60" y="34" font-family="'Source Sans 3','Segoe UI',system-ui,-apple-system,sans-serif" font-size="30" font-weight="800" letter-spacing="0.5" fill="#00143E">TDGS</text>
+</svg>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  text: string;
+  variant?: 'default' | 'note' | 'tip' | 'success' | 'caution' | 'danger';
+  size?: 'small' | 'medium' | 'large';
+}
+const { text, variant = 'default' } = Astro.props;
+const cls =
+  variant === 'success'
+    ? 'mdx-badge--success'
+    : variant === 'caution'
+      ? 'mdx-badge--caution'
+      : variant === 'danger'
+        ? 'mdx-badge--danger'
+        : '';
+---
+
+<span class={`mdx-badge ${cls}`.trim()}>{text}</span>

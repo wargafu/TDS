@@ -1,0 +1,38 @@
+---
+import type { NavItem } from '../lib/navigation';
+import { docHref } from '../lib/site';
+
+interface Props {
+  items: NavItem[];
+  activeSlug: string;
+}
+const { items, activeSlug } = Astro.props;
+---
+
+<ul class="sidebar__list">
+  {
+    items.map((item) =>
+      item.items ? (
+        <li class="sidebar__group-item">
+          {item.slug ? (
+            <a href={docHref(item.slug)} aria-current={item.slug === activeSlug ? 'page' : undefined}>
+              {item.label}
+            </a>
+          ) : (
+            <span class="sidebar__subtitle">{item.label}</span>
+          )}
+          <Astro.self items={item.items} activeSlug={activeSlug} />
+        </li>
+      ) : (
+        <li>
+          <a href={docHref(item.slug!)} aria-current={item.slug === activeSlug ? 'page' : undefined}>
+            {item.label}
+            {item.badge && <span class="doc-badge">{item.badge}</span>}
+          </a>
+        </li>
+      )
+    )
+  }
+</ul>
+
+{/* Le style de .sidebar__subtitle, .sidebar__list, etc. est dans styles/chrome.css. */}

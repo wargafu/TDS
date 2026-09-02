@@ -1,0 +1,9 @@
+/* Polices auto-hébergées via @fontsource — aucune requête tierce.
+   Source Sans 3 (latin, variable) · JetBrains Mono (code) · Noto Naskh Arabic
+   (sous-ensemble arabe uniquement, le latin étant couvert par Source Sans 3). */
+@import '@fontsource-variable/source-sans-3/index.css';
+@import '@fontsource-variable/source-sans-3/wght-italic.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/noto-naskh-arabic/arabic-400.css';
+@import '@fontsource/noto-naskh-arabic/arabic-700.css';

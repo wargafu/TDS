@@ -5,7 +5,6 @@ sidebar:
   order: 2
 ---
 
-import { Tabs, TabItem, Aside, Steps } from '@astrojs/starlight/components';
 
 `@tdgs/core` est préparé pour npm, mais sa publication publique n'a pas encore été effectuée.
 Le guide décrit la cible d'installation ainsi que l'utilisation dans le monorepo.
@@ -18,13 +17,31 @@ Le guide décrit la cible d'installation ainsi que l'utilisation dans le monorep
 ## Gestionnaire de paquets
 
 <Tabs>
-  <TabItem label="pnpm">```bash pnpm add @tdgs/core ```</TabItem>
-  <TabItem label="npm">```bash npm install @tdgs/core ```</TabItem>
-  <TabItem label="yarn">```bash yarn add @tdgs/core ```</TabItem>
+  <TabItem label="pnpm">
+
+```bash
+pnpm add @tdgs/core
+```
+
+  </TabItem>
+  <TabItem label="npm">
+
+```bash
+npm install @tdgs/core
+```
+
+  </TabItem>
+  <TabItem label="yarn">
+
+```bash
+yarn add @tdgs/core
+```
+
+  </TabItem>
 </Tabs>
 
 <Aside type="note" title="Version Node.js">
-  TDGS nécessite Node.js 18 ou supérieur. Le package utilise les modules ES natifs (`"type":
+  TDGS nécessite Node.js 20.18 ou supérieur. Le package utilise les modules ES natifs (`"type":
   "module"`).
 </Aside>
 

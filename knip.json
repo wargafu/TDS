@@ -1,0 +1,35 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "workspaces": {
+    "packages/core": {
+      "entry": [
+        "src/index.ts",
+        "src/manifest.ts",
+        "src/elements/index.ts",
+        "src/icons/index.ts",
+        "scripts/*.mjs",
+        "test/**/*.test.ts"
+      ],
+      "project": "src/**/*.ts"
+    },
+    "packages/react": {
+      "entry": ["src/index.ts", "test/**/*.test.tsx"],
+      "project": "src/**/*.{ts,tsx}"
+    },
+    "packages/vue": {
+      "entry": ["src/index.ts", "test/**/*.test.ts"],
+      "project": "src/**/*.ts"
+    },
+    "apps/docs": {
+      "entry": [
+        "src/pages/**/*.{astro,ts}",
+        "src/content.config.ts",
+        "scripts/*.mjs",
+        "astro.config.mjs"
+      ],
+      "project": "src/**/*.{astro,ts}"
+    }
+  },
+  "ignoreDependencies": ["@size-limit/file", "@cspell/dict-fr-fr"],
+  "ignore": ["**/dist/**", "reference/**", "templates/**"]
+}

@@ -1,0 +1,99 @@
+/* TDGS Toast — retour d'information transitoire, non bloquant. */
+:root {
+  --tds-toast-bg: var(--tds-bg-elevated);
+  --tds-toast-color: var(--tds-text);
+  --tds-toast-border: var(--tds-border);
+  --tds-toast-accent: var(--tds-action-primary);
+  --tds-toast-radius: var(--tds-radius-md);
+  --tds-toast-shadow: var(--tds-shadow-lg);
+  --tds-toast-width: 22rem;
+  --tds-toast-gap: var(--tds-spacing-2);
+}
+
+.tds-toast-region {
+  position: fixed;
+  inset-block-end: var(--tds-spacing-4);
+  inset-inline-end: var(--tds-spacing-4);
+  z-index: var(--tds-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--tds-toast-gap);
+  width: min(var(--tds-toast-width), calc(100vw - 2 * var(--tds-spacing-4)));
+  pointer-events: none;
+}
+
+.tds-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tds-spacing-3);
+  padding: var(--tds-spacing-3) var(--tds-spacing-4);
+  border: 1px solid var(--tds-toast-border);
+  border-inline-start: var(--tds-spacing-1) solid var(--tds-toast-accent);
+  border-radius: var(--tds-toast-radius);
+  background: var(--tds-toast-bg);
+  color: var(--tds-toast-color);
+  box-shadow: var(--tds-toast-shadow);
+  pointer-events: auto;
+  animation: tds-toast-in var(--tds-motion-normal) var(--tds-easing-enter);
+}
+
+.tds-toast[data-leaving] {
+  animation: tds-toast-out var(--tds-motion-fast) var(--tds-easing-exit) forwards;
+}
+
+.tds-toast--success {
+  --tds-toast-accent: var(--tds-semantic-success-icon);
+}
+.tds-toast--warning {
+  --tds-toast-accent: var(--tds-semantic-warning-icon);
+}
+.tds-toast--danger {
+  --tds-toast-accent: var(--tds-semantic-danger-icon);
+}
+
+.tds-toast__body {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--tds-font-size-sm);
+  line-height: var(--tds-line-height-md);
+}
+
+.tds-toast__close {
+  flex: 0 0 auto;
+  display: inline-flex;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: var(--tds-radius-xs);
+  background: transparent;
+  color: var(--tds-text-muted);
+  cursor: pointer;
+}
+.tds-toast__close:hover {
+  color: var(--tds-text);
+}
+
+@keyframes tds-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+@keyframes tds-toast-out {
+  to {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tds-toast,
+  .tds-toast[data-leaving] {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .tds-toast {
+    border: 1px solid CanvasText;
+  }
+}
