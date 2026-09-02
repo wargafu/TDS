@@ -2,7 +2,9 @@
    Les libellés s'enroulent autour de radios natives pour rester accessibles
    et fonctionnels sans JavaScript. */
 :root {
-  --tds-segmented-bg: var(--tds-neutral-100);
+  /* Fond adaptatif au thème : neutral-100 en dur cassait le contraste du
+     libellé (texte clair) en mode sombre. */
+  --tds-segmented-bg: var(--tds-bg-subtle);
   --tds-segmented-border: var(--tds-border-subtle);
   --tds-segmented-selected-bg: var(--tds-bg-elevated);
   --tds-segmented-selected-text: var(--tds-action-primary);
