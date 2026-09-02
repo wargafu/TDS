@@ -480,6 +480,26 @@ dialog.search-dialog::backdrop {
   --pagefind-ui-font: var(--tds-font-family-primary);
 }
 
+/* ─── Contraste forcé (High Contrast Mode) ──────────────────────────────── */
+@media (forced-colors: active) {
+  .site-header,
+  .site-footer {
+    background: Canvas;
+    color: CanvasText;
+    border-color: CanvasText;
+  }
+  .site-footer a,
+  .site-header__brand,
+  .site-nav a {
+    color: LinkText;
+  }
+  .site-nav a[aria-current='true']::after,
+  .tricolore,
+  .site-footer::before {
+    background: Highlight;
+  }
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 78rem) {
   .doc-shell,

@@ -92,5 +92,17 @@ for (const id of jsEnhanced) {
 }
 ok(`${jsEnhanced.length} composants jsEnhanced couverts`);
 
+// ── 5. matrice d'audit a11y : une ligne par composant ─────────────────
+const auditPath = join(ROOT, '..', '..', 'tdgs-documentation', 'ACCESSIBILITY-AUDIT.md');
+if (existsSync(auditPath)) {
+  const audit = readFileSync(auditPath, 'utf-8');
+  // Tolère l'alignement de colonnes de Prettier : `| \`id\` <espaces> |`.
+  const missing = ids.filter((id) => !new RegExp(`\\|\\s*\`${id}\`\\s*\\|`).test(audit));
+  if (missing.length) fail(`ACCESSIBILITY-AUDIT.md : ligne(s) manquante(s) — ${missing.join(', ')}`);
+  else ok('matrice d’audit a11y complète');
+} else {
+  fail('tdgs-documentation/ACCESSIBILITY-AUDIT.md introuvable');
+}
+
 process.stdout.write(`\n${errors === 0 ? '[validate-manifest] OK.' : `[validate-manifest] ${errors} erreur(s).`}\n`);
 process.exit(errors === 0 ? 0 : 1);

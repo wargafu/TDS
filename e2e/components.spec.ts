@@ -47,17 +47,31 @@ test('tableau triable : le tri réordonne et annonce aria-sort', async ({ page }
   await expect(table.locator('th').first()).toHaveAttribute('aria-sort', 'descending');
 });
 
-test('RTL : une page en arabe applique dir=rtl et le miroir d’icône', async ({ page }) => {
-  await page.goto('/fondamentaux/rtl/');
-  // La page de doc reste LTR ; on vérifie le mécanisme sur un fragment forcé.
+test('RTL : /rtl-preview/ rend les composants en dir=rtl', async ({ page }) => {
+  await page.goto('/rtl-preview/');
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+
+  // Direction calculée effective sur un composant.
+  const dir = await page
+    .locator('.tds-breadcrumb')
+    .evaluate((el) => getComputedStyle(el).direction);
+  expect(dir).toBe('rtl');
+
+  // Le bouton primaire est bien à droite de son conteneur (début en RTL).
+  const [rowBox, btnBox] = await Promise.all([
+    page.locator('#buttons .row').boundingBox(),
+    page.locator('#buttons .tds-button--primary').boundingBox(),
+  ]);
+  expect(btnBox!.x + btnBox!.width).toBeGreaterThan(rowBox!.x + rowBox!.width - btnBox!.width - 40);
+
+  // La puce d'icône directionnelle est retournée en RTL.
   await page.evaluate(() => {
-    const probe = document.createElement('div');
-    probe.dir = 'rtl';
+    const probe = document.createElement('span');
     probe.innerHTML = '<svg class="tds-icon tds-icon--mirror"><path d="M0 0"/></svg>';
     document.body.appendChild(probe);
   });
   const transform = await page
-    .locator('[dir="rtl"] .tds-icon--mirror')
+    .locator('.tds-icon--mirror')
     .evaluate((el) => getComputedStyle(el).transform);
   expect(transform).toMatch(/matrix\(-1|scaleX/);
 });

@@ -66,14 +66,29 @@ describe('naming convention: custom properties and classes are prefixed tds-', (
 });
 
 describe('RTL readiness', () => {
+  // Propriétés physiques interdites : elles ne se retournent pas en RTL.
+  // `::-webkit-slider-*` et `::-moz-range-*` échappent aux propriétés logiques
+  // (pseudo-éléments non standard) — les rares `left/right` y sont tolérés.
+  const PHYSICAL = new RegExp(
+    [
+      // positionnement et boîte
+      '(?:^|[;{\\s])(?:left|right|margin-left|margin-right|padding-left|padding-right)\\s*:',
+      // bordures physiques, y compris sous-propriétés (-width/-color/-style)
+      'border-(?:left|right)(?:-(?:width|color|style))?\\s*:',
+      'inset-(?:left|right)\\s*:',
+      // valeurs directionnelles
+      'text-align\\s*:\\s*(?:left|right)\\b',
+      '(?:float|clear)\\s*:\\s*(?:left|right)\\b',
+    ].join('|'),
+    'gi'
+  );
+
   it('does not ship physical left/right declarations in component CSS', () => {
     const physicalDeclarations = cssFiles.flatMap((file) => {
-      const text = readFileSync(file, 'utf-8');
-      return (
-        text.match(
-          /\b(?:left|right|margin-left|margin-right|padding-left|padding-right|border-left|border-right|inset-left|inset-right)\s*:/gi
-        ) ?? []
-      );
+      const text = readFileSync(file, 'utf-8')
+        // Retire les blocs de pseudo-éléments de curseur natif (non logiques).
+        .replace(/::(?:-webkit-slider|-moz-range)[^{]*\{[^}]*\}/gi, '');
+      return (text.match(PHYSICAL) ?? []).map((m) => `${relative(SRC_DIR, file)}: ${m.trim()}`);
     });
 
     expect(physicalDeclarations).toEqual([]);

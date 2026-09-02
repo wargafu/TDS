@@ -52,7 +52,7 @@
 
 /* Hover ligne */
 .tds-table tbody tr:hover td {
-  background: var(--tds-color-blue-50);
+  background: var(--tds-semantic-info-bg);
 }
 
 /* Lignes alternées */
@@ -61,7 +61,7 @@
 }
 
 .tds-table--striped tbody tr:nth-child(even):hover td {
-  background: var(--tds-color-blue-50);
+  background: var(--tds-semantic-info-bg);
 }
 
 /* Bordures */

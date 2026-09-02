@@ -39,7 +39,7 @@
 }
 
 .tds-summary__link:hover {
-  color: var(--tds-color-blue-700);
+  color: var(--tds-action-primary-hover);
 }
 
 .tds-summary__link:focus-visible {

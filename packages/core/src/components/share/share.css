@@ -70,22 +70,11 @@
   padding: 0;
 }
 
-/* Modificateurs de réseau : couleur discrète au survol, sans logo propriétaire. */
-.tds-share__link-x:hover {
-  color: var(--tds-neutral-900);
-  border-color: var(--tds-neutral-900);
-}
-
-.tds-share__link-linkedin:hover {
-  color: var(--tds-color-blue-600);
-  border-color: var(--tds-color-blue-600);
-}
-
-.tds-share__link-facebook:hover {
-  color: var(--tds-color-blue-700);
-  border-color: var(--tds-color-blue-700);
-}
-
+/* Modificateurs de réseau : teinte discrète au survol, adaptée au thème,
+   sans logo ni couleur propriétaire. */
+.tds-share__link-x:hover,
+.tds-share__link-linkedin:hover,
+.tds-share__link-facebook:hover,
 .tds-share__link-mail:hover {
   color: var(--tds-action-primary);
   border-color: var(--tds-action-primary);

@@ -1,0 +1,147 @@
+---
+// Aperçu RTL : rend un échantillon de composants @tdgs/core en arabe, dir="rtl",
+// avec le CSS réellement buildé (public/tds/). Sert de QA visuelle et de cible
+// aux tests Playwright RTL. Non indexé, non lié dans la navigation.
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>TDGS — معاينة RTL</title>
+    <meta name="robots" content="noindex" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/tds/tdgs.css" />
+    <style>
+      body {
+        max-inline-size: 60rem;
+        margin-inline: auto;
+        padding: 2rem clamp(1rem, 4vw, 2rem) 6rem;
+        background: var(--tds-bg);
+        color: var(--tds-text);
+      }
+      section {
+        margin-block-start: 2.5rem;
+        padding-block-start: 1.5rem;
+        border-block-start: 1px solid var(--tds-border-subtle);
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        margin-block-start: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>معاينة الاتجاه من اليمين إلى اليسار</h1>
+    <p>عيّنة من مكوّنات TDGS بالعربية، مع الاتجاه <code>dir="rtl"</code>.</p>
+
+    <section id="buttons" aria-labelledby="buttons-t">
+      <h2 id="buttons-t">الأزرار</h2>
+      <div class="row">
+        <button class="tds-button tds-button--primary tds-button--md" type="button">إرسال الطلب</button>
+        <button class="tds-button tds-button--secondary tds-button--md" type="button">رجوع</button>
+        <button class="tds-button tds-button--tertiary tds-button--md" type="button">مزيد</button>
+      </div>
+    </section>
+
+    <section id="breadcrumb" aria-labelledby="bc-t">
+      <h2 id="bc-t">مسار التنقّل</h2>
+      <nav class="tds-breadcrumb" aria-label="مسار التنقّل">
+        <ol class="tds-breadcrumb__list">
+          <li class="tds-breadcrumb__item"><a class="tds-breadcrumb__link" href="#">الرئيسية</a></li>
+          <li class="tds-breadcrumb__item">
+            <a class="tds-breadcrumb__link" href="#">وثائق الهوية</a>
+          </li>
+          <li class="tds-breadcrumb__item" aria-current="page">تجديد البطاقة</li>
+        </ol>
+      </nav>
+    </section>
+
+    <section id="field" aria-labelledby="field-t">
+      <h2 id="field-t">حقل نموذج</h2>
+      <div class="tds-field">
+        <label class="tds-field__label" for="nom">الاسم الكامل</label>
+        <input id="nom" class="tds-input tds-input--md" type="text" />
+        <p class="tds-helper-text">كما هو مكتوب في وثيقة الهوية.</p>
+      </div>
+      <div class="tds-field" style="margin-block-start:1rem">
+        <label class="tds-field__label" for="ville">المدينة</label>
+        <select id="ville" class="tds-select tds-input--md">
+          <option>نجامينا</option>
+          <option>موندو</option>
+          <option>سرح</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="alert" aria-labelledby="alert-t">
+      <h2 id="alert-t">تنبيه</h2>
+      <div class="tds-alert tds-alert--info" role="status">
+        <div class="tds-alert__content">
+          <p class="tds-alert__title">معلومة الخدمة</p>
+          <div class="tds-alert__body">تحقّق من المواعيد والوثائق المطلوبة قبل التنقّل.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stepper" aria-labelledby="step-t">
+      <h2 id="step-t">الخطوات</h2>
+      <ol class="tds-stepper" aria-label="تقدّم الإجراء">
+        <li class="tds-stepper__item tds-stepper--complete">
+          <span class="tds-stepper__label">الهوية</span>
+        </li>
+        <li class="tds-stepper__item tds-stepper--current" aria-current="step">
+          <span class="tds-stepper__label">العنوان</span>
+        </li>
+        <li class="tds-stepper__item tds-stepper--upcoming">
+          <span class="tds-stepper__label">المراجعة</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="table" aria-labelledby="table-t">
+      <h2 id="table-t">جدول</h2>
+      <table class="tds-table tds-table--striped">
+        <caption>
+          آخر الطلبات
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">المرجع</th>
+            <th scope="col">الخدمة</th>
+            <th scope="col">الحالة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">TD-2026-0142</th>
+            <td>الحالة المدنية</td>
+            <td><span class="tds-badge tds-badge--success">تمّت المعالجة</span></td>
+          </tr>
+          <tr>
+            <th scope="row">TD-2026-0143</th>
+            <td>وثائق الهوية</td>
+            <td><span class="tds-badge tds-badge--warning">قيد المعالجة</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="pagination" aria-labelledby="pg-t">
+      <h2 id="pg-t">ترقيم الصفحات</h2>
+      <nav class="tds-pagination" aria-label="ترقيم الصفحات">
+        <a class="tds-pagination__link" href="#" rel="prev">السابق</a>
+        <a class="tds-pagination__link" href="#" aria-current="page">1</a>
+        <a class="tds-pagination__link" href="#">2</a>
+        <a class="tds-pagination__link" href="#">3</a>
+        <a class="tds-pagination__link" href="#" rel="next">التالي</a>
+      </nav>
+    </section>
+  </body>
+</html>

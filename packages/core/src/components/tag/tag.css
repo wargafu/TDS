@@ -1,8 +1,8 @@
 /* TDGS Tag — classification, filtre ou état lisible */
 :root {
-  --tds-tag-bg: var(--tds-neutral-100);
-  --tds-tag-border: var(--tds-neutral-200);
-  --tds-tag-color: var(--tds-neutral-700);
+  --tds-tag-bg: var(--tds-bg-subtle);
+  --tds-tag-border: var(--tds-border-subtle);
+  --tds-tag-color: var(--tds-text);
   --tds-tag-radius: var(--tds-radius-full);
   --tds-tag-gap: var(--tds-spacing-1);
 }
@@ -34,9 +34,9 @@
 }
 
 .tds-tag--default {
-  --tds-tag-bg: var(--tds-neutral-100);
-  --tds-tag-border: var(--tds-neutral-200);
-  --tds-tag-color: var(--tds-neutral-700);
+  --tds-tag-bg: var(--tds-bg-subtle);
+  --tds-tag-border: var(--tds-border-subtle);
+  --tds-tag-color: var(--tds-text);
 }
 
 .tds-tag--info {

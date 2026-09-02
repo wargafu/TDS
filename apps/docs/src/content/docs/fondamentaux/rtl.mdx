@@ -12,10 +12,15 @@ L'arabe est la seconde langue officielle du Tchad. TDGS est conçu pour supporte
 les interfaces bilingues français/arabe avec une expérience de qualité pour les deux langues.
 
 <Aside type="note" title="Statut du support arabe">
-  Le support RTL est planifié comme une priorité de la prochaine version majeure de TDGS.
-  Les fondations sont en place (police, direction CSS) mais les composants n'ont pas encore
-  été testés exhaustivement en contexte RTL.
+  Les composants utilisent des **propriétés logiques** (aucun `left`/`right`
+  physique — vérifié par test), les icônes directionnelles se retournent
+  (`.tds-icon--mirror`), et un modèle complet en arabe est fourni
+  (`templates/login-ar/`). Un aperçu vivant des composants en RTL est
+  disponible sur la page **[/rtl-preview/](/rtl-preview/)**. Reste : tests
+  lecteur d'écran en arabe et localisation complète du site de documentation.
 </Aside>
+
+<a class="tds-button tds-button--secondary tds-button--md" href="/rtl-preview/">Ouvrir l'aperçu RTL des composants →</a>
 
 ---
 

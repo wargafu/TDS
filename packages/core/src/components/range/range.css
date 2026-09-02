@@ -1,6 +1,7 @@
 /* TDGS Range — curseur de plage. */
 :root {
-  --tds-range-track-bg: var(--tds-neutral-200);
+  /* Piste adaptative au thème (neutral-200 en dur restait clair en sombre). */
+  --tds-range-track-bg: var(--tds-border);
   --tds-range-track-filled: var(--tds-action-primary);
   --tds-range-thumb-bg: var(--tds-action-primary);
   --tds-range-thumb-border: var(--tds-neutral-0);
@@ -30,7 +31,7 @@
   font-size: var(--tds-font-size-sm);
   line-height: var(--tds-line-height-sm);
   font-weight: var(--tds-font-weight-semibold);
-  color: var(--tds-neutral-900);
+  color: var(--tds-text);
 }
 
 .tds-range__value {

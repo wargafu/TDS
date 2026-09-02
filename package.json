@@ -33,6 +33,7 @@
     "release:dry": "pnpm -r --filter \"@tdgs/*\" publish --dry-run --no-git-checks"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@changesets/cli": "^3.0.1",
     "@cspell/dict-fr-fr": "^2.3.2",
     "@playwright/test": "^1.62.1",
