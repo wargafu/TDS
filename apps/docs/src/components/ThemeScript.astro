@@ -1,0 +1,20 @@
+---
+/**
+ * Script sans-flash : applique le thème mémorisé avant le premier rendu et
+ * retire la classe `no-js` (utilisée pour les composants à dégradation).
+ */
+---
+
+<script is:inline>
+  (function () {
+    try {
+      document.documentElement.classList.remove('no-js');
+      var stored = localStorage.getItem('tds-theme');
+      if (stored === 'light' || stored === 'dark') {
+        document.documentElement.setAttribute('data-tds-theme', stored);
+      }
+    } catch (e) {
+      /* localStorage indisponible : on reste sur la préférence système. */
+    }
+  })();
+</script>

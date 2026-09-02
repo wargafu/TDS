@@ -1,0 +1,77 @@
+---
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pager from '../components/Pager.astro';
+import { SITE } from '../lib/site';
+
+interface Props {
+  slug: string;
+  title: string;
+  description?: string;
+  headings?: MarkdownHeading[];
+  template?: 'doc' | 'splash';
+  tableOfContents?: boolean;
+  badge?: string;
+  editPath?: string;
+}
+
+const {
+  slug,
+  title,
+  description,
+  headings = [],
+  template = 'doc',
+  tableOfContents = true,
+  badge,
+  editPath,
+} = Astro.props;
+
+const showToc = template === 'doc' && tableOfContents && headings.some((h) => h.depth <= 3);
+const shellClass = template === 'splash' ? 'doc-shell doc-shell--no-toc' : showToc ? 'doc-shell' : 'doc-shell doc-shell--no-toc';
+---
+
+<BaseLayout title={title} description={description} activeSlug={slug}>
+  <div class="container">
+    <div class={shellClass}>
+      <Sidebar activeSlug={slug} />
+
+      <article class="doc-main">
+        <Breadcrumbs slug={slug} title={title} />
+        <header class="doc-header">
+          <h1>{title}{badge && <span class="doc-badge">{badge}</span>}</h1>
+          {description && <p>{description}</p>}
+        </header>
+
+        <div class="doc-prose">
+          <slot />
+        </div>
+
+        <Pager slug={slug} />
+
+        {
+          editPath && (
+            <p class="doc-edit">
+              <a href={`${SITE.editBase}${editPath}`} target="_blank" rel="noopener noreferrer">
+                Modifier cette page sur GitHub
+              </a>
+            </p>
+          )
+        }
+      </article>
+
+      {showToc && <TableOfContents headings={headings} />}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .doc-edit {
+    margin-block-start: 2.5rem;
+    padding-block-start: 1.25rem;
+    border-block-start: 1px solid var(--tds-border-subtle);
+    font-size: var(--tds-font-size-sm);
+  }
+</style>

@@ -1,0 +1,89 @@
+/* ============================================================================
+   TDGS Docs — feuille de style du site.
+   Le socle @tdgs/core (tokens + reset + composants) est la base ; on n'ajoute
+   ici que le chrome du site et les éléments propres à la documentation.
+   ========================================================================== */
+
+@import './fonts.css';
+
+/* Design system complet : tokens sémantiques, base HTML, composants tds-*.
+   Les pages de doc rendent de vrais composants @tdgs/core en direct. */
+@import '@tdgs/core/tdgs.css';
+
+@import './chrome.css';
+@import './content.css';
+
+:root {
+  --docs-header-height: 4rem;
+  --docs-band-height: 0.25rem;
+  --docs-sidebar-width: 17rem;
+  --docs-toc-width: 15rem;
+  --docs-content-max: 46rem;
+  --docs-page-max: 90rem;
+  --docs-gutter: clamp(1rem, 4vw, 2.5rem);
+
+  /* Les paquets @fontsource(-variable) exposent des noms de famille précis ;
+     on les place en tête des piles de tokens sans en changer les valeurs. */
+  --tds-font-family-primary:
+    'Source Sans 3 Variable', 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+
+  color-scheme: light;
+}
+:root[data-tds-theme='dark'] {
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tds-theme='light']) {
+    color-scheme: dark;
+  }
+}
+
+html {
+  scroll-padding-block-start: calc(var(--docs-header-height) + 1.5rem);
+}
+body {
+  min-height: 100dvh;
+  background: var(--tds-bg);
+}
+
+/* ─── Lien d'évitement ───────────────────────────────────────────────────── */
+.skip-link {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: var(--tds-z-tooltip);
+  transform: translateY(-110%);
+  padding: 0.75rem 1.25rem;
+  background: var(--tds-action-primary);
+  color: #fff;
+  font-weight: var(--tds-font-weight-semibold);
+  text-decoration: none;
+  transition: transform var(--tds-motion-fast) var(--tds-easing-standard);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ─── Conteneurs / utilitaires ───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--docs-page-max);
+  margin-inline: auto;
+  padding-inline: var(--docs-gutter);
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+[hidden] {
+  display: none !important;
+}

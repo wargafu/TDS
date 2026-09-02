@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/site';
+---
+
+<BaseLayout title="Page introuvable" mainClass="home">
+  <section class="container home-section" style="text-align:center; padding-block: 6rem;">
+    <p class="home-hero__eyebrow">Erreur 404</p>
+    <h1 style="font-size: var(--tds-font-size-4xl); margin-block: 0.5rem 1rem;">Page introuvable</h1>
+    <p style="color: var(--tds-text-muted); max-width: 40ch; margin-inline: auto;">
+      La page que vous cherchez n'existe pas ou a été déplacée.
+    </p>
+    <p style="margin-block-start: 2rem;">
+      <a class="tds-button tds-button--primary tds-button--md" href={url('/')}>Retour à l'accueil</a>
+    </p>
+  </section>
+</BaseLayout>

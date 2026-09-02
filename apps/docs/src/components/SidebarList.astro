@@ -1,0 +1,48 @@
+---
+import type { NavItem } from '../lib/navigation';
+import { docHref } from '../lib/site';
+
+interface Props {
+  items: NavItem[];
+  activeSlug: string;
+}
+const { items, activeSlug } = Astro.props;
+---
+
+<ul class="sidebar__list">
+  {
+    items.map((item) =>
+      item.items ? (
+        <li class="sidebar__group-item">
+          {item.slug ? (
+            <a href={docHref(item.slug)} aria-current={item.slug === activeSlug ? 'page' : undefined}>
+              {item.label}
+            </a>
+          ) : (
+            <span class="sidebar__subtitle">{item.label}</span>
+          )}
+          <Astro.self items={item.items} activeSlug={activeSlug} />
+        </li>
+      ) : (
+        <li>
+          <a href={docHref(item.slug!)} aria-current={item.slug === activeSlug ? 'page' : undefined}>
+            {item.label}
+            {item.badge && <span class="doc-badge">{item.badge}</span>}
+          </a>
+        </li>
+      )
+    )
+  }
+</ul>
+
+<style>
+  .sidebar__subtitle {
+    display: block;
+    padding: 0.375rem 0.625rem;
+    font-size: var(--tds-font-size-xs);
+    font-weight: var(--tds-font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tds-text-muted);
+  }
+</style>

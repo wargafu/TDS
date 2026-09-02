@@ -579,13 +579,20 @@ const summaryItems = [
   <section id="dropdown" data-pagefind-ignore>
     <h2>Menu déroulant</h2>
     <div class="tds-dropdown" data-open="true">
-      <button type="button" class="tds-button tds-button--tertiary tds-button--md" aria-haspopup="menu" aria-expanded="true">
+      <button
+        type="button"
+        class="tds-button tds-button--tertiary tds-button--md"
+        aria-expanded="true"
+        aria-controls="dropdown-demo-menu"
+      >
         Actions <span aria-hidden="true">▾</span>
       </button>
-      <ul class="tds-dropdown__menu" role="menu">
+      <ul class="tds-dropdown__menu" id="dropdown-demo-menu">
         <li class="tds-dropdown__item"><a class="tds-dropdown__link" href="#">Modifier</a></li>
         <li class="tds-dropdown__item"><a class="tds-dropdown__link" href="#">Dupliquer</a></li>
-        <li class="tds-dropdown__item tds-dropdown__item-danger"><button type="button" class="tds-dropdown__link">Supprimer</button></li>
+        <li class="tds-dropdown__item tds-dropdown__item-danger">
+          <button type="button" class="tds-dropdown__link">Supprimer</button>
+        </li>
       </ul>
     </div>
   </section>

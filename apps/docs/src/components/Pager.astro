@@ -1,0 +1,29 @@
+---
+import { siblingPages } from '../lib/navigation';
+import { docHref } from '../lib/site';
+
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+const { prev, next } = siblingPages(slug);
+---
+
+{
+  (prev || next) && (
+    <nav class="pager" aria-label="Pages de la section">
+      {prev && (
+        <a class="pager--prev" href={docHref(prev.slug)} rel="prev">
+          <small>Précédent</small>
+          <strong>{prev.label}</strong>
+        </a>
+      )}
+      {next && (
+        <a class="pager--next" href={docHref(next.slug)} rel="next">
+          <small>Suivant</small>
+          <strong>{next.label}</strong>
+        </a>
+      )}
+    </nav>
+  )
+}
