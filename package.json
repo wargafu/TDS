@@ -19,14 +19,31 @@
     "format:check": "prettier --check \"**/*.{ts,json,css,md}\" --ignore-path .prettierignore",
     "test": "turbo test",
     "test:a11y": "turbo test:a11y",
+    "e2e": "playwright test",
+    "e2e:update": "playwright test --update-snapshots",
     "validate:templates": "node templates/validate.mjs",
-    "validate": "turbo validate"
+    "validate": "turbo validate",
+    "size": "turbo size",
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#**/node_modules\" \"#reference\" \"#**/CHANGELOG.md\"",
+    "spell": "cspell --no-progress --gitignore \"**/*.{md,mdx,ts,tsx,astro}\"",
+    "deadcode": "knip",
+    "changeset": "changeset",
+    "changeset:status": "changeset status --verbose",
+    "changeset:version": "changeset version && pnpm install --lockfile-only",
+    "release:dry": "pnpm -r --filter \"@tdgs/*\" publish --dry-run --no-git-checks"
   },
   "devDependencies": {
+    "@changesets/cli": "^3.0.1",
+    "@cspell/dict-fr-fr": "^2.3.2",
+    "@playwright/test": "^1.62.1",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "cspell": "^10.2.0",
     "eslint": "^8.57.0",
+    "knip": "^6.34.0",
+    "markdownlint-cli2": "^0.23.2",
     "prettier": "^3.2.0",
+    "publint": "^0.3.24",
     "turbo": "^1.11.0",
     "typescript": "^6.0.0"
   }

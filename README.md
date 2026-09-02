@@ -198,7 +198,7 @@ const body = typography.sizes.md; // '1rem'
 
 ## Structure du monorepo
 
-```
+```text
 TDGS/
 ├── packages/
 │   └── core/                  ← Package npm principal @tdgs/core
@@ -390,7 +390,7 @@ git push origin feat/nom-du-composant
 
 - **Issues** : [github.com/kisaigo/TDGS/issues](https://github.com/kisaigo/TDGS/issues)
 - **Discussions** : [github.com/kisaigo/TDGS/discussions](https://github.com/kisaigo/TDGS/discussions)
-- **Email** : design-system@gouv.td _(à configurer)_
+- **Email** : `design-system@gouv.td` _(à configurer)_
 
 ---
 

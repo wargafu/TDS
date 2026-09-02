@@ -39,6 +39,7 @@ jobs:
       - run: pnpm format:check
       - run: pnpm lint
       - run: pnpm lint:css
+      - run: pnpm lint:md
 
   build-test:
     name: Build, types, tests & validation
@@ -64,8 +65,12 @@ jobs:
       - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm test
-      - name: Valider @tdgs/core (tokens + exports)
+      - name: Valider @tdgs/core (tokens + manifeste + contraste + exports)
         run: pnpm --filter @tdgs/core validate
+      - name: Budget de taille (@tdgs/core)
+        run: pnpm --filter @tdgs/core size
+      - name: Santé des packages publiables (publint)
+        run: pnpm -r --filter "@tdgs/*" exec publint
       - name: Valider les templates
         run: pnpm validate:templates
 
@@ -103,5 +108,48 @@ jobs:
       - name: Tests d'accessibilité automatisés (axe-core)
         run: pnpm --filter tds-docs test:a11y
 
-# La publication npm est volontairement retirée de ce workflow. Un workflow de
-# release dédié (déclenchement manuel, dry-run vérifié) sera ajouté en phase 5.
+  e2e:
+    name: E2E (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @tdgs/core build
+      - run: pnpm --filter tds-docs build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm e2e
+
+  quality-extended:
+    name: Qualité étendue (non bloquant)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - name: Orthographe (cspell — arriéré de coquilles connu)
+        run: pnpm spell
+        continue-on-error: true
+      - name: Code mort (knip — config à affiner)
+        run: pnpm --filter @tdgs/core build && pnpm deadcode
+        continue-on-error: true
+
+# La publication npm passe par .github/workflows/release.yml (déclenchement
+# manuel, dry-run par défaut). Aucune publication n'a été effectuée.

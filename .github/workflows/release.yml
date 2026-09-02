@@ -1,0 +1,97 @@
+name: Release (@tdgs/*)
+
+# Publication npm des packages @tdgs/core, @tdgs/react, @tdgs/vue.
+# Déclenchement MANUEL uniquement. Par défaut : dry-run (aucune publication).
+# La publication réelle exige mode=publish ET confirm=PUBLIER-VRAIMENT.
+# Aucune publication n'a encore été effectuée.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'dry-run (vérifie tout, ne publie pas) ou publish'
+        type: choice
+        options: [dry-run, publish]
+        default: dry-run
+      confirm:
+        description: "Taper PUBLIER-VRAIMENT pour autoriser une vraie publication"
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+  id-token: write # provenance npm
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Vérifier avant release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          registry-url: 'https://registry.npmjs.org'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm --filter @tdgs/core validate
+      - run: pnpm changeset:status || echo "Aucun changeset en attente."
+      # Santé des packages publiés. (attw écarté : le cœur expose des
+      # sous-chemins .css sans types, qu'attw ne sait pas résoudre ; le paquet
+      # est ESM-only, sans risque de double CJS/ESM.)
+      - run: pnpm -r --filter "@tdgs/*" exec publint
+
+  dry-run:
+    name: Publication à blanc
+    needs: verify
+    if: ${{ github.event.inputs.mode == 'dry-run' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm -r --filter "@tdgs/*" publish --dry-run --no-git-checks
+
+  publish:
+    name: Publication npm (réelle)
+    needs: verify
+    if: ${{ github.event.inputs.mode == 'publish' && github.event.inputs.confirm == 'PUBLIER-VRAIMENT' }}
+    runs-on: ubuntu-latest
+    environment: npm-release
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+          registry-url: 'https://registry.npmjs.org'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Publier avec provenance
+        run: pnpm -r --filter "@tdgs/*" publish --provenance --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'

@@ -45,3 +45,7 @@ pnpm-debug.log*
 
 # Dépôts de référence locaux — ne pas empaqueter ni publier
 reference/dsfr/
+
+# Playwright
+test-results/
+playwright-report/

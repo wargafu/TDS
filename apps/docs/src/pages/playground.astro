@@ -684,6 +684,30 @@ const summaryItems = [
     </tds-consent>
   </section>
 
+  <section id="sortable" data-pagefind-ignore>
+    <h2>Tableau triable</h2>
+    <tds-sortable-table>
+      <table class="tds-table">
+        <caption>
+          Demandes récentes
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" data-sort>Référence</th>
+            <th scope="col" data-sort>Usager</th>
+            <th scope="col" data-sort="date">Déposée le</th>
+            <th scope="col" data-sort="number">Pièces</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>REF-0042</td><td>Zara Ahmat</td><td>2024-03-12</td><td>3</td></tr>
+          <tr><td>REF-0017</td><td>Ali Brahim</td><td>2024-01-28</td><td>7</td></tr>
+          <tr><td>REF-0091</td><td>Mariam Ousmane</td><td>2024-05-03</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </tds-sortable-table>
+  </section>
+
   <section id="icons" data-pagefind-ignore>
     <h2>Icônes</h2>
     <div class="row" style="gap: 1rem; font-size: 0; color: var(--tds-text);">
@@ -723,12 +747,7 @@ const summaryItems = [
 
   document.getElementById('consent-reset')?.addEventListener('click', () => {
     localStorage.removeItem('tds-consent');
-    const section = document.getElementById('consent');
-    const el = section?.querySelector('tds-consent');
-    if (!el || !section) return;
-    const fresh = el.cloneNode(true) as HTMLElement;
-    el.remove();
-    section.appendChild(fresh);
+    location.reload();
   });
 </script>
 </body>

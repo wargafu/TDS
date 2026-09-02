@@ -44,6 +44,10 @@
     },
     "validate:tokens": {
       "outputs": []
+    },
+    "size": {
+      "dependsOn": ["build"],
+      "outputs": []
     }
   }
 }
