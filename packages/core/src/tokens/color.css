@@ -100,7 +100,7 @@
   --tds-action-secondary: var(--tds-color-blue-50);
   --tds-action-secondary-hover: var(--tds-color-blue-100);
   --tds-accent: var(--tds-color-yellow-500);
-  --tds-accent-text: var(--tds-color-yellow-700);
+  --tds-accent-text: var(--tds-color-yellow-800);
 }
 
 /* Mode sombre — override explicite via data-tds-theme="dark" */

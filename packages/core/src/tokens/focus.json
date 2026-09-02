@@ -1,0 +1,7 @@
+{
+  "ring-width": "2px",
+  "ring-offset": "2px",
+  "ring-style": "solid",
+  "ring-color": "var(--tds-action-primary)",
+  "ring": "var(--tds-focus-ring-width) var(--tds-focus-ring-style) var(--tds-focus-ring-color)"
+}

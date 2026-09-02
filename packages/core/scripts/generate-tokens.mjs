@@ -314,5 +314,6 @@ writeOutputs('radius', generateFlatScale('radius', 'radius', 'TDGS radius tokens
 writeOutputs('shadow', generateFlatScale('shadow', 'shadow', 'TDGS shadow tokens'));
 writeOutputs('motion', generateMotion());
 writeOutputs('z-index', generateZIndex());
+writeOutputs('focus', generateFlatScale('focus', 'focus', 'TDGS focus tokens'));
 
 log('done.');

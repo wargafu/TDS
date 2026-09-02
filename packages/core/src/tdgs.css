@@ -9,6 +9,7 @@
 @import './tokens/shadow.css';
 @import './tokens/motion.css';
 @import './tokens/z-index.css';
+@import './tokens/focus.css';
 @import './base.css';
 @import './icons/icons.css';
 @import './components/button/button.css';

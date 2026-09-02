@@ -142,7 +142,7 @@
       },
       "accent": {
         "default": { "scale": "yellow", "shade": "500" },
-        "text": { "scale": "yellow", "shade": "700" }
+        "text": { "scale": "yellow", "shade": "800" }
       }
     },
     "dark": {

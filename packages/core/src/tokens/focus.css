@@ -1,0 +1,8 @@
+/* TDGS focus tokens */
+:root{
+  --tds-focus-ring-width: 2px;
+  --tds-focus-ring-offset: 2px;
+  --tds-focus-ring-style: solid;
+  --tds-focus-ring-color: var(--tds-action-primary);
+  --tds-focus-ring: var(--tds-focus-ring-width) var(--tds-focus-ring-style) var(--tds-focus-ring-color);
+}

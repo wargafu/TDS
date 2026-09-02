@@ -47,7 +47,16 @@ function assertValidJson(p, label) {
 }
 
 // ─── Primitive tokens ────────────────────────────────────────────
-const PRIMITIVES = ['color', 'typography', 'spacing', 'radius', 'shadow', 'motion', 'z-index'];
+const PRIMITIVES = [
+  'color',
+  'typography',
+  'spacing',
+  'radius',
+  'shadow',
+  'motion',
+  'z-index',
+  'focus',
+];
 
 process.stdout.write('[validate-tokens] Primitive tokens...\n\n');
 for (const name of PRIMITIVES) {
@@ -88,6 +97,13 @@ const COMPONENTS = [
   { name: 'download', tokenFile: 'download.tokens', cssFile: 'download' },
   { name: 'quote', tokenFile: 'quote.tokens', cssFile: 'quote' },
   { name: 'summary', tokenFile: 'summary.tokens', cssFile: 'summary' },
+  { name: 'password', tokenFile: 'password.tokens', cssFile: 'password' },
+  { name: 'range', tokenFile: 'range.tokens', cssFile: 'range' },
+  { name: 'segmented', tokenFile: 'segmented.tokens', cssFile: 'segmented' },
+  { name: 'dropdown', tokenFile: 'dropdown.tokens', cssFile: 'dropdown' },
+  { name: 'sidemenu', tokenFile: 'sidemenu.tokens', cssFile: 'sidemenu' },
+  { name: 'share', tokenFile: 'share.tokens', cssFile: 'share' },
+  { name: 'logo', tokenFile: 'logo.tokens', cssFile: 'logo' },
 ];
 
 process.stdout.write('\n[validate-tokens] Component tokens...\n\n');
