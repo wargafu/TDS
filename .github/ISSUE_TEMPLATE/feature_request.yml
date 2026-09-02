@@ -1,0 +1,30 @@
+name: 💡 Proposition
+description: Une amélioration ou un petit ajout. Pour un nouveau composant, utilisez « RFC ».
+labels: ['proposition', 'triage']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème
+      description: Le besoin réel, côté agent ou usager, avec des preuves d'usage.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposition
+      description: Ce que vous suggérez. Envisagez d'abord une combinaison de composants existants.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives envisagées
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Portée
+      options:
+        - label: Rétrocompatible (n'altère aucun contrat public existant)
+        - label: Nécessite une revue accessibilité
+        - label: Impact bilingue FR / AR

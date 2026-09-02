@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question d'utilisation
+    url: https://github.com/kisaigo/TDGS/discussions
+    about: Pour une question d'usage, ouvrez une discussion.
+  - name: Vulnérabilité de sécurité
+    url: https://github.com/kisaigo/TDGS/security/policy
+    about: Ne créez pas d'issue publique — voir SECURITY.md.

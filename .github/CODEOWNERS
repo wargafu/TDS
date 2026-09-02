@@ -1,0 +1,19 @@
+# Propriétaires par défaut — toute PR requiert leur revue.
+# Remplacer par les équipes réelles une fois la gouvernance confirmée
+# (voir GOVERNANCE.md).
+*                               @kisaigo
+
+# Contrat public : tokens, CSS et exports du cœur.
+/packages/core/                 @kisaigo
+/packages/core/tokens-src/      @kisaigo
+/packages/core/package.json     @kisaigo
+
+# Bindings framework.
+/packages/react/                @kisaigo
+/packages/vue/                  @kisaigo
+
+# Site de documentation.
+/apps/docs/                     @kisaigo
+
+# CI / release / sécurité.
+/.github/                       @kisaigo

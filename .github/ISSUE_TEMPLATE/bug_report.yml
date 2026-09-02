@@ -1,0 +1,56 @@
+name: 🐛 Rapport de bug
+description: Un comportement incorrect, reproductible.
+labels: ['bug', 'triage']
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Description
+      description: Ce qui se passe, et ce qui devrait se passer.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction minimale
+      description: Étapes, ou lien vers un exemple. N'incluez aucune donnée personnelle réelle.
+      placeholder: |
+        1. …
+        2. …
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version de @tdgs/core (ou commit)
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Périmètre
+      options:
+        - Tokens
+        - Composant CSS
+        - Custom element (@tdgs/core/elements)
+        - Binding React
+        - Binding Vue
+        - Documentation
+        - Autre
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environnement
+      placeholder: Navigateur + version, OS, framework, LTR/RTL, thème
+    validations:
+      required: true
+  - type: checkboxes
+    id: a11y
+    attributes:
+      label: Accessibilité
+      options:
+        - label: Ce bug a un impact clavier ou lecteur d'écran
+        - label: Ce bug concerne le contraste ou un thème

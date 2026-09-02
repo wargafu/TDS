@@ -315,7 +315,8 @@ git push origin feat/nom-du-composant
 
 ### Guide de contribution complet
 
-→ [docs/communaute/contribution](/apps/docs/src/content/docs/communaute/contribution.mdx)
+→ [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`GOVERNANCE.md`](GOVERNANCE.md) ·
+[`SECURITY.md`](SECURITY.md) · [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 
 ---
 

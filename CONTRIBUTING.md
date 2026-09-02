@@ -4,7 +4,9 @@ Merci de contribuer à un numérique public tchadien unifié, accessible et fiab
 
 ## Avant de commencer
 
-1. Lire `GOVERNANCE.md`, `CODE_OF_CONDUCT.md`, `ACCESSIBILITY.md` et `COMPONENT-LIFECYCLE.md`.
+1. Lire [`GOVERNANCE.md`](GOVERNANCE.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md),
+   [`tdgs-documentation/ACCESSIBILITY.md`](tdgs-documentation/ACCESSIBILITY.md) et
+   [`tdgs-documentation/COMPONENT-LIFECYCLE.md`](tdgs-documentation/COMPONENT-LIFECYCLE.md).
 2. Rechercher une issue existante.
 3. Ouvrir une proposition avant tout changement structurant.
 4. Ne pas inclure de secret, donnée personnelle réelle ou actif sans licence vérifiée.
