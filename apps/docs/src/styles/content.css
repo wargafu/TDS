@@ -99,18 +99,74 @@
   margin-block: 1.5rem;
 }
 .mdx-card {
-  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 1.35rem;
   border: 1px solid var(--tds-border-subtle);
   border-radius: var(--tds-radius-md);
   background: var(--tds-bg);
+  transition:
+    border-color var(--tds-motion-fast) var(--tds-easing-standard),
+    box-shadow var(--tds-motion-fast) var(--tds-easing-standard);
+}
+.mdx-card:has(a:hover) {
+  border-color: var(--tds-action-primary);
+  box-shadow: var(--tds-shadow-sm);
 }
 .mdx-card__title {
   font-size: var(--tds-font-size-lg);
   font-weight: var(--tds-font-weight-semibold);
-  margin-block-end: 0.4rem;
+  line-height: 1.3;
 }
-.mdx-card > :last-child {
+.mdx-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--tds-text-muted);
+  font-size: var(--tds-font-size-sm);
+}
+.mdx-card__body > :first-child {
+  margin-block-start: 0;
+}
+.mdx-card__body > :last-child {
   margin-block-end: 0;
+}
+/* Le lien CTA d'une carte est poussé en bas et mis en avant. */
+.mdx-card__body .arrow-link {
+  margin-block-start: auto;
+  font-size: var(--tds-font-size-sm);
+}
+.mdx-card__body p:has(.arrow-link) {
+  margin-block-start: auto;
+}
+
+/* ─── Lien-flèche (« lire → », « ouvrir → ») ─────────────────────────────── */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-weight: var(--tds-font-weight-semibold);
+  color: var(--tds-action-primary);
+  text-decoration: none;
+}
+.arrow-link::after {
+  content: '→';
+  transition: transform var(--tds-motion-fast) var(--tds-easing-standard);
+}
+.arrow-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.arrow-link:hover::after {
+  transform: translateX(0.2em);
+}
+[dir='rtl'] .arrow-link::after {
+  content: '←';
+}
+[dir='rtl'] .arrow-link:hover::after {
+  transform: translateX(-0.2em);
 }
 
 /* ─── Badge MDX ──────────────────────────────────────────────────────────── */
@@ -177,31 +233,59 @@
 
 /* ─── Tabs MDX ───────────────────────────────────────────────────────────── */
 .mdx-tabs {
-  margin-block: 1.5rem;
+  margin-block: 1.75rem;
 }
 .mdx-tabs__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  border-block-end: 1px solid var(--tds-border-subtle);
+  gap: 0.15rem;
+  padding-block-end: 0;
+  border-block-end: 1px solid var(--tds-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mdx-tabs__list::-webkit-scrollbar {
+  display: none;
 }
 .mdx-tabs__tab {
-  padding: 0.5rem 0.9rem;
+  position: relative;
+  padding: 0.55rem 0.95rem;
   border: 0;
-  border-block-end: 2px solid transparent;
   background: transparent;
   color: var(--tds-text-muted);
   font: inherit;
   font-weight: var(--tds-font-weight-semibold);
   font-size: var(--tds-font-size-sm);
+  white-space: nowrap;
   cursor: pointer;
+  border-radius: var(--tds-radius-sm) var(--tds-radius-sm) 0 0;
+  transition: color var(--tds-motion-fast) var(--tds-easing-standard);
+}
+.mdx-tabs__tab:hover {
+  color: var(--tds-text);
+  background: var(--tds-bg-subtle);
+}
+.mdx-tabs__tab:focus-visible {
+  outline: var(--tds-focus-ring-width) var(--tds-focus-ring-style) var(--tds-focus-ring-color);
+  outline-offset: -2px;
 }
 .mdx-tabs__tab[aria-selected='true'] {
   color: var(--tds-action-primary);
-  border-block-end-color: var(--tds-action-primary);
+}
+.mdx-tabs__tab[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0.35rem;
+  inset-block-end: -1px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: var(--tds-action-primary);
 }
 .mdx-tabs__panel {
-  padding-block-start: 1.25rem;
+  padding-block-start: 1.5rem;
+}
+.mdx-tabs__panel > :first-child {
+  margin-block-start: 0;
 }
 .mdx-tabs__panel[hidden] {
   display: none;
@@ -213,11 +297,19 @@
 .no-js .mdx-tabs__panel[hidden] {
   display: block;
 }
+.no-js .mdx-tabs__panel {
+  padding-block: 1rem 0;
+  border-block-start: 1px solid var(--tds-border-subtle);
+}
 .no-js .mdx-tabs__panel::before {
   content: attr(data-label);
   display: block;
+  font-size: var(--tds-font-size-sm);
   font-weight: var(--tds-font-weight-bold);
-  margin-block-end: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tds-text-muted);
+  margin-block-end: 0.75rem;
 }
 
 /* ─── Aperçu de composant (rendu réel @tdgs/core) ────────────────────────── */

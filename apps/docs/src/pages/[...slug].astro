@@ -15,18 +15,20 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
-const collectionSlug = entry.id.replace(/\/index$/, '') || 'index';
+// L'identifiant de collection (ex. `fondamentaux/index`) est la clé utilisée
+// par lib/navigation.ts — ne pas retirer `/index` ici, sinon les pages
+// d'accueil de section perdent leur barre latérale.
 ---
 
 <DocLayout
-  slug={collectionSlug}
+  slug={entry.id}
   title={entry.data.title}
   description={entry.data.description}
   headings={headings}
   template={entry.data.template}
   tableOfContents={entry.data.tableOfContents}
   badge={entry.data.badge}
-  editPath={`${entry.id}.mdx`}
+  editPath={(entry.filePath ?? `src/content/docs/${entry.id}.mdx`).replace(/^.*src\/content\/docs\//, '')}
 >
   <Content components={mdxComponents} />
 </DocLayout>

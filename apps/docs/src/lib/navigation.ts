@@ -22,7 +22,7 @@ export interface NavSection {
 export const SECTIONS: NavSection[] = [
   {
     label: 'Premiers pas',
-    rootSlug: 'premiers-pas/index',
+    rootSlug: 'premiers-pas',
     items: [
       { label: 'Introduction', slug: 'premiers-pas/introduction' },
       { label: 'Installation', slug: 'premiers-pas/installation' },
@@ -31,7 +31,7 @@ export const SECTIONS: NavSection[] = [
   },
   {
     label: 'Fondamentaux',
-    rootSlug: 'fondamentaux/index',
+    rootSlug: 'fondamentaux',
     items: [
       { label: 'Quand utiliser TDGS', slug: 'fondamentaux/when-to-use' },
       { label: 'Anti-patterns', slug: 'fondamentaux/anti-patterns' },
@@ -60,9 +60,9 @@ export const SECTIONS: NavSection[] = [
   },
   {
     label: 'Composants',
-    rootSlug: 'components/index',
+    rootSlug: 'components',
     items: [
-      { label: 'Catalogue', slug: 'components/index' },
+      { label: 'Catalogue', slug: 'components' },
       {
         label: 'Base',
         items: [
@@ -141,7 +141,7 @@ export const SECTIONS: NavSection[] = [
   },
   {
     label: 'Intégrations',
-    rootSlug: 'integrations/index',
+    rootSlug: 'integrations',
     items: [
       { label: 'Aperçu', slug: 'integrations/overview' },
       { label: 'HTML / CSS', slug: 'integrations/vanilla' },
@@ -151,7 +151,7 @@ export const SECTIONS: NavSection[] = [
   },
   {
     label: 'Modèles',
-    rootSlug: 'modeles/index',
+    rootSlug: 'modeles',
     items: [
       { label: 'Patterns gouvernementaux', slug: 'modeles/overview' },
       { label: 'Formulaire de connexion', slug: 'modeles/login-form' },
@@ -162,12 +162,12 @@ export const SECTIONS: NavSection[] = [
   },
   {
     label: 'Showcases',
-    rootSlug: 'showcases/index',
+    rootSlug: 'showcases',
     items: [{ label: 'Sites utilisant TDGS', slug: 'showcases/overview' }],
   },
   {
     label: 'Communauté',
-    rootSlug: 'communaute/index',
+    rootSlug: 'communaute',
     items: [
       { label: "Mesure d'audience", slug: 'mesure-audience/apercu' },
       { label: 'Contribution', slug: 'communaute/contribution' },
